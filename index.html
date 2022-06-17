@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="estilo.css" rel="stylesheet" />
+    <script>
+        var visibilidade = false 
+        var mudarStatus;
+
+        function mudarDiv(resp){
+                    
+                    if(!visibilidade){
+                        document.getElementById("resposta"+resp).style.display = "block";
+                        visibilidade = true;
+
+                    } else if(visibilidade){
+                        document.getElementById("resposta"+resp).style.display = "none";
+                        visibilidade= false;
+                    } 
+
+        }
+    </script>
+    <title>Barber</title>
+
+</head>
+<body>
+    <header class="cabecalho">
+        <nav>
+            <img class="iconeLogo" src="img/Iconelogo.png"/>
+            <!-- <img src="img/icone carrinho.png"/>
+            <img src="img/icone user.png.png"/>  -->
+            <img src="img/hamburguer.svg">  
+        </nav>
+    </header>
+    <!-- <ul class="menu">
+        <li>Planos</li>   
+    </ul> -->
+    <main class="corpoIndex">
+        <img class="banner" src="img/banner.png"/>
+
+        <div class="descricao">
+            <div class="tituloDesc">
+                <p>Barba,</p>
+                <p>cabelo e</p>
+                <p>bigode.</p>
+            </div>
+            <div class="introducao">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi labore consequatur ut temporibus dolores quas ad atque natus saepe explicabo asperiores dignissimos voluptatem necessitatibus aut, autem molestias quibusdam dolore pariatur quidem! Reiciendis voluptatum nihil, cupiditate quam inventore quisquam sequi totam alias qui laboriosam sit laborum odio eos repudiandae quidem obcaecati dolorem.</p>
+                <div class="btnIntroducao">
+                    <button class="startSocio">Seja Socio</button>
+                    <a href="">Conheça mais...</a>
+                </div>
+            </div>
+        </div>
+        <div class="planosIndex">
+            <h2 class="tituloPlanos">Nossos Planos </h2>
+            <h3>Venha fazer parte do nosso time. Conheça os planos que faz você economizar e ainda ficar em dia com o barbeiro.</h3>
+            <section class="cardsPlanos">
+                <article class="card">
+                    <div class="imgCard"></div>
+                    <div class="categoria">Basic</div>
+                        <h2 class="preco">R$30,00</h2>
+                        <p class="descPlanos">1 barba</p>
+                        <p>por mês</p>
+                        <p class="descPlanos">1 corte de cabelo</p>
+                        <p>por mês</p>
+                        
+                    <button class="btnComecar">COMPRAR PLANO</button>
+                </article>
+                <article class="card">
+                    <div class="imgCard"></div>
+                    <div class="categoria">Standard</div>
+                    <h2 class="preco">R$40,00</h2>
+                    <p class="descPlanos">4 barba</p>
+                    <p>por mês</p>
+                    <p class="descPlanos">1 corte de cabelo</p>
+                    <p>por mês</p>
+                    <button class="btnComecar">COMPRAR PLANO</button>
+                </article>
+                <article class="card">
+                    <div class="imgCard"></div>
+                    <div class="categoria">Premium</div>
+                    <h2 class="preco">R$60,00</h2>
+                    <p class="descPlanos">5 barbas</p>
+                    <p>por mês</p>
+                    <p class="descPlanos">5 cortes de cabelo</p>
+                    <p>por mês</p>
+                    <button class="btnComecar">COMPRAR PLANO</button>
+                </article>
+            </section>
+        </div>
+
+        <div class="barbeariasIndex">
+            <h2>Conheça as barbearias</h2>
+            <section class="cardsBarbearia">
+                <article class="cardB">
+                    <div class="imgCard"></div>
+                    <p class="localBarbearia">BAIRRO CENTRO</p>
+                    <p class="descPlanos">Av. Brasil, 2022</p>
+                    <p class="descLocal">loja 01</p>
+
+                    <button class="btnComecar">VER LOJA</button>
+                </article>
+            
+            </section>
+
+        </div>
+
+        <div class="duvidas">
+            <h2 class="tituloPerguntas">Perguntas Frequentes</h2>
+
+            <div class="perguntasFrequentes">
+    
+                <div class="perguntasResposta" onclick="mudarDiv(1)">
+
+                    <div class="iconePergunta"></div>
+                    <div class="pergunta">
+                        
+                        <p>Pode cancelar a qualquer momento?</p>
+                        <p id="resposta1">Sim. Entre na sua conta, clique em "minha conta" no menu e depois escolha a opção "cancelar plano".</p>
+                    </div>
+                    
+                </div>
+
+                <div class="perguntasResposta" onclick="mudarDiv(2)">
+                    <div class="iconePergunta"></div>
+                    <div class="pergunta">
+                        
+                        <p>Posso fazer upgrade do plano?</p> 
+
+                        <p id="resposta2">Sim. Entre na sua conta, escolha o plano que deseja adquirir e quando clicar para adquirir ele ira para a página de upgrade. </p>
+                    </div>
+                </div>
+                <div class="perguntasResposta" onclick="mudarDiv(3)">
+                    <div class="iconePergunta"></div>
+                    <div class="pergunta">
+                        
+                        <p>Como escolher o melhor plano?</p>
+                        <p id="resposta3">Faça o cálculo de quantas vezes você costuma ir na barbearia mensalmente e veja se qual vai sair mais vantajoso pra você. </p>
+                    </div>
+                </div>
+                <div class="perguntasResposta" onclick="mudarDiv(4)">
+                    <div class="iconePergunta"></div>
+                    <div class="pergunta">
+                        
+                        <p>Como agendar o corte com a barbearia ?</p>
+                        <p id="resposta4">Clicando no menu e indo na opção "Sobre nós" você encontra nosso endereço e nosso telefone. Fale conosco e informe sua matrícula que agendaremos pra você. </p>
+                    </div>
+                </div>
+
+               
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="rodape">
+
+    </footer>
+    
+</body>
+</html>

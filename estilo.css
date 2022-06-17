@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Numans&display=swap');
+@font-face {
+    font-family: 'Hansief-Rough';
+    src: url(font/HansiefRough.otf) format('opentype');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-size: 16px;
+    font-family: 'Numans', sans-serif;
+    color: #C69C6D;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.cabecalho{
+    width: 100vw;
+    height: 10%;
+    background-color: rgb(66, 33, 11);
+    padding: 0px 30px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 1px 10px rgba(0,66, 33, 11, 0.65);
+}
+
+.cabecalho nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.banner{
+    width: 100%;
+    opacity: 70%;
+}
+
+
+h1{
+    font-weight: normal;
+    font-size: 1rem;
+    color: #ffff;
+}
+.corpoIndex{
+    width: 100%;
+    height: 100%;
+}
+
+.corpoIndex .descricao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0% 10%;
+}
+
+.corpoIndex .descricao .introducao p{
+    font-family: 'Numans', sans-serif;
+    color: #C69C6D;
+    font-size: 0.8rem;
+}
+.corpoIndex .descricao .tituloDesc {
+    padding-bottom: 10px;
+}
+
+.corpoIndex .descricao .tituloDesc p{
+    font-weight: bold;
+    font-size: 2rem;
+    color: #42210B;
+}
+
+.corpoIndex .descricao .introducao .btnIntroducao .startSocio{
+    margin: 20px 10px 20px 0px;
+    width: 110px;
+    height: 45px;
+    background-color: #C69C6D;
+    color: #42210B;
+    font-weight: lighter;
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 8px;
+} 
+
+.corpoIndex .descricao .introducao .btnIntroducao a{
+    color: #C69C6D;
+    font-weight: bold;
+}
+
+.corpoIndex .planosIndex{
+    background-color: #C69C6D;
+    padding: 10% 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #42210B;
+}
+.corpoIndex .planosIndex h2{
+    font-size: 1.2rem;
+    color: #42210B;
+    margin-top: 13px;
+}
+.corpoIndex .planosIndex h3{
+    font-size: 0.6rem;
+    margin: 15px;
+    text-align: center;
+    color: #42210B;
+}
+
+.corpoIndex .planosIndex .cardsPlanos .card{
+    border: 1px solid #42210B;
+    width: 220px;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.corpoIndex .planosIndex .cardsPlanos .card .imgCard{
+    width: 100%;
+    height: 180px;
+    border-bottom: 1.5px solid #42210B;
+    background-image: url(img/corte.png);
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.corpoIndex .planosIndex .cardsPlanos .card .categoria{
+    background-color: #ffffff;;
+    width: 100px;
+    text-align: center;
+    position: relative;
+    top: -10px;
+    font-family: 'Hansief-Rough';
+    color: #42210B;
+}
+
+.corpoIndex .planosIndex .cardsPlanos .card .descPlanos{
+    color: #42210B;
+    margin-top: 20px
+}
+
+.corpoIndex .planosIndex .cardsPlanos .card .btnComecar{
+    background-color: #ffff;
+    font-family: 'Hansief-Rough';
+     color: #42210B;
+    width: 150px;
+    height: 55px;
+    border-radius: 5px;
+    margin: 20px 0px;
+    padding: 10px;
+    font-size: 0.9rem;
+    border: 1px solid #42210B;
+}
+
+.barbeariasIndex{
+        background-color: #ffffff;
+        padding: 10% 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+
+.corpoIndex .barbeariasIndex h2{
+    font-size: 1.2rem;
+    color: #42210B;
+    margin-top: 13px;
+}
+
+
+.corpoIndex .barbeariasIndex .cardsBarbearia .cardB{
+    border: 1px solid #42210B;
+    width: 220px;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    margin-top: 30px;
+}
+
+.corpoIndex .barbeariasIndex .cardsBarbearia .cardB .imgCard{
+    width: 100%;
+    height: 180px;
+    background-image: url(img/barbearias.png);
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.corpoIndex .barbeariasIndex .cardsBarbearia .cardB .descPlanos{
+    color: #42210B;
+    margin-top: 20px;
+    border-top: 2px solid #42210B;
+    padding-top: 13px;
+    width: 170px;
+    text-align: center;
+}
+.corpoIndex .barbeariasIndex .cardsBarbearia .cardB .descLocal{
+    border-bottom: 2px solid #42210B;
+    padding-bottom: 13px;
+    width: 170px;
+    text-align: center;
+}
+
+.corpoIndex .barbeariasIndex .localBarbearia{
+    font-family: 'Hansief-Rough' ;
+    color: #42210B;
+    font-size: 1.7rem;
+}
+
+.corpoIndex .barbeariasIndex .cardsBarbearia .cardB .btnComecar{
+    background-color: #C69C6D;
+    font-family: 'Hansief-Rough';
+    color: #ffffff;
+    width: 150px;
+    height: 40px;
+    border-radius: 40px;
+    margin: 20px 0px;
+    padding: 10px;
+    font-size: 0.9rem;
+    border: 1px solid #ffffff;
+}
+
+
+.corpoIndex .duvidas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.corpoIndex .duvidas .perguntasFrequentes{
+    padding: 10%;
+}
+
+.corpoIndex .duvidas .perguntasFrequentes .perguntasResposta{
+    border-bottom: 1px solid #42210B;
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: start;
+}
+
+.corpoIndex .duvidas .perguntasFrequentes .perguntasResposta .iconePergunta{
+    background-image: url("img/iconplus.png") ;
+    padding: 10px;
+    width: 35px;
+    height: 24px;
+    background-repeat: no-repeat;
+}
+
+.corpoIndex .duvidas .perguntasFrequentes .perguntasResposta .pergunta{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.corpoIndex .duvidas .perguntasFrequentes .perguntasResposta .pergunta p{
+    padding-bottom: 20px;
+}
+
+.corpoIndex .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #resposta2, #resposta3, #resposta4{
+    padding-bottom: 20px;
+    font-size: 0.8rem;
+    display: none;
+}
+
+
