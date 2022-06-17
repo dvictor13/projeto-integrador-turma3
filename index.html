@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="estilo.css" rel="stylesheet" />
+    <link href="css/estilo.css" rel="stylesheet" />
     <script>
         var visibilidade = false 
         var mudarStatus;
@@ -26,8 +26,8 @@
 
 </head>
 <body>
-    <header class="cabecalho">
-        <nav>
+    <header>
+        <nav class="cabecalho">
             <img class="iconeLogo" src="img/Iconelogo.png"/>
             <!-- <img src="img/icone carrinho.png"/>
             <img src="img/icone user.png.png"/>  -->
@@ -37,24 +37,26 @@
     <!-- <ul class="menu">
         <li>Planos</li>   
     </ul> -->
-    <main class="corpoIndex">
-        <img class="banner" src="img/banner.png"/>
+    <main>
+        <section class="corpoIndex">
+            <img class="banner" src="img/banner.png"/>
 
-        <div class="descricao">
-            <div class="tituloDesc">
-                <p>Barba,</p>
-                <p>cabelo e</p>
-                <p>bigode.</p>
-            </div>
-            <div class="introducao">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi labore consequatur ut temporibus dolores quas ad atque natus saepe explicabo asperiores dignissimos voluptatem necessitatibus aut, autem molestias quibusdam dolore pariatur quidem! Reiciendis voluptatum nihil, cupiditate quam inventore quisquam sequi totam alias qui laboriosam sit laborum odio eos repudiandae quidem obcaecati dolorem.</p>
-                <div class="btnIntroducao">
-                    <button class="startSocio">Seja Socio</button>
-                    <a href="">Conheça mais...</a>
+            <div class="descricao">
+                <div class="tituloDesc">
+                    <h2>Barba,</h2>
+                    <h2>cabelo e</h2>
+                    <h2>bigode.</h2>
+                </div>
+                <div class="introducao">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi labore consequatur ut temporibus dolores quas ad atque natus saepe explicabo asperiores dignissimos voluptatem necessitatibus aut, autem molestias quibusdam dolore pariatur quidem! Reiciendis voluptatum nihil, cupiditate quam inventore quisquam sequi totam alias qui laboriosam sit laborum odio eos repudiandae quidem obcaecati dolorem.</p>
+                    <div class="btnIntroducao">
+                        <button class="startSocio">Seja Socio</button>
+                        <a href="">Conheça mais...</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="planosIndex">
+        </section>
+        <section class="planosIndex">
             <h2 class="tituloPlanos">Nossos Planos </h2>
             <h3>Venha fazer parte do nosso time. Conheça os planos que faz você economizar e ainda ficar em dia com o barbeiro.</h3>
             <section class="cardsPlanos">
@@ -90,9 +92,9 @@
                     <button class="btnComecar">COMPRAR PLANO</button>
                 </article>
             </section>
-        </div>
+        </section>
 
-        <div class="barbeariasIndex">
+        <section class="barbeariasIndex">
             <h2>Conheça as barbearias</h2>
             <section class="cardsBarbearia">
                 <article class="cardB">
@@ -106,9 +108,9 @@
             
             </section>
 
-        </div>
+        </section>
 
-        <div class="duvidas">
+        <section class="duvidas">
             <h2 class="tituloPerguntas">Perguntas Frequentes</h2>
 
             <div class="perguntasFrequentes">
@@ -151,14 +153,13 @@
                 </div>
 
                
-
             </div>
 
-        </div>
+        </section>
 
     </main>
 
-    <footer class="rodape">
+    <footer>
 
     </footer>
     
