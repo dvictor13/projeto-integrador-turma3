@@ -97,7 +97,7 @@ main .planosIndex{
     align-items: center;
     color: #42210B;
 }
-main .planosIndex h2{
+main .planosIndex .tituloPlanos{
     font-size: 1.2rem;
     color: #42210B;
     margin-top: 13px;
@@ -111,38 +111,40 @@ main .planosIndex h3{
 
 main .planosIndex .cardsPlanos .card{
     border: 1px solid #42210B;
-    width: 220px;
-    height: 420px;
+    width: 288px;
+    height: 750px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     background-color: #ffffff;
-    margin-bottom: 20px;
+    gap: 20px;
 }
 
 main .planosIndex .cardsPlanos .card .imgCard{
-    width: 100%;
-    height: 180px;
-    border-bottom: 1.5px solid #42210B;
-    background-image: url(img/corte.png);
-    background-size: 65%;
-    background-repeat: no-repeat;
-    background-position: center;
+    width: 224px;
+    height: 224px;
+    margin: 30px 0px 0px;
+
 }
 
 main .planosIndex .cardsPlanos .card .categoria{
-    background-color: #ffffff;;
-    width: 100px;
+    background-color: #ffffff;
     text-align: center;
-    position: relative;
-    top: -10px;
     font-family: 'Hansief-Rough';
     color: #42210B;
+    font-size: 2rem;
+}
+
+main .planosIndex .cardsPlanos .card .preco{
+    border-top: 4px solid #42210B;
+    width: 130px;
+    padding-top: 20px;
+    text-align: center;
 }
 
 main .planosIndex .cardsPlanos .card .descPlanos{
     color: #42210B;
-    margin-top: 20px
 }
 
 main .planosIndex .cardsPlanos .card .btnComecar{
@@ -175,22 +177,21 @@ main .barbeariasIndex h2{
 
 main .barbeariasIndex .cardsBarbearia .cardB{
     border: 1px solid #42210B;
-    width: 220px;
-    height: 420px;
+    width: 288px;
+    height: 540px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     background-color: #ffffff;
     margin-top: 30px;
+    gap: 20px;
 }
 
 main .barbeariasIndex .cardsBarbearia .cardB .imgCard{
-    width: 100%;
-    height: 180px;
-    background-image: url(img/barbearias.png);
-    background-size: 90%;
-    background-repeat: no-repeat;
-    background-position: center;
+
+
+
 }
 
 main .barbeariasIndex .cardsBarbearia .cardB .descPlanos{
