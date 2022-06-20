@@ -324,12 +324,15 @@ header .cabecalho-media{
         align-items: center;
     }
     header .cabecalho-media .icons {
+        
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    header .cabecalho-media .menu-options{
-        font-size: 12px;
+    header .cabecalho-media .menu-options li{
+        font-size: 10px;
+        list-style: none;
+        padding: 0px 5px;
     }
     header .cabecalho-media .icons .user-dropdown{
         display: flex;
