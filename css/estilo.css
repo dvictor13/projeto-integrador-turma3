@@ -389,8 +389,22 @@ footer .redes-sociais{
         width: 50%;
         padding: auto;
     }
-}
 
+    main .planosIndex .tituloPlanos {
+        font-size: 2rem;
+    }
+    main .planosIndex h3{
+        font-size: 1rem;
+    }
+    main .planosIndex .cardsPlanos{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+
+    }
+}
 /* @media (min-width:768px) {
     
 } */
