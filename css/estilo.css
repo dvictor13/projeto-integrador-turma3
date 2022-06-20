@@ -112,7 +112,7 @@ main .planosIndex h3{
 main .planosIndex .cardsPlanos .card{
     border: 1px solid #42210B;
     width: 288px;
-    height: 750px;
+    height: 700px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -307,3 +307,47 @@ footer .redes-sociais{
     margin: 20px 0px;
     gap: 20px;
 }
+
+header .cabecalho-media{
+    display: none;
+}
+
+@media (min-width:460px) {
+    header .cabecalho{
+        display: none;
+    }
+    header .cabecalho-media{
+        width: 100%;
+        height: 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header .cabecalho-media .icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    header .cabecalho-media .menu-options{
+        font-size: 12px;
+    }
+    header .cabecalho-media .icons .user-dropdown{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    header .cabecalho-media .menu-options{
+        display: flex;
+        justify-content: space-between;
+    }
+    header .cabecalho-media .icons .user-dropdown .drop{
+        position: relative;
+        left: -10px;
+    }   
+
+    
+}
+
+/* @media (min-width:768px) {
+    
+} */
