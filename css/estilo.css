@@ -30,8 +30,20 @@ header .cabecalho{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 10px 20px 20px;
+    padding: 15px;
 }
+
+header .cabecalho a{
+    text-decoration: none;
+    color: inherit;
+}
+header .cabecalho .iconeLogo{
+    margin-right: 50px;
+}
+header .cabecalho .dsk{
+    display: none;
+}
+
 
 
 
@@ -308,47 +320,75 @@ footer .redes-sociais{
     gap: 20px;
 }
 
-header .cabecalho-media{
-    display: none;
-}
 
-@media (min-width:460px) {
+@media screen and (min-width:460px) {
+
     header .cabecalho{
+        font-size: 0.5rem;
+    }
+
+    header .cabecalho .iconeLogo{
+        margin-right: 10px;
+    }
+
+    header .cabecalho .hamburguer{
         display: none;
     }
-    header .cabecalho-media{
-        width: 100%;
-        height: 70px;
+
+    header .cabecalho .dsk{
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    header .cabecalho-media .icons {
-        
+
+    header .cabecalho .list{
+        list-style: none;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
     }
-    header .cabecalho-media .menu-options li{
-        font-size: 10px;
+    header .cabecalho .menu a{
+        font-size: 8px;
         list-style: none;
         padding: 0px 5px;
-    }
-    header .cabecalho-media .icons .user-dropdown{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    header .cabecalho-media .menu-options{
+        text-align: center;
+    }   
+    header .cabecalho .icons{
         display: flex;
         justify-content: space-between;
+        gap: 5px;
+        position: relative;
+        left: 20px;
+    } 
+    header .cabecalho .icons .user-dropdown{
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    header .cabecalho-media .icons .user-dropdown .drop{
+    header .cabecalho .icons .user-dropdown .drop{
         position: relative;
         left: -10px;
-    }   
+    }
+    main .corpoIndex .banner{
 
-    
+    }
+    main .corpoIndex .descricao{
+
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        padding: 5%;
+    }
+    main .corpoIndex .descricao .tituloDesc {
+
+        width: 50%;
+        text-align: center;
+
+    }
+    main .corpoIndex .descricao .introducao{
+        width: 50%;
+        padding: auto;
+    }
 }
 
 /* @media (min-width:768px) {
