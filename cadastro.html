@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<meta name<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/estiloCadastro.css" rel="stylesheet" />
+    <script>
+        var visibilidade = false 
+        var mudarStatus;
+
+        function mudarDiv(resp){
+                    
+                    if(!visibilidade){
+                        document.getElementById("resposta"+resp).style.display = "block";
+                        visibilidade = true;
+
+                    } else if(visibilidade){
+                        document.getElementById("resposta"+resp).style.display = "none";
+                        visibilidade= false;
+                    } 
+
+        }
+    </script>
+    <title>cadastroBarber</title>
+
+</head>
+<body>
+    <header>
+        <nav class="cabecalho">
+            <img class="iconeLogo" src="img/logo-header.svg"/>
+            <img src="img/hamburguer.svg">  
+        </nav>
+    </header>
+    <main>    
+        <section class="corpoCadastro">
+            <div class="faça seu login">
+                <h1>Faça seu Login</h1>
+                <h2>Acesse com umas de suas contas sociais</h2>
+                <ul>
+                    <li><link rel="stylesheet" href="img/Facebook.png"></li>
+                    <li><link rel="stylesheet" href="img/Twitter.png"></li>
+                </ul>
+                <p>OU</p>
+                <h2>Crie sua conta</h2>
+            </div>
+            <div class="formulario">
+                <form action="/cadastro.html" method="post">
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+                    <br>
+                    <input type="email" id="email" name="email" placeholder="Digite seu email">
+                    <br>
+                    <input type="number" id="cpf" name="cpf" placeholder="Digite seu CPF">
+                    <br>
+                    <input type="date" id="nascimento" name="nascimento" placeholder="Digite a data de nascimento">
+                    <br>
+                    <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone para contato">
+                    <br>
+                    <label for="genero">Gênero</label>
+                    <br>
+                    <input type="checkbox" name="genero" id="masculino" value="masculino"><label form="masculino">Masculino</label>
+                    <br>
+                    <input type="checkbox" name="genero" id="feminino" value="feminino"><label form="feminino">Feminino</label>
+                    <br> 
+                    <input type="checkbox" name="genero" id="outros" value="outros"><label form="outros">Outros</label>
+                    <br>
+                    <input type="checkbox" name="genero" id="nao informado" value="nao informado"><label form="nao informado">Prefiro não informar</label>
+                    <br>
+                    
+                </form>
+            </div>
+            <div class="btnCadastro">
+                <button class="concluirCadastro">Concluir</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="logo-footer">
+            <img src="img/logo-footer.svg" alt="">
+        </div>
+        <nav class="nav-footer">
+            <ul class="links">
+              <li><a href="#">trabalhe conosco</a></li>
+              <li><a href="#">fale conosco</a></li>
+              <li><a href="#">termos e condições</a></li>
+            </ul>
+        </nav>
+        <div class="redes-sociais">
+            <img src="img/Twitter.png" alt="">
+            <img src="img/Facebook.png" alt="">
+            <img src="img/instagram.png" alt="">
+        </div>
+        
+
+    </footer>
+    
+</body>
+</html>
