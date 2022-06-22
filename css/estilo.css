@@ -14,16 +14,12 @@
     color: #C69C6D;
 }
 
-/* body{
-    width: 100vw;
-    height: 100vh;
-} */
+
 header{
     box-shadow: 0px 1px 10px rgba(0,66, 33, 11, 0.65);
     background-color: rgb(66, 33, 11);
 
 }
-
 
 header .cabecalho{
     width: 100%;
@@ -37,16 +33,14 @@ header .cabecalho a{
     text-decoration: none;
     color: inherit;
 }
+
 header .cabecalho .iconeLogo{
     margin-right: 50px;
 }
+
 header .cabecalho .dsk{
     display: none;
 }
-
-
-
-
 
 main .banner{
     width: 100%;
@@ -115,7 +109,7 @@ main .planosIndex .tituloPlanos{
     margin-top: 13px;
 }
 main .planosIndex h3{
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     margin: 15px;
     text-align: center;
     color: #42210B;
@@ -123,21 +117,24 @@ main .planosIndex h3{
 
 main .planosIndex .cardsPlanos .card{
     border: 1px solid #42210B;
-    width: 288px;
-    height: 700px;
+    width: 258px;
+    height: 480px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     background-color: #ffffff;
-    gap: 20px;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 main .planosIndex .cardsPlanos .card .imgCard{
-    width: 224px;
-    height: 224px;
-    margin: 30px 0px 0px;
-
+    margin: 10px 0px 0px;
+    background-image: url(../img/planos-imgcard.svg);
+    background-repeat: no-repeat;
+    width: 172px;
+    height: 172px;
+    background-size: cover;    
 }
 
 main .planosIndex .cardsPlanos .card .categoria{
@@ -145,13 +142,13 @@ main .planosIndex .cardsPlanos .card .categoria{
     text-align: center;
     font-family: 'Hansief-Rough';
     color: #42210B;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 main .planosIndex .cardsPlanos .card .preco{
     border-top: 4px solid #42210B;
     width: 130px;
-    padding-top: 20px;
+    padding-top: 10px;
     text-align: center;
 }
 
@@ -166,7 +163,7 @@ main .planosIndex .cardsPlanos .card .btnComecar{
     width: 150px;
     height: 55px;
     border-radius: 5px;
-    margin: 20px 0px;
+    margin: 10px 0px;
     padding: 10px;
     font-size: 0.9rem;
     border: 1px solid #42210B;
@@ -174,7 +171,7 @@ main .planosIndex .cardsPlanos .card .btnComecar{
 
 main .barbeariasIndex{
         background-color: #ffffff;
-        padding: 10% 10%;
+        padding: 5% 10%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -183,28 +180,22 @@ main .barbeariasIndex{
 main .barbeariasIndex h2{
     font-size: 1.2rem;
     color: #42210B;
-    margin-top: 13px;
 }
 
 
 main .barbeariasIndex .cardsBarbearia .cardB{
     border: 1px solid #42210B;
     width: 288px;
-    height: 540px;
+    height: 450px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     background-color: #ffffff;
     margin-top: 30px;
-    gap: 20px;
+    gap: 10px;
 }
 
-main .barbeariasIndex .cardsBarbearia .cardB .imgCard{
-
-
-
-}
 
 main .barbeariasIndex .cardsBarbearia .cardB .descPlanos{
     color: #42210B;
@@ -321,7 +312,7 @@ footer .redes-sociais{
 }
 
 
-@media screen and (min-width:570px) {
+@media screen and (min-width:769px) {
 
     header .cabecalho{
         font-size: 0.5rem;
@@ -344,11 +335,11 @@ footer .redes-sociais{
     header .cabecalho .list{
         list-style: none;
         display: flex;
-        justify-content: space-between;
         align-items: center;
     }
+
     header .cabecalho .menu a{
-        font-size: 8px;
+        font-size: 0.8rem;
         list-style: none;
         padding: 0px 5px;
         text-align: center;
@@ -396,15 +387,76 @@ footer .redes-sociais{
     main .planosIndex h3{
         font-size: 1rem;
     }
-    main .planosIndex .cardsPlanos{
+
+    main .planosIndex .cardsPlanos {
         display: flex;
-        flex-wrap: wrap;
+        width: 100%;
         justify-content: space-between;
         align-items: center;
-
-
+        gap: 5px;
+        
     }
+
+    main .barbeariasIndex .cardsBarbearia{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    main .barbeariasIndex .cardsBarbearia .cardB{
+        width: 420px;
+        height: 500px;
+    }
+   
+
 }
-/* @media (min-width:768px) {
+@media (min-width:1280px) {
+
+        
+        main .corpoIndex .descricao .introducao p{
+            font-size: 1.5rem;
+        }
+
+        main .corpoIndex .descricao .tituloDesc h2{
+            font-size: 5rem;
+        }
+
+        main .planosIndex .cardsPlanos .card{
+            width: 420px;
+            height: 500px;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        main .planosIndex .cardsPlanos .card .imgCard{
+            width: 202px;
+            height: 202px;
+        }
+        
+        main .duvidas {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        main .duvidas h2{
+            font-size: 2rem;
+        }
+        main .duvidas .perguntasFrequentes .perguntasResposta{
+            width: 900px;
+            justify-content: center;
+        }
+
+        main .duvidas .perguntasFrequentes .perguntasResposta p{
+            font-size: 2rem;
+        }
+
+        main .duvidas .perguntasFrequentes{
+            padding-top: 60px;
+        }
     
-} */
+        footer{
+            flex-direction: row;
+            justify-content: space-around;
+        }
+} 
