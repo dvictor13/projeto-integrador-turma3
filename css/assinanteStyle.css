@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+main>h1{
+    padding: 20px;
+    text-align: center;
+}
+main>nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+main>nav>.frases>*{
+    text-align: center;
+    padding: 5px 20px;
+}
+main>nav>.dados{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    
+}
+main>nav>.dados>.col{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 5%;
+    
+}
+
+main>nav>.dados article{
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
