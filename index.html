@@ -22,6 +22,41 @@
 
         }
     </script>
+    <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            // Next/previous controls
+            function plusSlides(n) {
+            showSlides(slideIndex += n);
+            }
+
+            // Thumbnail image controls
+            function currentSlide(n) {
+            showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            }
+
+
+
+    </script>
+
+
     <title>Barber</title>
 
 </head>
@@ -29,16 +64,15 @@
     <header>
         <nav class="cabecalho">
             <a href="#"><img class="iconeLogo" src="img/logo-header.svg"></a>
-            <img class="hamburguer" src="img/hamburguer.svg" alt="">
+         <!--  <img class="hamburguer" src="img/hamburguer.svg" alt=""> --> 
             <div class="menu dsk">
                 <ul class="list">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#" >Shop</a></li>
-
-                    <li><a href="#" >Contact</a></li>
+                    <li><a href="#">NOSSOS PLANOS</a></li>
+                    <li><a href="#">BARBEARIAS</a></li>
+                    <li><a href="#" >LOGIN</a></li>
                 </ul>
             </div>
+            <!--
             <div class="icons dsk">
                 <img src="img/icon_Shop.svg" alt="" class="icon">
                 <img src="img/icon_Notification.svg" alt="" class="icon">
@@ -47,6 +81,7 @@
                     <img src="img/Dropdrown.svg" alt="" class="drop">
                 </div>
             </div>
+             -->
         </nav>
 
         
@@ -54,7 +89,34 @@
 
     <main>
         <section class="corpoIndex">
-            <img class="banner" src="img/banner.svg"/>
+            <div class="slideshow-container">
+                <div class="mySlides fade" style="display: block ;">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="img/img1.jpg" style="width:100%">
+                    <div class="text">Caption Text</div>
+                </div>
+                
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="img/img2.jpg" style="width:100%">
+                    <div class="text">Caption Two</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="img/img3.jpg" style="width:100%">
+                    <div class="text">Caption Three</div>
+                </div>
+
+                  <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+              </div>
 
             <div class="descricao">
                 <div class="tituloDesc">
@@ -64,60 +126,66 @@
                 </div>
                 <div class="introducao">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi labore consequatur ut temporibus dolores quas ad atque natus saepe explicabo asperiores dignissimos voluptatem necessitatibus aut, autem molestias quibusdam dolore pariatur quidem! Reiciendis voluptatum nihil, cupiditate quam inventore quisquam sequi totam alias qui laboriosam sit laborum odio eos repudiandae quidem obcaecati dolorem.</p>
-                    <div class="btnIntroducao">
-                        <button class="startSocio">Seja Socio</button>
-                        <a href="">Conheça mais...</a>
-                    </div>
                 </div>
             </div>
         </section>
         <section class="planosIndex">
-            <h2 class="tituloPlanos">Nossos Planos </h2>
-            <h3>Venha fazer parte do nosso time. Conheça os planos que faz você economizar e ainda ficar em dia com o barbeiro.</h3>
+            <h2 class="tituloPlanos">NOSSOS PLANOS</h2>
             <section class="cardsPlanos">
                 <article class="card">
-                    <div class="imgCard"></div>
-                    <div class="categoria">Basic</div>
-                        <h2 class="preco">R$30,00</h2>
-                        <p class="descPlanos">1 barba</p>
+                    <div class="imgPlano"><img src="img/planos-imgcard.svg" class="imgCard"></div>
+                    <div class="conteudoCard">
+                        <div class="categoria">Basic</div>
+                            <h2 class="preco">R$30,00</h2>
+                            <p class="descPlanos">1 barba</p>
+                            <p>por mês</p>
+                            <p class="descPlanos">1 corte de cabelo</p>
+                            <p>por mês</p>
+                        
+                        
+                        <button class="btnComecar">COMPRAR PLANO</button>
+                    </div>
+                </article>
+                <article class="card">
+                    <div><img src="img/planos-imgcard.svg" alt="" class="imgCard"></div>
+                    <div class="conteudoCard">
+                        <div class="categoria">Standard</div>
+                        <h2 class="preco">R$40,00</h2>
+                        <p class="descPlanos">4 barba</p>
                         <p>por mês</p>
                         <p class="descPlanos">1 corte de cabelo</p>
                         <p>por mês</p>
-                        
-                    <button class="btnComecar">COMPRAR PLANO</button>
+                        <button class="btnComecar">COMPRAR PLANO</button>
+                    </div>
                 </article>
                 <article class="card">
-                    <div class="imgCard"></div>
-                    <div class="categoria">Standard</div>
-                    <h2 class="preco">R$40,00</h2>
-                    <p class="descPlanos">4 barba</p>
-                    <p>por mês</p>
-                    <p class="descPlanos">1 corte de cabelo</p>
-                    <p>por mês</p>
-                    <button class="btnComecar">COMPRAR PLANO</button>
-                </article>
-                <article class="card">
-                    <div class="imgCard"></div>
-                    <div class="categoria">Premium</div>
-                    <h2 class="preco">R$60,00</h2>
-                    <p class="descPlanos">5 barbas</p>
-                    <p>por mês</p>
-                    <p class="descPlanos">5 cortes de cabelo</p>
-                    <p>por mês</p>
-                    <button class="btnComecar">COMPRAR PLANO</button>
+                    <div><img src="img/planos-imgcard.svg" alt="" class="imgCard"></div>
+                    <div class="conteudoCard">
+                        <div class="categoria">Premium</div>
+                        <h2 class="preco">R$60,00</h2>
+                        <p class="descPlanos">5 barbas</p>
+                        <p>por mês</p>
+                        <p class="descPlanos">5 cortes de cabelo</p>
+                        <p>por mês</p>
+                        <button class="btnComecar">COMPRAR PLANO</button>
+                    </div>
                 </article>
             </section>
         </section>
 
         <section class="barbeariasIndex">
-            <h2>Conheça as barbearias</h2>
+            <h2>CONHEÇA AS BARBEARIAS</h2>
             <section class="cardsBarbearia">
                 <article class="cardB">
                     <div class="imgCard"><img src="img/barbearias.svg" alt=""></div>
                     <p class="localBarbearia">BAIRRO CENTRO</p>
                     <p class="descPlanos">Av. Brasil, 2022</p>
                     <p class="descLocal">loja 01</p>
-
+                    <div class="redes-sociais">
+                        <img src="img/Twitter.png" alt="">
+                        <img src="img/Facebook.png" alt="">
+                        <img src="img/instagram.png" alt="">
+                    </div>
                     <button class="btnComecar">VER LOJA</button>
                 </article>
                 <article class="cardB">
@@ -125,7 +193,11 @@
                     <p class="localBarbearia">VILA JARDIM</p>
                     <p class="descPlanos">Av. Beira-Mar, 2023</p>
                     <p class="descLocal">loja 02</p>
-
+                    <div class="redes-sociais">
+                        <img src="img/Twitter.png" alt="">
+                        <img src="img/Facebook.png" alt="">
+                        <img src="img/instagram.png" alt="">
+                    </div>
                     <button class="btnComecar">VER LOJA</button>
                 </article>
             
