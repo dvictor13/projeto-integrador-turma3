@@ -290,7 +290,12 @@ main .duvidas {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 40px;
+    background-color: #42210B;
+}
+
+main .duvidas h2{
+    padding-top: 10%;
 }
 
 main .duvidas .perguntasFrequentes{
@@ -298,7 +303,7 @@ main .duvidas .perguntasFrequentes{
 }
 
 main .duvidas .perguntasFrequentes .perguntasResposta{
-    border-bottom: 1px solid #42210B;
+    border-bottom: 1px solid #C69C6D;
     display: flex;
     margin-bottom: 20px;
     justify-content: start;
@@ -331,26 +336,6 @@ main .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #res
 
 @media screen and (min-width:769px) {
 
-/*    header .cabecalho .icons{
-        display: flex;
-        justify-content: space-between;
-        gap: 5px;
-        position: relative;
-        left: 20px;
-    } 
-    header .cabecalho .icons .user-dropdown{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    header .cabecalho .icons .user-dropdown .drop{
-        position: relative;
-        left: -10px;
-    }*/
-
-    main .corpoIndex .banner{
-
-    }
 
     .text {
         font-size: 3rem;
@@ -421,17 +406,52 @@ main .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #res
         font-size: 1.5rem;
     }
 
-   
+    main .duvidas h2{
+        padding-top: 5%;
+    }
+    
+    main .duvidas .perguntasFrequentes{
+        padding: 5%;
+    }
+    
+    main .duvidas .perguntasFrequentes .perguntasResposta{
+        border-bottom: 1px solid #C69C6D;
+        display: flex;
+        margin-bottom: 20px;
+        justify-content: start;
+    }
+    
+    main .duvidas .perguntasFrequentes .perguntasResposta .iconePergunta{
+        background-image: url("img/iconplus.png") ;
+        padding: 10px;
+        width: 35px;
+        height: 24px;
+        background-repeat: no-repeat;
+    }
+    
+    main .duvidas .perguntasFrequentes .perguntasResposta .pergunta{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    
+    main .duvidas .perguntasFrequentes .perguntasResposta .pergunta p{
+        padding-bottom: 20px;
+    }
+    
+    main .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #resposta2, #resposta3, #resposta4{
+        padding-bottom: 20px;
+        font-size: 0.8rem;
+        display: none;
+    }
+
+
 
 }
 @media (min-width:1280px) {
 
         .slideshow-container {
             max-width: 1600px;
-        }
-
-        main .corpoIndex .descricao  {
-            
         }
 
         main .corpoIndex .descricao .introducao p{
@@ -469,7 +489,7 @@ main .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #res
             padding: 1% 10%;
             margin-top: 4%;
             margin-bottom: 8%;
-    }
+        }
     
         main .barbeariasIndex h2{
             font-size: 1.2rem;
@@ -486,15 +506,15 @@ main .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #res
         }
 
         main .duvidas h2{
-            font-size: 2rem;
+            font-size: 1.5rem;
         }
         main .duvidas .perguntasFrequentes .perguntasResposta{
             width: 900px;
-            justify-content: center;
+            justify-content: start;
         }
 
         main .duvidas .perguntasFrequentes .perguntasResposta p{
-            font-size: 2rem;
+            font-size: 1rem;
         }
 
         main .duvidas .perguntasFrequentes{
