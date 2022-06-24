@@ -1,64 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Numans&display=swap');
-@font-face {
-    font-family: 'Hansief-Rough';
-    src: url(font/HansiefRough.otf) format('opentype');
-}
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; 
-    font-size: 16px;
-    font-family: 'Numans', sans-serif;
-    color: #C69C6D;
-}
-
-
-header{
-    box-shadow: 0px 1px 10px rgba(0,66, 33, 11, 0.65);
-    background-color: rgb(66, 33, 11);
-
-}
-
-header .cabecalho{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-}
-
-header .cabecalho a{
-    text-decoration: none;
-    color: inherit;
-}
-
-header .cabecalho .iconeLogo{
-    margin-right: 50px;
-}
-
-header .cabecalho .dsk{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .cabecalho .list{
-    list-style: none;
-    display: flex;
-    align-items: center;
-    width: 215px;
-    justify-content: space-between;
-    margin-right: 5%;
-}
-
-header .cabecalho .menu a{
-    font-size: 0.6rem;
-    padding: 0px 2px;
-    text-align: center;
-    font-weight: bold;
-}   
 
 main{
     display: flex;
@@ -107,12 +49,15 @@ main{
   /* Caption text */
   .text {
     color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
+    font-size: 1.5rem;
     position: absolute;
-    bottom: 8px;
+    top: 0px;
     width: 100%;
+    height: 98%;
     text-align: center;
+    padding-top: 15%;
+    background-color: rgb(66, 33, 11, 0.4);
+    font-family: 'Hansief-Rough', sans-serif;
   }
   
   /* Number text (1/3 etc) */
@@ -383,53 +328,8 @@ main .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #res
     display: none;
 }
 
-footer{
-    background-color:#000000;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-footer .logo-footer{
-    padding: 20px;
-}
-
-
-footer .nav-footer{
-    margin: 20px 0px;
-}
-
-footer .nav-footer .links{
-    list-style: none;
-    display: flex ;
-    flex-direction: column;
-    gap: 20px;
-    
-}
-
-footer .nav-footer .links a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-footer .redes-sociais{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 20px 0px;
-    gap: 20px;
-}
-
 
 @media screen and (min-width:769px) {
-    
-    header .cabecalho .list{
-        width: 350px;
-    }
-    
-    header .cabecalho .menu a{
-        font-size: 0.8rem;
-    }   
 
 /*    header .cabecalho .icons{
         display: flex;
@@ -451,6 +351,12 @@ footer .redes-sociais{
     main .corpoIndex .banner{
 
     }
+
+    .text {
+        font-size: 3rem;
+        width: 100%;
+        height: 99.2%;
+      }
 
     main .corpoIndex .descricao{
         display: flex;
@@ -515,22 +421,10 @@ footer .redes-sociais{
         font-size: 1.5rem;
     }
 
-    footer{
-        flex-direction: row;
-        justify-content: space-around;
-    }
    
 
 }
 @media (min-width:1280px) {
-
-        header .cabecalho .list{
-            width: 400px;
-        }
-        
-        header .cabecalho .menu a{
-            font-size: 0.9rem;
-        }   
 
         .slideshow-container {
             max-width: 1600px;
