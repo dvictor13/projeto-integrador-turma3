@@ -13,15 +13,16 @@ main>nav{
     justify-content: center;
     align-items: center;
     gap: 20px;
+    padding-top: 20px;
 }
 main>nav>.frases>*{
     text-align: center;
-    padding: 5px 20px;
+    padding: 3% 6%;
 }
 main>nav>.dados{
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
+
     width: 100%;
     
 }
@@ -32,15 +33,17 @@ main>nav>.dados>.col{
     padding: 5%;
     
 }
-
 main>nav>.dados article{
     display: flex;
     width: 100%;
     gap: 20px;
+    text-align: center;
+    height: ;
 }
 main>.historico>.dados{
     display: flex;
 }
+
 
 main>.historico>.dados>.info{
     display: flex;
@@ -50,13 +53,74 @@ main>.historico>.dados>.info{
     width: 33%;
 
 }
-main>.historico>.dados>.info>.circle{
-    border-radius: 50%;
-    border: solid 2px blue;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+main>.historico>button{
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    color: #000000;
+    font-family: Open Sans;
+    font-size: 1rem;
+    padding: 2%;
+    background-color: #FFFFFF;
+    -webkit-box-shadow: 1px 1px 13px 0 #000000;
+    -moz-box-shadow: 1px 1px 13px 0 #000000;
+    box-shadow: 1px 1px 13px 0 #000000;
+    border: solid #000000 2px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
 }
+
+
+  
+.single-chart {
+    width: 60%;
+    justify-content: space-around ;
+}
+  
+.circular-chart {
+    display: block;
+    margin: 10px auto;
+    max-height: 250px;
+}
+  
+.circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3.8;
+}
+  
+.circle {
+    fill: none;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    /* animation: progress 3s ease-out forwards infinite; */
+}
+  
+@keyframes progress {
+    0% {
+      stroke-dasharray: 0 100;
+    }
+  }
+  
+.circular-chart.orange .circle {
+    stroke: #ff9f00;
+  }
+  
+.circular-chart.green .circle {
+    stroke: #4CC790;
+  }
+  
+.circular-chart.blue .circle {
+    stroke: #3c9ee5;
+  }
+.percentage {
+    fill: #666;
+    font-family: sans-serif;
+    font-size: 0.5em;
+    text-anchor: middle;
+  }
 
