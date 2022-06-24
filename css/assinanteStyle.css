@@ -1,24 +1,39 @@
+@font-face {
+    font-family: 'Akrobat-Regular';
+    src:url('./font/Akrobat-Regular.otf')
+}
+@font-face {
+    font-family: 'Akrobat-Black';
+    src:url('./font/Akrobat-Black.otf')
+}
+@font-face {
+    font-family: 'Akrobat-Bold';
+    src:url('./font/Akrobat-Bold.otf')
+}
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     text-align: left;
+    font-family: Akrobat-Regular,sans-serif;
+    font-weight: 400;
+
 }
-main>h1{
-    padding: 3% 6%;
-    text-align: center;
+main>h2{
+    padding: 10% 6%;
     color:#42210B ;
     text-align: left;
 
+
 }
-main > h1 .light{
+main > h2 .light{
     color: #C69C6D;
 
 }
 main>p {
     padding: 3% 6%;
     color: #754C24 ;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
 
 }
 main>nav{
@@ -26,12 +41,12 @@ main>nav{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 3% 6%;
+    padding: 6%;
 
 }
 main>nav>.frases>*{
     color:#C69C6D;
-    margin: 3% 0%;
+    margin: 5% 0%;
 }
 main nav>.cortes{
     width: 100%;
@@ -42,6 +57,9 @@ main nav>.cortes{
 }
 main nav .cortes article{
     padding: 3% 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 .light{
     color: #C69C6D;
@@ -65,14 +83,24 @@ main>.historico{
     align-items: start;
     gap: 20px;
     padding: 6%;
-
+}
+main>.historico>h2{
+    margin: 6% 0%;
 }
 main>.historico>article{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 10px;
+    margin-top: 5%;
 
 }
-
-
+main>.historico>.info>p{
+    font-size:1.25rem
+}
+.ak-black{
+    font-family:Akrobat-Black ;
+}
+.ak-bold{
+    font-family: Akrobat-Bold;
+}
