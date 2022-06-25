@@ -1,0 +1,105 @@
+main .corpoCadastro {
+    display: block;
+    margin: 10px;
+    text-align: center;
+ 
+
+    }
+
+.facaSeulogin{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 26px;
+    color: #42210B;
+    margin: 10px;
+    padding: 20px;
+
+}
+
+h1.titulo{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 26px;
+    color: #42210B;
+    margin: 10px;
+    padding: 20px;
+}
+
+h2.titulo{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+    color: #42210B;
+    margin: 10px;
+    padding: 20px;
+}
+
+p.titulo{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: regular;
+    font-size: 17px;
+    color: #42210B;
+    margin: 10px;
+    padding: 20px;
+}
+
+h2.tituloh2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: regular;
+    font-size: 12px;
+    color: #000000;
+    margin: 10px;
+    padding: 20px; 
+}
+
+ul#lista li {
+    display: flex;
+    text-align: center;
+}
+
+.formulario {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: regular;
+    font-size: 12px;
+    color: #000000;
+    margin: 30px;
+    padding: 20px;
+    border: 10px;
+    text-align: left;
+    gap: 10px;
+}
+
+.form1{
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: regular;
+    font-size: 12px;
+    color: #42210B;
+    background-color: #C69C6D;
+    margin: 30px;
+    padding: 20px;
+    border: 10px;
+    text-align: left;
+    gap: 10px;  
+    box-sizing: border-box;
+    
+
+}
+
+.formulariogenero{
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: regular;
+    font-size: 12px;
+    color: #42210B;
+    margin: 30px;
+    padding: 20px;
+    border: 10px;
+    text-align: left;
+    gap: 10px;  
+    box-sizing: border-box;
+    list-style-type: circle;
+    list-style-position: outside;
+    list-style-type: style insite #C69C6D;
+}

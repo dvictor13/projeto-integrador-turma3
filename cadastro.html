@@ -36,39 +36,44 @@
     </header>
     <main>    
         <section class="corpoCadastro">
-            <div class="faça seu login">
-                <h1>Faça seu Login</h1>
-                <h2>Acesse com umas de suas contas sociais</h2>
+            <div class="facaSeuLogin">
+                <h1 class="titulo">Faça seu Login</h1>
+                <h2 class="titulo">Acesse com umas de suas contas sociais</h2>
                 <ul>
-                    <li><link rel="stylesheet" href="img/Facebook.png"></li>
-                    <li><link rel="stylesheet" href="img/Twitter.png"></li>
+                    <li><img src="img/Facebook.png"></li>
+                    <li><img scr="img/Facebook.png"><li>  
+                    <li><img scr="img/google.png"></li>
                 </ul>
-                <p>OU</p>
-                <h2>Crie sua conta</h2>
+                <p class="titulo">OU</p>
+                <br>
+                <h2 class="tituloh2">Crie sua conta</h2>
             </div>
-            <div class="formulario">
-                <form action="/cadastro.html" method="post">
+            <div class="formulariocampos">
+                <form class=form1 action="/cadastro.html" method="post">
                     <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
-                    <br>
+                    <br><br>
                     <input type="email" id="email" name="email" placeholder="Digite seu email">
-                    <br>
+                    <br><br>
                     <input type="number" id="cpf" name="cpf" placeholder="Digite seu CPF">
-                    <br>
+                    <br><br>
                     <input type="date" id="nascimento" name="nascimento" placeholder="Digite a data de nascimento">
-                    <br>
+                    <br><br>
                     <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone para contato">
-                    <br>
+                    <br><br>
+                </form>
+            </div>
+            <div class="formulariogenero">
+                <form class=form2 action="/cadastro.html" method="post">
                     <label for="genero">Gênero</label>
-                    <br>
+                    <br><br>
                     <input type="checkbox" name="genero" id="masculino" value="masculino"><label form="masculino">Masculino</label>
-                    <br>
+                    <br><br>
                     <input type="checkbox" name="genero" id="feminino" value="feminino"><label form="feminino">Feminino</label>
-                    <br> 
+                    <br><br> 
                     <input type="checkbox" name="genero" id="outros" value="outros"><label form="outros">Outros</label>
-                    <br>
+                    <br><br>
                     <input type="checkbox" name="genero" id="nao informado" value="nao informado"><label form="nao informado">Prefiro não informar</label>
-                    <br>
-                    
+                    <br><br>
                 </form>
             </div>
             <div class="btnCadastro">
