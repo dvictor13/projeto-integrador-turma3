@@ -5,6 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/estilo.css" rel="stylesheet" />
+    <link href="css/estiloHeaderFooter.css" rel="stylesheet" />
+
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+    </script>
+    
+    <script> 
+    $(function(){
+    $("#header").load("header.html"); 
+    $("#footer").load("footer.html"); 
+    });
+    </script> 
+
+
     <script>
         var visibilidade = false 
         var mudarStatus;
@@ -19,43 +35,76 @@
                         document.getElementById("resposta"+resp).style.display = "none";
                         visibilidade= false;
                     } 
-
         }
     </script>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+        showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        }
+
+    </script>
+
     <title>Barber</title>
 
 </head>
 <body>
-    <header>
-        <nav class="cabecalho">
-            <a href="#"><img class="iconeLogo" src="img/logo-header.svg"></a>
-            <img class="hamburguer" src="img/hamburguer.svg" alt="">
-            <div class="menu dsk">
-                <ul class="list">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">How it works</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#" >Shop</a></li>
-                    <li><a href="#" >Pricing</a></li>
-                    <li><a href="#" >Contact</a></li>
-                </ul>
-            </div>
-            <div class="icons dsk">
-                <img src="img/icon_Shop.svg" alt="" class="icon">
-                <img src="img/icon_Notification.svg" alt="" class="icon">
-                <div class="user-dropdown">
-                    <img src="img/icon_User.svg" alt="">
-                    <img src="img/Dropdrown.svg" alt="" class="drop">
-                </div>
-            </div>
-        </nav>
-
-        
-    </header>
+    <div id="header"></div>
 
     <main>
         <section class="corpoIndex">
-            <img class="banner" src="img/banner.svg"/>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="./img/hero/salao_high_classic.jpg">
+                    <div class="numbertext">1 / 3</div>
+                    <div class="text">CONHEÇA AS BARBEARIAS</div>
+                </div>
+                
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="./img/hero/salao_amplo.jpg">
+                    <div class="text">VOCÊ SEMPRE ESTILOSO</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="./img/hero/salao_cadeiras.jpg">
+                    <div class="text">SEMPRE ELEGANTE</div>
+                </div>
+
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
 
             <div class="descricao">
                 <div class="tituloDesc">
@@ -65,60 +114,66 @@
                 </div>
                 <div class="introducao">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi labore consequatur ut temporibus dolores quas ad atque natus saepe explicabo asperiores dignissimos voluptatem necessitatibus aut, autem molestias quibusdam dolore pariatur quidem! Reiciendis voluptatum nihil, cupiditate quam inventore quisquam sequi totam alias qui laboriosam sit laborum odio eos repudiandae quidem obcaecati dolorem.</p>
-                    <div class="btnIntroducao">
-                        <button class="startSocio">Seja Socio</button>
-                        <a href="">Conheça mais...</a>
-                    </div>
                 </div>
             </div>
         </section>
         <section class="planosIndex">
-            <h2 class="tituloPlanos">Nossos Planos </h2>
-            <h3>Venha fazer parte do nosso time. Conheça os planos que faz você economizar e ainda ficar em dia com o barbeiro.</h3>
+            <h2 class="tituloPlanos">NOSSOS PLANOS</h2>
             <section class="cardsPlanos">
                 <article class="card">
-                    <div class="imgCard"><img src="img/planos-imgcard.svg" alt=""></div>
-                    <div class="categoria">Basic</div>
-                        <h2 class="preco">R$30,00</h2>
-                        <p class="descPlanos">1 barba</p>
+                    <div class="imgPlano"><img src="./img/barbeiros/barbeiro_detalhe_tesoura.jpg" class="imgCard"></div>
+                    <div class="conteudoCard">
+                        <div class="categoria">Basic</div>
+                            <h2 class="preco">R$30,00</h2>
+                            <p class="descPlanos">1 barba</p>
+                            <p>por mês</p>
+                            <p class="descPlanos">1 corte de cabelo</p>
+                            <p>por mês</p>
+                        
+                        
+                        <button class="btnComecar">COMPRAR PLANO</button>
+                    </div>
+                </article>
+                <article class="card">
+                    <div><img src="./img/barbeiros/barbeiro_detalhe_barba_tesoura.jpg" alt="" class="imgCard"></div>
+                    <div class="conteudoCard">
+                        <div class="categoria">Standard</div>
+                        <h2 class="preco">R$40,00</h2>
+                        <p class="descPlanos">4 barba</p>
                         <p>por mês</p>
                         <p class="descPlanos">1 corte de cabelo</p>
                         <p>por mês</p>
-                        
-                    <button class="btnComecar">COMPRAR PLANO</button>
+                        <button class="btnComecar">COMPRAR PLANO</button>
+                    </div>
                 </article>
                 <article class="card">
-                    <div class="imgCard"><img src="img/planos-imgcard.svg" alt=""></div>
-                    <div class="categoria">Standard</div>
-                    <h2 class="preco">R$40,00</h2>
-                    <p class="descPlanos">4 barba</p>
-                    <p>por mês</p>
-                    <p class="descPlanos">1 corte de cabelo</p>
-                    <p>por mês</p>
-                    <button class="btnComecar">COMPRAR PLANO</button>
-                </article>
-                <article class="card">
-                    <div class="imgCard"><img src="img/planos-imgcard.svg" alt=""></div>
-                    <div class="categoria">Premium</div>
-                    <h2 class="preco">R$60,00</h2>
-                    <p class="descPlanos">5 barbas</p>
-                    <p>por mês</p>
-                    <p class="descPlanos">5 cortes de cabelo</p>
-                    <p>por mês</p>
-                    <button class="btnComecar">COMPRAR PLANO</button>
+                    <div><img src="./img/barbeiros/barbeiro_detalhe_barba.jpg" alt="" class="imgCard"></div>
+                    <div class="conteudoCard">
+                        <div class="categoria">Premium</div>
+                        <h2 class="preco">R$60,00</h2>
+                        <p class="descPlanos">5 barbas</p>
+                        <p>por mês</p>
+                        <p class="descPlanos">5 cortes de cabelo</p>
+                        <p>por mês</p>
+                        <button class="btnComecar">COMPRAR PLANO</button>
+                    </div>
                 </article>
             </section>
         </section>
 
         <section class="barbeariasIndex">
-            <h2>Conheça as barbearias</h2>
+            <h2>CONHEÇA AS BARBEARIAS</h2>
             <section class="cardsBarbearia">
                 <article class="cardB">
                     <div class="imgCard"><img src="img/barbearias.svg" alt=""></div>
                     <p class="localBarbearia">BAIRRO CENTRO</p>
                     <p class="descPlanos">Av. Brasil, 2022</p>
                     <p class="descLocal">loja 01</p>
-
+                    <div class="redes-sociais">
+                        <img src="img/Twitter.png" alt="">
+                        <img src="img/Facebook.png" alt="">
+                        <img src="img/instagram.png" alt="">
+                    </div>
                     <button class="btnComecar">VER LOJA</button>
                 </article>
                 <article class="cardB">
@@ -126,7 +181,11 @@
                     <p class="localBarbearia">VILA JARDIM</p>
                     <p class="descPlanos">Av. Beira-Mar, 2023</p>
                     <p class="descLocal">loja 02</p>
-
+                    <div class="redes-sociais">
+                        <img src="img/Twitter.png" alt="">
+                        <img src="img/Facebook.png" alt="">
+                        <img src="img/instagram.png" alt="">
+                    </div>
                     <button class="btnComecar">VER LOJA</button>
                 </article>
             
@@ -153,16 +212,13 @@
                 <div class="perguntasResposta" onclick="mudarDiv(2)">
                     <div class="iconePergunta"></div>
                     <div class="pergunta">
-                        
                         <p>Posso fazer upgrade do plano?</p> 
-
                         <p id="resposta2">Sim. Entre na sua conta, escolha o plano que deseja adquirir e quando clicar para adquirir ele ira para a página de upgrade. </p>
                     </div>
                 </div>
                 <div class="perguntasResposta" onclick="mudarDiv(3)">
                     <div class="iconePergunta"></div>
                     <div class="pergunta">
-                        
                         <p>Como escolher o melhor plano?</p>
                         <p id="resposta3">Faça o cálculo de quantas vezes você costuma ir na barbearia mensalmente e veja se qual vai sair mais vantajoso pra você. </p>
                     </div>
@@ -170,38 +226,15 @@
                 <div class="perguntasResposta" onclick="mudarDiv(4)">
                     <div class="iconePergunta"></div>
                     <div class="pergunta">
-                        
                         <p>Como agendar o corte com a barbearia ?</p>
                         <p id="resposta4">Clicando no menu e indo na opção "Sobre nós" você encontra nosso endereço e nosso telefone. Fale conosco e informe sua matrícula que agendaremos pra você. </p>
                     </div>
                 </div>
-
-               
             </div>
-
         </section>
 
     </main>
 
-    <footer>
-        <div class="logo-footer">
-            <img src="img/logo-footer.svg" alt="">
-        </div>
-        <nav class="nav-footer">
-            <ul class="links">
-              <li><a href="#">trabalhe conosco</a></li>
-              <li><a href="#">fale conosco</a></li>
-              <li><a href="#">termos e condições</a></li>
-            </ul>
-        </nav>
-        <div class="redes-sociais">
-            <img src="img/Twitter.png" alt="">
-            <img src="img/Facebook.png" alt="">
-            <img src="img/instagram.png" alt="">
-        </div>
-        
-
-    </footer>
-    
+    <div id="footer"></div>  
 </body>
 </html>
