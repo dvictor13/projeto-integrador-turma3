@@ -81,18 +81,22 @@ main>.historico{
     background-color:#754C24;
     color:#C69C6D;
     align-items: start;
-    gap: 20px;
     padding: 6%;
 }
 main>.historico>h2{
-    margin: 6% 0%;
+    margin: 3% 0%;
 }
-main>.historico>article{
+
+main>.historico>.dados{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 10px;
     margin-top: 5%;
+}
+
+main>.historico>.dados>article{
+    margin: 3% 0%;
 
 }
 main>.historico>.info>p{
@@ -103,4 +107,58 @@ main>.historico>.info>p{
 }
 .ak-bold{
     font-family: Akrobat-Bold;
+}
+.note{
+    display: none;
+}
+
+@media screen and (min-width:769px) {
+    main>h2{
+        padding: 5% 6%;
+    }
+    .mob{
+        display: none;
+    }
+    .note{
+        display:block;
+    }
+    main>p{
+        padding: 1% 6%;
+    }
+    main>nav{
+        padding: 2% 6%;
+    }
+    main>nav>.frases>*{
+        margin: 2% 0%;
+        text-align: center;
+    }
+    main>nav>.cortes{
+        padding: 0%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    main>.historico{
+        padding: 2% 6%;
+        align-items: center;
+        gap:0px
+    }
+    main>.historico>h2{
+        align-self: center;
+    }
+    main>.historico .dados{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1%;
+        margin-top: 0%;
+    }
+    main>.historico>.dados>article{
+        padding: auto;
+        width: 30%;
+    }
+
+
+
+@media (min-width:1280px) {
+
 }
