@@ -42,11 +42,11 @@ header .cabecalho .dsk{
     align-items: center;
 }
 
-@media screen and (max-width: 768px){
+/* @media screen and (max-width: 768px){
     header .cabecalho .dsk{
         display: none;
     }
-}
+} */
 
 header .cabecalho .list{
     list-style: none;
