@@ -1,26 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Numans&display=swap');
 
+*{
+    box-sizing: border-box;
+}
 
 main{
     display: flex;
     flex-direction: column;
 }
 
+:root{
+    --primary-color: #42210B;
+    --secundary-color: #754C24;
+    --terciary-color: #C69C6D;
+}
+
+.corpoIndex{
+    display: flex;
+    flex-direction: column;
+}
+
 /* Slideshow container */
 .slideshow-container {
-    max-width: 1000px;
     position: relative;
-    margin: auto;
-  }
-  
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+}
+
+.slideshow-container img{
+    width: 100%;
+    max-height: 400px;
+    min-height: 250px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
+
   /* Hide the images by default */
-  .mySlides {
+
+.mySlides {
     display: none;
-  }
-  
+}
+
+.mySlides:first-child{
+    display: block;
+}
+
   /* Next & previous buttons */
-  .prev, .next {
+.prev, .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -33,69 +63,69 @@ main{
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
-  }
-  
+}
+
   /* Position the "next button" to the right */
-  .next {
+.next {
     right: 0;
     border-radius: 3px 0 0 3px;
-  }
-  
+}
+
   /* On hover, add a black background color with a little bit see-through */
-  .prev:hover, .next:hover {
+.prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
-  }
-  
+}
+
   /* Caption text */
-  .text {
-    color: #f2f2f2;
+.slideshow-container .mySlides .text {
+    width: 100%;
+    margin: auto;
+    text-align: center;
     font-size: 1.5rem;
     position: absolute;
-    top: 0px;
-    width: 100%;
-    height: 98%;
-    text-align: center;
-    padding-top: 15%;
-    background-color: rgb(66, 33, 11, 0.4);
+    top: 46%;
+    color: white;
     font-family: 'Hansief-Rough', sans-serif;
-  }
-  
+}
+
   /* Number text (1/3 etc) */
-  .numbertext {
-    color: #f2f2f2;
+.numbertext {
+    color: #C69C6D;
     font-size: 12px;
     padding: 8px 12px;
     position: absolute;
     top: 0;
-  }
-  
-  /* The dots/bullets/indicators */
-  .dot {
+    text-align: center;
+    width: 100%;
+}
+
+/* The dots/bullets/indicators */
+.dot {
     cursor: pointer;
-    height: 15px;
-    width: 15px;
+    height: 8px;
+    width: 8px;
     margin: 0 2px;
-    background-color: #bbb;
+    background-color: #C69C6D;
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
     margin-bottom: 20px;
-  }
-  
-  .active, .dot:hover {
-    background-color: #717171;
-  }
-  
+}
+
+.active, .dot:hover {
+    background-color: #42210B;
+}
+
   /* Fading animation */
-  .fade {
+.fade {
     animation-name: fade;
     animation-duration: 1.5s;
-  }
-  
-  @keyframes fade {
+}
+
+@keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
-  }
+}
 
 
 
@@ -161,13 +191,21 @@ main .planosIndex .cardsPlanos .card{
 }
 
 main .planosIndex .cardsPlanos .card .imgCard{
-    margin: 10px 0px 0px;
+    /*margin: 10px 0px 0px;
     position: relative;
     top: -90px;
     border: 2px solid #C69C6D;
+    border-radius: 100px;*/
     border-radius: 100px;
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
+    top: -80px;
+    max-height: 150px;
+    position: relative;
+    top: 0 px;
+    background-size: cover;
+    object-fit: cover;
+    border: 2px solid #C69C6D;
 }
 
 main .planosIndex .cardsPlanos .card .conteudoCard{
@@ -341,7 +379,7 @@ main .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #res
         font-size: 3rem;
         width: 100%;
         height: 99.2%;
-      }
+    }
 
     main .corpoIndex .descricao{
         display: flex;
@@ -450,9 +488,9 @@ main .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #res
 }
 @media (min-width:1280px) {
 
-        .slideshow-container {
+        /*.slideshow-container {
             max-width: 1600px;
-        }
+        }*/
 
         main .corpoIndex .descricao .introducao p{
             font-size: 1.5rem;
