@@ -124,6 +124,7 @@ main>.historico>.info>p{
     }
     main>p{
         padding: 1% 6%;
+        text-align: center;
     }
     main>nav{
         padding: 2% 6%;
