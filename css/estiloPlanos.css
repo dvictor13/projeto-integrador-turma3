@@ -63,7 +63,6 @@ main .secaoPlanos .cardsPlanos .categoriaEcon{
 
 main .secaoPlanos .cardsPlanos .cardP .descPlanos{
     color: #42210B;
-    margin-top: 20px;
     width: 170px;
     list-style-image: url(../img/check.png) ;
 }
