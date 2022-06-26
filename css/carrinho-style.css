@@ -95,11 +95,24 @@ main .secaoPlanoUp {
     justify-content: center;
     background-color: #ffffff;
     width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+main .secaoPlanoUp .upgrade{
+    color: #42210B;
+    font-size: 1.2rem;
+    width: 250px;
+    font-family: 'Akrobat-Black';
+    margin-bottom: 10px;
 }
 
 main .secaoPlanoUp .cardP{
     border: 3px solid #C69C6D;
+    box-shadow: 0px 2px 5px #C69C6D
 }
+
 main .secaoPlanoUp .categoriaPlano{
     margin: -1% 0px 25px 0px;
     width: 101%;
@@ -107,7 +120,7 @@ main .secaoPlanoUp .categoriaPlano{
 
 
 .ak-black{
-    font-family: Akrobat-Black,sans-serif;
+    font-family: 'Akrobat-Black',sans-serif;
     font-size: 2rem;
     margin: 0% 15%;
     padding-top: 10% ;
@@ -130,7 +143,7 @@ main .secaoPlanoUp .categoriaPlano{
 }
 
 .ak-bold{
-    font-family: Akrobat-Bold,sans-serif;
+    font-family: 'Akrobat-Bold',sans-serif;
     margin: 5% 15%;
 }
 main .flex-container{
