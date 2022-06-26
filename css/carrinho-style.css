@@ -1,23 +1,120 @@
-@font-face {
-    font-family: 'Akrobat-Regular';
-    src:url('./font/Akrobat-Regular.otf')
-}
-@font-face {
-    font-family: 'Akrobat-Black';
-    src:url('./font/Akrobat-Black.otf')
-}
-@font-face {
-    font-family: 'Akrobat-Bold';
-    src:url('./font/Akrobat-Bold.otf')
-}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Akrobat-Regular,sans-serif;
+}
+
+main .secaoPlanoEscolhido {
+    display: flex;
+    justify-content: center;
+}
+
+
+main .cardsPlanos .cardP{
+    border: 1px solid #42210B;
+    width: 250px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    margin-top: 15px;
+    border: none;
+    margin-bottom: 50px;
+}
+
+main .categoriaPlano{
+    width: 100%;
+    height: 90px;
+    background-color: #C69C6D;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+    
+main .categoriaPlano p{
+    color: #42210B;
+    font-family: 'Hansief-Rough' ;
+    font-size: 1.7rem;
+}
+
+
+main .cardP .começo-lista1{
+    color: #42210B;
+    font-size: 1.5rem;
+}
+
+
+main .cardP .preco{
+    width: 175px;
+    padding-top: 20px;
+    text-align: center; 
+    font-size: 1.5rem;
+    color: #42210B;
+    font-family: 'Hansief-Rough';
+    font-weight: lighter;
+    height: 80px;
+    margin-top: 30px;
+    border-top: 4px solid #42210B;
+}
+
+
+main .cardsPlanos .cardP .btnComecar{
+    background-color: #C69C6D;
+    width: 180px;
+    height: 70px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    border: 1px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main .cardsPlanos .cardP .btnComecar p {
+    font-family: 'Hansief-Rough';
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+.lista li{
+    list-style-image: url(../img/check.png) ;
+}
+
+.lista{
+    margin-left: 30px;
+    width: 150px;
+}
+
+
+main .secaoPlanoUp {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+main .secaoPlanoUp .cardP{
+    border: 3px solid #C69C6D;
+}
+main .secaoPlanoUp .categoriaPlano{
+    margin: -1% 0px 25px 0px;
+    width: 101%;
+}
+
+
+.ak-black{
+    font-family: Akrobat-Black,sans-serif;
+    font-size: 2rem;
+    margin: 0% 15%;
+    padding-top: 10% ;
 }
 .brown-light{
     color: #C69C6D;
+    margin-left: 0px;
 }
 .brown-medium{
     color: #754C24;
@@ -31,15 +128,11 @@
 .white{
     color:white;
 }
-.ak-black{
-    font-family: Akrobat-Black,sans-serif;
-}
+
 .ak-bold{
     font-family: Akrobat-Bold,sans-serif;
+    margin: 5% 15%;
 }
 main .flex-container{
     background-color:#754C24;
-}
-main>section>*{
-    padding: 6% 6%;
 }
