@@ -16,19 +16,20 @@ font-weight: lighter;
 main .secaoPlanos .vantagens{
     text-align: justify;
     margin: 8%;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Akrobat-Regular';
 }
 
 
 main .secaoPlanos .cardsPlanos .cardP{
-border: 1px solid #42210B;
-width: 250px;
-height: 410px;
-display: flex;
-flex-direction: column;
-align-items: center;
-background-color: #ffffff;
-margin-top: 15px;
+    border: 1px solid #42210B;
+    width: 250px;
+    height: 410px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    margin-top: 15px;
+    border: none;
 }
 
 main .secaoPlanos .categoriaPlano{
@@ -58,7 +59,7 @@ width: 170px;
 }
 
 main .secaoPlanos .cardsPlanos .cardP .preco{
-    width: 150px;
+    width: 175px;
     padding-top: 20px;
     text-align: center; 
     font-size: 1.5rem;
