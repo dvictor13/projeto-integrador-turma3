@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+    <link rel="stylesheet" href="css/carrinho-style.css">
+    <link href="css/estiloHeaderFooter.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <section class="flex-container">
+            <h2 class="white ak-black">VOCÊ ESCOLHEU O <br> PLANO <span class="brown-light ak-black">BASIC</span></h2>
+            <p class="white ak-bold">Você está escolhendo economizar. Fazer um dos nossos planos garantem economia no final do mês. Quando maior o plano, mais você economiza. Escolha os planos de acordo com sua necessidade e faça as contas! </p>
+                
+            <section class="secaoPlanoEscolhido">
+                <section class="cardsPlanos">
+                    <article class="cardP">
+                        <div class="categoriaPlano"><p>BASIC</p></div>
+                        <div class="começo-lista">
+                            <h2 class="tituloLista">Comece agora</h2>
+                            <h3 class="descLista">Adquirindo esse plano, você tem: </h3>
+                        </div>
+                        <ul class="lista">
+                            <div class="ordem">
+                                <li class="flex-item-lista1"> 1 corte de cabelo no mês</li>
+                                <li class="flex-item-lista1">Preferência nos agendamentos</li>
+                                <li class="flex-item-lista1">Maior flexibilidade de agendamento</li>
+                                <li class="flex-item-lista1">1 barba no mês</li>
+                            </div>
+                        </ul>
+                        <h2 class="preco">R$35,00</h2>
+                    </article>
+                </section>
+
+                <a href="">Ir para pagamento</a>
+            </section>
+
+            <section class="secaoPlanoUp">
+                <p class="upgrade">Por mais R$20,00 você pode fazer upgrade do plano</p><p>Mais economia para você!</p>
+                <section class="cardsPlanos">
+                    <article class="cardP">
+                        <div class="categoriaPlano"><p>STANDARD</p></div>
+                        <div class="começo-lista">
+                            <h2 class="tituloLista">Faça o Upgrade</h2>
+                            <h3 class="descLista">E tenha ainda mais vantagens: </h3>
+                        </div>
+                        <ul class="lista">
+                            <div class="ordem">
+                                <li class="flex-item-lista1"> 2 cortes de cabelo</li>
+                                <li class="flex-item-lista1"> 2 barbas</li>
+                                <li class="flex-item-lista1">Preferência de agendamento</li>
+                                <li class="flex-item-lista1">Ganhe uma cerveja ou refrigerante para consumir durante ou após o corte.</li>
+                            </div>
+                        </ul>
+                        <h2 class="preco">R$65,00</h2>
+                        <button class="btnComecar">TROCAR PLANO</button>
+                    </article>
+                </section>
+            </section>
+        </section>
+
+
+    </main>
+    <div id="footer"></div>  
+<script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+</script>
+        
+<script> 
+    $(function(){
+    $("#header").load("header.html"); 
+    $("#footer").load("footer.html"); 
+    });
+</script> 
+</body>

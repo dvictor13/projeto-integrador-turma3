@@ -2,13 +2,25 @@
     font-family: 'Hansief-Rough';
     src: url(font/HansiefRough.otf) format('opentype');
 }
+@font-face {
+    font-family: 'Akrobat-Black';
+    src: url(font/Akrobat-Black.otf) format('opentype');
+}
+@font-face {
+    font-family: 'Akrobat-Bold';
+    src: url(font/Akrobat-Bold.otf) format('opentype');
+}
+@font-face {
+    font-family: 'Akrobat-Regular';
+    src: url(font/Akrobat-Regular.otf) format('opentype');
+}
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box; 
     font-size: 16px;
-    font-family: 'Numans', sans-serif;
+    font-family: 'Akrobat-Bold';
     color: #C69C6D;
 }
 
@@ -25,15 +37,12 @@ header .cabecalho{
     justify-content: space-between;
     align-items: center;
     padding: 15px;
+    flex-direction: column;
 }
 
 header .cabecalho a{
     text-decoration: none;
     color: inherit;
-}
-
-header .cabecalho .iconeLogo{
-    margin-right: 50px;
 }
 
 header .cabecalho .dsk{
@@ -51,17 +60,16 @@ header .cabecalho .dsk{
 header .cabecalho .list{
     list-style: none;
     display: flex;
-    align-items: center;
-    width: 215px;
+    gap: 10px;
     justify-content: space-between;
-    margin-right: 5%;
 }
 
 header .cabecalho .menu a{
-    font-size: 0.6rem;
+    font-size: 1rem;
     padding: 0px 2px;
     text-align: center;
     font-weight: bold;
+    text-align: end;
 }   
 
 footer{
@@ -101,15 +109,25 @@ footer .redes-sociais{
     gap: 20px;
 }
 
+@media screen and (min-width:370px) {
+    header .cabecalho{
+        flex-direction: row;
+    }
+}
+
 
 @media screen and (min-width:769px) {
     
     header .cabecalho .list{
         width: 350px;
+        margin-right: 15%;
+        align-items: center;
+        justify-content: space-between;
+        
     }
     
     header .cabecalho .menu a{
-        font-size: 0.8rem;
+        font-size: 1.2rem;
     }   
 
     footer{
@@ -125,6 +143,6 @@ footer .redes-sociais{
     }
     
     header .cabecalho .menu a{
-        font-size: 0.9rem;
+        font-size: 1.4rem;
     }   
 }
