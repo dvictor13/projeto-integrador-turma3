@@ -14,6 +14,12 @@ main{
     --primary-color: #42210B;
     --secundary-color: #754C24;
     --terciary-color: #C69C6D;
+    --white:#ffff;
+    --ak-font-regular:Akrobat-Regular;
+    --ak-font-black:Akrobat-Black;
+    --ak-font-bold:Akrobat-Bold;
+    --ak-font-semibold:Akrobat-SemiBold;
+    --hans-font:Hansief-Rough;
 }
 
 .corpoIndex{
