@@ -54,9 +54,23 @@ main .categoria{
 
 .radio{
     display: flex;
-    gap: 20px;
+    gap: 10px;
     width: 150px;
-    
+    align-items: center;
+}
+
+input{
+    display: none;
+}
+.caixinha{
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    border: 1px solid #42210B;
+}
+
+.caixinha:hover{
+    background-image: url(../img/check.png) ;
 }
 
 main .descPlanos{
