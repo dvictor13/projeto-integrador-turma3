@@ -1,53 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<meta name<head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estiloCadastro.css">
+    <link rel="stylesheet" href="css/estilo.css">
 
-    <link href="css/estiloCadastro.css" rel="stylesheet" />
-
-    <script>
-        var visibilidade = false 
-        var mudarStatus;
-
-        function mudarDiv(resp){
-                    
-                    if(!visibilidade){
-                        document.getElementById("resposta"+resp).style.display = "block";
-                        visibilidade = true;
-
-                    } else if(visibilidade){
-                        document.getElementById("resposta"+resp).style.display = "none";
-                        visibilidade= false;
-                    } 
-
-        }
-    </script>
-    <title>cadastroBarber</title>
-
+    <title>Cadastro</title>
 </head>
 <body>
-    <header>
-        <nav class="cabecalho">
-            <img class="iconeLogo" src="img/logo-header.svg"/>
-            <img src="img/hamburguer.svg">  
-        </nav>
-    </header>
+    <div id="header"></div>
     <main>    
         <section class="corpoCadastro">
             <div class="facaSeuLogin">
-                <h1 class="titulo">Faça seu Login</h1>
-                <h2 class="titulo">Acesse com umas de suas contas sociais</h2>
-                <ul class="redesSociais">
-                    <li class="redeSociais"><img src="img/Facebook.png"></li>
-                    <li class="redeSociais"><img src="img/Twitter.png"></li>
-                    <li class="redeSociais"><img src="img/instagram.png"></li>
-                </ul>
+                <h1 class="titulo">FAÇA SEU LOGIN</h1>
+                <h2 class="titulo">ACESSE COM UMAS DE SUAS CONTAS SOCIAIS</h2>
+                <div class="links">
+                    <a href=""><img src="img\Facebook-login.png"></a>
+                    <a href=""><img src="img\instagram-login.png"></a>
+                    <a href=""><img src="img\google-login.png"></a>
+                </div>
                 <p class="titulo">OU</p>
-                <h2 class="tituloh2">Crie sua conta</h2>
+                <br>
+                <h2 class="tituloh2">CRIE SUA CONTA</h2>
             </div>
-            <div class="formularioCampos">
+            <section class="formulariocampos">
                 <form class=form1 action="/cadastro.html" method="post">
                     <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
                     <br><br>
@@ -74,32 +52,27 @@
                     <input type="radio" name="genero" id="nao informado" value="nao informado"><label form="nao informado">Prefiro não informar</label>
                     <br><br>
                 </form>
-            </div>
+            </section>
             <div class="btnCadastro">
                 <button class="concluirCadastro" type="submit">Concluir</button>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="logo-footer">
-            <img src="img/logo-footer.svg" alt="">
-        </div>
-        <nav class="nav-footer">
-            <ul class="links">
-              <li><a href="#">trabalhe conosco</a></li>
-              <li><a href="#">fale conosco</a></li>
-              <li><a href="#">termos e condições</a></li>
-            </ul>
-        </nav>
-        <div class="redes-sociais">
-            <img src="img/Twitter.png" alt="">
-            <img src="img/Facebook.png" alt="">
-            <img src="img/instagram.png" alt="">
-        </div>
-        
+    <div id="footer"></div>  
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+    </script>
+    
+    <script> 
+    $(function(){
+    $("#header").load("header.html"); 
+    $("#footer").load("footer.html"); 
+    });
+    </script> 
 
-    </footer>
     
 </body>
 </html>

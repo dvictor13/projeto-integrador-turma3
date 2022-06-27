@@ -1,0 +1,165 @@
+@font-face {
+    font-family: 'Akrobat-Regular';
+    src:url('./font/Akrobat-Regular.otf')
+}
+@font-face {
+    font-family: 'Akrobat-Black';
+    src:url('./font/Akrobat-Black.otf')
+}
+@font-face {
+    font-family: 'Akrobat-Bold';
+    src:url('./font/Akrobat-Bold.otf')
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-family: Akrobat-Regular,sans-serif;
+    font-weight: 400;
+
+}
+main>h2{
+    padding: 10% 6%;
+    color:#42210B ;
+    text-align: left;
+
+
+}
+main > h2 .light{
+    color: #C69C6D;
+
+}
+main>p {
+    padding: 3% 6%;
+    color: #754C24 ;
+    font-size: 1.25rem;
+
+}
+main>nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6%;
+
+}
+main>nav>.frases>*{
+    color:#C69C6D;
+    margin: 5% 0%;
+}
+main nav>.cortes{
+    width: 100%;
+    padding: 6% 0%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+main nav .cortes article{
+    padding: 3% 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.light{
+    color: #C69C6D;
+}
+.normal{
+    color: #754C24;
+}
+.dark{
+    color: #42210B;
+}
+.white{
+    color:#FFFFFF;
+}
+.black{
+    color: #000000;
+}
+
+main>.historico{
+    background-color:#754C24;
+    color:#C69C6D;
+    align-items: start;
+    padding: 6%;
+}
+main>.historico>h2{
+    margin: 3% 0%;
+}
+
+main>.historico>.dados{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 5%;
+}
+
+main>.historico>.dados>article{
+    margin: 3% 0%;
+
+}
+main>.historico>.info>p{
+    font-size:1.25rem
+}
+.ak-black{
+    font-family:Akrobat-Black ;
+}
+.ak-bold{
+    font-family: Akrobat-Bold;
+}
+.note{
+    display: none;
+}
+
+@media screen and (min-width:769px) {
+    main>h2{
+        padding: 5% 6%;
+    }
+    .mob{
+        display: none;
+    }
+    .note{
+        display:block;
+    }
+    main>p{
+        padding: 1% 6%;
+        text-align: center;
+    }
+    main>nav{
+        padding: 2% 6%;
+    }
+    main>nav>.frases>*{
+        margin: 2% 0%;
+        text-align: center;
+    }
+    main>nav>.cortes{
+        padding: 0%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    main>.historico{
+        padding: 2% 6%;
+        align-items: center;
+        gap:0px
+    }
+    main>.historico>h2{
+        align-self: center;
+    }
+    main>.historico .dados{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1%;
+        margin-top: 0%;
+    }
+    main>.historico>.dados>article{
+        padding: auto;
+        width: 30%;
+    }
+
+
+
+@media (min-width:1280px) {
+
+}

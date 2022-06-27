@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estiloPlanos.css">
+    <title>Planos</title>
+</head>
+<body>
+
+    <div id="header"></div>
+
+    <main>
+        <section class="secaoPlanos">
+            <h2>VOCÊ SEMPRE ESTILOSO</h2>
+            <p class="vantagens">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, quis aliquam reprehenderit nam in odit sed, ullam non quos, vitae ipsa? Vero, sed? Dolorem consectetur in reiciendis magnam adipisci nam!</p>
+
+            <section class="cardsPlanos">
+                <article class="cardP">
+                    <div class="categoriaPlano"><p>BASIC</p></div>
+                    <div class="categoriaEcon">POPULAR</div>
+                    <ul>
+                        <li class="descPlanos"> 1 corte de cabelo</li><span class="descTempo">no mês</span>
+                        <li class="descPlanos">Preferência nos agendamentos</li>
+                        <li class="descPlanos">Maior flexibilidade de agendamento</li>
+                         <li class="descPlanos">1 barba</li><span class="descTempo">no mês</span>
+                    </ul>
+                    <h2 class="preco">R$35,00</h2>
+
+                    <button class="btnComecar"><p>COMPRAR</p><p>ESTE PLANO</p></button>
+                    <div class="economia"><p>ADIQUIRA ESTE PLANO E</p> <p>ECONOMIZE ATÉ R$20 POR</p> <p>CORTE E BARBA</p></div>
+                </article>
+
+                <article class="cardP">
+                        <div class="categoriaPlano"><p>STANDARD</p></div>
+                        <ul>
+                            <li class="descPlanos">2 barbas</li>
+                            <p class="descTempo">por mês</p>
+                            <li class="descPlanos">2 cortes de cabelo</li>
+                            <p class="descTempo">por mês</p>
+                        </ul>
+                        <h2 class="preco">R$65,00</h2>
+                        <button class="btnComecar"><p>COMPRAR</p><p>ESTE PLANO</p></button>
+                        <div class="economia"><p>ADIQUIRA ESTE PLANO E</p> <p>ECONOMIZE ATÉ R$25 POR</p> <p>CORTE E BARBA</p></div>
+                </article>
+
+                <article class="cardP">
+                            <div class="categoriaPlano"><p>PREMIUM</p></div>
+                            <ul>
+                                <li class="descPlanos">2 barbas</li>
+                                <p class="descTempo">por mês</p>
+                                <li class="descPlanos">3 cortes de cabelo</li>
+                                <p class="descTempo">por mês</p>
+                                
+                            </ul>
+                            <h2 class="preco">R$80,00</h2>
+                            <button class="btnComecar"><p>COMPRAR</p><p>ESTE PLANO</p></button>
+                            <div class="economia"><p>ADIQUIRA ESTE PLANO E</p> <p>ECONOMIZE ATÉ R$30 POR</p> <p>CORTE E BARBA</p></div>
+                </article>
+            
+            </section>
+        </section>
+
+    </main>
+
+    <div id="footer"></div>  
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+    </script>
+    
+    <script> 
+    $(function(){
+    $("#header").load("header.html"); 
+    $("#footer").load("footer.html"); 
+    });
+    </script> 
+
+</body>
+</html>

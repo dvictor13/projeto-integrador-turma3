@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estiloPagamento.css">
+    <link rel="stylesheet" href="css/estiloHeaderFooter.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Pagamento</title>
+</head>
+<body>
+    <div id="header"></div>
+    <main>
+        <h2>FINALIZE A SUA COMPRA E COMECE A UTILIZAR O PLANO EM 24H</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem harum suscipit voluptatibus cum repellat repudiandae laborum rem porro quibusdam quis dignissimos commodi eaque reiciendis magni quasi praesentium ipsum, at obcaecati?</p>
+        <section class="pagamento">
+            <h2 class="titulo">DADOS DE PAGAMENTO</h2>
+            <article class="resumo">
+                <h3 class="plano">PLANO BASIC</h3>
+                <span class="valor">RS 130</span>
+            </article>
+            <form action="">
+                <label for="duracao">Selecione o período:</label>
+                <select name="duracao" id="duracao" required>
+                    <option disable selected value></option>
+                    <option value="m">Mensal</option>
+                    <option value="t">Trimestral</option>
+                    <option value="s">Semestral</option>
+                    <option value="a">Anual</option>
+                </select>
+                <input type="number" id="cardnumber" name="cardnumber" placeholder="Numero do cartão" required>
+                <input type="text" id="cardname" name="cardname" placeholder="Nome no cartão" required>
+                <div class="carddata">
+                    <div class="data">
+                        <label for="validade">Data de Expiração</label>
+                        <input type="date" id="validade" name="val" placeholder="MM/YY" required>
+                    </div>
+                    <div class="data">
+                        <label for="safecode">Código de Segurança</label>
+                        <input type="number" name="safecode" id="safecode" placeholder="CVV" required>
+                    </div>
+                </div>
+                <div class="savecard">
+                    <input type="checkbox" name="savecard" id="savecard">
+                    <label for="savecard">Salvar este cartão para compras futuras</label>
+                </div>
+                </form>
+            <div class="pix modopgto">
+                <img src="img/pix.png" alt="">
+                <p>PIX</p>
+                <img class="seta"  src="img/Down.png" alt="">
+            </div>
+            <div class="boleto modopgto">
+                <img src="img/codigobarras.png" alt="">
+                <p>BOLETO</p>
+                <img class="seta" src="img/Down.png" alt="">
+            </div>
+            <div class="total">
+                <p>Total</p>
+                <span>RS 30</span>
+            </div>
+            <div class="finalizar">
+                <button disabled="imprimir">FINALIZAR PEDIDO</button>
+                <img src="img/recaptcha.png" alt="">  
+            </div>
+
+        </section>      
+            
+
+        <section class="duvidas">
+            <h2 class="tituloPerguntas">PERGUNTAS FREQUENTES</h2>
+
+            <div class="perguntasFrequentes">
+    
+                <div class="perguntasResposta" onclick="mudarDiv(1)">
+
+                    <div class="iconePergunta"></div>
+                    <div class="pergunta">
+                        
+                        <p>Pode cancelar a qualquer momento?</p>
+                        <p id="resposta1">Sim. Entre na sua conta, clique em "minha conta" no menu e depois escolha a opção "cancelar plano".</p>
+                    </div>
+                    
+                </div>
+
+                <div class="perguntasResposta" onclick="mudarDiv(2)">
+                    <div class="iconePergunta"></div>
+                    <div class="pergunta">
+                        <p>Posso fazer upgrade do plano?</p> 
+                        <p id="resposta2">Sim. Entre na sua conta, escolha o plano que deseja adquirir e quando clicar para adquirir ele ira para a página de upgrade. </p>
+                    </div>
+                </div>
+                <div class="perguntasResposta" onclick="mudarDiv(3)">
+                    <div class="iconePergunta"></div>
+                    <div class="pergunta">
+                        <p>Como escolher o melhor plano?</p>
+                        <p id="resposta3">Faça o cálculo de quantas vezes você costuma ir na barbearia mensalmente e veja se qual vai sair mais vantajoso pra você. </p>
+                    </div>
+                </div>
+                <div class="perguntasResposta" onclick="mudarDiv(4)">
+                    <div class="iconePergunta"></div>
+                    <div class="pergunta">
+                        <p>Como agendar o corte com a barbearia ?</p>
+                        <p id="resposta4">Clicando no menu e indo na opção "Sobre nós" você encontra nosso endereço e nosso telefone. Fale conosco e informe sua matrícula que agendaremos pra você. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <div id="footer"></div>  
+    <script>
+        var visibilidade = false 
+        var mudarStatus;
+
+        function mudarDiv(resp){
+                    
+                    if(!visibilidade){
+                        document.getElementById("resposta"+resp).style.display = "block";
+                        visibilidade = true;
+
+                    } else if(visibilidade){
+                        document.getElementById("resposta"+resp).style.display = "none";
+                        visibilidade= false;
+                    } 
+        }
+    </script>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+        
+    <script> 
+        $(function(){
+        $("#header").load("header.html"); 
+        $("#footer").load("footer.html"); 
+        });
+    </script> 
+</body>
+</html>
+
+            <!-- <section class="pagamento">
+            <h2 class="titulo">DADOS DE PAGAMENTO</h2>
+            <article class="resumo">
+                <img src="img/qrcode.png" alt="">
+                <div>
+                    <h2 class="useqr">USE O QR CODE</h2>
+                    <h2 class="parapagar">PARA PAGAR</h2>
+                </div>
+                <h4 class="nome">Fulano de tal</h4>
+                <h6 class="email">email@google.com</h6>
+                <h3 class="plano">Plano BASIC</h3>
+                <span class="valor">R$ 130</span>
+                <button disabled="imprimir">IMPRIMIR<br>BOLETO</button>
+            </article>
+        </section> -->
