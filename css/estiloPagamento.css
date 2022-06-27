@@ -215,4 +215,56 @@ main>section .total span{
     width: 64px;
     height: 64px;
     box-shadow: 5px 10px grey;
+    position: relative;
+    left: -10%;
+}
+main .duvidas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    background-color: #42210B;
+}
+
+main .duvidas h2{
+    padding-top: 10%;
+    color: var(--terciary-color);
+    font-size: 3rem;
+}
+
+main .duvidas .perguntasFrequentes{
+    padding: 10%;
+}
+
+main .duvidas .perguntasFrequentes .perguntasResposta{
+    border-bottom: 1px solid #C69C6D;
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+main .duvidas .perguntasFrequentes .perguntasResposta .iconePergunta{
+    background-image: url(/img/iconplus.png) ;
+    padding: 10px;
+    width: 35px;
+    height: 24px;
+    background-repeat: no-repeat;
+}
+
+main .duvidas .perguntasFrequentes .perguntasResposta .pergunta{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+main .duvidas .perguntasFrequentes .perguntasResposta .pergunta p{
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+main .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #resposta2, #resposta3, #resposta4{
+    padding-bottom: 20px;
+    font-size: 0.8rem;
+    display: none;
 }

@@ -66,6 +66,67 @@
 
         </section>      
             
+
+        <section class="duvidas">
+            <h2 class="tituloPerguntas">PERGUNTAS FREQUENTES</h2>
+
+            <div class="perguntasFrequentes">
+    
+                <div class="perguntasResposta" onclick="mudarDiv(1)">
+
+                    <div class="iconePergunta"></div>
+                    <div class="pergunta">
+                        
+                        <p>Pode cancelar a qualquer momento?</p>
+                        <p id="resposta1">Sim. Entre na sua conta, clique em "minha conta" no menu e depois escolha a opção "cancelar plano".</p>
+                    </div>
+                    
+                </div>
+
+                <div class="perguntasResposta" onclick="mudarDiv(2)">
+                    <div class="iconePergunta"></div>
+                    <div class="pergunta">
+                        <p>Posso fazer upgrade do plano?</p> 
+                        <p id="resposta2">Sim. Entre na sua conta, escolha o plano que deseja adquirir e quando clicar para adquirir ele ira para a página de upgrade. </p>
+                    </div>
+                </div>
+                <div class="perguntasResposta" onclick="mudarDiv(3)">
+                    <div class="iconePergunta"></div>
+                    <div class="pergunta">
+                        <p>Como escolher o melhor plano?</p>
+                        <p id="resposta3">Faça o cálculo de quantas vezes você costuma ir na barbearia mensalmente e veja se qual vai sair mais vantajoso pra você. </p>
+                    </div>
+                </div>
+                <div class="perguntasResposta" onclick="mudarDiv(4)">
+                    <div class="iconePergunta"></div>
+                    <div class="pergunta">
+                        <p>Como agendar o corte com a barbearia ?</p>
+                        <p id="resposta4">Clicando no menu e indo na opção "Sobre nós" você encontra nosso endereço e nosso telefone. Fale conosco e informe sua matrícula que agendaremos pra você. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script>
+        var visibilidade = false 
+        var mudarStatus;
+
+        function mudarDiv(resp){
+                    
+                    if(!visibilidade){
+                        document.getElementById("resposta"+resp).style.display = "block";
+                        visibilidade = true;
+
+                    } else if(visibilidade){
+                        document.getElementById("resposta"+resp).style.display = "none";
+                        visibilidade= false;
+                    } 
+        }
+    </script>
+</body>
+</html>
+
             <!-- <section class="pagamento">
             <h2 class="titulo">DADOS DE PAGAMENTO</h2>
             <article class="resumo">
@@ -81,9 +142,3 @@
                 <button disabled="imprimir">IMPRIMIR<br>BOLETO</button>
             </article>
         </section> -->
-        <section class="perguntas">
-            <h1 class="titulo">PERGUNTAS FREQUENTES</h1>
-        </section>
-    </main>
-</body>
-</html>
