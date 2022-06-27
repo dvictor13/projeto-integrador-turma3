@@ -51,6 +51,14 @@ main .categoria{
     font-family: 'Hansief-Rough' ;
     font-size: 1.7rem;
 }
+
+.radio{
+    display: flex;
+    gap: 20px;
+    width: 150px;
+    
+}
+
 main .descPlanos{
     color: #42210B;
 }

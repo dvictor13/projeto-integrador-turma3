@@ -18,9 +18,12 @@
             <p class="white ak-bold">Você está escolhendo economizar. Fazer um dos nossos planos garantem economia no final do mês. Quando maior o plano, mais você economiza. Escolha os planos de acordo com sua necessidade e faça as contas! </p>
                 
             <section class="secaoPlanoEscolhido">
-                <section class="cardsPlanos">
+                <form class="cardsPlanos">
+
                     <article class="categoriaPlano">
-                            <p class="categoria">BASIC</p>
+                            <div class="radio">
+                                <input type="radio" name="categoriaP" id="basic" value="basic" checked><label for="basic" class="categoria">BASIC</label>
+                            </div>
                             <div class="descricao">
                                 <div class="ladoDir">
                                     <p class="descPlanos">1 barba</p>
@@ -37,7 +40,9 @@
                      <p class="oferta">Por mais R$20,00 você pode</p><p class="oferta">fazer upgrade do plano</p>
 
                      <article class="categoriaPlanoUp">
-                        <p class="categoria">STANDARD</p>
+                        <div class="radio">
+                            <input type="radio" name="categoriaP" id="basic" value="basic"><label for="basic" class="categoria">STANDARD</label>
+                        </div>
                         <div class="descricao">
                             <div class="ladoDir">
                                 <p class="descPlanos">2 barbas</p>
@@ -50,9 +55,8 @@
                         </div>
                         <h2 class="preco">R$65,00</h2>
                     </article>
-
-                </section>
-                <button class="btnComecar">Realizar pagamento</button>
+                    <button class="btnComecar">Realizar pagamento</button>
+                </form>
 
             </section>
             
