@@ -16,6 +16,59 @@
         <section class="pagamento">
             <h2 class="titulo">DADOS DE PAGAMENTO</h2>
             <article class="resumo">
+                <h3 class="plano">PLANO BASIC</h3>
+                <span class="valor">RS 130</span>
+            </article>
+            <form action="">
+                <label for="duracao">Selecione o período:</label>
+                <select name="duracao" id="duracao" required>
+                    <option disable selected value></option>
+                    <option value="m">Mensal</option>
+                    <option value="t">Trimestral</option>
+                    <option value="s">Semestral</option>
+                    <option value="a">Anual</option>
+                </select>
+                <input type="number" id="cardnumber" name="cardnumber" placeholder="Numero do cartão" required>
+                <input type="text" id="cardname" name="cardname" placeholder="Nome no cartão" required>
+                <div class="carddata">
+                    <div class="data">
+                        <label for="validade">Data de Expiração</label>
+                        <input type="number" id="validade" name="val" placeholder="MM/YY" required>
+                    </div>
+                    <div class="data">
+                        <label for="safecode">Código de Segurança</label>
+                        <input type="number" name="safecode" id="safecode" placeholder="CVV" required>
+                    </div>
+                </div>
+                <div class="savecard">
+                    <input type="checkbox" name="savecard" id="savecard">
+                    <label for="savecard">Salvar este cartão para compras futuras</label>
+                </div>
+                </form>
+            <div class="pix modopgto">
+                <img src="img/pix.png" alt="">
+                <p>PIX</p>
+                <img class="seta"  src="img/Down.png" alt="">
+            </div>
+            <div class="boleto modopgto">
+                <img src="img/codigobarras.png" alt="">
+                <p>BOLETO</p>
+                <img class="seta" src="img/Down.png" alt="">
+            </div>
+            <div class="total">
+                <p>Total</p>
+                <span>RS 30</span>
+            </div>
+            <div class="finalizar">
+                <button disabled="imprimir">FINALIZAR PEDIDO</button>
+                <img src="img/recaptcha.png" alt="">  
+            </div>
+
+        </section>      
+            
+            <!-- <section class="pagamento">
+            <h2 class="titulo">DADOS DE PAGAMENTO</h2>
+            <article class="resumo">
                 <img src="img/qrcode.png" alt="">
                 <div>
                     <h2 class="useqr">USE O QR CODE</h2>
@@ -27,7 +80,7 @@
                 <span class="valor">R$ 130</span>
                 <button disabled="imprimir">IMPRIMIR<br>BOLETO</button>
             </article>
-        </section>
+        </section> -->
         <section class="perguntas">
             <h1 class="titulo">PERGUNTAS FREQUENTES</h1>
         </section>
