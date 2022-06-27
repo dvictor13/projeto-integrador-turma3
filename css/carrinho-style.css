@@ -11,72 +11,67 @@ main .secaoPlanoEscolhido {
     align-items: center;
 }
 
-
-main .cardsPlanos .cardP{
-    border: 1px solid #42210B;
-    width: 250px;
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #ffffff;
-    margin-top: 15px;
-    border: none;
-    margin-bottom: 20px;
-}
-
 main .categoriaPlano{
-    width: 100%;
-    height: 70px;
+    height: 230px;
     background-color: #C69C6D;
     border: none;
     display: flex;
-    justify-content: center;
     align-items: center;
     margin-bottom: 25px;
+    padding-top: 25px;
+    flex-direction: column;
+    width: 250px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+main .descricao{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+}
+main .descricao .ladoDir{
+    width: 30%;
+}
+main .descricao .ladoEsq{
+    width: 30%;
 }
     
-main .categoriaPlano p{
+main .categoria{
     color: #42210B;
     font-family: 'Hansief-Rough' ;
     font-size: 1.7rem;
 }
-
-
-main .cardP .tituloLista{
+main .descPlanos{
     color: #42210B;
-    font-size: 1.5rem;
+}
+main p{
+    color: #754C24;
 }
 
-main .cardP .começo-lista{
-    width: 170px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-
-main .cardP .preco{
+main .preco{
     width: 175px;
-    padding-top: 20px;
+    padding-top: 15px;
     text-align: center; 
     font-size: 1.5rem;
     color: #42210B;
     font-family: 'Hansief-Rough';
     font-weight: lighter;
     height: 80px;
-    margin-top: 30px;
+    margin-top: 20px;
     border-top: 4px solid #42210B;
 }
 
 
-main .cardsPlanos .cardP .btnComecar{
-    background-color: #C69C6D;
+main .btnComecar{
+    background-color: #42210B;
     width: 180px;
-    height: 70px;
+    height: 50px;
     border-radius: 30px;
     margin-bottom: 20px;
-    border: 1px solid #ffffff;
+    border: none;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -92,47 +87,27 @@ main .cardsPlanos .cardP .btnComecar{
 .lista{
     margin-left: 30px;
     width: 150px;
-    margin-top: ;
 }
 
-main .secaoPlanoEscolhido a{
-    margin-bottom: 20px;
-}
-
-main .secaoPlanoUp {
-    display: flex;
-    justify-content: center;
+main .categoriaPlanoUp{
+    height: 230px;
     background-color: #ffffff;
-    width: 100%;
-    flex-direction: column;
+    border: none;
+    display: flex;
     align-items: center;
-    padding-top: 50px;
-}
-
-main .secaoPlanoUp .upgrade{
-    color: #42210B;
-    font-size: 1.2rem;
+    margin-bottom: 25px;
+    padding-top: 25px;
+    flex-direction: column;
     width: 250px;
-    font-family: 'Akrobat-Black';
-    margin-bottom: 10px;
+    margin-top: 15px;
+    border-radius: 10px;
 }
-
-main .secaoPlanoUp .cardP{
-    border: 3px solid #C69C6D;
-    box-shadow: 0px 2px 5px #C69C6D;
-    height: 450px;
-}
-
-main .secaoPlanoUp .categoriaPlano{
-    margin: -1% 0px 25px 0px;
-    width: 101%;
-}
-
 
 .ak-black{
     font-family: 'Akrobat-Black',sans-serif;
     margin: 0% 15%;
     padding-top: 10% ;
+    font-size: 1.3rem;
 }
 .brown-light{
     color: #C69C6D;
@@ -155,7 +130,6 @@ main .secaoPlanoUp .categoriaPlano{
     font-family: 'Akrobat-Bold',sans-serif;
     margin: 5% 15%;
     font-size: 1rem;
-    display: none;
 }
 main .flex-container{
     background-color:#754C24;
