@@ -33,28 +33,28 @@
                     <br><br>
                     <input type="number" id="cpf" name="cpf" placeholder="Digite seu CPF">
                     <br><br>
-                    <input type="date" id="nascimento" name="nascimento" placeholder="Digite a data de nascimento">
+                    <input class=date type="date" id="nascimento" name="nascimento" placeholder="Digite a data de nascimento">
                     <br><br>
                     <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone para contato">
                     <br><br>
                 </form>
-            </section>
-            <section class="formulariogenero">
+            </div>
+            <div class="formularioGenero">
                 <form class=form2 action="/cadastro.html" method="post">
                     <label for="genero">Gênero</label>
                     <br><br>
-                    <input type="checkbox" name="genero" id="masculino" value="masculino"><label form="masculino">Masculino</label>
+                    <input type="radio" name="genero" id="masculino" value="masculino"><label form="masculino">Masculino</label>
                     <br><br>
-                    <input type="checkbox" name="genero" id="feminino" value="feminino"><label form="feminino">Feminino</label>
+                    <input type="radio" name="genero" id="feminino" value="feminino"><label form="feminino">Feminino</label>
                     <br><br> 
-                    <input type="checkbox" name="genero" id="outros" value="outros"><label form="outros">Outros</label>
+                    <input type="radio" name="genero" id="outros" value="outros"><label form="outros">Outros</label>
                     <br><br>
-                    <input type="checkbox" name="genero" id="nao informado" value="nao informado"><label form="nao informado">Prefiro não informar</label>
+                    <input type="radio" name="genero" id="nao informado" value="nao informado"><label form="nao informado">Prefiro não informar</label>
                     <br><br>
                 </form>
             </section>
             <div class="btnCadastro">
-                <button class="concluirCadastro">Concluir</button>
+                <button class="concluirCadastro" type="submit">Concluir</button>
             </div>
         </section>
     </main>
