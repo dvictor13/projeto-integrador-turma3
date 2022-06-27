@@ -523,10 +523,10 @@ main .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #res
         }
         
         main .planosIndex .cardsPlanos .card .imgCard{
-            width: 220px;
-            height: 220px;
+            width: 150px;
+            height: 150px;
             border-radius: 110px;
-            top: -110px;
+            top: -75px;
         }
 
         main .barbeariasIndex{

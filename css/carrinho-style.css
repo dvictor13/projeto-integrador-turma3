@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'Akrobat-Regular';
+    src:url('./font/Akrobat-Regular.otf')
+}
+@font-face {
+    font-family: 'Akrobat-Black';
+    src:url('./font/Akrobat-Black.otf')
+}
+@font-face {
+    font-family: 'Akrobat-Bold';
+    src:url('./font/Akrobat-Bold.otf')
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Akrobat-Regular,sans-serif;
+}
+.brown-light{
+    color: #C69C6D;
+}
+.brown-medium{
+    color: #754C24;
+}
+.brown-dark{
+    color: #42210B;
+}
+.black{
+    color: #000;
+}
+.white{
+    color:white;
+}
+.ak-black{
+    font-family: Akrobat-Black,sans-serif;
+}
+.ak-bold{
+    font-family: Akrobat-Bold,sans-serif;
+}
+main .flex-container{
+    background-color:#754C24;
+}
+main>section>*{
+    padding: 6% 6%;
+}
