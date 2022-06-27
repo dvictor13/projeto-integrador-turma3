@@ -91,41 +91,19 @@ main section button {
     line-height: 23px;
     letter-spacing: 0em;
 }
-.nome{
-    color: var(--primary-color);
-    font-family: var(--ak-font-regular);
-    font-weight: 500;
-    font-size: 1.5rem;
-    
-}
-.email{
-    font-size: 1.125rem;
-    font-weight: 500;
-}
-.plano {
-    padding: 5% 10%;
-    border-bottom: solid 4px var(--primary-color);
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    font-weight: 400;
-    font-family: var(--ak-font-black);
-}
-.valor{
-    font-size: 2rem;
-    color: var(--primary-color);
-    font-family: var(--ak-font-black);
-    padding: 5%;
-}
 main>.pagamento>form{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 1rem;
+
     
 }
 main>.pagamento>form>label{
     font-size: 1.5rem;
+    margin: 1%;
+    padding: 1%;
 }
 
 main>.pagamento>form>*{
@@ -159,9 +137,12 @@ main>.pagamento>form>.carddata .data{
 
 
 main>.pagamento>form>.carddata .data input{
-    width: 75%;
+    width: 100%;
     padding: 2%;
     margin-top: 2%;
+}
+main>.pagamento>form>.carddata .data label{
+    margin-bottom: 5%;
 }
 .savecard{
     display: flex;
@@ -268,3 +249,30 @@ main .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #res
     font-size: 0.8rem;
     display: none;
 }
+
+.nome{
+    color: var(--primary-color);
+    font-family: var(--ak-font-regular);
+    font-weight: 500;
+    font-size: 1.5rem;
+    
+}
+.email{
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+.plano {
+    padding: 5% 10%;
+    border-bottom: solid 4px var(--primary-color);
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: var(--ak-font-black);
+}
+.valor{
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-family: var(--ak-font-black);
+    padding: 5%;
+}
+
