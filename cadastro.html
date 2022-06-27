@@ -5,26 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estiloCadastro.css">
+    <link rel="stylesheet" href="css/estilo.css">
+
     <title>Cadastro</title>
 </head>
 <body>
     <div id="header"></div>
-
     <main>    
         <section class="corpoCadastro">
             <div class="facaSeuLogin">
-                <h1 class="titulo">Faça seu Login</h1>
-                <h2 class="titulo">Acesse com umas de suas contas sociais</h2>
-                <ul>
-                    <li><img src="img/Facebook.png"></li>
-                    <li><img scr="img/Facebook.png"><li>  
-                    <li><img scr="img/google.png"></li>
-                </ul>
+                <h1 class="titulo">FAÇA SEU LOGIN</h1>
+                <h2 class="titulo">ACESSE COM UMAS DE SUAS CONTAS SOCIAIS</h2>
+                <div class="links">
+                    <a href=""><img src="img\Facebook-login.png"></a>
+                    <a href=""><img src="img\instagram-login.png"></a>
+                    <a href=""><img src="img\google-login.png"></a>
+                </div>
                 <p class="titulo">OU</p>
                 <br>
-                <h2 class="tituloh2">Crie sua conta</h2>
+                <h2 class="tituloh2">CRIE SUA CONTA</h2>
             </div>
-            <div class="formulariocampos">
+            <section class="formulariocampos">
                 <form class=form1 action="/cadastro.html" method="post">
                     <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
                     <br><br>
@@ -37,8 +38,8 @@
                     <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone para contato">
                     <br><br>
                 </form>
-            </div>
-            <div class="formulariogenero">
+            </section>
+            <section class="formulariogenero">
                 <form class=form2 action="/cadastro.html" method="post">
                     <label for="genero">Gênero</label>
                     <br><br>
@@ -51,7 +52,7 @@
                     <input type="checkbox" name="genero" id="nao informado" value="nao informado"><label form="nao informado">Prefiro não informar</label>
                     <br><br>
                 </form>
-            </div>
+            </section>
             <div class="btnCadastro">
                 <button class="concluirCadastro">Concluir</button>
             </div>

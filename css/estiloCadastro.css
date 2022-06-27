@@ -1,13 +1,28 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 main .corpoCadastro {
     display: block;
     margin: 10px;
     text-align: center;
- 
+}
+main *{
+    font-family: var(--ak-font-regular);
+}
 
-    }
+main section .links{
+    display: flex;
+    justify-content: center;
+}
+ main section .links a{
+    margin: 0% 5%;
+ }
 
 .facaSeulogin{
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 26px;
     color: #42210B;
@@ -17,7 +32,6 @@ main .corpoCadastro {
 }
 
 h1.titulo{
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 26px;
     color: #42210B;
@@ -26,7 +40,6 @@ h1.titulo{
 }
 
 h2.titulo{
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 17px;
     color: #42210B;
@@ -35,7 +48,6 @@ h2.titulo{
 }
 
 p.titulo{
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: regular;
     font-size: 17px;
     color: #42210B;
@@ -44,23 +56,17 @@ p.titulo{
 }
 
 h2.tituloh2{
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: regular;
-    font-size: 12px;
+    
     color: #000000;
     margin: 10px;
     padding: 20px; 
 }
 
-ul#lista li {
-    display: flex;
-    text-align: center;
-}
+
 
 .formulario {
     display: block;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: regular;
+    width: 100%;
     font-size: 12px;
     color: #000000;
     margin: 30px;
@@ -72,7 +78,6 @@ ul#lista li {
 
 .form1{
     display: inline-block;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: regular;
     font-size: 12px;
     color: #42210B;
@@ -89,7 +94,7 @@ ul#lista li {
 
 .formulariogenero{
     display: inline-block;
-    font-family: Arial, Helvetica, sans-serif;
+    
     font-weight: regular;
     font-size: 12px;
     color: #42210B;
