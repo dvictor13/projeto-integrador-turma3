@@ -10,6 +10,7 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="header"></div>
     <main>
         <h2>FINALIZE A SUA COMPRA E COMECE A UTILIZAR O PLANO EM 24H</h2>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem harum suscipit voluptatibus cum repellat repudiandae laborum rem porro quibusdam quis dignissimos commodi eaque reiciendis magni quasi praesentium ipsum, at obcaecati?</p>
@@ -108,6 +109,7 @@
         </section>
 
     </main>
+    <div id="footer"></div>  
     <script>
         var visibilidade = false 
         var mudarStatus;
@@ -124,6 +126,18 @@
                     } 
         }
     </script>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+        
+    <script> 
+        $(function(){
+        $("#header").load("header.html"); 
+        $("#footer").load("footer.html"); 
+        });
+    </script> 
 </body>
 </html>
 

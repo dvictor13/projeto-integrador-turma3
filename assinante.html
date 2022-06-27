@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/estiloAssinante.css">
 </head>
 <body>
+    <div id="header"></div>
     <main>
         <h2 class="mob ak-black">BEM-VINDO,<br><span class="light ak-black" > FULANO DE TAL!</span></h2>
         <h2 class="note ak-black">BEM-VINDO,<span class="light ak-black" > FULANO DE TAL!</span></h2>
@@ -58,6 +59,18 @@
             </section>
         </nav>
     </main>
+    <div id="footer"></div>  
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+    </script>
     
+    <script> 
+    $(function(){
+    $("#header").load("header.html"); 
+    $("#footer").load("footer.html"); 
+    });
+    </script> 
 </body>
 </html>
