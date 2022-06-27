@@ -6,70 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho</title>
     <link rel="stylesheet" href="css/carrinho-style.css">
+    <link href="css/estiloHeaderFooter.css" rel="stylesheet" />
+
 </head>
 <body>
+    <div id="header"></div>
+
     <main>
         <section class="flex-container">
             <h2 class="white ak-black">VOCÊ ESCOLHEU O <br> PLANO <span class="brown-light ak-black">BASIC</span></h2>
-            <p class="white ak-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid facilis nesciunt vitae autem commodi possimus, fuga cumque in harum eveniet laborum necessitatibus, dolore dolores consequuntur suscipit incidunt dolorum odit corrupti.</p>
-            <article class="listaordenada">
+            <p class="white ak-bold">Você está escolhendo economizar. Fazer um dos nossos planos garantem economia no final do mês. Quando maior o plano, mais você economiza. Escolha os planos de acordo com sua necessidade e faça as contas! </p>
                 
-            <ul class="lista">
-            <div class="começo-lista">
-                <h2 class="começo-lista1">Starter</h2>
-                <h3 class="começo-lista2">For startups</h3>
-            </div>
-            <div class="ordem">
-                <li class="flex-item-lista1"> <img src="./img/img-correto.jpg" alt="img-correto"> Unlimited</li>
-                <li class="flex-item-lista1"> <img src="./img/img-correto.jpg" alt="img-correto"> Books per month</li>
-                <li class="flex-item-lista1"> <img src="./img/img-correto.jpg" alt="img-correto"> 10 users</li>
-            </div>
-            <div class="ordem1">
-                <li class="flex-item-lista1"> <img src="./img/img-correto.jpg" alt="img-correto"> Unlimited</li>
-                <li class="flex-item-lista1"> <img src="./img/img-correto.jpg" alt="img-correto"> Books per month</li>
-                <li class="flex-item-lista1"> <img src="./img/img-correto.jpg" alt="img-correto"> 10 users</li>
-            </div>
-            <div>
-            <li class="flex-item-lista1"> <img src="./img/img-correto.jpg" alt="img-correto"> Unlimited</li>
-            <li class="flex-item-lista1"> <img src="./img/img-correto.jpg" alt="img-correto"> Books per month</li>
-            <li class="flex-item-lista1"> <img src="./img/img-correto.jpg" alt="img-correto"> 10 users</li>
-            </div>
-            <div class="final">
-            <h2 class="final1"> <strong class="final2">$20</strong>/ mo</h2>
-            <button class="botao"> SIGN UP</button>
-            </div>
-            </ul>
-            <div class="meio">
-            <strong class="negrito">Por R$10,00 pode fazer upgrade de plano</strong>
-            </div>
+            <section class="secaoPlanoEscolhido">
+                <form class="cardsPlanos">
+
+                    <article class="categoriaPlano">
+                            <div class="radio">
+                                <input type="radio" name="categoriaP" id="basic" value="basic" checked><label for="basic" class="caixinha"></label><label for="basic" class="categoria">BASIC</label>
+                            </div>
+                            <div class="descricao">
+                                <div class="ladoDir">
+                                    <p class="descPlanos">1 barba</p>
+                                    <p>por mês</p>
+                                </div>
+                                <div class="ladoEsq">
+                                    <p class="descPlanos"> 1 corte de cabelo</p>
+                                    <p>por mês</p>
+                                </div>
+                            </div>
+                            <h2 class="preco">R$35,00</h2>
+                     </article>
+
+                     <p class="oferta">Por mais R$20,00 você pode</p><p class="oferta">fazer upgrade do plano</p>
+
+                     <article class="categoriaPlanoUp">
+                        <div class="radio">
+                            <input type="radio" name="categoriaP" id="basic" value="basic"><label for="basic" class="caixinha"></label><label for="basic" class="categoria">STANDARD</label>
+                        </div>
+                        <div class="descricao">
+                            <div class="ladoDir">
+                                <p class="descPlanos">2 barbas</p>
+                                <p>por mês</p>
+                            </div>
+                            <div class="ladoEsq">
+                                <p class="descPlanos"> 2 cortes de cabelo</p>
+                                <p>por mês</p>
+                            </div>
+                        </div>
+                        <h2 class="preco">R$65,00</h2>
+                    </article>
+                    <button class="btnComecar">Realizar pagamento</button>
+                </form>
+
+            </section>
+            
+            
 
 
-                    <div class="listaordenada">
-                    <ul class="lista">
-                    <div class="começo-lista">
-                        <h2 class="começo-lista1">Advanced</h2>
-                        <h3 class="começo-lista2">For small business></h3>
-                    </div>
-                    <div class="ordem">
-                        <li class="flex-item-lista1"> <img src="./img/img-correto.jpg" alt="img-correto"> Unlimited</li>
-                        <li class="flex-item-lista1"> <img src="./img/img-correto.jpg" alt="img-correto"> Books per month</li>
-                        <li class="flex-item-lista1"> <img src="./img/img-correto.jpg" alt="img-correto"> 10 users</li>
-                    </div>
-                    <div class="ordem1">
-                        <li class="flex-item-lista1"> <img src="./img/img-correto.jpg" alt="img-correto"> Unlimited</li>
-                        <li class="flex-item-lista1"> <img src="./img/img-correto.jpg" alt="img-correto"> Books per month</li>
-                        <li class="flex-item-lista1"> <img src="./img/img-correto.jpg" alt="img-correto"> 10 users</li>
-                    </div>
-                    <div>
-                        <li class="flex-item-lista1"> <img src="./img/img-correto.jpg" alt="img-correto"> Unlimited</li>
-                        <li class="flex-item-lista1"> <img src="./img/img-correto.jpg" alt="img-correto"> Books per month</li>
-                        <li class="flex-item-lista1"> <img src="./img/img-correto.jpg" alt="img-correto"> 10 users</li>
-                    </div>
-                    <div class="final">
-                        <h2 class="final1"> <strong class="final2">$30</strong>/ mo</h2>
-                        <button class="botao"> SIGN UP</button>
-                    </ul>
-                    </div>
-        </section>
     </main>
+    <div id="footer"></div>  
+<script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+</script>
+        
+<script> 
+    $(function(){
+    $("#header").load("header.html"); 
+    $("#footer").load("footer.html"); 
+    });
+</script> 
+
 </body>

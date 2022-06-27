@@ -1,6 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Numans&display=swap');
-
+@font-face {
+    font-family: 'Akrobat-Regular';
+    src:url('./font/Akrobat-Regular.otf')
+}
+@font-face {
+    font-family: 'Akrobat-Black';
+    src:url('./font/Akrobat-Black.otf')
+}
+@font-face {
+    font-family: 'Akrobat-Bold';
+    src:url('./font/Akrobat-Bold.otf')
+}
 *{
     box-sizing: border-box;
 }

@@ -1,70 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Numans&display=swap');
+@font-face {
+    font-family: 'Hansief-Rough';
+    src: url(./font/HansiefRough.otf) format('opentype');}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 main .corpoCadastro {
     display: block;
     margin: 10px;
     text-align: center;
- 
+}
+main *{
+    font-family: var(--ak-font-regular);
+}
 
-    }
+main section .links{
+    display: flex;
+    justify-content: center;
+}
+ main section .links a{
+    margin: 0% 5%;
+ }
 
 .facaSeulogin{
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 26px;
     color: #42210B;
     margin: 10px;
-    padding: 20px;
+    padding: 10px;
 
 }
 
 h1.titulo{
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 26px;
     color: #42210B;
     margin: 10px;
-    padding: 20px;
+    padding: 10px;
 }
 
 h2.titulo{
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 17px;
     color: #42210B;
     margin: 10px;
-    padding: 20px;
+    padding: 10px;
 }
 
 p.titulo{
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: regular;
     font-size: 17px;
     color: #42210B;
     margin: 10px;
-    padding: 20px;
+    padding: 10px;
 }
 
 h2.tituloh2{
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: regular;
-    font-size: 12px;
+    
     color: #000000;
     margin: 10px;
-    padding: 20px; 
+    padding: 10px; 
 }
 
-ul#lista li {
-    display: flex;
+ul.facaSeulogin{
+    display: inline-block;
     text-align: center;
+    align-content: space-between;
+    gap: 10px;
 }
 
-.formulario {
+li.redesSociais{
+    display: inline-block;
+    text-align: center;
+    align-content: space-between;
+    gap: 10px;
+}
+
+div .formularioGenero {
     display: block;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: regular;
+    width: 100%;
     font-size: 12px;
     color: #000000;
     margin: 30px;
-    padding: 20px;
+    padding: 10px;
     border: 10px;
     text-align: left;
     gap: 10px;
@@ -72,34 +95,71 @@ ul#lista li {
 
 .form1{
     display: inline-block;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: regular;
     font-size: 12px;
     color: #42210B;
-    background-color: #C69C6D;
-    margin: 30px;
-    padding: 20px;
+    margin: 10px;
+    padding: 10px;
     border: 10px;
+    border-color: #C69C6D;
     text-align: left;
     gap: 10px;  
     box-sizing: border-box;
+    fill: #C69C6D;
+        
+}
+
+.form2{
+    display: inline-block;
     
+    font-weight: regular;
+    font-size: 12px;
+    color: #42210B;
+    margin: 5px;
+    padding: 10px 0px;
+    border: 5px;
+    text-align: left;
+    gap: 10px;  
+    box-sizing: border-box;
 
 }
 
-.formulariogenero{
-    display: inline-block;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: regular;
-    font-size: 12px;
+
+::placeholder{
     color: #42210B;
-    margin: 30px;
-    padding: 20px;
-    border: 10px;
+    background-color: #C69C6D;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 12px;
     text-align: left;
     gap: 10px;  
     box-sizing: border-box;
-    list-style-type: circle;
-    list-style-position: outside;
-    list-style-type: style insite #C69C6D;
+    content: normal;
+
+}
+
+input.date{
+    color: #42210B;
+    background: #C69C6D;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+    text-align: left;
+    gap: 10px;  
+    box-sizing: border-box;
+
+}
+
+.concluirCadastro{
+    background-color: #C69C6D;
+    font-family: 'Hansief-Rough';
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    width: 209px;
+    height: 56px;
+    margin: 10px;
+    border: 10px;
+    padding: 10px;
+    border-radius: 10px;
 }
