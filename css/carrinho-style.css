@@ -9,10 +9,17 @@ main .secaoPlanoEscolhido {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+main .cardsPlanos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 main .categoriaPlano{
-    height: 230px;
+    height: 200px;
     background-color: #C69C6D;
     border: none;
     display: flex;
@@ -60,7 +67,7 @@ main .preco{
     font-family: 'Hansief-Rough';
     font-weight: lighter;
     height: 80px;
-    margin-top: 20px;
+    margin-top: 5px;
     border-top: 4px solid #42210B;
 }
 
@@ -90,7 +97,7 @@ main .btnComecar{
 }
 
 main .categoriaPlanoUp{
-    height: 230px;
+    height: 200px;
     background-color: #ffffff;
     border: none;
     display: flex;
@@ -124,6 +131,11 @@ main .categoriaPlanoUp{
 }
 .white{
     color:white;
+}
+.oferta{
+    color:white;
+    width: 250px;
+    font-size: 1.2rem;
 }
 
 .ak-bold{
