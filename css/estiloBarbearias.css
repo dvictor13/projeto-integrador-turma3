@@ -1,0 +1,178 @@
+
+main {
+    background-color: #42210B;
+    color: #c69c6d;
+}
+
+.introBarbearias{
+    width: 100%;
+    padding: 10px;
+}
+
+.introBarbearias h2{
+    width: 100%;
+    font-family: 'Hansief-Rough';
+    font-size: 2rem;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+.introBarbearias .destaque{
+    width: 100%;
+    font-family: 'Akrobat', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.introBarbearias .paragraph{
+    text-indent: 20px;
+    text-align: left;
+}
+
+.map{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+}
+
+.map h2{
+    font-size: 1.5rem;
+    color: white;
+}
+
+input{
+    width: 100%;
+    margin: 5px 0;
+}
+
+.mapouter{
+    margin: 10px 0;
+}
+
+.barbeariasIndex{
+    background-color: #ffffff;
+    padding: 5% 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15%;
+}
+
+.barbeariasIndex img{
+    padding-top: 3%;
+}
+
+main .barbeariasIndex h2{
+font-size: 1.2rem;
+color: #42210B;
+font-family: 'Hansief-Rough';
+font-weight: lighter;
+}
+
+.barbeariasIndex .cardsBarbearia .cardB{
+border: 1px solid #42210B;
+width: 288px;
+height: 450px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+background-color: #ffffff;
+margin-top: 30px;
+}
+
+
+/*main .secaoPlanos{
+    background-color: #754C24;
+    padding: 10% 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .secaoPlanos h2{
+font-size: 1.2rem;
+color: #ffffff;
+font-family: 'Hansief-Rough';
+font-weight: lighter;
+}
+
+main .secaoPlanos .vantagens{
+    text-align: justify;
+    margin: 8%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+main .secaoPlanos .cardsPlanos .cardP{
+border: 1px solid #42210B;
+width: 250px;
+height: 410px;
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: #ffffff;
+margin-top: 15px;
+}
+
+main .secaoPlanos .categoriaPlano{
+    width: 100%;
+    height: 90px;
+    background-color: #C69C6D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    
+main .secaoPlanos .categoriaPlano p{
+    color: #42210B;
+    font-family: 'Hansief-Rough' ;
+    font-size: 1.7rem;
+}
+
+
+main .secaoPlanos .cardsPlanos .cardP .descPlanos{
+color: #42210B;
+margin-top: 20px;
+width: 170px;
+}
+
+main .secaoPlanos .cardsPlanos .cardP .descTempo{
+width: 170px;
+}
+
+main .secaoPlanos .cardsPlanos .cardP .preco{
+    width: 150px;
+    padding-top: 20px;
+    text-align: center; 
+    font-size: 1.5rem;
+    color: #42210B;
+    font-family: 'Hansief-Rough';
+    font-weight: lighter;
+    height: 80px;
+    margin-top: 30px;
+    border-top: 4px solid #42210B;
+}
+
+
+main .secaoPlanos .cardsPlanos .cardP .btnComecar{
+    background-color: #C69C6D;
+    width: 180px;
+    height: 66px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    border: 1px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main .secaoPlanos .cardsPlanos .cardP .btnComecar p {
+    font-family: 'Hansief-Rough';
+    color: #ffffff;
+    font-size: 1.1rem;
+}/*
