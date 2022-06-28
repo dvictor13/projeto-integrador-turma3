@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main .secaoPlanoEscolhido {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+main .cardsPlanos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .categoriaPlano{
+    height: 200px;
+    background-color: #C69C6D;
+    border: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-top: 25px;
+    flex-direction: column;
+    width: 250px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+main .descricao{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+}
+main .descricao .ladoDir{
+    width: 30%;
+}
+main .descricao .ladoEsq{
+    width: 30%;
+}
+    
+main .categoria{
+    color: #42210B;
+    font-family: 'Hansief-Rough' ;
+    font-size: 1.7rem;
+}
+
+.radio{
+    display: flex;
+    gap: 10px;
+    width: 150px;
+    align-items: center;
+}
+
+input{
+    display: none;
+}
+.caixinha{
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    border: 1px solid #42210B;
+}
+
+.caixinha:hover{
+    background-image: url(../img/check.png) ;
+}
+
+main .descPlanos{
+    color: #42210B;
+}
+main p{
+    color: #754C24;
+}
+
+main .preco{
+    width: 175px;
+    padding-top: 15px;
+    text-align: center; 
+    font-size: 1.5rem;
+    color: #42210B;
+    font-family: 'Hansief-Rough';
+    font-weight: lighter;
+    height: 80px;
+    margin-top: 5px;
+    border-top: 4px solid #42210B;
+}
+
+
+main .btnComecar{
+    background-color: #42210B;
+    width: 180px;
+    height: 50px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+.lista li{
+    list-style-image: url(../img/check.png) ;
+}
+
+.lista{
+    margin-left: 30px;
+    width: 150px;
+}
+
+main .categoriaPlanoUp{
+    height: 200px;
+    background-color: #ffffff;
+    border: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-top: 25px;
+    flex-direction: column;
+    width: 250px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.ak-black{
+    font-family: 'Akrobat-Black',sans-serif;
+    margin: 0% 15%;
+    padding-top: 10% ;
+    font-size: 1.3rem;
+}
+.brown-light{
+    color: #C69C6D;
+    margin-left: 0px;
+}
+.brown-medium{
+    color: #754C24;
+}
+.brown-dark{
+    color: #42210B;
+}
+.black{
+    color: #000;
+}
+.white{
+    color:white;
+}
+.oferta{
+    color:white;
+    width: 250px;
+    font-size: 1.2rem;
+}
+
+.ak-bold{
+    font-family: 'Akrobat-Bold',sans-serif;
+    margin: 5% 15%;
+    font-size: 1rem;
+}
+main .flex-container{
+    background-color:#754C24;
+}
