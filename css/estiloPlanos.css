@@ -60,7 +60,9 @@ main .secaoPlanos .cardsPlanos .categoriaEcon{
     top: -14px;
 }
 
-
+main .secaoPlanos .cardsPlanos ul{
+    margin-top: 5%;
+}
 main .secaoPlanos .cardsPlanos .cardP .descPlanos{
     color: #42210B;
     width: 170px;
