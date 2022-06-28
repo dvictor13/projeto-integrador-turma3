@@ -10,6 +10,10 @@
     font-family: 'Akrobat-Bold';
     src:url('./font/Akrobat-Bold.otf')
 }
+@font-face {
+    font-family: 'Hansief';
+    src:url('./font/HansiefRough.otf')
+}
 *{
     box-sizing: border-box;
     margin: 0;
@@ -159,7 +163,3 @@ main>.historico>.info>p{
     }
 
 
-
-@media (min-width:1280px) {
-
-}
