@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estiloPagamento.css">
-    <link rel="stylesheet" href="css/estiloHeaderFooter.css">
-    <link rel="stylesheet" href="css/estilo.css">
-    <title>Pagamento</title>
-</head>
-<body>
-    <div id="header"></div>
-    <main>
+<link rel="stylesheet" href="stylesheets/estiloPagamento.css">
+<%- include('./partials/header') %>
         <h2>FINALIZE A SUA COMPRA E COMECE A UTILIZAR O PLANO EM 24H</h2>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem harum suscipit voluptatibus cum repellat repudiandae laborum rem porro quibusdam quis dignissimos commodi eaque reiciendis magni quasi praesentium ipsum, at obcaecati?</p>
         <section class="pagamento">
@@ -47,14 +35,14 @@
                 </div>
                 </form>
             <div class="pix modopgto">
-                <img src="img/pix.png" alt="">
+                <img src="images/pix.png" alt="">
                 <p>PIX</p>
-                <img class="seta"  src="img/Down.png" alt="">
+                <img class="seta"  src="images/Down.png" alt="">
             </div>
             <div class="boleto modopgto">
-                <img src="img/codigobarras.png" alt="">
+                <img src="images/codigobarras.png" alt="">
                 <p>BOLETO</p>
-                <img class="seta" src="img/Down.png" alt="">
+                <img class="seta" src="images/Down.png" alt="">
             </div>
             <div class="total">
                 <p>Total</p>
@@ -62,7 +50,7 @@
             </div>
             <div class="finalizar">
                 <button disabled="imprimir">FINALIZAR PEDIDO</button>
-                <img src="img/recaptcha.png" alt="">  
+                <img src="images/recaptcha.png" alt="">  
             </div>
 
         </section>      
@@ -107,9 +95,7 @@
                 </div>
             </div>
         </section>
-
-    </main>
-    <div id="footer"></div>  
+<%- include('./partials/footer')%>
     <script>
         var visibilidade = false 
         var mudarStatus;
@@ -126,18 +112,7 @@
                     } 
         }
     </script>
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.js"
-        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous">
-    </script>
-        
-    <script> 
-        $(function(){
-        $("#header").load("header.html"); 
-        $("#footer").load("footer.html"); 
-        });
-    </script> 
+
 </body>
 </html>
 

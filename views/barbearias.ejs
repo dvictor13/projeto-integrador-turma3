@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estiloBarbearias.css">
-    <title>Barbearias</title>
-</head>
-<body>
+<link rel="stylesheet" href="stylesheets/estiloBarbearias.css">
 
-    <div id="header"></div>
-
-    <main class="barbearias">
+<%- include('./partials/header') %>
         <section class="introBarbearias">
             <h2>veja as barbearias que fazem parte da nossa rede</h2>
             <p class="destaque">If you’re looking for the latest in wireless headphones, look no further. These are perfect</p>
@@ -50,46 +39,32 @@
                 <h2>CONHEÇA AS BARBEARIAS</h2>
                 <div class="cardsBarbearia">
                     <article class="cardB">
-                        <div class="imgCard"><img src="img/barbearias.svg" alt=""></div>
+                        <div class="imgCard"><img src="images/barbearias.svg" alt=""></div>
                         <p class="localBarbearia">BAIRRO CENTRO</p>
                         <p class="descPlanos">Av. Brasil, 2022</p>
                         <p class="descLocal">loja 01</p>
                         <div class="redes-sociais">
-                            <img src="img/Twitter.png" alt="">
-                            <img src="img/Facebook.png" alt="">
-                            <img src="img/instagram.png" alt="">
+                            <img src="images/Twitter.png" alt="">
+                            <img src="images/Facebook.png" alt="">
+                            <img src="images/instagram.png" alt="">
                         </div>
                         <button class="btnComecar">VER LOJA</button>
                     </article>
                     <article class="cardB">
-                        <div class="imgCard"><img src="img/barbearias.svg" alt=""></div>
+                        <div class="imgCard"><img src="images/barbearias.svg" alt=""></div>
                         <p class="localBarbearia">VILA JARDIM</p>
                         <p class="descPlanos">Av. Beira-Mar, 2023</p>
                         <p class="descLocal">loja 02</p>
                         <div class="redes-sociais">
-                            <img src="img/Twitter.png" alt="">
-                            <img src="img/Facebook.png" alt="">
-                            <img src="img/instagram.png" alt="">
+                            <img src="images/Twitter.png" alt="">
+                            <img src="images/Facebook.png" alt="">
+                            <img src="images/instagram.png" alt="">
                         </div>
                         <button class="btnComecar">VER LOJA</button>
                     </article>
                 </div>
             </section>
-    </main>
-
-    <div id="footer"></div>  
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous">
-    </script>
-    
-    <script> 
-    $(function(){
-    $("#header").load("header.html"); 
-    $("#footer").load("footer.html"); 
-    });
-    </script> 
+<%- include('./partials/footer')%>
 
 </body>
 </html>

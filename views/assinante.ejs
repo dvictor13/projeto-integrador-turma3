@@ -1,23 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assinante</title>
-    <link rel="stylesheet" href="css/estiloAssinante.css">
-    <link rel="stylesheet" href="css/estiloPlanos.css">
-</head>
-<body>
-    <div id="header"></div>
-    <main>
-        <h2 class="mob ak-black">BEM-VINDO,<br><span class="light ak-black" > FULANO DE TAL!</span></h2>
-        <h2 class="note ak-black">BEM-VINDO,<span class="light ak-black" > FULANO DE TAL!</span></h2>
-        <p class="ak-bold">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem harum suscipit voluptatibus cum repellat repudiandae laborum rem porro quibusdam quis dignissimos commodi eaque reiciendis magni quasi praesentium ipsum, at obcaecati?</p>
+<link rel="stylesheet" href="stylesheets/estiloAssinante.css">
+<link rel="stylesheet" href="stylesheets/estiloPlanos.css">
+<%- include('./partials/header')%>
+
+
+        <h2 class="mob ak-black">BEM-VINDO,<br><span class="light ak-black"> FULANO DE TAL!</span></h2>
+        <h2 class="note ak-black">BEM-VINDO,<span class="light ak-black"> FULANO DE TAL!</span></h2>
+        <p class="ak-bold">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem harum suscipit voluptatibus
+            cum repellat repudiandae laborum rem porro quibusdam quis dignissimos commodi eaque reiciendis magni quasi
+            praesentium ipsum, at obcaecati?</p>
         <nav class="uso-servico">
             <div class="frases">
                 <h2 class="ak-black">ACOMPANHE O <br>SEU USO NO MÊS</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur perspiciatis nostrum nemo eligendi, officia quo delectus reiciendis amet ipsam repellat incidunt magni corporis sunt neque necessitatibus quasi? Magnam, nostrum minima.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur perspiciatis nostrum nemo eligendi,
+                    officia quo delectus reiciendis amet ipsam repellat incidunt magni corporis sunt neque
+                    necessitatibus quasi? Magnam, nostrum minima.</p>
             </div>
             <section class="cortes">
                 <article class="light">
@@ -50,11 +46,15 @@
         <nav class="secaoPlanos">
             <div class="frases">
                 <h2 class="dark ak-black">QUER DAR UM UPGRADE NO SEU PLANO?</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni natus eligendi possimus pariatur delectus autem cumque similique dolorem! Nostrum repellendus animi minus eligendi velit ad esse repellat, cupiditate illum. Aliquam! </p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni natus eligendi possimus pariatur
+                    delectus autem cumque similique dolorem! Nostrum repellendus animi minus eligendi velit ad esse
+                    repellat, cupiditate illum. Aliquam! </p>
             </div>
             <section class="cardsPlanos">
                 <article class="cardP">
-                    <div class="categoriaPlano"><p>STANDARD</p></div>
+                    <div class="categoriaPlano">
+                        <p>STANDARD</p>
+                    </div>
                     <ul>
                         <li class="descPlanos">2 barbas</li>
                         <p class="descTempo">por mês</p>
@@ -62,38 +62,43 @@
                         <p class="descTempo">por mês</p>
                     </ul>
                     <h2 class="preco">R$65,00</h2>
-                    <button class="btnComecar"><p>COMPRAR</p><p>ESTE PLANO</p></button>
-                    <div class="economia"><p>ADIQUIRA ESTE PLANO E</p> <p>ECONOMIZE ATÉ R$25 POR</p> <p>CORTE E BARBA</p></div>
+                    <button class="btnComecar">
+                        <p>COMPRAR</p>
+                        <p>ESTE PLANO</p>
+                    </button>
+                    <div class="economia">
+                        <p>ADIQUIRA ESTE PLANO E</p>
+                        <p>ECONOMIZE ATÉ R$25 POR</p>
+                        <p>CORTE E BARBA</p>
+                    </div>
                 </article>
 
                 <article class="cardP">
-                        <div class="categoriaPlano"><p>PREMIUM</p></div>
-                        <ul>
-                            <li class="descPlanos">2 barbas</li>
-                            <p class="descTempo">por mês</p>
-                            <li class="descPlanos">3 cortes de cabelo</li>
-                            <p class="descTempo">por mês</p>
-                            
-                        </ul>
-                        <h2 class="preco">R$80,00</h2>
-                        <button class="btnComecar"><p>COMPRAR</p><p>ESTE PLANO</p></button>
-                        <div class="economia"><p>ADIQUIRA ESTE PLANO E</p> <p>ECONOMIZE ATÉ R$30 POR</p> <p>CORTE E BARBA</p></div>
+                    <div class="categoriaPlano">
+                        <p>PREMIUM</p>
+                    </div>
+                    <ul>
+                        <li class="descPlanos">2 barbas</li>
+                        <p class="descTempo">por mês</p>
+                        <li class="descPlanos">3 cortes de cabelo</li>
+                        <p class="descTempo">por mês</p>
+
+                    </ul>
+                    <h2 class="preco">R$80,00</h2>
+                    <button class="btnComecar">
+                        <p>COMPRAR</p>
+                        <p>ESTE PLANO</p>
+                    </button>
+                    <div class="economia">
+                        <p>ADIQUIRA ESTE PLANO E</p>
+                        <p>ECONOMIZE ATÉ R$30 POR</p>
+                        <p>CORTE E BARBA</p>
+                    </div>
                 </article>
             </section>
         </nav>
-    </main>
-    <div id="footer"></div>  
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous">
-    </script>
-    
-    <script> 
-    $(function(){
-    $("#header").load("header.html"); 
-    $("#footer").load("footer.html"); 
-    });
-    </script> 
+<%- include('./partials/footer')%>
+
 </body>
+
 </html>
