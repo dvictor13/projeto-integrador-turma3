@@ -1,18 +1,18 @@
 @font-face {
     font-family: 'Hansief-Rough';
-    src: url(font/HansiefRough.otf) format('opentype');
+    src: url(../font/HansiefRough.otf) format('opentype');
 }
 @font-face {
     font-family: 'Akrobat-Black';
-    src: url(font/Akrobat-Black.otf) format('opentype');
+    src: url(../font/Akrobat-Black.otf) format('opentype');
 }
 @font-face {
     font-family: 'Akrobat-Bold';
-    src: url(font/Akrobat-Bold.otf) format('opentype');
+    src: url(../font/Akrobat-Bold.otf) format('opentype');
 }
 @font-face {
     font-family: 'Akrobat-Regular';
-    src: url(font/Akrobat-Regular.otf) format('opentype');
+    src: url(../font/Akrobat-Regular.otf) format('opentype');
 }
 
 *{
