@@ -477,7 +477,7 @@ main .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #res
     }
     
     main .duvidas .perguntasFrequentes .perguntasResposta .iconePergunta{
-        background-image: url("images/iconplus.png") ;
+        background-image: url("../images/iconplus.png") ;
         padding: 10px;
         width: 35px;
         height: 24px;
