@@ -2,15 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Numans&display=swap');
 @font-face {
     font-family: 'Akrobat-Regular';
-    src:url('./font/Akrobat-Regular.otf')
+    src:url('../font/Akrobat-Regular.otf')
 }
 @font-face {
     font-family: 'Akrobat-Black';
-    src:url('./font/Akrobat-Black.otf')
+    src:url('../font/Akrobat-Black.otf')
 }
 @font-face {
     font-family: 'Akrobat-Bold';
-    src:url('./font/Akrobat-Bold.otf')
+    src:url('../font/Akrobat-Bold.otf')
 }
 *{
     box-sizing: border-box;
@@ -365,7 +365,7 @@ main .duvidas .perguntasFrequentes .perguntasResposta{
 }
 
 main .duvidas .perguntasFrequentes .perguntasResposta .iconePergunta{
-    background-image: url("img/iconplus.png") ;
+    background-image: url("images/iconplus.png") ;
     padding: 10px;
     width: 35px;
     height: 24px;
@@ -477,7 +477,7 @@ main .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #res
     }
     
     main .duvidas .perguntasFrequentes .perguntasResposta .iconePergunta{
-        background-image: url("img/iconplus.png") ;
+        background-image: url("../images/iconplus.png") ;
         padding: 10px;
         width: 35px;
         height: 24px;
