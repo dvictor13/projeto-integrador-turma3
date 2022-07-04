@@ -1,70 +1,159 @@
 <link rel="stylesheet" href="stylesheets/estiloBarbearias.css">
 
 <%- include('./partials/header') %>
-        <section class="introBarbearias">
-            <h2>veja as barbearias que fazem parte da nossa rede</h2>
-            <p class="destaque">If you’re looking for the latest in wireless headphones, look no further. These are perfect</p>
-            <p class="paragraph">If you’re looking for the latest in wireless headphones, look no further. These are perfect for TV, stereo, home, and cell phone. If you’re looking for the latest in wireless headphones, look no further. These are perfect for TV,
-            </p>
 
-            <section class="map">
-                <h2>Busque a barbearia mais próxima de você</h2>
-                <form class="form-container">
-                    <p><label for="adress" >Busca por CEP ou endereço</label>
-                    <input type="text" name="adress" id="nome" placeholder="Digite o CEP ou nome da rua" required>
-                    </p>
-                    <p>
-                    <label for="text">Busca por serviço:</label>
-                    </p>
-                    <p>
-                    <select name="departamentos" id="departamentos"  required>
-                            <option selected disabled>Selecione</option>
-                            <option value="barba">Barba</option>
-                            <option value="cabelo">Cabelo</option>
-                            <option value="depilação">Depilação</option>
-                    </select>
-                    </p>
-                    <p>
-                    <button class="btn">enviar</button>
-                    </form>
-                    </p>
-                <div class="mapouter">
-                    <div class="gmap_canvas">
+        <div class="barbearias-container">
+            <section class="presentation">
+                <h1>nossas barbearias</h1>
+                <h4 class="">If you’re looking for the latest in wireless headphones, look no further. These are perfect</h4>
+                <p class="">If you’re looking for the latest in wireless headphones, look no further. These are perfect for TV, stereo, home, and cell phone. If you’re looking for the latest in wireless headphones, look no further. These are perfect for TV,
+                </p>
+            </section>
+            <section class="form">
+                <div class="form-container">
+                    <div class="form-text">
+                        <h3>Busque a barbearia mais próxima</h3>
+                        <p class="">If you’re looking for the latest in wireless headphones, look no further. These are perfect for
+                            TV, stereo, home, and cell phone.
+                        </p>
+                    </div>
+                    <div class="form-img">
+                        <label for="adress">
+                            <h5>Pesquise por palavra-chave</h5>
+                        </label>
+                        <div class="search">
+                            <input type="text" name="adress" id="nome" placeholder="Pesquisar unidades" required>
+                            <button class="btnform"><span class="material-symbols-outlined">search</span><h5>Pesquisar</h5></span></button>
+                        </div>
+                        <label for="text">
+                            <h5>Buscar por tipo de serviço</h5>
+                        </label>
+                        <select name="departamentos" id="departamentos" required>
+                        <option selected disabled>
+                                    <h5>Selecione</h5>
+                                </option>
+                                <option value="barba">
+                                    <p>Barba</p>
+                                </option>
+                                <option value="cabelo">
+                                    <p>Cabelo</p>
+                                </option>
+                                <option value="depilação">
+                                    <p>Depilação</p>
+                                </option>
+                            </select>
+                            </form>
+                    </div>
+                </div>
+            </section>
+            <section class="cards">
+                <article class="enderecoBarbearia">
+                    <div class="imgCard"><img src="img/barbearias/salao_amplo_pb.jpg" alt=""></div>
+                    <div class="dados">
+                        <h4 class="nomeBarbearia">Fio do Bigode</h4>
+                        <div class="endereco">
+                            <h5>Av. Brasil, 2022</h5>
+                            <p>loja 01</p>
+                            <p>Bairro Centro</p>
+                        </div>
+                        <ul class="servicos">
+                            <li><p>Corte de cabelo</p></li>
+                            <li><p>Corte de barba</p></li>
+                            <li><p>Depilação facial</p></li>
+                        </ul>
+                        <div class="contact">
+                            <div class="whats">
+                                <img src="./img/whatsapp-logo.svg">
+                                <h5> Conversar pelo Whats</h5>
+                            </div>
+                            <div class="gmaps">
+                                <img src="./img/google-maps-logo.svg">
+                                <h5> Traçar rota no Maps</h5>
+                            </div>
+                        </div>
+                        <div class="horarios">
+                            <h5>Horário de funcionamento</h5>
+                            <p>Seg. a Sáb.: das 9h às 23h</p>
+                            <p>Dom.: das 11h às 22h</p>
+                        </div>
+                    </div>
+                </article>
+    
+                <article class="enderecoBarbearia">
+                    <div class="imgCard"><img src="img/barbearias/salao_amplo_vertical_color.jpg" alt=""></div>
+                    <div class="dados">
+                        <h4 class="nomeBarbearia">Barba Negra</h4>
+                        <div class="endereco">
+                            <h5>Av. Brasil, 2022</h5>
+                            <p>loja 01</p>
+                            <p>Bairro Centro</p>
+                        </div>
+                        <ul class="servicos">
+                            <li><p>Corte de cabelo</p></li>
+                            <li><p>Corte de barba</p></li>
+                            <li><p>Depilação facial</p></li>
+                        </ul>
+                        <div class="contact">
+                            <div class="whats">
+                                <img src="./img/whatsapp-logo.svg">
+                                <h5> Conversar pelo Whats</h5>
+                            </div>
+                            <div class="gmaps">
+                                <img src="./img/google-maps-logo.svg">
+                                <h5> Traçar rota no Maps</h5>
+                            </div>
+                        </div>
+                        <div class="horarios">
+                            <h5>Horário de funcionamento</h5>
+                            <p>Seg. a Sáb.: das 9h às 23h</p>
+                            <p>Dom.: das 11h às 22h</p>
+                        </div>
+                    </div>
+                </article>
+    
+                <article class="enderecoBarbearia">
+                    <div class="imgCard"><img src="img/barbearias/salao_vertical_color.jpg" alt=""></div>
+                    <div class="dados">
+                        <h4 class="nomeBarbearia">Velho tranquilo</h4>
+                        <div class="endereco">
+                            <h5>Av. Brasil, 2022</h5>
+                            <p>loja 01</p>
+                            <p>Bairro Centro</p>
+                        </div>
+                        <ul class="servicos">
+                            <li><p>Corte de cabelo</p></li>
+                            <li><p>Corte de barba</p></li>
+                            <li><p>Depilação facial</p></li>
+                        </ul>
+                        <div class="contact">
+                            <div class="whats">
+                                <img src="./img/whatsapp-logo.svg">
+                                <h5> Conversar pelo Whats</h5>
+                            </div>
+                            <div class="gmaps">
+                                <img src="./img/google-maps-logo.svg">
+                                <h5> Traçar rota no Maps</h5>
+                            </div>
+                        </div>
+                        <div class="horarios">
+                            <h5>Horário de funcionamento</h5>
+                            <p>Seg. a Sáb.: das 9h às 23h</p>
+                            <p>Dom.: das 11h às 22h</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <section class="googlemaps">
+                <div class="maps-container">
+                    <div class="maps-text">
+                        <h3>Nossas unidades</h3>
+                        <p class="">If you’re looking for the latest in wireless headphones, look no further. These are perfect for TV, stereo, home, and cell phone.
+                        </p>
+                    </div>
+                    <div class="maps-img">
                         <iframe width="100%" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=digitalhouse&t=&z=13&ie=UTF8&iwloc=&output=embed">
                         </iframe>
                     </div>
                 </div>
             </section>
-            <section class="barbeariasIndex">
-                <h2>CONHEÇA AS BARBEARIAS</h2>
-                <div class="cardsBarbearia">
-                    <article class="cardB">
-                        <div class="imgCard"><img src="images/barbearias.svg" alt=""></div>
-                        <p class="localBarbearia">BAIRRO CENTRO</p>
-                        <p class="descPlanos">Av. Brasil, 2022</p>
-                        <p class="descLocal">loja 01</p>
-                        <div class="redes-sociais">
-                            <img src="images/Twitter.png" alt="">
-                            <img src="images/Facebook.png" alt="">
-                            <img src="images/instagram.png" alt="">
-                        </div>
-                        <button class="btnComecar">VER LOJA</button>
-                    </article>
-                    <article class="cardB">
-                        <div class="imgCard"><img src="images/barbearias.svg" alt=""></div>
-                        <p class="localBarbearia">VILA JARDIM</p>
-                        <p class="descPlanos">Av. Beira-Mar, 2023</p>
-                        <p class="descLocal">loja 02</p>
-                        <div class="redes-sociais">
-                            <img src="images/Twitter.png" alt="">
-                            <img src="images/Facebook.png" alt="">
-                            <img src="images/instagram.png" alt="">
-                        </div>
-                        <button class="btnComecar">VER LOJA</button>
-                    </article>
-                </div>
-            </section>
 <%- include('./partials/footer')%>
-
-</body>
-</html>
