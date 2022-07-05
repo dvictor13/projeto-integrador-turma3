@@ -15,30 +15,31 @@
                     officia quo delectus reiciendis amet ipsam repellat incidunt magni corporis sunt neque
                     necessitatibus quasi? Magnam, nostrum minima.</p>
             </div>
-            <section class="cortes">
-                <article class="light">
-                    <h2 class="ak-black">VOCÊ CORTOU A BARBA </h2>
-                    <h2 class="dark ak-black">3 VEZES</h2>
-                </article>
-                <article class="light">
-                    <h2 class="ak-black">VOCÊ CORTOU O CABELO </h2>
-                    <h2 class="dark ak-black">2 VEZES</h2>
-                </article>
+            <section class="cortes"> 
+                <% for (let data in usuario[0].mes) { %> 
+                    <article class="light">
+                        <h2 class="ak-black">VOCÊ FEZ <%=data.toUpperCase() %>  </h2> 
+                        <h2 class="dark ak-black"> <%=usuario[0].mes[data] %> VEZ<% if(usuario[0].mes[data]>1){%>ES<%}%> </h2>
+                    </article>
+                <% } %> 
+
             </section>
         </nav>
         <nav class="historico">
             <h2 class="ak-black">SEU HISTÓRICO </h2>
             <section class="dados">
+                <% for (let data in usuario[0].total) { %> 
                 <article class="info">
-                    <h2 class="white ak-black">X VEZES</h2>
-                    <p>É o número total de cortes de barba desde a compra do plano</p>
+                    <h2 class="white ak-black"><%=usuario[0].total[data] %> VEZ<% if(usuario[0].total[data]>1){%>ES<%}%></h2>
+                    <p>É o número total de cortes de <%=data%>  desde a compra do plano</p>
                 </article>
-                <article class="info">
+                <% } %> 
+                <!-- <article class="info">
                     <h2 class="white ak-black">X VEZES</h2>
                     <p>É o número total de cortes de cabelo desde a compra do plano</p>
-                </article>
-                <article class="info">
-                    <h2 class="white ak-black">BARBEARIA BAIRRO BONFIM</h2>
+                </article> -->
+                 <article class="info">
+                    <h2 class="white ak-black"><%= usuario[0].barbearia %></h2>
                     <p>É a barbearia de sua preferência</p>
                 </article>
             </section>
@@ -51,7 +52,25 @@
                     repellat, cupiditate illum. Aliquam! </p>
             </div>
             <section class="cardsPlanos">
-                <article class="cardP">
+                <% const index = listaplanos.findIndex(object=>object.nome===usuario[0].plano) %> 
+                <% for (let i = index+1; i< listaplanos.length; i++) { %> 
+                    <article class="cardP">
+                        <div class="categoriaPlano"><p><%= listaplanos[i].nome %> </p></div>
+                        <% if (listaplanos[i].nome == 'BASIC') {%> <div class="categoriaEcon">POPULAR</div> <% } %> 
+                        <ul>
+                            <li class="descPlanos"><%= listaplanos[i].cabelos%> corte<% if (listaplanos[i].cabelos > 1) {%>s<%}%> de cabelo<span class="descTempo"> no mês</span></li>
+                            <li class="descPlanos"><%= listaplanos[i].barbas%> barba<% if (listaplanos[i].cabelos > 1) {%>s<%}%><span class="descTempo"> no mês</span></li>
+                            <% for( let vantagem of listaplanos[i].vantagens) { %>
+                                <li class="descPlanos"><%= vantagem %> </li>
+                            <% } %>
+                        </ul>
+                        <h2 class="preco"><%= listaplanos[i].preco %> </h2>
+    
+                        <button class="btnComecar"><p>COMPRAR</p><p>ESTE PLANO</p></button>
+                        <div class="economia"><p>ADQUIRA ESTE PLANO E</p> <p>ECONOMIZE ATÉ R$<%=listaplanos[i].economia %> POR</p> <p>CORTE E BARBA</p></div>
+                    </article>
+                    <% } %> 
+                <!-- <article class="cardP">
                     <div class="categoriaPlano">
                         <p>STANDARD</p>
                     </div>
@@ -71,9 +90,9 @@
                         <p>ECONOMIZE ATÉ R$25 POR</p>
                         <p>CORTE E BARBA</p>
                     </div>
-                </article>
+                </article> -->
 
-                <article class="cardP">
+                <!-- <article class="cardP">
                     <div class="categoriaPlano">
                         <p>PREMIUM</p>
                     </div>
@@ -94,7 +113,7 @@
                         <p>ECONOMIZE ATÉ R$30 POR</p>
                         <p>CORTE E BARBA</p>
                     </div>
-                </article>
+                </article> -->
             </section>
         </nav>
 <%- include('./partials/footer')%>

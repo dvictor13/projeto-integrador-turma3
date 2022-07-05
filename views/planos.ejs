@@ -6,22 +6,24 @@
             <p class="vantagens">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, quis aliquam reprehenderit nam in odit sed, ullam non quos, vitae ipsa? Vero, sed? Dolorem consectetur in reiciendis magnam adipisci nam!</p>
 
             <section class="cardsPlanos">
+                <% for (let plano of listaplanos) { %> 
                 <article class="cardP">
-                    <div class="categoriaPlano"><p>BASIC</p></div>
-                    <div class="categoriaEcon">POPULAR</div>
+                    <div class="categoriaPlano"><p><%= plano.nome %> </p></div>
+                    <% if (plano.nome == 'BASIC') {%> <div class="categoriaEcon">POPULAR</div> <% } %> 
                     <ul>
-                        <li class="descPlanos"> 1 corte de cabelo</li><span class="descTempo">no mês</span>
-                        <li class="descPlanos">Preferência nos agendamentos</li>
-                        <li class="descPlanos">Maior flexibilidade de agendamento</li>
-                         <li class="descPlanos">1 barba</li><span class="descTempo">no mês</span>
+                        <li class="descPlanos"><%= plano.cabelos%> corte<% if (plano.cabelos > 1) {%>s<%}%> de cabelo<span class="descTempo"> no mês</span></li>
+                        <li class="descPlanos"><%= plano.barbas%> barba<% if (plano.cabelos > 1) {%>s<%}%><span class="descTempo"> no mês</span></li>
+                        <% for( let vantagem of plano.vantagens) { %>
+                            <li class="descPlanos"><%= vantagem %> </li>
+                        <% } %>
                     </ul>
-                    <h2 class="preco">R$35,00</h2>
+                    <h2 class="preco"><%= plano.preco %> </h2>
 
                     <button class="btnComecar"><p>COMPRAR</p><p>ESTE PLANO</p></button>
-                    <div class="economia"><p>ADIQUIRA ESTE PLANO E</p> <p>ECONOMIZE ATÉ R$20 POR</p> <p>CORTE E BARBA</p></div>
+                    <div class="economia"><p>ADQUIRA ESTE PLANO E</p> <p>ECONOMIZE ATÉ R$<%=plano.economia %> POR</p> <p>CORTE E BARBA</p></div>
                 </article>
-
-                <article class="cardP">
+                <% } %> 
+                <!-- <article class="cardP">
                         <div class="categoriaPlano"><p>STANDARD</p></div>
                         <ul>
                             <li class="descPlanos">2 barbas</li>
@@ -46,7 +48,7 @@
                             <h2 class="preco">R$80,00</h2>
                             <button class="btnComecar"><p>COMPRAR</p><p>ESTE PLANO</p></button>
                             <div class="economia"><p>ADIQUIRA ESTE PLANO E</p> <p>ECONOMIZE ATÉ R$30 POR</p> <p>CORTE E BARBA</p></div>
-                </article>
+                </article> -->
             
             </section>
         </section>
