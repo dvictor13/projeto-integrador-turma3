@@ -50,21 +50,21 @@
     <section class="planosIndex">
         <h2 class="tituloPlanos">NOSSOS PLANOS</h2>
         <section class="cardsPlanos">
-            <article class="card">
-                <div class="imgPlano"><img src="images/barbeiros/barbeiro_detalhe_tesoura.jpg" class="imgCard"></div>
-                <div class="conteudoCard">
-                    <div class="categoria">Basic</div>
-                    <h2 class="preco">R$30,00</h2>
-                    <p class="descPlanos">1 barba</p>
+            <% for (let plano of listaplanos) { %>
+                <article class="card">
+                    <div class="imgPlano"><img src= "<%= plano.img %>" class="imgCard"></div>
+                    <div class="conteudoCard">
+                    <div class="categoria"><%=plano.nome%></div>
+                    <h2 class="preco"><%=plano.preco%></h2>
+                    <p class="descPlanos"><%=plano.barbas %> barba<% if (plano.barbas > 1) {%>s<%}%></p>
                     <p>por mês</p>
-                    <p class="descPlanos">1 corte de cabelo</p>
+                    <p class="descPlanos"><%=plano.cabelo %> corte<% if (plano.cabelo > 1) {%>s<%}%> de cabelo</p>
                     <p>por mês</p>
-
-
                     <button class="btnComecar">COMPRAR PLANO</button>
-                </div>
-            </article>
-            <article class="card">
+                    </div>
+                </article>
+            <%}%>
+            <!-- <article class="card">
                 <div><img src="images/barbeiros/barbeiro_detalhe_barba_tesoura.jpg" alt="" class="imgCard"></div>
                 <div class="conteudoCard">
                     <div class="categoria">Standard</div>
@@ -87,7 +87,7 @@
                     <p>por mês</p>
                     <button class="btnComecar">COMPRAR PLANO</button>
                 </div>
-            </article>
+            </article> -->
         </section>
     </section>
 
