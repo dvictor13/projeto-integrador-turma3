@@ -57,11 +57,12 @@ a:active {
 header{
     box-shadow: 0px 1px 10px rgba(0,66, 33, 11, 0.65);
     background-color: rgb(66, 33, 11);
-    max-width: 1200px;
     margin: 0 auto;
 }
 
 header .cabecalho{
+    max-width: 1200px;
+    margin: 0 auto;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -120,7 +121,7 @@ footer{
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    gap:80px;
+    gap: 80px;
 }
 
 .container-footer .logo-footer{
@@ -194,6 +195,10 @@ footer{
     .container-footer .redes-sociais{
         justify-content: center;
         gap: 20px;
+    }
+
+    .container-footer{
+        gap: 20%;
     }
 }
 

@@ -8,7 +8,7 @@
 
 /*-------spans--------*/
 
-.material-symbols-outlined {
+.material-symbols-outlined{
   font-variation-settings:
   'FILL' 0,
   'wght' 400,
@@ -177,7 +177,7 @@ p{
     width: 100%;
     display: flex;
     flex-direction: column;
-    max-width: 1200px;
+    /*max-width: 1200px;*/
     margin: 0 auto;
 }
 
@@ -186,6 +186,7 @@ p{
     padding: 10px;
     margin: 20px auto;
     margin-bottom: 30px;
+    max-width: 1200px;
 }
 
 @media screen and (min-width:768px) {
@@ -212,6 +213,8 @@ p{
 .barbearias .barbearias-container .form .form-container{
     padding: 20px 10px;
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -265,12 +268,17 @@ p{
 }
 
 /*cards*/
+
 .barbearias .barbearias-container .cards{
     background-color: var(--marrom-claro);
+}
+
+.barbearias .barbearias-container .cards .cards-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 100%;
+    max-width: 1200px;
     flex-direction: column;
     gap: 5px;
     padding: 40px 10px;
@@ -278,17 +286,17 @@ p{
     flex: 1 1 auto;
 }
 
-.barbearias .barbearias-container .cards h4{
+.barbearias .barbearias-container .cards .cards-container h4{
     font-weight: 800;
 }
 
-.barbearias .barbearias-container .cards h5{
+.barbearias .barbearias-container .cards .cards-container h5{
     line-height: 1rem;
     font-weight: 700;
     text-transform: capitalize;
 }
 
-.barbearias .barbearias-container .cards .enderecoBarbearia{
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia{
     width: 100%;
     max-width: 300px;
     display: flex;
@@ -302,12 +310,12 @@ p{
 }
 
 @media screen and (min-width:425px) {
-    .barbearias .barbearias-container .cards{
+    .barbearias .barbearias-container .cards .cards-container{
         flex-direction: row;
     }
 }
 
-.barbearias .barbearias-container .cards .enderecoBarbearia .imgCard{
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .imgCard{
     border-radius: 16px 16px 0 0;
     width: 100%;
     height: auto;
@@ -315,18 +323,18 @@ p{
     overflow: hidden;
 }
 
-.barbearias .barbearias-container .cards .enderecoBarbearia .imgCard img{
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .imgCard img{
     object-fit: cover;
     width: 100%;
     height: 200px;
 }
 
-.barbearias .barbearias-container .cards .enderecoBarbearia .dados{
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .dados{
     width: 100%;
     padding: 10px;
 }
 
-.barbearias .barbearias-container .cards .enderecoBarbearia .dados .endereco, .servicos, .contact, .horarios{
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .dados .endereco, .servicos, .contact, .horarios{
     width: 100%;
     margin: 0 auto;
     text-align: center;
@@ -334,12 +342,12 @@ p{
     padding: 10px;
 }
 
-.barbearias .barbearias-container .cards .enderecoBarbearia .dados h4{
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .dados h4{
     font-weight: 700;
     text-align: center;
 }
 
-.barbearias .barbearias-container .cards .enderecoBarbearia .dados .servicos{
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .dados .servicos{
     display: inline-flex;
     flex-wrap: wrap;
     width: 100%;
@@ -347,7 +355,7 @@ p{
     padding: 10px;
 }
 
-.barbearias .barbearias-container .cards .enderecoBarbearia .dados .servicos li p{
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .dados .servicos li p{
     font-weight: 700;
     width: fit-content;
     padding: 5px 10px;
@@ -358,12 +366,12 @@ p{
     cursor: pointer;
 }
 
-.barbearias .barbearias-container .cards .enderecoBarbearia .dados .servicos li p:hover{
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .dados .servicos li p:hover{
     background-color: var(--preto);
     transition: .5s ease;
 }
 
-.barbearias .barbearias-container .cards .enderecoBarbearia .dados .contact{
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .dados .contact{
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -372,12 +380,12 @@ p{
     padding: 10px;
 }
 
-.barbearias .barbearias-container .cards .enderecoBarbearia .dados .contact img{
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .dados .contact img{
     width: 40px;
     padding: 2px;
 }
 
-.barbearias .barbearias-container .cards .enderecoBarbearia .dados .contact .whats, .gmaps{
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .dados .contact .whats, .gmaps{
     display: flex;
     width: 100%;
     align-items: center;
@@ -386,19 +394,19 @@ p{
     cursor: pointer;
 }
 
-.barbearias .barbearias-container .cards .enderecoBarbearia .dados .contact .whats:hover, .gmaps:hover{
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .dados .contact .whats:hover, .gmaps:hover{
     background-color: var(--cinza);
     border-radius: 5px;
     transition: .5s ease;
 }
 
 @media screen and (min-width: 425px){
-    .barbearias .barbearias-container .cards .enderecoBarbearia .dados .contact{
+    .barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .dados .contact{
         display: flex;
         flex-direction: column;
     }
 
-    .barbearias .barbearias-container .cards .enderecoBarbearia .dados .contact .whats, .gmaps{
+    .barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .dados .contact .whats, .gmaps{
         flex-direction: row;
     }
 }
@@ -423,6 +431,7 @@ p{
     flex-direction: column;
     justify-content: space-between;
     gap: 10px;
+    max-width: 1200px;
 }
 
 .barbearias .barbearias-container .googlemaps p{
