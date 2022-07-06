@@ -1,3 +1,5 @@
+const fs = require('fs')
+
 const listaUsuarios =[
     {nome:'Fulano de Tal',plano:"BASIC",mes:{barba:3,cabelo:2,depilação:1},total:{cabelos:22,barbas:32,depilacao:5},barbearia:"BARBEARIA BAIRRO BONFIM"}
 ]
@@ -23,7 +25,10 @@ const userController = {
     },
     saveform:(req,res)=>{
         console.log(req.body);
+        user = JSON.stringify(req.body)
+        fs.appendFileSync('users.txt',user);
         res.redirect('assinante');
+        
     }
 }
 module.exports = userController;
