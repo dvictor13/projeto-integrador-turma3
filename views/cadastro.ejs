@@ -16,7 +16,7 @@
                 <h2 class="tituloh2">CRIE SUA CONTA</h2>
             </div>
             <section class="formulariocampos">
-                <form class=form1 action="/cadastro.html" method="post">
+                <form class=form1 id="form1" action="cadastro" method="POST">
                     <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
                     <br><br>
                     <input type="email" id="email" name="email" placeholder="Digite seu email">
@@ -30,7 +30,7 @@
                 </form>
             </div>
             <div class="formularioGenero">
-                <form class=form2 action="/cadastro.html" method="post">
+                <form class=form2 id="form2" action="cadastro" method="post">
                     <label for="genero">Gênero</label>
                     <br><br>
                     <input type="radio" name="genero" id="masculino" value="masculino"><label form="masculino">Masculino</label>
@@ -44,11 +44,16 @@
                 </form>
             </section>
             <div class="btnCadastro">
-                <button class="concluirCadastro" type="submit">Concluir</button>
+                <input type="button" value="Concluir" class="concluirCadastro" onclick="submitForms()"/>
             </div>
         </section>
     <%- include('./partials/footer') %>
-
+    <script>
+        submitForms = function(){
+            document.getElementById("form1").submit();
+            document.getElementById("form2").submit();
+        }
+    </script>    
     
 </body>
 </html>

@@ -20,6 +20,10 @@ const userController = {
     },
     assinante:(req,res)=>{
         res.render('assinante',{usuario:listaUsuarios,listaplanos:listaPlanos});
+    },
+    getdata:(req,res)=>{
+        console.log(req.body);
+        res.redirect('assinante')
     }
 }
 module.exports = userController;
