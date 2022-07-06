@@ -18,6 +18,6 @@ router.get('/cadastro',userController.cadastro)
 router.get('/barbearias',contentController.barbearias)
 router.get('/planos',contentController.planos)
 
-router.post('/cadastro',userController.getdata)
+router.post('/cadastro',userController.saveform)
 
 module.exports = router;

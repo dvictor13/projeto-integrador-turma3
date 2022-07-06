@@ -2,8 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Numans&display=swap');
 @font-face {
     font-family: 'Hansief-Rough';
-    src: url(./font/HansiefRough.otf) format('opentype');}
-
+    src: url(../font/HansiefRough.otf) format('opentype');
+}
+@font-face {
+    font-family: 'Akrobat-Regular';
+    src: url(../font/Akrobat-Regular.otf) format('opentype');
+}
 *{
     box-sizing: border-box;
     margin: 0;
@@ -81,74 +85,65 @@ li.redesSociais{
     gap: 10px;
 }
 
-div .formularioGenero {
-    display: block;
+.formularioGenero {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     width: 100%;
-    font-size: 12px;
-    color: #000000;
+    font-size: 1rem;
+
     margin: 30px;
     padding: 10px;
     border: 10px;
     text-align: left;
-    gap: 10px;
 }
 
 .form1{
     display: inline-block;
     font-weight: regular;
-    font-size: 12px;
+    font-size: 1rem;
     color: #42210B;
     margin: 10px;
-    padding: 10px;
-    border: 10px;
-    border-color: #C69C6D;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     text-align: left;
-    gap: 10px;  
-    box-sizing: border-box;
     fill: #C69C6D;
         
 }
-
-.form2{
-    display: inline-block;
+.form1>*{
+    margin: 1%;
+    width: 50%;
     
-    font-weight: regular;
-    font-size: 12px;
-    color: #42210B;
-    margin: 5px;
-    padding: 10px 0px;
-    border: 5px;
-    text-align: left;
-    gap: 10px;  
-    box-sizing: border-box;
+}
+input{
+    border:solid 2px var(--primary-color);
+    border-radius: 5%;
+    background-color: #C69C6D;
+    padding: 1%;
+    font-size: 1rem;
+}
 
+input[type=radio]{
+    margin: 5% 1%;
 }
 
 
 ::placeholder{
     color: #42210B;
     background-color: #C69C6D;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
     font-weight: normal;
-    font-size: 12px;
+    font-size: 1rem;
     text-align: left;
-    gap: 10px;  
-    box-sizing: border-box;
-    content: normal;
+    
+
 
 }
 
-input.date{
-    color: #42210B;
-    background: #C69C6D;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: normal;
-    font-size: 12px;
-    text-align: left;
-    gap: 10px;  
-    box-sizing: border-box;
-
-}
 
 .concluirCadastro{
     background-color: #C69C6D;

@@ -17,43 +17,41 @@
             </div>
             <section class="formulariocampos">
                 <form class=form1 id="form1" action="cadastro" method="POST">
-                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
-                    <br><br>
-                    <input type="email" id="email" name="email" placeholder="Digite seu email">
-                    <br><br>
-                    <input type="number" id="cpf" name="cpf" placeholder="Digite seu CPF">
-                    <br><br>
-                    <input class=date type="date" id="nascimento" name="nascimento" placeholder="Digite a data de nascimento">
-                    <br><br>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                    <br>
+                    <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                    <br>
+                    <input type="number" id="cpf" name="cpf" placeholder="Digite seu CPF" required>
+                    <br>
+                    <input class=date type="date" id="nascimento" name="nascimento" placeholder="Digite a data de nascimento" required>
+                    <br>
                     <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone para contato">
-                    <br><br>
-                </form>
+                    <br>
             </div>
             <div class="formularioGenero">
-                <form class=form2 id="form2" action="cadastro" method="post">
-                    <label for="genero">Gênero</label>
-                    <br><br>
-                    <input type="radio" name="genero" id="masculino" value="masculino"><label form="masculino">Masculino</label>
-                    <br><br>
+                <label for="genero">Gênero</label>
+                <div>
+                    <input type="radio" name="genero" id="masculino" value="masculino" required><label form="masculino">Masculino</label>
+                </div>
+                <div>
                     <input type="radio" name="genero" id="feminino" value="feminino"><label form="feminino">Feminino</label>
-                    <br><br> 
+                </div>
+                <div>
                     <input type="radio" name="genero" id="outros" value="outros"><label form="outros">Outros</label>
-                    <br><br>
+                </div>    
+                <div>    
                     <input type="radio" name="genero" id="nao informado" value="nao informado"><label form="nao informado">Prefiro não informar</label>
-                    <br><br>
-                </form>
+                </div>    
+            </div>
+                
             </section>
             <div class="btnCadastro">
-                <input type="button" value="Concluir" class="concluirCadastro" onclick="submitForms()"/>
+                <input type="submit" value="CONCLUIR" class="concluirCadastro"  />
             </div>
+        </form>
+            
         </section>
-    <%- include('./partials/footer') %>
-    <script>
-        submitForms = function(){
-            document.getElementById("form1").submit();
-            document.getElementById("form2").submit();
-        }
-    </script>    
+    <%- include('./partials/footer') %>   
     
 </body>
 </html>

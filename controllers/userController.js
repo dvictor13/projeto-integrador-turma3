@@ -21,9 +21,9 @@ const userController = {
     assinante:(req,res)=>{
         res.render('assinante',{usuario:listaUsuarios,listaplanos:listaPlanos});
     },
-    getdata:(req,res)=>{
+    saveform:(req,res)=>{
         console.log(req.body);
-        res.redirect('assinante')
+        res.redirect('assinante');
     }
 }
 module.exports = userController;
