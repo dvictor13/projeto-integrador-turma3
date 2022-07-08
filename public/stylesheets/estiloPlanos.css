@@ -119,3 +119,12 @@ main .secaoPlanos .cardsPlanos .cardP .economia p{
     color: #ffffff;
     font-family: 'Hansief-Rough';
 }
+
+@media screen and (min-width:769px) {
+
+
+/* */
+}
+
+@media (min-width:1280px) {
+}
