@@ -179,7 +179,7 @@ footer{
         flex-direction: row;
         width: 100%;
         padding: 0 10%;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .container-footer .ladoDireitoFooter{
