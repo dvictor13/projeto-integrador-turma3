@@ -105,7 +105,11 @@ header .cabecalho .menu a{
     text-align: center;
     font-weight: bold;
     text-align: end;
-}   
+}
+
+header .cabecalho .menu a:hover{
+    color: var(--amarelo-btn);
+}
 
 footer{
     background-color:var(--preto);
