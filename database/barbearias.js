@@ -1,0 +1,28 @@
+const listaBarbearias = [
+    {nome:"FIO DO BIGODE",
+    img:"images/barbearias/salao_amplo_pb.jpg",
+    rua:"Av.Brasil, 2022",loja:"Loja 01",bairro:"Centro",
+    horarioutil:"Seg. a Sáb.: das 9h às 23h",horariofds:"Dom.: das 11h às 22h",
+    servicos:["Corte de cabelo","Corte de barba","Depilação facial"],}
+    ,
+    {nome:"BARBA NEGRA",
+    img:"images/barbearias/salao_amplo_vertical_color.jpg",
+    rua:"Av.Brasil, 2032",loja:"Loja 02",bairro:"Centro",
+    horarioutil:"Seg. a Sáb.: das 9h às 23h",horariofds:"Dom.: das 9h às 22h",
+    servicos:["Corte de cabelo","Corte de barba","Depilação facial"],}
+    ,
+    {nome:"VELHO TRANQUILO",
+    img:"images/barbearias/salao_vertical_color.jpg",
+    rua:"Av.Brasil, 2022",loja:"Loja 05",bairro:"Centro",
+    horarioutil:"Seg. a Sáb.: das 9h às 23h",horariofds:"Dom.: das 11h às 22h",
+    servicos:["Corte de cabelo","Corte de barba","Depilação facial"],}
+    ,
+    {nome:"RUA DOS BOBOS",
+    img:"images/barbearias/salao_vertical_color.jpg",
+    rua:"Av.Brasil, 2022",loja:"Loja 05",bairro:"Centro",
+    horarioutil:"Seg. a Sáb.: das 9h às 23h",horariofds:"Dom.: das 10h às 22h",
+    servicos:["Corte de cabelo","Depilação facial"],}
+    ,
+]
+
+module.exports = listaBarbearias;
