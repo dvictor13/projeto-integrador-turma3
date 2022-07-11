@@ -19,7 +19,7 @@ main .cardsPlanos{
 }
 
 main .categoriaPlano{
-    height: 200px;
+    height: 220px;
     background-color: #C69C6D;
     border: none;
     display: flex;
@@ -91,6 +91,7 @@ main .preco{
     height: 80px;
     margin-top: 5px;
     border-top: 4px solid #42210B;
+    margin-bottom: 10px;
 }
 
 
@@ -119,7 +120,7 @@ main .btnComecar{
 }
 
 main .categoriaPlanoUp{
-    height: 200px;
+    height: 220px;
     background-color: #ffffff;
     border: none;
     display: flex;
