@@ -17,10 +17,12 @@
                             <li class="descPlanos"><%= vantagem %> </li>
                         <% } %>
                     </ul>
-                    <h2 class="preco"><%= plano.preco %> </h2>
+                    <div class="precoButon">
+                        <h2 class="preco"><%= plano.preco %> </h2>
 
-                    <button class="btnComecar"><p>COMPRAR</p><p>ESTE PLANO</p></button>
-                    <div class="economia"><p>ADQUIRA ESTE PLANO E</p> <p>ECONOMIZE ATÉ R$<%=plano.economia %> POR</p> <p>CORTE E BARBA</p></div>
+                        <button class="btnComecar"><p>COMPRAR</p><p>ESTE PLANO</p></button>
+                        <div class="economia"><p>ADQUIRA ESTE PLANO E</p> <p>ECONOMIZE ATÉ R$<%=plano.economia %> POR</p> <p>CORTE E BARBA</p></div>
+                    </div>
                 </article>
                 <% } %> 
                 <!-- <article class="cardP">
