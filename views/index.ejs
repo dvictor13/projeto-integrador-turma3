@@ -38,6 +38,12 @@
             </div>
             <div class="introducao">
                 <p>Chegou a sua babearia por assinatura. O seu cuidado estético agora é muito mais prático. Ao assinar o plano, você escolhe a barbearia mais próxima da sua casa, agenda o horário e pronto, é só realizar o seu serviço. O pagamento é "no fio do bigode"</p>
+                <p>Aqui No Fio do Bigode o trato é trazer aos nossos clientes o melhor atendimento e com produtos de altíssima qualidade.
+                </p>
+                <p>Em um ambiente confortável, descontraído e exclusivamente masculino você encontrará os melhores cuidados para o estilo de barba e cabelo, que melhor se adaptam a você.
+                </p>
+                <p>Aproveite a melhor forma de se manter estiloso e com a autoestima em alta. Escolha um dos nossos planos de assinaturas e tenha a maior comodidade para se cuidar em uma de nossas unidades.
+                </p>    
             </div>
         </div>
     </section>
@@ -88,18 +94,22 @@
     <section class="barbeariasIndex">
         <h2>CONHEÇA AS BARBEARIAS</h2>
         <section class="cardsBarbearia">
-            <article class="cardB">
-                <div class="imgCard"><img src="images/barbearias.svg" alt=""></div>
-                <p class="localBarbearia">BAIRRO CENTRO</p>
-                <p class="descPlanos">Av. Brasil, 2022</p>
-                <p class="descLocal">loja 01</p>
-                <div class="redes-sociais">
-                    <img src="images/Twitter.png" alt="">
-                    <img src="images/Facebook.png" alt="">
-                    <img src="images/instagram.png" alt="">
-                </div>
-                <button class="btnComecar">VER LOJA</button>
-            </article>
+
+            <% for (let barbearia of barbearias) { %> 
+                <article class="cardB">
+                    <div class="imgCard"><img src="<%=barbearias[0].img %>" alt=""></div>
+                    <p class="localBarbearia"><%= barbearia.nome.toUpperCase(); %> </p>
+                    <p class="descPlanos"><%=barbearia.rua%></p>
+                    <p class="descLocal">LOJA <%=barbearia.loja%></p>
+                    <div class="redes-sociais">
+                        <img src="images/Twitter.svg" alt="">
+                        <img src="images/Facebook.svg" alt="">
+                        <img src="images/instagram.svg" alt="">
+                    </div>
+                    <button class="btnComecar">VER LOJA</button>
+                </article>
+            <% } %> 
+<!-- 
             <article class="cardB">
                 <div class="imgCard"><img src="images/barbearias.svg" alt=""></div>
                 <p class="localBarbearia">VILA JARDIM</p>
@@ -111,7 +121,7 @@
                     <img src="images/instagram.png" alt="">
                 </div>
                 <button class="btnComecar">VER LOJA</button>
-            </article>
+            </article> -->
 
         </section>
 
