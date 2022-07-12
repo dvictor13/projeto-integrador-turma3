@@ -132,6 +132,10 @@ main .secaoPlanos .cardsPlanos .cardP .economia p{
 }
 
 @media screen and (min-width:769px) {
+    main .secaoPlanos{
+        padding: 2% 5%;
+
+    }
 
     main .secaoPlanos h2{
         font-size: 2rem;
