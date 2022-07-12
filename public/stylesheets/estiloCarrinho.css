@@ -173,10 +173,25 @@ main .flex-container{
 
 @media screen and (min-width:769px) {
 
+    .flex-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .ak-black{
         font-size: 2rem;
-        margin: 0% 15%;
-        padding-top: 10% ;
+        width: 750px;
+        margin: 2% 0%;
+        padding-top: 0% ;
+
+    }
+
+    .ak-bold{
+        font-family: 'Akrobat-Bold',sans-serif;
+        margin: 2% 0%;
+        font-size: 1rem;
+        width: 750px;
     }
 
     .secaoPlanoEscolhido .cardsPlanos .categoriaPlano{
@@ -187,7 +202,21 @@ main .flex-container{
         padding: 0% 5%;
     }
 
-    .secaoPlanoEscolhido .cardsPlanos .categoriaPlano .preco{
+    main .categoriaPlanoUp{
+        height: 200px;
+        background-color: #ffffff;
+        border: none;
+        padding: 0% 5%;
+        flex-direction: row;
+        width: 750px;
+    }
+    
+    main .categoria{
+        width: 120px;
+
+    }
+
+    .secaoPlanoEscolhido .cardsPlanos .preco{
         border-top: none;
         font-size: 2rem;
     }
@@ -197,8 +226,10 @@ main .flex-container{
 
 @media (min-width:1280px) {
 
-    main .secaoPlanos h2{
-        width: 1200px;
+    .flex-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     main .secaoPlanos .vantagens{
