@@ -47,7 +47,6 @@ main>section{
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin: 5% 0% ;
     /* border: solid 2px var(--terciary-color); */
 }
 main>section>h2{
@@ -90,12 +89,17 @@ main section button {
     line-height: 23px;
     letter-spacing: 0em;
 }
+
+main>.pagamento{
+    padding: 0% 5%;
+}
 main>.pagamento>form{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 1rem;
+    padding: 0% 5%;
 
     
 }
@@ -197,56 +201,6 @@ main>section .total span{
     box-shadow: 5px 10px grey;
     position: relative;
     left: -10%;
-}
-main .duvidas {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
-    background-color: #42210B;
-}
-
-main .duvidas h2{
-    padding-top: 10%;
-    color: var(--terciary-color);
-    font-size: 3rem;
-}
-
-main .duvidas .perguntasFrequentes{
-    padding: 10%;
-}
-
-main .duvidas .perguntasFrequentes .perguntasResposta{
-    border-bottom: 1px solid #C69C6D;
-    display: flex;
-    margin-bottom: 20px;
-    justify-content: center;
-    width: 100%;
-}
-
-main .duvidas .perguntasFrequentes .perguntasResposta .iconePergunta{
-    background-image: url(/images/iconplus.png) ;
-    padding: 10px;
-    width: 35px;
-    height: 24px;
-    background-repeat: no-repeat;
-}
-
-main .duvidas .perguntasFrequentes .perguntasResposta .pergunta{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-main .duvidas .perguntasFrequentes .perguntasResposta .pergunta p{
-    padding-bottom: 20px;
-    width: 100%;
-}
-
-main .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #resposta2, #resposta3, #resposta4{
-    padding-bottom: 20px;
-    font-size: 0.8rem;
-    display: none;
 }
 
 .nome{
