@@ -20,11 +20,13 @@
     padding: 0%;
     font-family: var(--ak-font-regular)
 }
+
 main{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 main *{
     font-family: var(--ak-font-regular);
 
@@ -32,28 +34,24 @@ main *{
 main>h2{
     font-family: var(--ak-font-black);
     color: var(--primary-color);
-    text-align: center ;
-    margin: 8% 0%;
+    margin: 3% 0%;
 }
 main>p{
     font-family: var(--ak-font-bold);
     font-size: 1.25rem;
     color: var(--secundary-color);
     font-weight: 700;
-    margin: 5% 0%;
+    margin: 2% 0%;
 }
-main>section{
+
+main>section {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     /* border: solid 2px var(--terciary-color); */
 }
-main>section>h2{
-    margin: 8% 0%;
-    color: var(--primary-color);
-    font-family: var(--ak-font-black);
-}
+
 main>section>article{
     width: 100%;
     display: flex;
@@ -93,6 +91,7 @@ main section button {
 main>.pagamento{
     padding: 0% 5%;
 }
+
 main>.pagamento>form{
     width: 100%;
     display: flex;
@@ -100,9 +99,9 @@ main>.pagamento>form{
     align-items: center;
     font-size: 1rem;
     padding: 0% 5%;
-
-    
+  
 }
+
 main>.pagamento>form>label{
     font-size: 1.5rem;
     margin: 1%;
@@ -229,3 +228,44 @@ main>section .total span{
     padding: 5%;
 }
 
+.ladoEsqCarrinho{
+    display: none;
+}
+
+
+@media (min-width:1280px) {
+/*
+    main{
+        flex-direction: row;
+    }
+
+    .pagamento{
+        width: 50%;
+    }
+    
+    .ladoEsq{
+        display: flex;
+        width: 50%;
+        background-color: #754C24;
+        padding-top: 10%;
+    }
+    
+    .finalizarPag{
+        width: 350px;
+        background-color: #ffffff;
+        height: 250px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 5% 7% 0%; 
+        align-items: center;
+    }
+
+    .finalizarPag p{ 
+        width: 270px;
+        display: flex;
+        justify-content: space-between;
+    }
+*/
+}

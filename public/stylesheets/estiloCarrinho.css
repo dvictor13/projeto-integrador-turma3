@@ -237,6 +237,7 @@ main .flex-container{
     .flex-container{
         width: 70%;
     }
+    
     .ladoEsqCarrinho{
         display: flex;
         width: 30%;
