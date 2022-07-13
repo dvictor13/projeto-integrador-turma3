@@ -31,12 +31,13 @@ main *{
     font-family: var(--ak-font-regular);
 
 }
-main>h2{
+
+.finalizeCompra{
     font-family: var(--ak-font-black);
     color: var(--primary-color);
     margin: 3% 0%;
 }
-main>p{
+.descricao{
     font-family: var(--ak-font-bold);
     font-size: 1.25rem;
     color: var(--secundary-color);
@@ -65,7 +66,7 @@ main>section>article>*{
     padding: 5% 0%;
 }
 
-main>section>article h2{
+h2{
     font-family: var(--hans-font);
     font-weight: 400;
     line-height: 23px;
@@ -228,44 +229,76 @@ main>section .total span{
     padding: 5%;
 }
 
-.ladoEsqCarrinho{
+.ladoEsq{
     display: none;
 }
 
 
 @media (min-width:1280px) {
-/*
+
     main{
         flex-direction: row;
+        align-items: flex-start;
     }
 
     .pagamento{
         width: 50%;
+
+    }
+
+    .resumo{
+        display: none;
     }
     
-    .ladoEsq{
+    main .ladoEsq{
         display: flex;
         width: 50%;
-        background-color: #754C24;
-        padding-top: 10%;
+        margin-top: 5%;
     }
     
     .finalizarPag{
-        width: 350px;
-        background-color: #ffffff;
-        height: 250px;
+        width: 400px;
+        border: 2px solid var(--terciary-color) ;
+        height: 600px;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        padding: 5% 7% 0%; 
+        justify-content: center;
         align-items: center;
     }
 
-    .finalizarPag p{ 
-        width: 270px;
-        display: flex;
-        justify-content: space-between;
+    .categoriaEscolhida{
+        margin-bottom: 10px;
+        color: #42210B;
+        font-family: var(--ak-font-black) ;
+        font-size: 2.5rem;
+        border-bottom: 1px solid var(--terciary-color) ;
     }
-*/
+
+    .categoria{
+        color: #42210B;
+        font-family: 'Hansief-Rough' ;
+        font-size: 2.5rem;
+    }
+
+    .finalizarPag .preco {
+        font-size: 2.5rem;
+        padding: 6% 0%;
+    }
+
+    .planoEscolhido{
+        display: flex;
+        align-items: center;
+    }
+
+    .caixinha{
+        width: 20px;
+        height: 20px;
+        border-radius: 3px;
+        border: 1px solid #42210B;
+        background-image: url(../images/check.png) ;
+        margin-right: 15px;
+        margin-left: -40px;
+    }
+
 }

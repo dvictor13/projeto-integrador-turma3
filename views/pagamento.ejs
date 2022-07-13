@@ -1,15 +1,15 @@
 <link rel="stylesheet" href="stylesheets/estiloPagamento.css">
 <%- include('./partials/header') %>
 
-<h2>FINALIZE A SUA COMPRA E COMECE A UTILIZAR O PLANO EM 24H</h2>
-<p>Agora que já escolheu o seu plano siga os próximos passos e finalize o quanto antes o seu pagamento e daqui 24 começa a usufruir dos melhores serviços de cuidados estéticos. Nós do No Fio do Bigode estamos aguardando você! Prossiga!</p>
+<h2 class="finalizeCompra">FINALIZE A SUA COMPRA E COMECE A UTILIZAR O PLANO EM 24H</h2>
+<p class="descricao">Agora que já escolheu o seu plano siga os próximos passos e finalize o quanto antes o seu pagamento e daqui 24 começa a usufruir dos melhores serviços de cuidados estéticos. Nós do No Fio do Bigode estamos aguardando você! Prossiga!</p>
 
 <main>  
         <section class="pagamento">
             <h2 class="titulo">DADOS DE PAGAMENTO</h2>
             <article class="resumo">
                 <h3 class="plano">PLANO BASIC</h3>
-                <span class="valor">RS 130</span>
+                <span class="valor">RS 35,00</span>
             </article>
             <form action="">
                 <label for="duracao">Selecione o período:</label>
@@ -49,7 +49,7 @@
             </div>
             <div class="total">
                 <p>Total</p>
-                <span>RS 30</span>
+                <span>RS35,00</span>
             </div>
             <div class="finalizar">
                 <button disabled="imprimir">FINALIZAR PEDIDO</button>
@@ -58,14 +58,25 @@
 
         </section>    
         
-   <!--   <section class="ladoEsq">
+       <section class="ladoEsq">
             <article class="finalizarPag">
-                <p>Valor do plano <span>R$35,00</span></p>
-                <p>Taxa de adesão  <span>R$0,00</span></p>
-                <button class="btnComecar">Realizar pagamento</button>
+                <p class="categoriaEscolhida">PLANO ESCOLHIDO</p>
+                    <div class="radio">
+                        <div class="planoEscolhido"><div class="caixinha"></div><p class="categoria">BASIC</p></div>
+                    </div>
+                    <div class="descricao">
+                        <div class="ladoDir">
+                            <p class="descPlanos">1 barba</p>
+                            <p>por mês</p>
+                            <p class="descPlanos"> 1 corte de cabelo</p>
+                            <p>por mês</p>
+                        </div>
+                    </div>
+                    <h2 class="preco">R$35,00</h2>
+                    <p>por mês</p>
             </article>
         </section>
-    -->
+   
 
             
     </main>
