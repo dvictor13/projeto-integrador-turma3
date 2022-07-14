@@ -11,7 +11,9 @@
 
                     <article class="categoriaPlano">
                             <div class="radio">
-                                <input type="radio" name="categoriaP" id="basic" value="basic" checked><label for="basic" class="caixinha"></label><label for="basic" class="categoria">BASIC</label>
+                                <% for (let p of user) { %> 
+                                <input type="radio" name="categoriaP" id="basic" value="basic" checked><label for="basic" class="caixinha"></label><label for="basic" class="categoria"><%= p.plano %>  </label>
+                                <% } %>
                             </div>
                             <div class="descricao">
                                 <div class="ladoDir">

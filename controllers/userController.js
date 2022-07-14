@@ -10,7 +10,7 @@ const userController = {
         res.render('cadastro')
     },
     carrinho:(req,res)=>{
-        res.render('carrinho')
+        res.render('carrinho',{user:listaUsuarios});
     },
     pagamento:(req,res)=>{
         res.render('pagamento')
