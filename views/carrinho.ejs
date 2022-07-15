@@ -13,16 +13,16 @@
                             <div class="radio">
                     
                                 
-                                <input type="radio" name="categoriaP" id="basic" value="basic" checked><label for="basic" class="caixinha"></label><label for="basic" class="categoria"><%= user[0].plano  %></label>
+                                <input type="radio" name="categoriaP" id="basic" value="basic" checked><label for="basic" class="caixinha"></label><label for="basic" class="categoria"><%= listaplanos[0].nome  %></label>
                               
                             </div>
                             <div class="descricao">
                                 <div class="ladoDir">
-                                    <p class="descPlanos">1 barba</p>
+                                    <p class="descPlanos"><%= listaplanos[0].barbas %> barba<%if(listaplanos[0].barbas > 1) {%>s<%}%> </p>
                                     <p>por mês</p>
                                 </div>
                                 <div class="ladoEsq">
-                                    <p class="descPlanos"> 1 corte de cabelo</p>
+                                    <p class="descPlanos"> <%= listaplanos[0].cabelos %> corte<%if(listaplanos[0].barbas > 1) {%>s<%}%> de cabelo</p>
                                     <p>por mês</p>
                                 </div>
                             </div>
@@ -30,9 +30,9 @@
                      </article>
 
                      <%let planoup %>
-                     <%if (user[0].plano === 'BASIC') planoup = 'STANDARD' %>
-                     <%if (user[0].plano === 'STANDARD') planoup = 'PREMIUM' %>
-                     <%if (user[0].plano === 'PREMIUM') planoup = 'desabilitar' %> 
+                     <%if (listaplanos[0].nome === 'BASIC') planoup = 'STANDARD' %>
+                     <%if (listaplanos[0].nome === 'STANDARD') planoup = 'PREMIUM' %>
+                     <%if (listaplanos[0].nome === 'PREMIUM') planoup = 'desabilitar' %> 
 
                     
                      <p class="oferta"  <% if (planoup === 'desabilitar') { %> style="display: none"  <% } %> >
