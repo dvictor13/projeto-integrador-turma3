@@ -243,7 +243,7 @@ main>section .total span{
 
     .pagamento{
         width: 50%;
-
+        margin: 0% 10%;
     }
 
     .resumo{
@@ -254,6 +254,7 @@ main>section .total span{
         display: flex;
         width: 50%;
         margin-top: 5%;
+        margin-left: -10% ;
     }
     
     .finalizarPag{
