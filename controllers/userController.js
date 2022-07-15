@@ -10,7 +10,8 @@ const userController = {
         res.render('cadastro')
     },
     carrinho:(req,res)=>{
-        res.render('carrinho',{listaplanos:listaPlanos});
+        const codPlano = req.params.id;
+        res.render('carrinho',{listaplanos:listaPlanos, codPlano});
     },
     pagamento:(req,res)=>{
         res.render('pagamento')
