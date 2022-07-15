@@ -15,7 +15,6 @@
     src:url(./font/Akrobat-SemiBold.otf)
 }
 *{
-    text-align: center;
     margin: 0%;
     padding: 0%;
     font-family: var(--ak-font-regular)
@@ -43,6 +42,7 @@ main *{
     color: var(--secundary-color);
     font-weight: 700;
     margin: 2% 0%;
+    text-align: center;
 }
 
 main>section {
@@ -100,7 +100,7 @@ main>.pagamento>form{
     align-items: center;
     font-size: 1rem;
     padding: 0% 5%;
-  
+    text-align: center;
 }
 
 main>.pagamento>form>label{
@@ -234,6 +234,8 @@ main>section .total span{
 }
 
 
+
+
 @media (min-width:1280px) {
 
     main{
@@ -274,6 +276,7 @@ main>section .total span{
         font-family: var(--ak-font-black) ;
         font-size: 2.5rem;
         border-bottom: 1px solid var(--terciary-color) ;
+        text-align: center;
     }
 
     .categoria{
