@@ -62,6 +62,7 @@ main .categoria{
 input{
     display: none;
 }
+
 .caixinha{
     width: 20px;
     height: 20px;
@@ -177,7 +178,7 @@ main .flex-container{
 
 @media screen and (min-width:769px) {
     main{
-        height: 77vh;
+        min-height: 78vh;
         background-color:#754C24;
     }
 
@@ -204,14 +205,14 @@ main .flex-container{
 
     .secaoPlanoEscolhido .cardsPlanos .categoriaPlano{
         width: 750px;
-        height: 200px;
+        height: 160px;
         flex-direction: row;
         justify-content: space-between;
         padding: 0% 5%;
     }
 
     main .categoriaPlanoUp{
-        height: 200px;
+        height: 160px;
         background-color: #ffffff;
         border: none;
         padding: 0% 5%;

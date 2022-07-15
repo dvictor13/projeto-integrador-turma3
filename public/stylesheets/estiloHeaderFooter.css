@@ -156,7 +156,7 @@ footer{
     align-items: top;
 }
 
-@media screen and (min-width:490px) {
+@media screen and (min-width:535px) {
     header .cabecalho{
         flex-direction: row;
     }
