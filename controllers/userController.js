@@ -22,9 +22,14 @@ const userController = {
     saveform:(req,res)=>{
         console.log(req.body);
         user = JSON.stringify(req.body)
-        fs.appendFileSync('users.txt',user);
+        fs.appendFileSync('out/users.txt',user);
         res.redirect('assinante');
         
+    },
+    planchoice:(req,res)=>{
+
+        res.redirect('../pagamento')
     }
+
 }
 module.exports = userController;

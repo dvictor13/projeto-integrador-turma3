@@ -6,7 +6,7 @@
             <p class="white ak-bold">Você está escolhendo economizar. Fazer um dos nossos planos garantem economia no final do mês. Quando maior o plano, mais você economiza. Escolha os planos de acordo com sua necessidade e faça as contas! </p>
                 
             <section class="secaoPlanoEscolhido">
-                <form class="cardsPlanos">
+                <form class="cardsPlanos" action="carrinho/" method="POST">
 
                     <article class="categoriaPlano">
                             <div class="radio">
@@ -29,7 +29,7 @@
 
                      <article class="categoriaPlanoUp">
                         <div class="radio">
-                            <input type="radio" name="categoriaP" id="basic" value="basic"><label for="basic" class="caixinha"></label><label for="basic" class="categoria">STANDARD</label>
+                            <input type="radio" name="categoriaP" id="standard" value="standard"><label for="basic" class="caixinha"></label><label for="basic" class="categoria">STANDARD</label>
                         </div>
                         <div class="descricao">
                             <div class="ladoDir">
@@ -42,9 +42,10 @@
                             </div>
                         </div>
                         <h2 class="preco">R$65,00</h2>
+                        <button class="btnComecar">Realizar pagamento</button>
+
                     </article>
                 </form>
-                <a href="pagamento"><button class="btnComecar">Realizar pagamento</button></a>
             </section>
             
             

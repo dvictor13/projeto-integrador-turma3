@@ -19,5 +19,6 @@ router.get('/barbearias',contentController.barbearias)
 router.get('/planos',contentController.planos)
 
 router.post('/cadastro',userController.saveform)
+router.post('/carrinho',userController.planchoice)
 
 module.exports = router;
