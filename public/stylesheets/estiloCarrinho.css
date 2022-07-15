@@ -176,6 +176,10 @@ main .flex-container{
 
 
 @media screen and (min-width:769px) {
+    main{
+        height: 77vh;
+        background-color:#754C24;
+    }
 
     .flex-container{
         display: flex;

@@ -11,9 +11,10 @@
 
                     <article class="categoriaPlano">
                             <div class="radio">
-                                <% for (let p of user) { %> 
-                                <input type="radio" name="categoriaP" id="basic" value="basic" checked><label for="basic" class="caixinha"></label><label for="basic" class="categoria"><%= p.plano %>  </label>
-                                <% } %>
+                    
+                                
+                                <input type="radio" name="categoriaP" id="basic" value="basic" checked><label for="basic" class="caixinha"></label><label for="basic" class="categoria"><%= user[0].plano  %></label>
+                              
                             </div>
                             <div class="descricao">
                                 <div class="ladoDir">
@@ -28,11 +29,23 @@
                             <h2 class="preco">R$35,00</h2>
                      </article>
 
-                     <p class="oferta">Por mais R$20,00 você pode</p><p class="oferta">fazer upgrade do plano</p>
+                     <%let planoup %>
+                     <%if (user[0].plano === 'BASIC') planoup = 'STANDARD' %>
+                     <%if (user[0].plano === 'STANDARD') planoup = 'PREMIUM' %>
+                     <%if (user[0].plano === 'PREMIUM') planoup = 'desabilitar' %> 
 
-                     <article class="categoriaPlanoUp">
+                    
+                     <p class="oferta"  <% if (planoup === 'desabilitar') { %> style="display: none"  <% } %> >
+                        Por mais R$20,00 você pode
+                    </p>
+                    <p class="oferta" <% if (planoup === 'desabilitar') { %> style="display: none"  <% } %>  >
+                        fazer upgrade do plano
+                    </p>
+
+                     <article class="categoriaPlanoUp" <% if (planoup === 'desabilitar') { %> style="display: none"  <% } %> >
                         <div class="radio">
-                            <input type="radio" name="categoriaP" id="basic" value="basic"><label for="basic" class="caixinha"></label><label for="basic" class="categoria">STANDARD</label>
+                            <input type="radio" name="categoriaP" id="basic" value="basic"><label for="basic" class="caixinha"></label><label for="basic" class="categoria">
+                                <%= planoup %> </label>
                         </div>
                         <div class="descricao">
                             <div class="ladoDir">
