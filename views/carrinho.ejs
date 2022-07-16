@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="stylesheets/estiloCarrinho.css">
+<link rel="stylesheet" href="/stylesheets/estiloCarrinho.css">
 
 <%- include('./partials/header') %>
         <section class="flex-container">
@@ -6,11 +6,13 @@
             <p class="white ak-bold">Você está escolhendo economizar. Fazer um dos nossos planos garantem economia no final do mês. Quando maior o plano, mais você economiza. Escolha os planos de acordo com sua necessidade e faça as contas! </p>
                 
             <section class="secaoPlanoEscolhido">
-                <form class="cardsPlanos" action="carrinho/" method="POST">
+                <form class="cardsPlanos" action="/pagamento" method="POST">
 
                     <article class="categoriaPlano">
                             <div class="radio">
-                                <input type="radio" name="categoriaP" id="basic" value="basic" checked><label for="basic" class="caixinha"></label><label for="basic" class="categoria">BASIC</label>
+                    <input type="radio" name="categoriaP" id="basic" value="BASIC">
+                                <label for="BASIC" class="caixinha"></label>
+                                <label for="BASIC" class="categoria">BASIC</label>
                             </div>
                             <div class="descricao">
                                 <div class="ladoDir">
@@ -29,7 +31,7 @@
 
                      <article class="categoriaPlanoUp">
                         <div class="radio">
-                            <input type="radio" name="categoriaP" id="standard" value="standard"><label for="basic" class="caixinha"></label><label for="basic" class="categoria">STANDARD</label>
+                    <input type="radio" name="categoriaP" id="standard" value="STANDARD"><label for="STANDARD" class="caixinha"></label><label for="STANDARD" class="categoria">STANDARD</label>
                         </div>
                         <div class="descricao">
                             <div class="ladoDir">
@@ -43,7 +45,6 @@
                         </div>
                         <h2 class="preco">R$65,00</h2>
                         <button class="btnComecar">Realizar pagamento</button>
-
                     </article>
                 </form>
             </section>

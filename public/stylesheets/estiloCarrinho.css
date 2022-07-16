@@ -60,7 +60,7 @@ main .categoria{
 }
 
 input{
-    display: none;
+    display: block;
 }
 .caixinha{
     width: 20px;

@@ -14,10 +14,13 @@ const userController = {
         res.render('carrinho')
     },
     pagamento:(req,res)=>{
-        res.render('pagamento')
+        res.render('pagamento',{dadosPlano:listaPlanos[0]})
     },
     assinante:(req,res)=>{
         res.render('assinante',{usuario:listaUsuarios,listaplanos:listaPlanos});
+    },
+    contato:(req,res)=>{
+        res.render('contato');
     },
     saveform:(req,res)=>{
         console.log(req.body);
@@ -27,9 +30,9 @@ const userController = {
         
     },
     planchoice:(req,res)=>{
-
-        res.redirect('../pagamento')
-    }
-
+        let plano = req.body.categoriaP
+        let index = listaPlanos.findIndex(element => element.nome == plano)
+        res.redirect('pagamento') // add object to send to the page
+    }, 
 }
 module.exports = userController;
