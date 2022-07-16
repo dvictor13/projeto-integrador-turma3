@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheets/estiloCarrinho.css">
-    <link rel="stylesheet" href="stylesheets/estiloHeaderFooter.css">
+    <link rel="stylesheet" href="/stylesheets/estiloCarrinho.css">
+    <link rel="stylesheet" href="/stylesheets/estiloHeaderFooter.css">
     <title>Barba,Cabelo e Bigode</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -25,16 +25,16 @@
                             <div class="radio">
                     
                                 
-                                <input type="radio" name="categoriaP" id="basic" value="basic" checked><label for="basic" class="caixinha"></label><label for="basic" class="categoria"><%= listaplanos[0].nome  %></label>
+                                <input type="radio" name="categoriaP" id="basic" value="basic" checked><label for="basic" class="caixinha"></label><label for="basic" class="categoria"><%= listaplanos[codPlano].nome  %></label>
                               
                             </div>
                             <div class="descricao">
                                 <div class="ladoDir">
-                                    <p class="descPlanos"><%= listaplanos[0].barbas %> barba<%if(listaplanos[0].barbas > 1) {%>s<%}%> </p>
+                                    <p class="descPlanos"><%= listaplanos[0].barbas %> barba<%if(listaplanos[codPlano].barbas > 1) {%>s<%}%> </p>
                                     <p>por mês</p>
                                 </div>
                                 <div class="ladoEsq">
-                                    <p class="descPlanos"> <%= listaplanos[0].cabelos %> corte<%if(listaplanos[0].barbas > 1) {%>s<%}%> de cabelo</p>
+                                    <p class="descPlanos"> <%= listaplanos[0].cabelos %> corte<%if(listaplanos[codPlano].barbas > 1) {%>s<%}%> de cabelo</p>
                                     <p>por mês</p>
                                 </div>
                             </div>
@@ -42,9 +42,9 @@
                      </article>
 
                      <%let planoup %>
-                     <%if (listaplanos[0].nome === 'BASIC') planoup = 'STANDARD' %>
-                     <%if (listaplanos[0].nome === 'STANDARD') planoup = 'PREMIUM' %>
-                     <%if (listaplanos[0].nome === 'PREMIUM') planoup = 'desabilitar' %> 
+                     <%if (listaplanos[codPlano].nome === 'BASIC') planoup = 'STANDARD' %>
+                     <%if (listaplanos[codPlano].nome === 'STANDARD') planoup = 'PREMIUM' %>
+                     <%if (listaplanos[codPlano].nome === 'PREMIUM') planoup = 'desabilitar' %> 
 
                     
                      <p class="oferta"  <% if (planoup === 'desabilitar') { %> style="display: none"  <% } %> >
