@@ -38,28 +38,26 @@
                                     <p>por mês</p>
                                 </div>
                             </div>
-                            <h2 class="preco">R$35,00</h2>
+                            <h2 class="preco"><%= listaplanos[codPlano].preco %></h2>
                      </article>
 
                      <%let planoup = parseInt(codPlano) + 1 %>
 
-
+                    <% if (planoup >= listaplanos.length ) planoup = 'desabilitar' %>
                     
-
-                    
-                     <p class="oferta"  <% if (planoup >= 3) { %> style="display: none"  <% } %> >
+                     <p class="oferta"  <% if (planoup === 'desabilitar') { %> style="display: none"  <% } %> >
                         Por mais R$20,00 você pode
                     </p>
-                    <p class="oferta" <% if (planoup >= 3) { %> style="display: none"  <% } %>  >
+                    <p class="oferta" <% if (planoup === 'desabilitar') { %> style="display: none"  <% } %>  >
                         fazer upgrade do plano
                     </p>
                  
 
-                     <article class="categoriaPlanoUp" <% if (planoup >= 3) { %> style="display: none"  <% } %> >
+                     <article class="categoriaPlanoUp" <% if (planoup === 'desabilitar') { %> style="display: none"  <% } %> >
                         <div class="radio">
-                            <% if (planoup >= 3) { planoup = 0 } %>
+                            <% if (planoup === 'desabilitar') { planoup = 0 } %>
                             <input type="radio" name="categoriaP" id="basic" value="basic"><label for="basic" class="caixinha"></label><label for="basic" class="categoria">
-                                <%= listaplanos[planoup].nome %> </label>
+                                <% if (planoup != 'desabilitar') { %> <%= listaplanos[planoup].nome %> <%}%> </label>
                         </div>
                         <div class="descricao">
                             <div class="ladoDir">
@@ -71,7 +69,7 @@
                                 <p>por mês</p>
                             </div>
                         </div>
-                        <h2 class="preco">R$65,00</h2>
+                        <h2 class="preco"><%= listaplanos[planoup].preco %></h2>
                     </article>
                     <a href="pagamento"><button class="btnComecar">Realizar pagamento</button></a>
                 </form>

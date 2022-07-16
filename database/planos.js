@@ -23,6 +23,13 @@ const listaPlanos = [
     vantagens:["Preferência nos agendamentos","Maior flexibilidade de agendamento","Atendimento Luxo"],
     economia:30}
     ,
+    {nome:"MASTER",
+    preco:"R$100,00",
+    barbas: 'Ilimitado',
+    cabelos:'Ilimitado',
+    img:"images/barbeiros/barbeiro_detalhe_tesoura.jpg",
+    vantagens:["Preferência nos agendamentos","Maior flexibilidade de agendamento","Atendimento Luxo"],
+    economia:30}
 ]
 
 module.exports = listaPlanos;
