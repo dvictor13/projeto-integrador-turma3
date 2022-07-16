@@ -14,10 +14,11 @@
 
 <%- include('./partials/header') %>
 <main>
+    <%if(codPlano != undefined  && codPlano < listaplanos.length ){ %>   
         <section class="flex-container">
-            <h2 class="white ak-black">VOCÊ ESCOLHEU O <br> PLANO <span class="brown-light ak-black">BASIC</span></h2>
+            <h2 class="white ak-black">VOCÊ ESCOLHEU O <br> PLANO <span class="brown-light ak-black"><%= listaplanos[codPlano].nome  %></span></h2>
             <p class="white ak-bold">Você está escolhendo economizar. Fazer um dos nossos planos garantem economia no final do mês. Quando maior o plano, mais você economiza. Escolha os planos de acordo com sua necessidade e faça as contas! </p>
-                
+             
             <section class="secaoPlanoEscolhido">
                 <form class="cardsPlanos">
 
@@ -85,7 +86,11 @@
                 </article>
 
         </section>
-
+        <% } else {%>
+            <h2 class="white ak-black">Seu carrinho está <span class="brown-light ak-black">Vazio</span><br> Volte para seção <a href="planos" class="brown-light ak-black">Planos</a> e escolha o seu plano. </h2>
+            
+            
+        <% }%>
     </main>
             <%- include('./partials/footer') %>
 
