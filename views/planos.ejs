@@ -16,7 +16,7 @@
         <section class="secaoPlanos">
             <h2>VOCÊ SEMPRE ESTILOSO</h2>
             <p class="vantagens">No Fio do Bigode oferece os melhores planos para você se manter um homem estiloso e moderno. Escolha o melhor plano para você, pode ser o BASIC, o STANDART ou o PREMIUM. Escolha e assine já!</p>
-
+            <%let index = 0 %> 
             <section class="cardsPlanos">
                 <% for (let plano of listaplanos) { %> 
                 <article class="cardP">
@@ -32,10 +32,13 @@
                     <div class="precoButon">
                         <h2 class="preco"><%= plano.preco %> </h2>
 
-                       <a href="carrinho/0"><button class="btnComecar"><p>COMPRAR</p><p>ESTE PLANO</p></button></a>
+
+                      
+                       <a href="carrinho/<%=index%>"><button class="btnComecar"><p>COMPRAR</p><p>ESTE PLANO</p></button></a>
                         <div class="economia"><p>ADQUIRA ESTE PLANO E</p> <p>ECONOMIZE ATÉ R$<%=plano.economia %> POR</p> <p>CORTE E BARBA</p></div>
                     </div>
                 </article>
+                <%index += 1 %> 
                 <% } %> 
                 <!-- <article class="cardP">
                         <div class="categoriaPlano"><p>STANDARD</p></div>
