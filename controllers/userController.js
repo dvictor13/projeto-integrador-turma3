@@ -11,7 +11,7 @@ const userController = {
     },
     carrinho:(req,res)=>{
         const codPlano = req.params.id;
-        res.render('carrinho',{listaplanos:listaPlanos, codPlano});
+        res.render('carrinho',{listaplanos:listaPlanos, codPlano:codPlano});
     },
     pagamento:(req,res)=>{
         res.render('pagamento')
