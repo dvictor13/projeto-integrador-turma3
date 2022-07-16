@@ -30,42 +30,44 @@
                             </div>
                             <div class="descricao">
                                 <div class="ladoDir">
-                                    <p class="descPlanos"><%= listaplanos[0].barbas %> barba<%if(listaplanos[codPlano].barbas > 1) {%>s<%}%> </p>
+                                    <p class="descPlanos"><%= listaplanos[codPlano].barbas %> barba<%if(listaplanos[codPlano].barbas > 1) {%>s<%}%> </p>
                                     <p>por mês</p>
                                 </div>
                                 <div class="ladoEsq">
-                                    <p class="descPlanos"> <%= listaplanos[0].cabelos %> corte<%if(listaplanos[codPlano].barbas > 1) {%>s<%}%> de cabelo</p>
+                                    <p class="descPlanos"> <%= listaplanos[codPlano].cabelos %> corte<%if(listaplanos[codPlano].barbas > 1) {%>s<%}%> de cabelo</p>
                                     <p>por mês</p>
                                 </div>
                             </div>
                             <h2 class="preco">R$35,00</h2>
                      </article>
 
-                     <%let planoup %>
-                     <%if (listaplanos[codPlano].nome === 'BASIC') planoup = 'STANDARD' %>
-                     <%if (listaplanos[codPlano].nome === 'STANDARD') planoup = 'PREMIUM' %>
-                     <%if (listaplanos[codPlano].nome === 'PREMIUM') planoup = 'desabilitar' %> 
+                     <%let planoup = parseInt(codPlano) + 1 %>
+
 
                     
-                     <p class="oferta"  <% if (planoup === 'desabilitar') { %> style="display: none"  <% } %> >
+
+                    
+                     <p class="oferta"  <% if (planoup >= 3) { %> style="display: none"  <% } %> >
                         Por mais R$20,00 você pode
                     </p>
-                    <p class="oferta" <% if (planoup === 'desabilitar') { %> style="display: none"  <% } %>  >
+                    <p class="oferta" <% if (planoup >= 3) { %> style="display: none"  <% } %>  >
                         fazer upgrade do plano
                     </p>
+                 
 
-                     <article class="categoriaPlanoUp" <% if (planoup === 'desabilitar') { %> style="display: none"  <% } %> >
+                     <article class="categoriaPlanoUp" <% if (planoup >= 3) { %> style="display: none"  <% } %> >
                         <div class="radio">
+                            <% if (planoup >= 3) { planoup = 0 } %>
                             <input type="radio" name="categoriaP" id="basic" value="basic"><label for="basic" class="caixinha"></label><label for="basic" class="categoria">
-                                <%= planoup %> </label>
+                                <%= listaplanos[planoup].nome %> </label>
                         </div>
                         <div class="descricao">
                             <div class="ladoDir">
-                                <p class="descPlanos">2 barbas</p>
+                                <p class="descPlanos"><%= listaplanos[planoup].barbas %> barbas</p>
                                 <p>por mês</p>
                             </div>
                             <div class="ladoEsq">
-                                <p class="descPlanos"> 2 cortes de cabelo</p>
+                                <p class="descPlanos"> <%= listaplanos[planoup].cabelos %> cortes de cabelo</p>
                                 <p>por mês</p>
                             </div>
                         </div>
