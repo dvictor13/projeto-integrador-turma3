@@ -48,6 +48,47 @@ h1.titulo{
     padding: 10px;
 }
 
+.caixinhaLogin{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 220px;
+    background-color: rgb(198, 156, 109, 0.5);
+    border-radius: 5px;
+    margin-bottom: 5%;
+    flex-direction: column;
+}
+
+.form2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.form2 input{
+    width: 200px;
+    height: 35px;
+    border: 1px solid #42210B;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.form2 .logar{
+    font-family: 'Hansief-Rough';
+    font-size: 1rem;
+    color: #FFFFFF;
+    width: 160px;
+    height: 56px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #42210B;
+    margin-bottom: 5%;
+}
+
+
 h2.titulo{
     font-weight: bold;
     font-size: 17px;
@@ -65,7 +106,6 @@ p.titulo{
 }
 
 h2.tituloh2{
-    
     color: #000000;
     margin: 10px;
     padding: 10px; 
@@ -89,10 +129,8 @@ li.redesSociais{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     width: 100%;
     font-size: 1rem;
-
     margin: 30px;
     padding: 10px;
     border: 10px;
@@ -109,7 +147,7 @@ li.redesSociais{
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    justify-content: center;
     text-align: left;
     fill: #C69C6D;
         
@@ -119,42 +157,48 @@ li.redesSociais{
     width: 50%;
     
 }
-input{
+.form1 input{
     border:solid 2px var(--primary-color);
-    border-radius: 5%;
-    background-color: #C69C6D;
     padding: 1%;
     font-size: 1rem;
+    height: 35px;
+    border: 1px solid #42210B;
+    border-radius: 5px;
+    padding-left: 10px;
 }
 
-input[type=radio]{
+.form1 input[type=radio]{
     margin: 5% 1%;
+}
+
+.formularioGenero div{
+    display: flex;
+    align-items: center;
 }
 
 
 ::placeholder{
     color: #42210B;
-    background-color: #C69C6D;
+ /*   background-color: #C69C6D;*/
     /* font-family: Arial, Helvetica, sans-serif; */
     font-weight: normal;
     font-size: 1rem;
     text-align: left;
-    
-
 
 }
 
 
-.concluirCadastro{
-    background-color: #C69C6D;
+.form1 .concluirCadastro{
     font-family: 'Hansief-Rough';
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 1rem;
     color: #FFFFFF;
-    width: 209px;
+    width: 160px;
     height: 56px;
-    margin: 10px;
-    border: 10px;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
+    background-color: #42210B;
+}
+
+#formulariocampos{
+    display: none;
 }
