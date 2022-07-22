@@ -125,14 +125,12 @@ footer{
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    gap: 80px;
+    gap: 50px;
 }
 
 .container-footer .logo-footer{
-    max-width: 200px;
-    width: 100%;
     display: flex;
-    align-items: top;
+    align-items: center;
 }
 
 .container-footer .ladoDireitoFooter{
@@ -158,7 +156,7 @@ footer{
     align-items: top;
 }
 
-@media screen and (min-width:490px) {
+@media screen and (min-width:535px) {
     header .cabecalho{
         flex-direction: row;
     }
@@ -189,7 +187,8 @@ footer{
     .container-footer .ladoDireitoFooter{
         flex-direction: row;
         width: 100%;
-        align-items: flex-start;
+        height: 100%;
+        align-items: center;
     }
 
     .container-footer .nav-footer{

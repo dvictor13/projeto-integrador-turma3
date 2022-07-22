@@ -1,21 +1,47 @@
-<link rel="stylesheet" href="stylesheets/estiloCadastro.css">
-<link rel="stylesheet" href="stylesheets/estilo.css">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/estiloCadastro.css">
+    <link rel="stylesheet" href="/stylesheets/estilo.css">
+    <link rel="stylesheet" href="/stylesheets/estiloHeaderFooter.css">
+    <title>Barba,Cabelo e Bigode</title>
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
 <%- include('./partials/header') %>
+<main>
         <section class="corpoCadastro">
             <div class="facaSeuLogin">
                 <h1 class="titulo">FAÇA SEU LOGIN</h1>
                 <h2 class="titulo">ACESSE COM UMAS DE SUAS CONTAS SOCIAIS</h2>
                 <div class="links">
-                    <a href="assinante"><img src="images/Facebook-login.png"></a>
-                    <a href="assinante"><img src="images/instagram-login.png"></a>
-                    <a href="assinante"><img src="images/google-login.png"></a>
+                    <a href="assinante"><img src="/images/Facebook-login.png"></a>
+                    <a href="assinante"><img src="/images/instagram-login.png"></a>
+                    <a href="assinante"><img src="/images/google-login.png"></a>
                 </div>
                 <p class="titulo">OU</p>
-                <br>
-                <h2 class="tituloh2">CRIE SUA CONTA</h2>
             </div>
-            <section class="formulariocampos">
+            <div class="caixinhaLogin">
+                <form class=form2 id="form1" action="login" method="POST">
+                    <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                    <br>
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                    <br>
+                
+                    <div class="btnCadastro">
+                        <input type="submit" value="LOGAR" class="logar"  />
+                    </div>
+                </form>
+                <button onclick="mudarDiv()">Cadastre-se</button>
+            </div>
+
+
+            <section id="formulariocampos">
+                <h2 class="tituloh2">CRIE SUA CONTA</h2>
                 <form class=form1 id="form1" action="cadastro" method="POST">
                     <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
                     <br>
@@ -27,31 +53,49 @@
                     <br>
                     <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone para contato">
                     <br>
-            </div>
-            <div class="formularioGenero">
-                <label for="genero">Gênero</label>
-                <div>
-                    <input type="radio" name="genero" id="masculino" value="masculino" required><label form="masculino">Masculino</label>
-                </div>
-                <div>
-                    <input type="radio" name="genero" id="feminino" value="feminino"><label form="feminino">Feminino</label>
-                </div>
-                <div>
-                    <input type="radio" name="genero" id="outros" value="outros"><label form="outros">Outros</label>
-                </div>    
-                <div>    
-                    <input type="radio" name="genero" id="nao informado" value="nao informado"><label form="nao informado">Prefiro não informar</label>
-                </div>    
-            </div>
-                
+                    <div class="formularioGenero">
+                        <label for="genero">Gênero</label>
+                        <div>
+                            <input type="radio" name="genero" id="masculino" value="masculino" required><label form="masculino">Masculino</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="genero" id="feminino" value="feminino"><label form="feminino">Feminino</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="genero" id="outros" value="outros"><label form="outros">Outros</label>
+                        </div>    
+                        <div>    
+                            <input type="radio" name="genero" id="nao informado" value="nao informado"><label form="nao informado">Prefiro não informar</label>
+                        </div>    
+                    </div>
+                    <div class="btnCadastro">
+                        <input type="submit" value="CONCLUIR" class="concluirCadastro"  />
+                    </div>
+                </form>                
             </section>
-            <div class="btnCadastro">
-                <input type="submit" value="CONCLUIR" class="concluirCadastro"  />
-            </div>
-        </form>
+
+
             
         </section>
+
+    </main>
     <%- include('./partials/footer') %>   
+
+    <script>
+        var visibilidade = false;
     
+        function mudarDiv() {
+    
+            if (!visibilidade) {
+                document.getElementsById("formulariocampos").style.display = "flex";
+                visibilidade = true;
+    
+            } else if (visibilidade) {
+                document.getElementsById("formulariocampos").style.display = "none";
+                visibilidade = false;
+            }
+        }
+    </script>
+
 </body>
 </html>

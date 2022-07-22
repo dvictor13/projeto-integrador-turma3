@@ -14,12 +14,12 @@ router.get('/home',indexController.home)
 
 router.get('/assinante',userController.assinante)
 router.get('/pagamento',userController.pagamento)
-router.get('/carrinho',userController.carrinho)
+router.get('/carrinho/:id?',userController.carrinho)
 router.get('/cadastro',userController.cadastro)
 router.get('/contato',userController.contato)
 
 router.get('/barbearias',contentController.barbearias)
-router.get('/planos',contentController.planos)
+router.get('/planos/',contentController.planos)
 
 router.post('/pagamento',userController.planchoice)
 router.post('/cadastro',userController.saveform)

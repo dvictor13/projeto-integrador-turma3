@@ -1,4 +1,4 @@
-const fs = require('fs')
+const fs = require('fs');
 
 const listaUsuarios = require('../database/usuarios');
 
@@ -11,7 +11,8 @@ const userController = {
         res.render('cadastro')
     },
     carrinho:(req,res)=>{
-        res.render('carrinho')
+        const codPlano = req.params.id;
+        res.render('carrinho',{listaplanos:listaPlanos, codPlano:codPlano});
     },
     pagamento:(req,res)=>{
         res.render('pagamento',{dadosPlano:listaPlanos[0]})
