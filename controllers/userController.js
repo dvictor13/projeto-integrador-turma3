@@ -50,7 +50,7 @@ const userController = {
             if (senhaValida) {
                 req.session.isAuth = dadosUsuario.email
                 //login com sucesso
-                return res.render('assinante')
+                return res.redirect('/assinante')
             }
         }
         return res.send('Login ou senha errada')

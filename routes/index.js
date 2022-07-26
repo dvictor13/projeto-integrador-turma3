@@ -11,14 +11,14 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/home',isAuthUser,indexController.home)
+router.get('/home',indexController.home)
 router.get('/assinante',userController.assinante)
 router.get('/pagamento',userController.pagamento)
 router.get('/carrinho/:id?',userController.carrinho)
 router.get('/cadastro',userController.cadastro)
 router.get('/barbearias',contentController.barbearias)
 router.get('/planos/',contentController.planos)
-router.post('/assinante', userController.auth)
+router.post('/home', userController.auth)
 router.post('/cadastro',userController.cadastra)
 
 
