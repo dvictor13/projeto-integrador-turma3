@@ -1,0 +1,20 @@
+[
+    {
+        "nome": "melissa ",
+        "email": "melissa@email.com",
+        "senha": "$2b$11$Nm8U8XUKRtTUYaukCzxU8Oetddc2V.gGokHvkCPw47Cn8GDyb6vXK",
+        "cpf": "142536728",
+        "nascimento": "1995-03-23",
+        "telefone": "21828379033",
+        "genero": "feminino"
+    },
+    {
+        "nome": "melissa ",
+        "email": "melissa@email.com",
+        "senha": "$2b$11$9bWDMYGkFwIreuAZEil89e3VriQnDTIyTmqBySXd9lhyqrl7Q7dgi",
+        "cpf": "23234354",
+        "nascimento": "",
+        "telefone": "",
+        "genero": "feminino"
+    }
+]

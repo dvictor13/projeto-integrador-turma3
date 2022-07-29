@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const isAuthUser = require('../middlewares/isAuthUser');
 
 const indexController = require('../controllers/indexController')
 const userController = require('../controllers/userController')
@@ -20,9 +21,8 @@ router.get('/contato',userController.contato)
 
 router.get('/barbearias',contentController.barbearias)
 router.get('/planos/',contentController.planos)
-
-router.post('/pagamento',userController.planchoice)
-router.post('/cadastro',userController.saveform)
+router.post('/home', userController.auth)
+router.post('/cadastro',userController.cadastra)
 
 
 module.exports = router;

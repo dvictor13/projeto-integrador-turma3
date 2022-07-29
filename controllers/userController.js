@@ -1,4 +1,6 @@
 const fs = require('fs');
+const usersJson = require('../users.json')
+const bcrypt = require('bcrypt')
 
 const listaUsuarios = require('../database/usuarios');
 
@@ -19,21 +21,44 @@ const userController = {
     },
     assinante:(req,res)=>{
         res.render('assinante',{usuario:listaUsuarios,listaplanos:listaPlanos});
-    },
+    },    
     contato:(req,res)=>{
         res.render('contato');
     },
-    saveform:(req,res)=>{
-        console.log(req.body);
-        user = JSON.stringify(req.body)
-        fs.appendFileSync('out/users.txt',user);
-        res.redirect('assinante');
-        
+    cadastra: (req, res) => {
+        const usuario = req.body
+        //Criptografar a senha
+        const senhaCriptografada = bcrypt.hashSync(usuario.senha, 11)
+        console.log(senhaCriptografada)
+        //edita o objeto usuario com a senha Criptografada
+        usuario.senha = senhaCriptografada
+        //Salva na memoria
+        usersJson.push(usuario)
+        //Escreve no Json
+        fs.writeFile("users.json", JSON.stringify(usersJson, null, 4), err => {
+            // Checking for errors
+        if (err) throw err;
+            console.log("Done writing"); // Success
+        });
+        return res.redirect('/cadastro')
     },
-    planchoice:(req,res)=>{
-        let plano = req.body.categoriaP
-        let index = listaPlanos.findIndex(element => element.nome == plano)
-        res.redirect('pagamento') // add object to send to the page
-    }, 
+    auth: (req, res) => {
+        //{email:"Iago@dh",senha:"123456"}
+        const dadosUsuario = req.body
+        //Busca o usuario por email
+        const user = usersJson.find((u) => u.email == dadosUsuario.email)
+        //Valida se o usuario existe
+        if (user) {
+            //compara a senha do formulario com a senha do json
+            let senhaValida = bcrypt.compareSync(dadosUsuario.senha, user.senha)
+            if (senhaValida) {
+                req.session.isAuth = dadosUsuario.email
+                //login com sucesso
+                return res.redirect('/assinante')
+            }
+        }
+        return res.send('Login ou senha errada')
+
+    }
 }
 module.exports = userController;

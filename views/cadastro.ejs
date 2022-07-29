@@ -14,6 +14,7 @@
 <body>
 <%- include('./partials/header') %>
 <main>
+
         <section class="corpoCadastro">
             <div class="facaSeuLogin">
                 <h1 class="titulo">FAÇA SEU LOGIN</h1>
@@ -26,7 +27,7 @@
                 <p class="titulo">OU</p>
             </div>
             <div class="caixinhaLogin">
-                <form class=form2 id="form1" action="login" method="POST">
+                <form class=form2 id="form1" action="/home" method="POST">
                     <input type="email" id="email" name="email" placeholder="Digite seu email" required>
                     <br>
                     <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
@@ -36,27 +37,29 @@
                         <input type="submit" value="LOGAR" class="logar"  />
                     </div>
                 </form>
-                <button onclick="mudarDiv()">Cadastre-se</button>
+                <a onclick="mudarDiv()">Cadastre-se</a>
             </div>
 
 
             <section id="formulariocampos">
                 <h2 class="tituloh2">CRIE SUA CONTA</h2>
-                <form class=form1 id="form1" action="cadastro" method="POST">
+                <form class=form1 id="form1" action="/cadastro" method="POST">
                     <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
                     <br>
                     <input type="email" id="email" name="email" placeholder="Digite seu email" required>
                     <br>
-                    <input type="number" id="cpf" name="cpf" placeholder="Digite seu CPF" required>
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
                     <br>
-                    <input class=date type="date" id="nascimento" name="nascimento" placeholder="Digite a data de nascimento" required>
+                    <input type="number" id="cpf" name="cpf" placeholder="Digite seu CPF">
+                    <br>
+                    <input class=date type="date" id="nascimento" name="nascimento" placeholder="Digite a data de nascimento" >
                     <br>
                     <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone para contato">
                     <br>
                     <div class="formularioGenero">
                         <label for="genero">Gênero</label>
                         <div>
-                            <input type="radio" name="genero" id="masculino" value="masculino" required><label form="masculino">Masculino</label>
+                            <input type="radio" name="genero" id="masculino" value="masculino" ><label form="masculino">Masculino</label>
                         </div>
                         <div>
                             <input type="radio" name="genero" id="feminino" value="feminino"><label form="feminino">Feminino</label>
@@ -87,11 +90,11 @@
         function mudarDiv() {
     
             if (!visibilidade) {
-                document.getElementsById("formulariocampos").style.display = "flex";
+                document.getElementById("formulariocampos").style.display = "block";
                 visibilidade = true;
     
             } else if (visibilidade) {
-                document.getElementsById("formulariocampos").style.display = "none";
+                document.getElementById("formulariocampos").style.display = "none";
                 visibilidade = false;
             }
         }

@@ -18,9 +18,15 @@ main .corpoCadastro {
     display: block;
     margin: 10px;
     text-align: center;
+    width: auto;
 }
+
 main *{
     font-family: var(--ak-font-regular);
+}
+
+main{
+    width: 100%;
 }
 
 main section .links{
@@ -54,7 +60,6 @@ h1.titulo{
     justify-content: center;
     align-items: center;
     height: 220px;
-    background-color: rgb(198, 156, 109, 0.5);
     border-radius: 5px;
     margin-bottom: 5%;
     flex-direction: column;
@@ -65,11 +70,12 @@ h1.titulo{
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
-
+    width: 100%;
+    align-items: center;
 }
 
 .form2 input{
-    width: 200px;
+    width: 70%;
     height: 35px;
     border: 1px solid #42210B;
     border-radius: 5px;
@@ -154,17 +160,16 @@ li.redesSociais{
 }
 .form1>*{
     margin: 1%;
-    width: 50%;
+    width: 80%;
     
 }
 .form1 input{
     border:solid 2px var(--primary-color);
-    padding: 1%;
     font-size: 1rem;
     height: 35px;
     border: 1px solid #42210B;
     border-radius: 5px;
-    padding-left: 10px;
+
 }
 
 .form1 input[type=radio]{
@@ -174,6 +179,7 @@ li.redesSociais{
 .formularioGenero div{
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 
@@ -201,4 +207,29 @@ li.redesSociais{
 
 #formulariocampos{
     display: none;
+}
+
+.btnCadastro{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+@media screen and (min-width:769px) {
+    main{
+        min-height: 77vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 5px solid #000000;
+    }
+
+    .corpoCadastro{
+        min-width: 40%;
+        background-color:hsla(32, 44%, 60%, 0.5);
+        border-radius: 40px;
+    }
+
 }
