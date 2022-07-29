@@ -2,9 +2,9 @@ const fs = require('fs');
 const usersJson = require('../users.json')
 const bcrypt = require('bcrypt')
 
-const listaUsuarios = require('../database/usuarios');
+const listaUsuarios = require('../usuarios.json');
 
-const listaPlanos = require('../database/planos');
+const listaPlanos = require('../planos.json');
 
 
 
