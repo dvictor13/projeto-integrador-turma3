@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,39 +9,64 @@
     <link rel="stylesheet" href="/stylesheets/estiloHeaderFooter.css">
     <title>Barba,Cabelo e Bigode</title>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
+
 <body>
-<%- include('./partials/header') %>
-<main>
-        <section class="secaoPlanos">
-            <h2>VOCÊ SEMPRE ESTILOSO</h2>
-            <p class="vantagens">No Fio do Bigode oferece os melhores planos para você se manter um homem estiloso e moderno. Escolha o melhor plano para você, pode ser o BASIC, o STANDART ou o PREMIUM. Escolha e assine já!</p>
-            <%let index = 0 %> 
-            <section class="cardsPlanos">
-                <% for (let plano of listaplanos) { %> 
-                <article class="cardP">
-                    <div class="categoriaPlano"><p><%= plano.nome %> </p></div>
-                    <% if (plano.nome == 'BASIC') {%> <div class="categoriaEcon">POPULAR</div> <% } %> 
-                    <ul>
-                        <li class="descPlanos"><%= plano.cabelos%> corte<% if (plano.cabelos > 1) {%>s<%}%> de cabelo<span class="descTempo"> no mês</span></li>
-                        <li class="descPlanos"><%= plano.barbas%> barba<% if (plano.cabelos > 1) {%>s<%}%><span class="descTempo"> no mês</span></li>
-                        <% for( let vantagem of plano.vantagens) { %>
-                            <li class="descPlanos"><%= vantagem %> </li>
-                        <% } %>
-                    </ul>
-                    <div class="precoButon">
-                        <h2 class="preco">R$<%= plano.preco %>,00 </h2>
+    <%- include('./partials/header') %>
+        <main>
+            <section class="secaoPlanos">
+                <h2>VOCÊ SEMPRE ESTILOSO</h2>
+                <p class="vantagens">No Fio do Bigode oferece os melhores planos para você se manter um homem estiloso e
+                    moderno. Escolha o melhor plano para você, pode ser o BASIC, o STANDART ou o PREMIUM. Escolha e
+                    assine já!</p>
+                <%let index=0 %>
+                    <section class="cardsPlanos">
+                        <% for (let plano of listaplanos) { %>
+                            <article class="cardP">
+                                <div class="categoriaPlano">
+                                    <p>
+                                        <%= plano.nome %>
+                                    </p>
+                                </div>
+                                <% if (plano.nome=='BASIC' ) {%>
+                                    <div class="categoriaEcon">POPULAR</div>
+                                    <% } %>
+                                        <ul>
+                                            <li class="descPlanos">
+                                                <%= plano.cabelos%> corte<% if (plano.cabelos> 1) {%>s<%}%> de
+                                                            cabelo<span class="descTempo"> no mês</span>
+                                            </li>
+                                            <li class="descPlanos">
+                                                <%= plano.barbas%> barba<% if (plano.cabelos> 1) {%>s<%}%><span
+                                                                class="descTempo"> no mês</span>
+                                            </li>
+                                            <% for( let vantagem of plano.vantagens) { %>
+                                                <li class="descPlanos">
+                                                    <%= vantagem %>
+                                                </li>
+                                                <% } %>
+                                        </ul>
+                                        <div class="precoButon">
+                                            <h2 class="preco">R$<%= plano.preco %>,00 </h2>
 
 
-                      
-                       <a href="carrinho/<%=index%>"><button class="btnComecar"><p>COMPRAR</p><p>ESTE PLANO</p></button></a>
-                        <div class="economia"><p>ADQUIRA ESTE PLANO E</p> <p>ECONOMIZE ATÉ R$<%=plano.economia %> POR</p> <p>CORTE E BARBA</p></div>
-                    </div>
-                </article>
-                <%index += 1 %> 
-                <% } %> 
-                <!-- <article class="cardP">
+
+                                            <a href="carrinho/<%=index%>"><button class="btnComecar">
+                                                    <p>COMPRAR</p>
+                                                    <p>ESTE PLANO</p>
+                                                </button></a>
+                                            <div class="economia">
+                                                <p>ADQUIRA ESTE PLANO E</p>
+                                                <p>ECONOMIZE ATÉ R$<%=plano.economia %> POR</p>
+                                                <p>CORTE E BARBA</p>
+                                            </div>
+                                        </div>
+                            </article>
+                            <%index +=1 %>
+                                <% } %>
+                                    <!-- <article class="cardP">
                         <div class="categoriaPlano"><p>STANDARD</p></div>
                         <ul>
                             <li class="descPlanos">2 barbas</li>
@@ -66,11 +92,12 @@
                             <button class="btnComecar"><p>COMPRAR</p><p>ESTE PLANO</p></button>
                             <div class="economia"><p>ADIQUIRA ESTE PLANO E</p> <p>ECONOMIZE ATÉ R$30 POR</p> <p>CORTE E BARBA</p></div>
                 </article> -->
-            
+
+                    </section>
             </section>
-        </section>
-    </main>
+        </main>
         <%- include('./partials/footer')%>
 
 </body>
+
 </html>

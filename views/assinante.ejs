@@ -73,10 +73,12 @@
                                 <li class="descPlanos"><%= vantagem %> </li>
                             <% } %>
                         </ul>
-                        <h2 class="preco"><%= listaplanos[i].preco %> </h2>
-    
-                        <button class="btnComecar"><p>COMPRAR</p><p>ESTE PLANO</p></button>
-                        <div class="economia"><p>ADQUIRA ESTE PLANO E</p> <p>ECONOMIZE ATÉ R$<%=listaplanos[i].economia %> POR</p> <p>CORTE E BARBA</p></div>
+                        <div class="precoButon">
+                            <h2 class="preco">R$<%= listaplanos[i].preco %>,00 </h2>
+        
+                            <button class="btnComecar"><p>COMPRAR</p><p>ESTE PLANO</p></button>
+                            <div class="economia"><p>ADQUIRA ESTE PLANO E</p> <p>ECONOMIZE ATÉ R$<%=listaplanos[i].economia %> POR</p> <p>CORTE E BARBA</p></div>
+                        </div>
                     </article>
                     <% } %> 
                 <!-- <article class="cardP">
