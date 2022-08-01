@@ -14,20 +14,17 @@
 
 <%- include('./partials/header') %>
 <main>
+<form action="/pagamento" method="POST" class="conteudo">
     <%if(codPlano != undefined  && codPlano < listaplanos.length ){ %>   
         <section class="flex-container">
             <h2 class="white ak-black">VOCÊ ESCOLHEU O <br> PLANO <span class="brown-light ak-black"><%= listaplanos[codPlano].nome  %></span></h2>
-            <p class="white ak-bold">Você está escolhendo economizar. Fazer um dos nossos planos garantem economia no final do mês. Quando maior o plano, mais você economiza. Escolha os planos de acordo com sua necessidade e faça as contas! </p>
-             
+        
             <section class="secaoPlanoEscolhido">
-                <form class="cardsPlanos">
+                <div class="cardsPlanos">
 
                     <article class="categoriaPlano">
                             <div class="radio">
-                    
-                                
-                                <input type="radio" name="categoriaP" id="basic" value="basic" checked><label for="basic" class="caixinha"></label><label for="basic" class="categoria"><%= listaplanos[codPlano].nome  %></label>
-                              
+                                <input type="radio" name="categoriaP" id="basic" value="basic" checked><label for="basic" class="caixinha"></label><label for="basic" class="categoria"><%= listaplanos[codPlano].nome  %></label>                              
                             </div>
                             <div class="descricao">
                                 <div class="ladoDir">
@@ -47,11 +44,7 @@
                     <% if (planoup >= listaplanos.length ) planoup = 'desabilitar' %>
                     
                      <p class="oferta"  <% if (planoup === 'desabilitar') { %> style="display: none"  <% } %> >
-                        Por mais R$<%=listaplanos[planoup].preco - listaplanos[codPlano].preco  %>,00  você pode
-                    </p>
-                    <p class="oferta" <% if (planoup === 'desabilitar') { %> style="display: none"  <% } %>  >
-                        fazer upgrade do plano
-                    </p>
+                        Por mais R$<%=listaplanos[planoup].preco - listaplanos[codPlano].preco  %>,00  você pode fazer upgrade do plano </p>
                  
 
                      <article class="categoriaPlanoUp" <% if (planoup === 'desabilitar') { %> style="display: none"  <% } %> >
@@ -71,10 +64,10 @@
                             </div>
                         </div>
                         <h2 class="preco">R$<%= listaplanos[planoup].preco %>,00</h2>
+                        <a href="/pagamento"><button class="btnComecar">Realizar pagamento</button></a>
                     </article>
-                    <a href="/pagamento"><button class="btnComecar">Realizar pagamento</button></a>
-                </form>
 
+                </div>
             </section>
         </section>
 
@@ -86,8 +79,9 @@
                 </article>
 
         </section>
+        </form>
         <% } else {%>
-            <h2 class="white ak-black">Seu carrinho está <span class="brown-light ak-black">Vazio</span><br> Volte para seção <a href="planos" class="brown-light ak-black">Planos</a> e escolha o seu plano. </h2>
+            <h2 class="white ak-black">Seu carrinho está <span class="brown-light ak-black">Vazio</span><br> Volte para seção <a href="planos" class="brown-light ak-black">Planos</a></h2>
             
             
         <% }%>

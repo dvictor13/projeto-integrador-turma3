@@ -20,6 +20,7 @@ router.get('/barbearias',contentController.barbearias)
 router.get('/planos/',contentController.planos)
 router.post('/home', userController.auth)
 router.post('/cadastro',userController.cadastra)
+router.post('/pagamento',userController.pagar)
 
 
 module.exports = router;
