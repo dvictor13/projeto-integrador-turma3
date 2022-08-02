@@ -2,7 +2,9 @@ const fs = require('fs');
 const usersJson = require('../users.json')
 const bcrypt = require('bcrypt')
 
-const listaUsuarios = require('../usuarios.json');
+const listaUsuarios = require('../users.json');
+
+const listaUsuariosassinante = require('../database/preferenciausuarios');
 
 const listaPlanos = require('../planos.json');
 
@@ -20,7 +22,7 @@ const userController = {
         res.render('pagamento',{dadosPlano:listaPlanos[0]})
     },
     assinante:(req,res)=>{
-        res.render('assinante',{usuario:listaUsuarios,listaplanos:listaPlanos});
+        res.render('assinante',{usuario:listaUsuariosassinante,listaplanos:listaPlanos});
     },    
     contato:(req,res)=>{
         res.render('contato');
