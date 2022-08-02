@@ -61,6 +61,9 @@ const userController = {
         }
         return res.send('Login ou senha errada')
 
+    },
+    pagar: (req, res) => {
+        res.render('pagamento')
     }
 }
 module.exports = userController;

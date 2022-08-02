@@ -185,6 +185,7 @@ main .secaoPlanos .cardsPlanos .cardP .economia p{
     main .secaoPlanos .cardsPlanos .cardP .preco{
         width: 100px;
         border-top: none;
+        margin-top: -10px;
     }
 
     main .secaoPlanos .cardsPlanos .cardP .precoButon{
