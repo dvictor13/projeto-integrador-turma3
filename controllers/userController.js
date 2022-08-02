@@ -63,7 +63,7 @@ const userController = {
 
     },
     pagar: (req, res) => {
-        res.render('pagamento')
+        res.render('pagamento',{dadosPlano:listaPlanos[0]})
     }
 }
 module.exports = userController;
