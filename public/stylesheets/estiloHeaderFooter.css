@@ -115,7 +115,10 @@ footer{
     background-color:var(--preto);
     color: var(--marrom-claro);
     display: flex;
-    padding: 20px;
+    padding: 5% 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 .container-footer{
