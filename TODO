@@ -6,7 +6,7 @@ Todo:
   ☐ Criar os middlewares necessários ( buscar middlewares corretos)
   ☐ Transformar os jsons em Bancos de Dados -- reavaliar o jeito de acessar os dados no controller e no front
   ☐ Conferir com o professor a senha do config do banco de dados ( cada dev tem uma)
-  ☐ Reavaliar nome dos controllers e ajeitar as rotas
+  ☐ Reavaliar nome e qtde dos controllers e ajeitar as rotas
   ☐ Adicionar eventos ao front-end com javaScript
   
 
