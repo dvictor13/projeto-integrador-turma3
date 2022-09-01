@@ -37,17 +37,16 @@
                                 </div>
                             </div>
                             <h2 class="preco">R$<%= listaplanos[codPlano].preco %>,00</h2>
-                     </article>
+                    </article>
 
-                     <%let planoup = parseInt(codPlano) + 1 %>
+                    <%let planoup = parseInt(codPlano) + 1 %>
 
                     <% if (planoup >= listaplanos.length ) planoup = 'desabilitar' %>
                     
-                     <p class="oferta"  <% if (planoup === 'desabilitar') { %> style="display: none"  <% } %> >
-                        Por mais R$<%=listaplanos[planoup].preco - listaplanos[codPlano].preco  %>,00  você pode fazer upgrade do plano </p>
-                 
+                    <p class="oferta"  <% if (planoup === 'desabilitar') { %> style="display: none"  <% } %> >
+                        <% if (planoup != 'desabilitar') { %> Por mais R$<%=listaplanos[planoup].preco - listaplanos[codPlano].preco  %>,00  você pode fazer upgrade do plano <%}%></p>
 
-                     <article class="categoriaPlanoUp" <% if (planoup === 'desabilitar') { %> style="display: none"  <% } %> >
+                    <article class="categoriaPlanoUp" <% if (planoup === 'desabilitar') { %> style="display: none"  <% } %> >
                         <div class="radio">
                             <% if (planoup === 'desabilitar') { planoup = 0 } %>
                             <input type="radio" name="categoriaP" id="basic" value="basic"><label for="basic" class="caixinha"></label><label for="basic" class="categoria">
