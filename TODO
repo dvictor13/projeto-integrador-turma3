@@ -3,8 +3,11 @@ Todo:
   ☐ Fazer/Consertar página de assinante (editar dados)
   ☐ Páginas e Rotas dos links do footers
   ☐ Refazer os Models
-  ☐ Criar os middlewares
-  ☐ Transformar os jsons em Bancos de Dados
+  ☐ Criar os middlewares necessários ( buscar middlewares corretos)
+  ☐ Transformar os jsons em Bancos de Dados -- reavaliar o jeito de acessar os dados no controller e no front
   ☐ Conferir com o professor a senha do config do banco de dados ( cada dev tem uma)
+  ☐ Reavaliar nome dos controllers e ajeitar as rotas
+  ☐ Adicionar eventos ao front-end com javaScript
+  
 
 
