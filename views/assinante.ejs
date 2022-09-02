@@ -16,23 +16,52 @@
 <%- include('./partials/header')%>
 <main>
 
-        <h2 class="mob ak-black">BEM-VINDO,<br><span class="light ak-black"> FULANO DE TAL!</span></h2>
         <h2 class="note ak-black">BEM-VINDO,<span class="light ak-black"> FULANO DE TAL!</span></h2>
-        <p class="ak-bold">Aqui você poderá acompanhar o seu plano e ver quantas as vezes você utilizou nossos serviços. E saiba que em cada um deles foi sempre um prazer em recebê-lo, porque aqui No Fio do Bigode o trato é você sair estiloso e sempre satisfeito.
-        </p>
-        <nav class="uso-servico">
-            <div class="frases">
-                <h2 class="ak-black">ACOMPANHE O <br>SEU USO NO MÊS</h2>
-                <p>Veja aqui o histórico de utilização dos nossos serviços no último mês.</p>
-            </div>
             <section class="cortes"> 
-                <% for (let data in usuario[0].mes) { %> 
-                    <article class="light">
-                        <h2 class="ak-black">VOCÊ FEZ <%=data.toUpperCase() %>  </h2> 
-                        <h2 class="dark ak-black"> <%=usuario[0].mes[data] %> VEZ<% if(usuario[0].mes[data]>1){%>ES<%}%> </h2>
-                    </article>
-                <% } %> 
-
+                    <form class=form1 id="form1" action="/cadastro" method="POST">
+                        <div class = "infos">
+                            <label>Nome</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        <div class = "infos">
+                            <label>Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                      <!--  <div class = "infos">
+                            <label>Nome</label>
+                            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                        </div>-->
+                        <div class = "infos">
+                            <label>CPF</label>
+                            <input type="number" id="cpf" name="cpf" required>
+                        </div>
+                        <div class = "infos">
+                            <label>Data de nascimento</label>
+                            <input class=date type="date" id="nascimento" name="nascimento" required >
+                        </div>
+                        <div class = "infos">
+                            <label>Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" >
+                        </div>
+                        <div class="infos">
+                            <label for="genero">Gênero</label>
+                            <div>
+                                <input type="radio" name="genero" id="masculino" value="masculino" ><label form="masculino">Masculino</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="genero" id="feminino" value="feminino"><label form="feminino">Feminino</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="genero" id="outros" value="outros"><label form="outros">Outros</label>
+                            </div>    
+                            <div>    
+                                <input type="radio" name="genero" id="nao informado" value="nao informado"><label form="nao informado">Prefiro não informar</label>
+                            </div>    
+                        </div>
+                       <!-- <div class="btnCadastro">
+                            <input type="submit" value="CONCLUIR" class="concluirCadastro"  />
+                        </div>-->
+                    </form>               
             </section>
         </nav>
         <nav class="historico">

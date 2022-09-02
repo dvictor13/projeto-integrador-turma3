@@ -30,6 +30,31 @@ main>h2{
 
 
 }
+
+.form1{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 15% 10%;
+}
+
+.infos{
+    display: flex;
+    flex-direction: column;
+    width: 175px;
+    font-size: 1.3rem;
+    font-family: 'Akrobat-Regular';
+}
+.form1 label{
+    font-family: 'Akrobat-black';
+    color: #C69C6D;
+}
+
+.form1 input{
+    font-family: 'Akrobat-black';
+    color: #C69C6D;
+}
+
+
 main > h2 .light{
     color: #C69C6D;
 
