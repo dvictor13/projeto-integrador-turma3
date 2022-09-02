@@ -17,7 +17,9 @@
 <main>
 
         <h2 class="note ak-black">BEM-VINDO,<span class="light ak-black"> FULANO DE TAL!</span></h2>
+        <section id="dados">
             <section class="cortes"> 
+                    <div class="imgPlano"><img src= "<%= user.img %>" class="imgCard"></div>
                     <form class=form1 id="form1" action="/cadastro" method="POST">
                         <div class = "infos">
                             <label>Nome</label>
@@ -58,12 +60,32 @@
                                 <input type="radio" name="genero" id="nao informado" value="nao informado"><label form="nao informado">Prefiro não informar</label>
                             </div>    
                         </div>
-                       <!-- <div class="btnCadastro">
-                            <input type="submit" value="CONCLUIR" class="concluirCadastro"  />
-                        </div>-->
-                    </form>               
+                    </form>    
+               <!--     <section class="cardsPlanos">
+                        <% for (let plano of listaplanos) { %>
+                            <article class="card">
+                                <div class="imgPlano"><img src= "<%= plano.img %>" class="imgCard"></div>
+                                <div class="conteudoCard">
+                                <div class="categoria"><%=plano.nome%></div>
+                                <h2 class="preco">R$<%=plano.preco%>,00</h2>
+                                <p class="descPlanos"><%=plano.barbas %> barba<% if (plano.barbas > 1) {%>s<%}%></p>
+                                <p>por mês</p>
+                                <p class="descPlanos"><%=plano.cabelo %> corte<% if (plano.cabelo > 1) {%>s<%}%> de cabelo</p>
+                                <p>por mês</p>
+                                <a href="carrinho"><button class="btnComecar">COMPRAR PLANO</button></a>
+                                </div>
+                            </article>
+                            <%}%>
+                        -->
+                    </section>
             </section>
-        </nav>
+            <section class="butons">
+                <button id="alterar">Alterar</button>
+                <button id="senha">Alterar Senha</button>
+                <button id="salvar">Salvar</button>    
+            </section>
+           
+        </section>
         <nav class="historico">
             <h2 class="ak-black">SEU HISTÓRICO </h2>
             <section class="dados">

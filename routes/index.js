@@ -14,7 +14,7 @@ const contentController = require('../controllers/contentController')
 router.get('/home',indexController.home)
 router.get('/',indexController.home)
 
-router.get('/assinante',userController.assinante)
+router.get('/assinante',isAuthUser,userController.assinante)
 router.get('/pagamento',userController.pagamento)
 router.get('/carrinho/:id?',userController.carrinho)
 router.get('/cadastro',userController.cadastro)

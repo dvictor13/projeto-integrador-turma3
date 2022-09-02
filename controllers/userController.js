@@ -7,6 +7,7 @@ const listaUsuarios = require('../users.json');
 const listaUsuariosassinante = require('../database/preferenciausuarios');
 
 const listaPlanos = require('../planos.json');
+const listaUser = require('../users.json');
 
 
 
@@ -22,7 +23,8 @@ const userController = {
         res.render('pagamento',{dadosPlano:listaPlanos[0]})
     },
     assinante:(req,res)=>{
-        res.render('assinante',{usuario:listaUsuariosassinante,listaplanos:listaPlanos});
+        let sessao = listaUser.find(listaUser => listaUser.email === req.session.isAuth);
+        res.render('assinante',{usuario:listaUsuariosassinante,listaplanos:listaPlanos, user:sessao});
     },    
     contato:(req,res)=>{
         res.render('contato');
@@ -56,7 +58,9 @@ const userController = {
             if (senhaValida) {
                 req.session.isAuth = dadosUsuario.email
                 //login com sucesso
+                console.log(req.session.isAuth);
                 return res.redirect('/assinante')
+                
             }
         }
         return res.send('Login ou senha errada')

@@ -24,23 +24,22 @@
 
 }
 main>h2{
-    padding: 10% 6%;
+    padding: 5% 6%;
     color:#42210B ;
     text-align: left;
-
-
 }
 
 .form1{
     display: flex;
     justify-content: space-between;
     margin: 0px 15% 10%;
+    flex-direction: column;
 }
 
 .infos{
     display: flex;
     flex-direction: column;
-    width: 175px;
+    width: 300px;
     font-size: 1.3rem;
     font-family: 'Akrobat-Regular';
 }

@@ -6,7 +6,8 @@
         "cpf": "142536728",
         "nascimento": "1995-03-23",
         "telefone": "21828379033",
-        "genero": "feminino"
+        "genero": "feminino",
+        "img": "images/user.png"
     },
     {
         "nome": "melissa ",
@@ -15,7 +16,8 @@
         "cpf": "23234354",
         "nascimento": "",
         "telefone": "",
-        "genero": "feminino"
+        "genero": "feminino",
+        "img": "images/user.png"
     },
     {
         "nome": "Douglas Victor Menezes",
@@ -24,6 +26,7 @@
         "cpf": "00000000022",
         "nascimento": "1985-01-13",
         "telefone": "(51) 99669-6668",
-        "genero": "masculino"
+        "genero": "masculino",
+        "img": "images/user.png"
     }
 ]
