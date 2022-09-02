@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="/stylesheets/estiloContato.css">
+<main>
+    <h1>FALE CONOSCO</h1>
+    <div class="intro">
+        <h2>Nós adoraríamos ouvir você</h2>
+        <p>Estamos sempre disponíveis para ouvir sugestões, críticas,dúvidas e qualquer outro assunto que desejar.
+            Selecione o tipo de contato e escreva sua mensagem. Em breve, retonaremos o contato. Caso deseje, coloque seu telefone para facilitar o retorno.
+        </p>
+        <form action="/contato" method="POST">
+            <input type="email" placeholder="Email" required>
+            <select name="tipomsg" id="">
+                <option value="sug">SUGESTÕES</option>
+                <option value="duv">DUVIDAS</option>
+                <option value="rec">CRÍTICAS</option>
+                <option value="out">OUTROS</option>
+            </select>
+            <textarea rows="5" cols="50" placeholder="Escreva sua mensagem..."></textarea>
+
+            <input type="tel" name="tel" id="" placeholder="Telefone para contato">
+
+            <button type="submit">ENVIAR</button>
+        </form>
+    </div>
+    <section class="info">
+        <div>
+            <img src="" alt="simbolo de local">
+            <p>385 Noah Place Suite 878</p>
+        </div>
+        <div>
+            <img src="" alt="simbolo telefone">
+            <p>877-255-7945</p>
+        </div>
+        <div>
+            <img src="" alt="simbolo email">
+            <p>info@form.com</p>
+        </div>
+
+
+    </section>
+</main>

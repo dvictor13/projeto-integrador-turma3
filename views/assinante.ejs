@@ -1,19 +1,29 @@
-<link rel="stylesheet" href="stylesheets/estiloAssinante.css">
-<link rel="stylesheet" href="stylesheets/estiloPlanos.css">
-<%- include('./partials/header')%>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/estiloAssinante.css">
+    <link rel="stylesheet" href="/stylesheets/estiloPlanos.css">
+    <link rel="stylesheet" href="/stylesheets/estiloHeaderFooter.css">
+    <title>Barba,Cabelo e Bigode</title>
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+
+<%- include('./partials/header')%>
+<main>
 
         <h2 class="mob ak-black">BEM-VINDO,<br><span class="light ak-black"> FULANO DE TAL!</span></h2>
         <h2 class="note ak-black">BEM-VINDO,<span class="light ak-black"> FULANO DE TAL!</span></h2>
-        <p class="ak-bold">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem harum suscipit voluptatibus
-            cum repellat repudiandae laborum rem porro quibusdam quis dignissimos commodi eaque reiciendis magni quasi
-            praesentium ipsum, at obcaecati?</p>
+        <p class="ak-bold">Aqui você poderá acompanhar o seu plano e ver quantas as vezes você utilizou nossos serviços. E saiba que em cada um deles foi sempre um prazer em recebê-lo, porque aqui No Fio do Bigode o trato é você sair estiloso e sempre satisfeito.
+        </p>
         <nav class="uso-servico">
             <div class="frases">
                 <h2 class="ak-black">ACOMPANHE O <br>SEU USO NO MÊS</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur perspiciatis nostrum nemo eligendi,
-                    officia quo delectus reiciendis amet ipsam repellat incidunt magni corporis sunt neque
-                    necessitatibus quasi? Magnam, nostrum minima.</p>
+                <p>Veja aqui o histórico de utilização dos nossos serviços no último mês.</p>
             </div>
             <section class="cortes"> 
                 <% for (let data in usuario[0].mes) { %> 
@@ -47,9 +57,8 @@
         <nav class="secaoPlanos">
             <div class="frases">
                 <h2 class="dark ak-black">QUER DAR UM UPGRADE NO SEU PLANO?</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni natus eligendi possimus pariatur
-                    delectus autem cumque similique dolorem! Nostrum repellendus animi minus eligendi velit ad esse
-                    repellat, cupiditate illum. Aliquam! </p>
+                <p>Aproveite e dê um upgrade no seu plano e tenha mais ofertas dos nossos serviços. Ao escolher um novo plano você poderá utilizá-lo em até 24 horas. Não perca tempo e vamos fazer mais esse trato. Nós, No Fio do Bigode aguardamos você!!
+                </p>
             </div>
             <section class="cardsPlanos">
                 <% const index = listaplanos.findIndex(object=>object.nome===usuario[0].plano) %> 
@@ -64,10 +73,12 @@
                                 <li class="descPlanos"><%= vantagem %> </li>
                             <% } %>
                         </ul>
-                        <h2 class="preco"><%= listaplanos[i].preco %> </h2>
-    
-                        <button class="btnComecar"><p>COMPRAR</p><p>ESTE PLANO</p></button>
-                        <div class="economia"><p>ADQUIRA ESTE PLANO E</p> <p>ECONOMIZE ATÉ R$<%=listaplanos[i].economia %> POR</p> <p>CORTE E BARBA</p></div>
+                        <div class="precoButon">
+                            <h2 class="preco">R$<%= listaplanos[i].preco %>,00 </h2>
+        
+                            <button class="btnComecar"><p>COMPRAR</p><p>ESTE PLANO</p></button>
+                            <div class="economia"><p>ADQUIRA ESTE PLANO E</p> <p>ECONOMIZE ATÉ R$<%=listaplanos[i].economia %> POR</p> <p>CORTE E BARBA</p></div>
+                        </div>
                     </article>
                     <% } %> 
                 <!-- <article class="cardP">
@@ -116,6 +127,7 @@
                 </article> -->
             </section>
         </nav>
+</main>
 <%- include('./partials/footer')%>
 
 </body>

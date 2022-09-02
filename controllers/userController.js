@@ -1,13 +1,13 @@
-const fs = require('fs')
+const fs = require('fs');
+const usersJson = require('../users.json')
+const bcrypt = require('bcrypt')
 
-const listaUsuarios =[
-    {nome:'Fulano de Tal',plano:"BASIC",mes:{barba:3,cabelo:2,depilação:1},total:{cabelos:22,barbas:32,depilacao:5},barbearia:"BARBEARIA BAIRRO BONFIM"}
-]
-const listaPlanos = [
-    {nome:"BASIC",preco:"R$30,00",barbas:1,cabelos:1,img:"images/barbeiros/barbeiro_detalhe_barba_tesoura.jpg",vantagens:["Barbas mais robustas","Ajustes mensais"],economia:20},
-    {nome:"STANDARD",preco:"R$65,00",barbas:2,cabelos:3,img:"images/barbeiros/barbeiro_detalhe_barba.jpg",vantagens:["Atendentes","Escolha de Barbeiro","Horários fixos"],economia:25},
-    {nome:"PREMIUM",preco:"R$80,00",barbas:5,cabelos:5,img:"images/barbeiros/barbeiro_detalhe_tesoura.jpg",vantagens:["Preferência nos agendamentos","Maior flexibilidade de agendamento","Atendimento Luxo"],economia:30},
-]
+const listaUsuarios = require('../users.json');
+
+const listaUsuariosassinante = require('../database/preferenciausuarios');
+
+const listaPlanos = require('../planos.json');
+
 
 
 const userController = {
@@ -15,20 +15,55 @@ const userController = {
         res.render('cadastro')
     },
     carrinho:(req,res)=>{
-        res.render('carrinho')
+        const codPlano = req.params.id;
+        res.render('carrinho',{listaplanos:listaPlanos, codPlano:codPlano});
     },
     pagamento:(req,res)=>{
-        res.render('pagamento')
+        res.render('pagamento',{dadosPlano:listaPlanos[0]})
     },
     assinante:(req,res)=>{
-        res.render('assinante',{usuario:listaUsuarios,listaplanos:listaPlanos});
+        res.render('assinante',{usuario:listaUsuariosassinante,listaplanos:listaPlanos});
+    },    
+    contato:(req,res)=>{
+        res.render('contato');
     },
-    saveform:(req,res)=>{
-        console.log(req.body);
-        user = JSON.stringify(req.body)
-        fs.appendFileSync('users.txt',user);
-        res.redirect('assinante');
-        
+    cadastra: (req, res) => {
+        const usuario = req.body
+        //Criptografar a senha
+        const senhaCriptografada = bcrypt.hashSync(usuario.senha, 11)
+        console.log(senhaCriptografada)
+        //edita o objeto usuario com a senha Criptografada
+        usuario.senha = senhaCriptografada
+        //Salva na memoria
+        usersJson.push(usuario)
+        //Escreve no Json
+        fs.writeFile("users.json", JSON.stringify(usersJson, null, 4), err => {
+            // Checking for errors
+        if (err) throw err;
+            console.log("Done writing"); // Success
+        });
+        return res.redirect('/cadastro')
+    },
+    auth: (req, res) => {
+        //{email:"Iago@dh",senha:"123456"}
+        const dadosUsuario = req.body
+        //Busca o usuario por email
+        const user = usersJson.find((u) => u.email == dadosUsuario.email)
+        //Valida se o usuario existe
+        if (user) {
+            //compara a senha do formulario com a senha do json
+            let senhaValida = bcrypt.compareSync(dadosUsuario.senha, user.senha)
+            if (senhaValida) {
+                req.session.isAuth = dadosUsuario.email
+                //login com sucesso
+                return res.redirect('/assinante')
+            }
+        }
+        return res.send('Login ou senha errada')
+
+    },
+    pagar: (req, res) => {
+        res.render('pagamento',{dadosPlano:listaPlanos[0]})
     }
 }
 module.exports = userController;

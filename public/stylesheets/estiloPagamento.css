@@ -15,47 +15,44 @@
     src:url(./font/Akrobat-SemiBold.otf)
 }
 *{
-    text-align: center;
     margin: 0%;
     padding: 0%;
     font-family: var(--ak-font-regular)
 }
+
 main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0% 6% ;
 }
+
 main *{
     font-family: var(--ak-font-regular);
 
 }
-main>h2{
+
+.finalizeCompra{
     font-family: var(--ak-font-black);
     color: var(--primary-color);
-    text-align: center ;
-    margin: 8% 0%;
+    margin: 3% 0%;
 }
-main>p{
+.descricao{
     font-family: var(--ak-font-bold);
     font-size: 1.25rem;
     color: var(--secundary-color);
     font-weight: 700;
-    margin: 5% 0%;
+    margin: 2% 0%;
+    text-align: center;
 }
-main>section{
+
+main>section {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin: 5% 0% ;
     /* border: solid 2px var(--terciary-color); */
 }
-main>section>h2{
-    margin: 8% 0%;
-    color: var(--primary-color);
-    font-family: var(--ak-font-black);
-}
+
 main>section>article{
     width: 100%;
     display: flex;
@@ -69,7 +66,7 @@ main>section>article>*{
     padding: 5% 0%;
 }
 
-main>section>article h2{
+h2{
     font-family: var(--hans-font);
     font-weight: 400;
     line-height: 23px;
@@ -91,15 +88,21 @@ main section button {
     line-height: 23px;
     letter-spacing: 0em;
 }
+
+main>.pagamento{
+    padding: 0% 5%;
+}
+
 main>.pagamento>form{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 1rem;
-
-    
+    padding: 0% 5%;
+    text-align: center;
 }
+
 main>.pagamento>form>label{
     font-size: 1.5rem;
     margin: 1%;
@@ -199,56 +202,6 @@ main>section .total span{
     position: relative;
     left: -10%;
 }
-main .duvidas {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
-    background-color: #42210B;
-}
-
-main .duvidas h2{
-    padding-top: 10%;
-    color: var(--terciary-color);
-    font-size: 3rem;
-}
-
-main .duvidas .perguntasFrequentes{
-    padding: 10%;
-}
-
-main .duvidas .perguntasFrequentes .perguntasResposta{
-    border-bottom: 1px solid #C69C6D;
-    display: flex;
-    margin-bottom: 20px;
-    justify-content: center;
-    width: 100%;
-}
-
-main .duvidas .perguntasFrequentes .perguntasResposta .iconePergunta{
-    background-image: url(/img/iconplus.png) ;
-    padding: 10px;
-    width: 35px;
-    height: 24px;
-    background-repeat: no-repeat;
-}
-
-main .duvidas .perguntasFrequentes .perguntasResposta .pergunta{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-main .duvidas .perguntasFrequentes .perguntasResposta .pergunta p{
-    padding-bottom: 20px;
-    width: 100%;
-}
-
-main .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #resposta2, #resposta3, #resposta4{
-    padding-bottom: 20px;
-    font-size: 0.8rem;
-    display: none;
-}
 
 .nome{
     color: var(--primary-color);
@@ -276,3 +229,80 @@ main .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #res
     padding: 5%;
 }
 
+.ladoEsq{
+    display: none;
+}
+
+
+
+
+@media (min-width:1280px) {
+
+    main{
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .pagamento{
+        width: 50%;
+        margin: 0% 10%;
+    }
+
+    .resumo{
+        display: none;
+    }
+    
+    main .ladoEsq{
+        display: flex;
+        width: 50%;
+        margin-top: 5%;
+        margin-left: -10% ;
+    }
+    
+    .finalizarPag{
+        width: 400px;
+        border: 2px solid var(--terciary-color) ;
+        height: 600px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .categoriaEscolhida{
+        margin-bottom: 10px;
+        color: #42210B;
+        font-family: var(--ak-font-black) ;
+        font-size: 2.5rem;
+        border-bottom: 1px solid var(--terciary-color) ;
+        text-align: center;
+    }
+
+    .categoria{
+        color: #42210B;
+        font-family: 'Hansief-Rough' ;
+        font-size: 2.5rem;
+    }
+
+    .finalizarPag .preco {
+        font-size: 2.5rem;
+        padding: 6% 0%;
+    }
+
+    .planoEscolhido{
+        display: flex;
+        align-items: center;
+    }
+
+    .caixinha{
+        width: 20px;
+        height: 20px;
+        border-radius: 3px;
+        border: 1px solid #42210B;
+        background-image: url(../images/check.png) ;
+        margin-right: 15px;
+        margin-left: -40px;
+    }
+
+}

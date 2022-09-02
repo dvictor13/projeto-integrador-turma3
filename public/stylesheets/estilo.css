@@ -38,6 +38,11 @@ main{
     flex-direction: column;
 }
 
+.corpoIndex .navslider{
+    text-align: center;
+    margin: 20px;
+}
+
 /* Slideshow container */
 .slideshow-container {
     position: relative;
@@ -100,14 +105,17 @@ main{
     text-align: center;
     font-size: 1.5rem;
     position: absolute;
-    top: 46%;
+    top: 40%;
+    padding: 0 20%;
     color: white;
     font-family: 'Hansief-Rough', sans-serif;
+    text-shadow:  0 0 5px #000;
 }
 
   /* Number text (1/3 etc) */
 .numbertext {
     color: #C69C6D;
+    display: none;
     font-size: 12px;
     padding: 8px 12px;
     position: absolute;
@@ -157,8 +165,9 @@ h1{
 main .corpoIndex .descricao{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    /* justify-content: center; */
+    gap: 20px;
     padding: 0% 10%;
 }
 
@@ -167,14 +176,15 @@ main .corpoIndex .descricao .introducao p{
     color: #C69C6D;
     font-size: 0.8rem;
     margin-bottom: 30px;
-    text-align: justify ;
+    /*text-align: left ;*/
 }
+
 main .corpoIndex .descricao .tituloDesc {
-    padding-bottom: 10px;
+    padding: 0;
 }
 
 main .corpoIndex .descricao .tituloDesc h2{
-    font-weight: bold;
+    font-weight: 800;
     font-size: 2rem;
     color: #42210B;
 }
@@ -341,7 +351,7 @@ main .barbeariasIndex .cardsBarbearia .cardB .btnComecar{
 }
 
 
-main .duvidas {
+/*.duvidas {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -349,74 +359,83 @@ main .duvidas {
     background-color: #42210B;
 }
 
-main .duvidas h2{
+.duvidas h2{
     padding-top: 10%;
     color: var(--terciary-color);
 }
 
-main .duvidas .perguntasFrequentes{
+.duvidas .perguntasFrequentes{
     padding: 10%;
 }
 
-main .duvidas .perguntasFrequentes .perguntasResposta{
+.duvidas .perguntasFrequentes .perguntasResposta{
     border-bottom: 1px solid #C69C6D;
     display: flex;
     margin-bottom: 20px;
     justify-content: start;
 }
 
-main .duvidas .perguntasFrequentes .perguntasResposta .iconePergunta{
-    background-image: url("images/iconplus.png") ;
+.duvidas .perguntasFrequentes .perguntasResposta .iconePergunta{
+    background-image: url("../images/iconplus.png") ;
     padding: 10px;
     width: 35px;
     height: 24px;
     background-repeat: no-repeat;
 }
 
-main .duvidas .perguntasFrequentes .perguntasResposta .pergunta{
+.duvidas .perguntasFrequentes .perguntasResposta .pergunta{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
 
-main .duvidas .perguntasFrequentes .perguntasResposta .pergunta p{
+.duvidas .perguntasFrequentes .perguntasResposta .pergunta p{
     padding-bottom: 20px;
     color: var(--terciary-color);
 }
 
-main .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #resposta2, #resposta3, #resposta4{
+.duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #resposta2, #resposta3, #resposta4{
     padding-bottom: 20px;
     font-size: 0.8rem;
     display: none;
-}
+}*/
 
 
 @media screen and (min-width:769px) {
 
-
-    .text {
-        font-size: 3rem;
-        width: 100%;
+    .slideshow-container .mySlides .text {
+        font-size: 2.5rem;
         height: 99.2%;
+        padding: 0 10%;
     }
 
     main .corpoIndex .descricao{
         display: flex;
         justify-content: space-between;
         flex-direction: row;
-        margin: 0px, 50%;
+        margin: 30px auto;
         padding: 0% 10%;
     }
     
     main .corpoIndex .descricao .tituloDesc {
-        width: 50%;
-        text-align: center;
+        width: 100%;
+        flex: 1 1 auto;
+        padding-right: 10%;
     }
 
     main .corpoIndex .descricao .introducao{
-        width: 50%;
-        padding: auto;
+        width: 100%;
+        flex: 1 1 auto;
     }
+
+    main .corpoIndex .descricao .introducao p{
+        font-size: 1.1rem;
+    }
+
+    main .corpoIndex .descricao .tituloDesc h2{
+        font-size: 3rem;
+    }
+
 
     main .planosIndex .tituloPlanos {
         font-size: 2rem;
@@ -454,31 +473,31 @@ main .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #res
         height: 500px;
     }
 
-    main .duvidas .perguntasFrequentes .perguntasResposta{
+   /* .duvidas .perguntasFrequentes .perguntasResposta{
         width: 700px;
         justify-content: center;
     }
 
-    main .duvidas .perguntasFrequentes .perguntasResposta p{
+    .duvidas .perguntasFrequentes .perguntasResposta p{
         font-size: 1.5rem;
     }
 
-    main .duvidas h2{
+    .duvidas h2{
         padding-top: 5%;
     }
     
-    main .duvidas .perguntasFrequentes{
+    .duvidas .perguntasFrequentes{
         padding: 5%;
     }
     
-    main .duvidas .perguntasFrequentes .perguntasResposta{
+    .duvidas .perguntasFrequentes .perguntasResposta{
         border-bottom: 1px solid #C69C6D;
         display: flex;
         margin-bottom: 20px;
         justify-content: start;
     }
     
-    main .duvidas .perguntasFrequentes .perguntasResposta .iconePergunta{
+    .duvidas .perguntasFrequentes .perguntasResposta .iconePergunta{
         background-image: url("../images/iconplus.png") ;
         padding: 10px;
         width: 35px;
@@ -486,21 +505,21 @@ main .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #res
         background-repeat: no-repeat;
     }
     
-    main .duvidas .perguntasFrequentes .perguntasResposta .pergunta{
+    .duvidas .perguntasFrequentes .perguntasResposta .pergunta{
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
     }
     
-    main .duvidas .perguntasFrequentes .perguntasResposta .pergunta p{
+    .duvidas .perguntasFrequentes .perguntasResposta .pergunta p{
         padding-bottom: 20px;
     }
     
-    main .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #resposta2, #resposta3, #resposta4{
+    .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #resposta2, #resposta3, #resposta4{
         padding-bottom: 20px;
         font-size: 0.8rem;
         display: none;
-    }
+    }*/
 
 
 
@@ -511,12 +530,20 @@ main .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #res
             max-width: 1600px;
         }*/
 
+        main .corpoIndex .descricao .introducao{
+            padding: 25px 0;
+        }
+
         main .corpoIndex .descricao .introducao p{
-            font-size: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        main .corpoIndex .descricao .tituloDesc {
+            padding-right: 3%;
         }
 
         main .corpoIndex .descricao .tituloDesc h2{
-            font-size: 5rem;
+            font-size: 4rem;
         }
 
         main .planosIndex{
@@ -555,27 +582,27 @@ main .duvidas .perguntasFrequentes .perguntasResposta .pergunta #resposta1, #res
         }
         
 
-        main .duvidas {
+   /*     .duvidas {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin-top: 50px;
         }
 
-        main .duvidas h2{
+        .duvidas h2{
             font-size: 1.5rem;
         }
-        main .duvidas .perguntasFrequentes .perguntasResposta{
+        .duvidas .perguntasFrequentes .perguntasResposta{
             width: 900px;
             justify-content: start;
         }
 
-        main .duvidas .perguntasFrequentes .perguntasResposta p{
+        .duvidas .perguntasFrequentes .perguntasResposta p{
             font-size: 1rem;
         }
 
-        main .duvidas .perguntasFrequentes{
+        .duvidas .perguntasFrequentes{
             padding-top: 60px;
-        }
+        }*/
     
 } 

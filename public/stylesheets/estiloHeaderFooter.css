@@ -105,13 +105,20 @@ header .cabecalho .menu a{
     text-align: center;
     font-weight: bold;
     text-align: end;
-}   
+}
+
+header .cabecalho .menu a:hover{
+    color: var(--amarelo-btn);
+}
 
 footer{
     background-color:var(--preto);
     color: var(--marrom-claro);
     display: flex;
-    padding: 20px;
+    padding: 5% 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 .container-footer{
@@ -121,13 +128,16 @@ footer{
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    gap: 80px;
+    gap: 50px;
 }
 
 .container-footer .logo-footer{
+<<<<<<< HEAD
     max-width: 200px;
+=======
+>>>>>>> a1fb84f087c56a65210a45c73d65fc59dd64b590
     display: flex;
-    align-items: top;
+    align-items: center;
 }
 
 .container-footer .ladoDireitoFooter{
@@ -153,7 +163,7 @@ footer{
     align-items: top;
 }
 
-@media screen and (min-width:490px) {
+@media screen and (min-width:535px) {
     header .cabecalho{
         flex-direction: row;
     }
@@ -184,7 +194,8 @@ footer{
     .container-footer .ladoDireitoFooter{
         flex-direction: row;
         width: 100%;
-        align-items: flex-start;
+        height: 100%;
+        align-items: center;
     }
 
     .container-footer .nav-footer{

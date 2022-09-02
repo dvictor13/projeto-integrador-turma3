@@ -3,8 +3,17 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-color:#754C24;
+}
 
-main .secaoPlanoEscolhido {
+.conteudo{
+    background-color:#754C24;
+    min-height: 40vh;
+    margin: 8% auto;
+}
+
+.conteudo .secaoPlanoEscolhido {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -12,14 +21,14 @@ main .secaoPlanoEscolhido {
     flex-wrap: wrap;
 }
 
-main .cardsPlanos{
+.conteudo .cardsPlanos{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-main .categoriaPlano{
-    height: 200px;
+.conteudo .categoriaPlano{
+    height: 220px;
     background-color: #C69C6D;
     border: none;
     display: flex;
@@ -32,21 +41,21 @@ main .categoriaPlano{
     border-radius: 10px;
 }
 
-main .descricao{
+.conteudo .descricao{
     display: flex;
     width: 100%;
     justify-content: center;
     padding: 10px;
     gap: 10px;
 }
-main .descricao .ladoDir{
+.conteudo .descricao .ladoDir{
     width: 30%;
 }
-main .descricao .ladoEsq{
+.conteudo .descricao .ladoEsq{
     width: 30%;
 }
     
-main .categoria{
+.conteudo .categoria{
     color: #42210B;
     font-family: 'Hansief-Rough' ;
     font-size: 1.7rem;
@@ -60,8 +69,9 @@ main .categoria{
 }
 
 input{
-    display: none;
+    display: block;
 }
+
 .caixinha{
     width: 20px;
     height: 20px;
@@ -73,14 +83,19 @@ input{
     background-image: url(../images/check.png) ;
 }
 
-main .descPlanos{
+.conteudo .descPlanos{
     color: #42210B;
 }
-main p{
+
+.conteudo p{
     color: #754C24;
 }
 
-main .preco{
+.conteudo .oferta{
+    color: #ffffff;
+}
+
+.conteudo .preco{
     width: 175px;
     padding-top: 15px;
     text-align: center; 
@@ -91,10 +106,11 @@ main .preco{
     height: 80px;
     margin-top: 5px;
     border-top: 4px solid #42210B;
+    margin-bottom: 10px;
 }
 
 
-main .btnComecar{
+.conteudo .btnComecar{
     background-color: #42210B;
     width: 180px;
     height: 50px;
@@ -118,8 +134,8 @@ main .btnComecar{
     width: 150px;
 }
 
-main .categoriaPlanoUp{
-    height: 200px;
+.conteudo .categoriaPlanoUp{
+    height: 220px;
     background-color: #ffffff;
     border: none;
     display: flex;
@@ -137,6 +153,7 @@ main .categoriaPlanoUp{
     margin: 0% 15%;
     padding-top: 10% ;
     font-size: 1.3rem;
+
 }
 .brown-light{
     color: #C69C6D;
@@ -165,6 +182,116 @@ main .categoriaPlanoUp{
     margin: 5% 15%;
     font-size: 1rem;
 }
-main .flex-container{
+
+.conteudo .flex-container{
     background-color:#754C24;
+}
+
+.ladoEsqCarrinho{
+    display: none;
+}
+
+
+@media screen and (min-width:769px) {
+    .conteudo{
+        min-height: 50vh;
+    }
+
+    .flex-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h2{
+        text-align: center;
+    }
+
+    .ak-black{
+        font-size: 2rem;
+        /*width: 750px;*/
+        margin: 2% 0%;
+        padding-top: 0% ;
+    }
+
+    .ak-bold{
+        font-family: 'Akrobat-Bold',sans-serif;
+        margin: 2% 0%;
+        font-size: 1rem;
+        width: 750px;
+    }
+
+    .secaoPlanoEscolhido .cardsPlanos .categoriaPlano{
+        width: 750px;
+        height: 160px;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0% 5%;
+    }
+
+    .conteudo .categoriaPlanoUp{
+        height: 160px;
+        background-color: #ffffff;
+        border: none;
+        padding: 0% 5%;
+        flex-direction: row;
+        width: 750px;
+    }
+    
+    .conteudo .categoria{
+        width: 120px;
+
+    }
+
+    .secaoPlanoEscolhido .cardsPlanos .preco{
+        border-top: none;
+        font-size: 2rem;
+    }
+    .conteudo .oferta{
+        width: 500px;
+    }
+
+/* */
+}
+
+@media (min-width:1280px) {
+    .conteudo{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .flex-container{
+        width: 70%;
+    }
+    
+    .ladoEsqCarrinho{
+        display: flex;
+        width: 30%;
+        background-color: #754C24;
+        padding-top: 10%;
+    }
+
+    .finalizarPag{
+        width: 350px;
+        background-color: #ffffff;
+        height: 250px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 5% 7% 0%; 
+        align-items: center;
+    }
+
+    .finalizarPag p{ 
+        width: 270px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .cardsPlanos .btnComecar{
+        display: none;
+    }
+
+
 }

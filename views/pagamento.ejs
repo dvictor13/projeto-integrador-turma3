@@ -1,12 +1,27 @@
-<link rel="stylesheet" href="stylesheets/estiloPagamento.css">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/estiloPagamento.css">
+    <link rel="stylesheet" href="/stylesheets/estiloHeaderFooter.css">
+    <title>Barba,Cabelo e Bigode</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
 <%- include('./partials/header') %>
-        <h2>FINALIZE A SUA COMPRA E COMECE A UTILIZAR O PLANO EM 24H</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem harum suscipit voluptatibus cum repellat repudiandae laborum rem porro quibusdam quis dignissimos commodi eaque reiciendis magni quasi praesentium ipsum, at obcaecati?</p>
+
+<h2 class="finalizeCompra">FINALIZE A SUA COMPRA E COMECE A UTILIZAR O PLANO EM 24H</h2>
+<p class="descricao">Agora que já escolheu o seu plano siga os próximos passos e finalize o quanto antes o seu pagamento e daqui 24 começa a usufruir dos melhores serviços de cuidados estéticos. Nós do No Fio do Bigode estamos aguardando você! Prossiga!</p>
+
+<main>  
         <section class="pagamento">
             <h2 class="titulo">DADOS DE PAGAMENTO</h2>
             <article class="resumo">
-                <h3 class="plano">PLANO BASIC</h3>
-                <span class="valor">RS 130</span>
+                <h3 class="plano"> <%= dadosPlano.nome %> </h3>
+                <span class="valor"><%= dadosPlano.preco %></span>
             </article>
             <form action="">
                 <label for="duracao">Selecione o período:</label>
@@ -35,84 +50,52 @@
                 </div>
                 </form>
             <div class="pix modopgto">
-                <img src="images/pix.png" alt="">
+                <img src="/images/pix.png" alt="">
                 <p>PIX</p>
-                <img class="seta"  src="images/Down.png" alt="">
+                <img class="seta"  src="/images/Down.png" alt="">
             </div>
             <div class="boleto modopgto">
-                <img src="images/codigobarras.png" alt="">
+                <img src="/images/codigobarras.png" alt="">
                 <p>BOLETO</p>
-                <img class="seta" src="images/Down.png" alt="">
+                <img class="seta" src="/images/Down.png" alt="">
             </div>
             <div class="total">
                 <p>Total</p>
-                <span>RS 30</span>
+                <span>RS35,00</span>
             </div>
             <div class="finalizar">
-                <button disabled="imprimir">FINALIZAR PEDIDO</button>
-                <img src="images/recaptcha.png" alt="">  
+                <a href="assinante"><button >FINALIZAR PEDIDO</button></a>
+                <img src="/images/recaptcha.png" alt="">  
             </div>
 
-        </section>      
-            
-
-        <section class="duvidas">
-            <h2 class="tituloPerguntas">PERGUNTAS FREQUENTES</h2>
-
-            <div class="perguntasFrequentes">
-    
-                <div class="perguntasResposta" onclick="mudarDiv(1)">
-
-                    <div class="iconePergunta"></div>
-                    <div class="pergunta">
-                        
-                        <p>Pode cancelar a qualquer momento?</p>
-                        <p id="resposta1">Sim. Entre na sua conta, clique em "minha conta" no menu e depois escolha a opção "cancelar plano".</p>
+        </section>    
+        
+       <section class="ladoEsq">
+            <article class="finalizarPag">
+                <p class="categoriaEscolhida">PLANO ESCOLHIDO</p>
+                    <div class="radio">
+                        <div class="planoEscolhido"><div class="caixinha"></div><p class="categoria">BASIC</p></div>
                     </div>
-                    
-                </div>
-
-                <div class="perguntasResposta" onclick="mudarDiv(2)">
-                    <div class="iconePergunta"></div>
-                    <div class="pergunta">
-                        <p>Posso fazer upgrade do plano?</p> 
-                        <p id="resposta2">Sim. Entre na sua conta, escolha o plano que deseja adquirir e quando clicar para adquirir ele ira para a página de upgrade. </p>
+                    <div class="descricao">
+                        <div class="ladoDir">
+                            <p class="descPlanos">1 barba</p>
+                            <p>por mês</p>
+                            <p class="descPlanos"> 1 corte de cabelo</p>
+                            <p>por mês</p>
+                        </div>
                     </div>
-                </div>
-                <div class="perguntasResposta" onclick="mudarDiv(3)">
-                    <div class="iconePergunta"></div>
-                    <div class="pergunta">
-                        <p>Como escolher o melhor plano?</p>
-                        <p id="resposta3">Faça o cálculo de quantas vezes você costuma ir na barbearia mensalmente e veja se qual vai sair mais vantajoso pra você. </p>
-                    </div>
-                </div>
-                <div class="perguntasResposta" onclick="mudarDiv(4)">
-                    <div class="iconePergunta"></div>
-                    <div class="pergunta">
-                        <p>Como agendar o corte com a barbearia ?</p>
-                        <p id="resposta4">Clicando no menu e indo na opção "Sobre nós" você encontra nosso endereço e nosso telefone. Fale conosco e informe sua matrícula que agendaremos pra você. </p>
-                    </div>
-                </div>
-            </div>
+                    <h2 class="preco">R$35,00</h2>
+                    <p>por mês</p>
+            </article>
         </section>
-<%- include('./partials/footer')%>
-    <script>
-        var visibilidade = false 
-        var mudarStatus;
+   
 
-        function mudarDiv(resp){
-                    
-                    if(!visibilidade){
-                        document.getElementById("resposta"+resp).style.display = "block";
-                        visibilidade = true;
+            
+    </main>
+        <%- include('./partials/perguntas') %>
 
-                    } else if(visibilidade){
-                        document.getElementById("resposta"+resp).style.display = "none";
-                        visibilidade= false;
-                    } 
-        }
-    </script>
-
+        <%- include('./partials/footer')%>
+    
 </body>
 </html>
 
