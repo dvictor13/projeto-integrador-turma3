@@ -7,6 +7,8 @@ const session = require('express-session')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var logMiddleware = require ('./middlewares/logUsuario');
+const logUsuario = require('./middlewares/logUsuario');
 
 var app = express();
 
@@ -24,7 +26,7 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 }))
-
+app.use(logMiddleware)
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
