@@ -53,7 +53,7 @@ const userController = {
         }
         
         let userCreated = User.create(userToCreate)
-        return res.redirect('/cadastro')
+        return res.redirect('/login')
     },
     auth: (req, res) => {
         //{email:"Iago@dh",senha:"123456"}
