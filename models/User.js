@@ -17,8 +17,7 @@ const User ={
         let allUsers = this.getUsers();
         let newUser = {
             id: this.generateId(),
-            ...userData,
-            
+            ...userData
         }
 
         allUsers.push(newUser);
