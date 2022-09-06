@@ -43,10 +43,4 @@ const User ={
 
 }
 
-console.log(User.create({
-    nome: "Mariana", "email": "mari@email.com",
-    senha: "1234",
-    cpf: "12345678",
-    nascimento: "1990-02-05",
-    telefone: "21152145269",
-    genero: "feminino"}))
+module.exports = User;

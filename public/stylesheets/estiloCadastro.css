@@ -206,7 +206,7 @@ li.redesSociais{
 }
 
 #formulariocampos{
-    display: none;
+    display: block;
 }
 
 .btnCadastro{

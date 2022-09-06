@@ -16,30 +16,6 @@
 <main>
 
         <section class="corpoCadastro">
-            <div class="facaSeuLogin">
-                <h1 class="titulo">FAÇA SEU LOGIN</h1>
-                <h2 class="titulo">ACESSE COM UMAS DE SUAS CONTAS SOCIAIS</h2>
-                <div class="links">
-                    <a href="assinante"><img src="/images/Facebook-login.png"></a>
-                    <a href="assinante"><img src="/images/instagram-login.png"></a>
-                    <a href="assinante"><img src="/images/google-login.png"></a>
-                </div>
-                <p class="titulo">OU</p>
-            </div>
-            <div class="caixinhaLogin">
-                <form class=form2 id="form1" action="/home" method="POST">
-                    <input type="email" id="email" name="email" placeholder="Digite seu email" required>
-                    <br>
-                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
-                    <br>
-                
-                    <div class="btnCadastro">
-                        <input type="submit" value="LOGAR" class="logar"  />
-                    </div>
-                </form>
-                <a onclick="mudarDiv()">Cadastre-se</a>
-            </div>
-
 
             <section id="formulariocampos">
                 <h2 class="tituloh2">CRIE SUA CONTA</h2>
@@ -84,21 +60,6 @@
     </main>
     <%- include('./partials/footer') %>   
 
-    <script>
-        var visibilidade = false;
-    
-        function mudarDiv() {
-    
-            if (!visibilidade) {
-                document.getElementById("formulariocampos").style.display = "block";
-                visibilidade = true;
-    
-            } else if (visibilidade) {
-                document.getElementById("formulariocampos").style.display = "none";
-                visibilidade = false;
-            }
-        }
-    </script>
 
 </body>
 </html>

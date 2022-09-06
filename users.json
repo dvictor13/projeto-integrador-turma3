@@ -28,5 +28,15 @@
   "nascimento": "1990-02-05",
   "telefone": "21152145269",
   "genero": "feminino"
+ },
+ {
+  "id": 4,
+  "nome": "Camila",
+  "email": "camila@email.com",
+  "senha": "$2b$11$w/Daksj17PlhWAHqUn3Hr.Y2ybxQUIqE/8i4/S32OH5JZpPjProAC",
+  "cpf": "12345678915",
+  "nascimento": "2000-07-19",
+  "telefone": "21152448965",
+  "genero": "feminino"
  }
 ]

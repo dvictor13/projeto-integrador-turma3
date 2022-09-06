@@ -1,15 +1,25 @@
 const fs = require('fs');
 const usersJson = require('../users.json')
 const bcrypt = require('bcrypt')
-
 const listaUsuarios = require('../database/usuarios');
-
-const listaPlanos = require('../database/planos')
+const listaPlanos = require('../database/planos');
+const User = require('../models/User');
+const {validationResult} = require('express-validator')
 
 
 const userController = {
     cadastro:(req,res)=>{
         res.render('cadastro')
+    },
+    processRegister: (req,res) =>{
+        const resultValidations = validationResult(req);
+        if (resultValidations.errors.length > 0){
+            return res.render('cadastro', {
+                errors: resultValidations.mapped(),
+                oldData: req.body
+            });
+        }
+        return res.send('Ok, passou')
     },
     carrinho:(req,res)=>{
         const codPlano = req.params.id;
@@ -24,18 +34,25 @@ const userController = {
     cadastra: (req, res) => {
         const usuario = req.body
         //Criptografar a senha
-        const senhaCriptografada = bcrypt.hashSync(usuario.senha, 11)
-        console.log(senhaCriptografada)
-        //edita o objeto usuario com a senha Criptografada
-        usuario.senha = senhaCriptografada
-        //Salva na memoria
-        usersJson.push(usuario)
-        //Escreve no Json
-        fs.writeFile("users.json", JSON.stringify(usersJson, null, 4), err => {
-            // Checking for errors
-        if (err) throw err;
-            console.log("Done writing"); // Success
-        });
+       
+        let userExists = User.findUserByField('email', req.body.email);
+
+        if (userExists){
+            return res.render('cadastro', {
+                errors: {
+                    email: {msg: "Este email já está registrado"}
+                },
+                oldData: req.body
+            })
+        }
+
+        let userToCreate = {
+            ...req.body,
+            senha: bcrypt.hashSync(usuario.senha, 11)
+           // avatar: 
+        }
+        
+        let userCreated = User.create(userToCreate)
         return res.redirect('/cadastro')
     },
     auth: (req, res) => {
@@ -58,6 +75,9 @@ const userController = {
     },
     pagar: (req, res) => {
         res.render('pagamento')
+    },
+    logar: (req,res) =>{
+        res.render('login')
     }
 }
 module.exports = userController;
