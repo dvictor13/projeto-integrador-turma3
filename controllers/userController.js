@@ -34,7 +34,6 @@ const userController = {
     cadastra: (req, res) => {
         const usuario = req.body
         //Criptografar a senha
-       
         let userExists = User.findUserByField('email', req.body.email);
 
         if (userExists){
@@ -53,7 +52,7 @@ const userController = {
         }
         
         let userCreated = User.create(userToCreate)
-        return res.redirect('/login')
+        return res.render('login')
     },
     auth: (req, res) => {
         //{email:"Iago@dh",senha:"123456"}

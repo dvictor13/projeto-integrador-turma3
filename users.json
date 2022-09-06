@@ -38,5 +38,34 @@
   "nascimento": "2000-07-19",
   "telefone": "21152448965",
   "genero": "feminino"
+ },
+ {
+  "id": 5,
+  "nome": "teste",
+  "email": "teste@email.com",
+  "senha": "$2b$11$QaRUZAMKxmwh/nznizv1q.aqUMZGGhs5YxAVWeqKVThBaAH3TC5ze",
+  "cpf": "15",
+  "nascimento": "",
+  "telefone": ""
+ },
+ {
+  "id": 6,
+  "nome": "teste1",
+  "email": "teste1@email.com",
+  "senha": "$2b$11$iA7WtMUTaDwx2Ww0DBQ63eSOw8SFUXgG/GWaZl8A6W.zOb.JD/.ga",
+  "cpf": "15555666",
+  "nascimento": "",
+  "telefone": "",
+  "genero": "nao informado"
+ },
+ {
+  "id": 7,
+  "nome": "teste2",
+  "email": "teste2@email.com",
+  "senha": "$2b$11$CTKKD3QJVevuUrzvUhM4buKNw2bhqyHzIszmuCKq5KRhfr6h/UlTG",
+  "cpf": "15555555",
+  "nascimento": "",
+  "telefone": "",
+  "genero": "nao informado"
  }
 ]
