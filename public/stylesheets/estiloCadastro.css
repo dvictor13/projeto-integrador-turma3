@@ -65,7 +65,7 @@ h1.titulo{
     flex-direction: column;
 }
 
-.form2{
+/*.form2{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -80,9 +80,29 @@ h1.titulo{
     border: 1px solid #42210B;
     border-radius: 5px;
     padding-left: 10px;
+}*/
+
+#login {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
 }
 
-.form2 .logar{
+#login input{
+    height: 35px;
+    border: 1px solid #42210B;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+#login #lembrarMe{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-top: -20px;
+}
+
+#login .logar{
     font-family: 'Hansief-Rough';
     font-size: 1rem;
     color: #FFFFFF;
@@ -192,7 +212,6 @@ li.redesSociais{
     text-align: left;
 
 }
-
 
 .form1 .concluirCadastro{
     font-family: 'Hansief-Rough';

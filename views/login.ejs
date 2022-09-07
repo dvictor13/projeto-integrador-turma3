@@ -36,12 +36,14 @@
                         <% } %> 
                     </ul>
                 <% } %> 
-                <form class=form2 id="form1" action="/logar" method="POST">
+                <form id="login" action="/logar" method="POST">
                     <input type="email" id="email" name="email" placeholder="Digite seu email" required>
                     <br>
                     <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
                     <br>
-                
+                    <div id="lembrarMe">
+                        <input type="checkbox" id="lembrar" name="lembrar" value="lembrar"><label for="lembrar">Lembrar meu usuário</label>
+                    </div>
                     <div class="btnCadastro">
                         <input type="submit" value="LOGAR" class="logar"  />
                     </div>
