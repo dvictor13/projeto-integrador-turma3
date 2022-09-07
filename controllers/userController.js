@@ -1,20 +1,11 @@
 const fs = require('fs');
 const usersJson = require('../users.json')
 const bcrypt = require('bcrypt')
-<<<<<<< HEAD
-const listaUsuarios = require('../database/usuarios');
 const listaPlanos = require('../database/planos');
 const User = require('../models/User');
 const {validationResult} = require('express-validator')
-=======
-
-const listaUsuarios = require('../users.json');
-
 const listaUsuariosassinante = require('../database/preferenciausuarios');
-
 const listaPlanos = require('../planos.json');
-
->>>>>>> 66cd802b02939eee65537dda7fc34da31c0864ca
 
 
 const userController = {
@@ -86,14 +77,10 @@ const userController = {
 
     },
     pagar: (req, res) => {
-<<<<<<< HEAD
-        res.render('pagamento')
+        res.render('pagamento',{dadosPlano:listaPlanos[0]})
     },
     logar: (req,res) =>{
         res.render('login')
-=======
-        res.render('pagamento',{dadosPlano:listaPlanos[0]})
->>>>>>> 66cd802b02939eee65537dda7fc34da31c0864ca
     }
 }
 module.exports = userController;
