@@ -41,42 +41,22 @@
  },
  {
   "id": 5,
-  "nome": "teste",
-  "email": "teste@email.com",
-  "senha": "$2b$11$QaRUZAMKxmwh/nznizv1q.aqUMZGGhs5YxAVWeqKVThBaAH3TC5ze",
-  "cpf": "15",
-  "nascimento": "",
-  "telefone": ""
+  "nome": "Douglas Victor Menezes",
+  "email": "dv@douglasvictor.com",
+  "senha": "$2b$11$tkvyU1nJ7fbh/TxJX9yAH.JcZl1KSbFte/W.8uc9lUiCcS1gZhZ82",
+  "cpf": "00000000022",
+  "nascimento": "1985-01-13",
+  "telefone": "(51) 99669-6668",
+  "genero": "masculino"
  },
  {
   "id": 6,
-  "nome": "teste1",
-  "email": "teste1@email.com",
-  "senha": "$2b$11$iA7WtMUTaDwx2Ww0DBQ63eSOw8SFUXgG/GWaZl8A6W.zOb.JD/.ga",
-  "cpf": "15555666",
+  "nome": "teste3",
+  "email": "teste3@email.com",
+  "senha": "$2b$11$/6Ty6d6qFGVsucH1h2IntuuJGNvsE/jT92BijcOKdZWhqYcHqu6cK",
+  "cpf": "",
   "nascimento": "",
   "telefone": "",
   "genero": "nao informado"
- },
- {
-  "id": 7,
-  "nome": "teste2",
-  "email": "teste2@email.com",
-  "senha": "$2b$11$CTKKD3QJVevuUrzvUhM4buKNw2bhqyHzIszmuCKq5KRhfr6h/UlTG",
-  "cpf": "15555555",
-  "nascimento": "",
-  "telefone": "",
-  "genero": "nao informado"
- },
-   
-{
-    "id": 8,
-    "nome": "Douglas Victor Menezes",
-    "email": "dv@douglasvictor.com",
-    "senha": "$2b$11$tkvyU1nJ7fbh/TxJX9yAH.JcZl1KSbFte/W.8uc9lUiCcS1gZhZ82",
-    "cpf": "00000000022",
-    "nascimento": "1985-01-13",
-    "telefone": "(51) 99669-6668",
-    "genero": "masculino"
-}
+ }
 ]

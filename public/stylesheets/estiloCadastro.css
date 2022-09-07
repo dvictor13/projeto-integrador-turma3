@@ -223,7 +223,7 @@ li.redesSociais{
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 5px solid #000000;
+        /*border: 5px solid #000000;*/
     }
 
     .corpoCadastro{

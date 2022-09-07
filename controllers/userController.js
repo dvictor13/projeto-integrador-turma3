@@ -1,7 +1,6 @@
 const fs = require('fs');
 const usersJson = require('../users.json')
 const bcrypt = require('bcrypt')
-const listaPlanos = require('../database/planos');
 const User = require('../models/User');
 const {validationResult} = require('express-validator')
 const listaUsuariosassinante = require('../database/preferenciausuarios');
@@ -13,14 +12,37 @@ const userController = {
         res.render('cadastro')
     },
     processRegister: (req,res) =>{
-        const resultValidations = validationResult(req);
-        if (resultValidations.errors.length > 0){
+        const errors = validationResult(req);
+        if (!errors.isEmpty()){
             return res.render('cadastro', {
-                errors: resultValidations.mapped(),
+                errors: errors.mapped(),
                 oldData: req.body
             });
         }
-        return res.send('Ok, passou')
+        
+        const usuario = req.body
+        //Criptografar a senha
+        let userExists = User.findUserByField('email', usuario.email);
+
+        if (userExists){
+            console.log("funcionou")
+            return res.render('cadastro', {
+                 errors: {
+                     email: {msg: "Este email já está registrado"}
+                 },
+                oldData: usuario
+            })
+            
+        }
+
+        let userToCreate = {
+            ...req.body,
+            senha: bcrypt.hashSync(usuario.senha, 11)
+           // avatar: 
+        }
+        
+        let userCreated = User.create(userToCreate)
+        return res.render('login')
     },
     carrinho:(req,res)=>{
         const codPlano = req.params.id;
@@ -34,29 +56,6 @@ const userController = {
     },    
     contato:(req,res)=>{
         res.render('contato');
-    },
-    cadastra: (req, res) => {
-        const usuario = req.body
-        //Criptografar a senha
-        let userExists = User.findUserByField('email', req.body.email);
-
-        if (userExists){
-            return res.render('cadastro', {
-                errors: {
-                    email: {msg: "Este email já está registrado"}
-                },
-                oldData: req.body
-            })
-        }
-
-        let userToCreate = {
-            ...req.body,
-            senha: bcrypt.hashSync(usuario.senha, 11)
-           // avatar: 
-        }
-        
-        let userCreated = User.create(userToCreate)
-        return res.render('login')
     },
     auth: (req, res) => {
         //{email:"Iago@dh",senha:"123456"}
@@ -73,7 +72,11 @@ const userController = {
                 return res.redirect('/assinante')
             }
         }
-        return res.send('Login ou senha errada')
+        return res.render('login', {
+            errors: {
+                senha: {msg: "Email ou senha inválido."}
+            }
+       })
 
     },
     pagar: (req, res) => {

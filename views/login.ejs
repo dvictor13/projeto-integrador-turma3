@@ -27,6 +27,15 @@
                 <p class="titulo">OU</p>
             </div>
             <div class="caixinhaLogin">
+                <% if(typeof errors !== 'undefined'){%> 
+                    <ul>
+                        <% for(let error in errors){ %>
+                            <li>
+                                <%= errors[error].msg %>
+                            </li> 
+                        <% } %> 
+                    </ul>
+                <% } %> 
                 <form class=form2 id="form1" action="/home" method="POST">
                     <input type="email" id="email" name="email" placeholder="Digite seu email" required>
                     <br>
