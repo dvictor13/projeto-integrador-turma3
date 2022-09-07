@@ -49,16 +49,15 @@ const userController = {
     },
     pagamento:(req,res)=>{
         res.render('pagamento',{dadosPlano:listaPlanos[0]})
-    },
-    assinante:(req,res)=>{
-        res.render('assinante',{
-            userLogged: req.session.auth,
-            usuario:listaUsuariosassinante,
-            listaplanos:listaPlanos
-        });
     },    
     contato:(req,res)=>{
         res.render('contato');
+    }, 
+    pagar: (req, res) => {
+        res.render('pagamento',{dadosPlano:listaPlanos[0]})
+    },
+    logar: (req,res) =>{
+        res.render('login')
     },
     auth: (req, res) => {
         const dadosUsuario = req.body
@@ -69,7 +68,7 @@ const userController = {
             if(senhaValida){
                 delete userToLogin.senha;
                 req.session.isAuth = userToLogin;
-                console.log(req.session)
+                console.log(req.session.isAuth)
                 return res.redirect('/assinante')
             }
         }
@@ -80,11 +79,17 @@ const userController = {
             }
         })
     },
-    pagar: (req, res) => {
-        res.render('pagamento',{dadosPlano:listaPlanos[0]})
+    assinante:(req,res)=>{
+        res.render('assinante',{
+            userLogged: req.session.isAuth,
+            usuario:listaUsuariosassinante,
+            listaplanos:listaPlanos
+        });
     },
-    logar: (req,res) =>{
-        res.render('login')
+    logout: (req, res) => {
+        req.session.destroy();
+        
+        return res.redirect('/');
     }
 }
 module.exports = userController;

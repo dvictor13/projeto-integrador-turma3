@@ -1,9 +1,7 @@
 function isAuthUser(req,res,next){
-    if(req.session.isAuth){
-        next()
-    }else{
-       return res.redirect('/cadastro')
-    }
-
+    if(!req.session.isAuth){
+        return res.redirect('/login')
+     }
+     next()
 }
 module.exports = isAuthUser

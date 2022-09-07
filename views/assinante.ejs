@@ -16,10 +16,10 @@
 <%- include('./partials/header')%>
 <main>
 
-        <h2 class="note ak-black">BEM-VINDO,<span class="light ak-black"> FULANO DE TAL!</span></h2>
+        <h2 class="note ak-black">BEM-VINDO,<span class="light ak-black"> <%= userLogged.nome %> !</span></h2>
         <section id="dados">
             <section class="cortes"> 
-                    <div class="imgPlano"><img src= "<%= user.img %>" class="imgCard"></div>
+                    <div class="imgPlano"><img src="<%= userLogged.img %>" class="imgCard"></div>
                     <form class=form1 id="form1" action="/cadastro" method="POST">
                         <div class = "infos">
                             <label>Nome</label>
