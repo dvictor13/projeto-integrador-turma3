@@ -133,6 +133,10 @@ footer{
 }
 
 .container-footer .logo-footer{
+<<<<<<< HEAD
+    max-width: 200px;
+=======
+>>>>>>> a1fb84f087c56a65210a45c73d65fc59dd64b590
     display: flex;
     align-items: center;
 }
@@ -189,7 +193,7 @@ footer{
         flex-direction: row;
         width: 100%;
         padding: 0 10%;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .container-footer .ladoDireitoFooter{

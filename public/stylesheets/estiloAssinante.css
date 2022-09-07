@@ -24,12 +24,36 @@
 
 }
 main>h2{
-    padding: 10% 6%;
+    padding: 5% 6%;
     color:#42210B ;
     text-align: left;
-
-
 }
+
+.form1{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 15% 10%;
+    flex-direction: column;
+}
+
+.infos{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    font-size: 1.3rem;
+    font-family: 'Akrobat-Regular';
+}
+.form1 label{
+    font-family: 'Akrobat-black';
+    color: #C69C6D;
+}
+
+.form1 input{
+    font-family: 'Akrobat-black';
+    color: #C69C6D;
+}
+
+
 main > h2 .light{
     color: #C69C6D;
 
