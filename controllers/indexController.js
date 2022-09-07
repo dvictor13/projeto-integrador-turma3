@@ -1,5 +1,5 @@
-const listaPlanos = require("../database/planos")
-const listaBarbearias = require("../database/barbearias")
+const listaPlanos = require("../planos.json")
+const listaBarbearias = require("../barbearias.json")
 
 
 

@@ -10,6 +10,7 @@ body{
 .conteudo{
     background-color:#754C24;
     min-height: 40vh;
+    margin: 8% auto;
 }
 
 .conteudo .secaoPlanoEscolhido {
@@ -68,7 +69,7 @@ body{
 }
 
 input{
-    display: none;
+    display: block;
 }
 
 .caixinha{
@@ -208,7 +209,7 @@ input{
 
     .ak-black{
         font-size: 2rem;
-        width: 750px;
+        /*width: 750px;*/
         margin: 2% 0%;
         padding-top: 0% ;
     }

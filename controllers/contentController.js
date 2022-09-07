@@ -1,6 +1,6 @@
 // criar lista de barbearias e planos e mandar no render
-const listaPlanos = require('../database/planos')
-const listaBarbearias = require('../database/barbearias')
+const listaPlanos = require('../planos.json')
+const listaBarbearias = require('../barbearias.json')
 
 
 const contentController ={
@@ -9,6 +9,10 @@ const contentController ={
     },
     barbearias:(req,res)=>{
         res.render('barbearias',{listabarbearias:listaBarbearias,}) // adicionar objeto barbearias
+    },
+    visualizarPlanos:async (req,res)=>{
+        let planos = await Plano.findAll()
+        res.send(planos)
     }
 }
 

@@ -97,6 +97,7 @@ header .cabecalho .list{
 
 li{
     color: var(--marrom-claro);
+    padding: 5px;
 }
 
 header .cabecalho .menu a{
@@ -115,7 +116,10 @@ footer{
     background-color:var(--preto);
     color: var(--marrom-claro);
     display: flex;
-    padding: 20px;
+    padding: 5% 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 .container-footer{
@@ -154,6 +158,10 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: top;
+}
+
+.container-footer .redes-sociais li a img{
+    width: 30px;
 }
 
 @media screen and (min-width:535px) {
@@ -198,6 +206,12 @@ footer{
     .container-footer .redes-sociais{
         justify-content: center;
         gap: 20px;
+        opacity: .7;
+    }
+
+    .container-footer .redes-sociais:hover{
+        opacity: 1;
+        transition: .5s;
     }
 
     .container-footer{

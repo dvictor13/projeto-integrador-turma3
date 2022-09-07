@@ -101,6 +101,7 @@
         display: flex;
         margin-bottom: 20px;
         justify-content: start;
+        cursor: pointer;
     }
     
     .duvidas .perguntasFrequentes .perguntasResposta .iconePergunta{

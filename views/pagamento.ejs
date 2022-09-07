@@ -20,8 +20,8 @@
         <section class="pagamento">
             <h2 class="titulo">DADOS DE PAGAMENTO</h2>
             <article class="resumo">
-                <h3 class="plano">PLANO BASIC</h3>
-                <span class="valor">RS 35,00</span>
+                <h3 class="plano"> <%= dadosPlano.nome %> </h3>
+                <span class="valor"><%= dadosPlano.preco %></span>
             </article>
             <form action="">
                 <label for="duracao">Selecione o período:</label>
@@ -64,7 +64,7 @@
                 <span>RS35,00</span>
             </div>
             <div class="finalizar">
-                <button disabled="imprimir">FINALIZAR PEDIDO</button>
+                <a href="assinante"><button >FINALIZAR PEDIDO</button></a>
                 <img src="/images/recaptcha.png" alt="">  
             </div>
 
