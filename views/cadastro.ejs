@@ -29,18 +29,24 @@
                         <% } %> 
                     </ul>
                 <% } %> 
+
                 <form class=form1 id="form1" action="/cadastro" method="POST">
-                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required
+                    <% if(typeof oldData !== 'undefined') {%> value="<%=oldData.nome %>" <% }%>>
                     <br>
-                    <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                    <input type="email" id="email" name="email" placeholder="Digite seu email" required
+                    <% if(typeof oldData !== 'undefined') {%> value="<%=oldData.email %>" <% }%>>
                     <br>
                     <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
                     <br>
-                    <input type="number" id="cpf" name="cpf" placeholder="Digite seu CPF">
+                    <input type="number" id="cpf" name="cpf" placeholder="Digite seu CPF"
+                    <% if(typeof oldData !== 'undefined') {%> value="<%=oldData.cpf %>" <% }%>>
                     <br>
-                    <input class=date type="date" id="nascimento" name="nascimento" placeholder="Digite a data de nascimento" >
+                    <input class=date type="date" id="nascimento" name="nascimento" placeholder="Digite a data de nascimento" 
+                    <% if(typeof oldData !== 'undefined') {%> value="<%=oldData.nascimento %>" <% }%>>
                     <br>
-                    <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone para contato">
+                    <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone para contato"
+                    <% if(typeof oldData !== 'undefined') {%> value="<%=oldData.telefone %>" <% }%>>
                     <br>
                     <div class="formularioGenero">
                         <label for="genero">Gênero</label>

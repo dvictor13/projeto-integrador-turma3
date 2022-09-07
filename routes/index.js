@@ -22,7 +22,7 @@ router.get('/contato',userController.contato)
 
 router.get('/barbearias',contentController.barbearias)
 router.get('/planos/',contentController.planos)
-router.post('/home', userController.auth)
+router.post('/logar', userController.auth)
 router.post('/cadastro',validationMiddlewares,userController.processRegister)
 router.post('/pagamento',userController.pagar)
 router.get('/login',userController.logar)

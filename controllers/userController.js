@@ -1,5 +1,4 @@
 const fs = require('fs');
-const usersJson = require('../users.json')
 const bcrypt = require('bcrypt')
 const User = require('../models/User');
 const {validationResult} = require('express-validator')
@@ -52,32 +51,34 @@ const userController = {
         res.render('pagamento',{dadosPlano:listaPlanos[0]})
     },
     assinante:(req,res)=>{
-        res.render('assinante',{usuario:listaUsuariosassinante,listaplanos:listaPlanos});
+        res.render('assinante',{
+            userLogged: req.session.auth,
+            usuario:listaUsuariosassinante,
+            listaplanos:listaPlanos
+        });
     },    
     contato:(req,res)=>{
         res.render('contato');
     },
     auth: (req, res) => {
-        //{email:"Iago@dh",senha:"123456"}
         const dadosUsuario = req.body
-        //Busca o usuario por email
-        const user = usersJson.find((u) => u.email == dadosUsuario.email)
-        //Valida se o usuario existe
-        if (user) {
-            //compara a senha do formulario com a senha do json
-            let senhaValida = bcrypt.compareSync(dadosUsuario.senha, user.senha)
-            if (senhaValida) {
-                req.session.isAuth = dadosUsuario.email
-                //login com sucesso
+        let userToLogin = User.findUserByField('email', dadosUsuario.email);
+        if(userToLogin){
+            let senhaValida = bcrypt.compareSync(dadosUsuario.senha, userToLogin.senha)
+
+            if(senhaValida){
+                delete userToLogin.senha;
+                req.session.isAuth = userToLogin;
+                console.log(req.session)
                 return res.redirect('/assinante')
             }
         }
+
         return res.render('login', {
             errors: {
                 senha: {msg: "Email ou senha inválido."}
             }
-       })
-
+        })
     },
     pagar: (req, res) => {
         res.render('pagamento',{dadosPlano:listaPlanos[0]})
