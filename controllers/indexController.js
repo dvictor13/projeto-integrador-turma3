@@ -5,7 +5,8 @@ const listaBarbearias = require("../barbearias.json")
 
 const indexController = {
     home:(req,res)=>{
-        res.render('index',{listaplanos:listaPlanos,barbearias:listaBarbearias});
+        console.log(req.cookies.aceite)
+        res.render('index',{listaplanos:listaPlanos,barbearias:listaBarbearias, aceite:req.cookies.aceite});
     },
     equipe:(req,res)=>{
         res.render('equipe');
