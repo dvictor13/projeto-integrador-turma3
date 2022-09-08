@@ -52,20 +52,6 @@
                     <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone para contato"
                     <% if(typeof oldData !== 'undefined') {%> value="<%=oldData.telefone %>" <% }%>>
                     <br>
-                    <div class="formularioGenero">
-                        <label for="genero">Gênero</label>
-                        <div>
-                            <input type="radio" name="genero" id="masculino" value="masculino" ><label form="masculino">Masculino</label>
-                        </div>
-                        <div>
-                            <input type="radio" name="genero" id="feminino" value="feminino"><label form="feminino">Feminino</label>
-                        </div>
-                        <div>
-                            <input type="radio" name="genero" id="outros" value="outros"><label form="outros">Outros</label>
-                        </div>    
-                        <div>    
-                            <input type="radio" name="genero" id="nao informado" value="nao informado"><label form="nao informado">Prefiro não informar</label>
-                        </div>    -->
                             <div class="radio-container">
                                 <label for="masculino">
                                     <input type="radio" id="masculino" value="masculino" name="radio" />
@@ -114,26 +100,6 @@
 
         </main>
         <%- include('./partials/footer') %>
-
-            <script>
-                var visibilidade = false;
-
-                function mudarDiv() {
-
-<<<<<<< HEAD
-=======
-                    if (!visibilidade) {
-                        document.getElementById("formulariocampos").style.display = "flex";
-                        visibilidade = true;
-
-                    } else if (visibilidade) {
-                        document.getElementById("formulariocampos").style.display = "none";
-                        visibilidade = false;
-                    }
-                }
-            </script>
->>>>>>> 4301a0cdcdea0f2803703f76bf07ca1ff3efdf6a
-
 </body>
 
 </html>

@@ -76,7 +76,6 @@ input[type=submit]:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    display: none;
     border-radius: 10px;
 }
 
