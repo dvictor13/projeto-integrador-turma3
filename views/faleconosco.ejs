@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/estilo.css">
+    <link rel="stylesheet" href="/stylesheets/estiloHeaderFooter.css">
+    <title>Barba,Cabelo e Bigode</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+
+<%- include('./partials/header') %>
+<main>
+
+    <section id="contact-us">
+            <div class="p-container">
+                <div class="content">
+                    <form action="action_page.php">
+            
+                        <label for="fname">Nome</label>
+                        <input type="text" id="fname" name="firstname" placeholder="Nome">
+                
+                        <label for="lname">Sobrenome</label>
+                        <input type="text" id="lname" name="lastname" placeholder="Sobrenome">
+                
+                        <label for="local">Estado</label>
+                        <select id="local" name="local">
+                            <option selected disabled>Selecione</option>
+                            <option value="rj">Rio de Janeiro</option>
+                            <option value="sp">São Paulo</option>
+                            <option value="rs">Rio Grande do Sul</option>
+                            <option value="rs">Outro</option>
+                        </select>
+                
+                        <label for="subject">Mensagem</label>
+                        <textarea id="subject" name="subject" placeholder="Deixe a sua mensagem" style="height:200px"></textarea>
+                
+                        <input type="submit" value="Submit">
+                        <button onclick="closeContact()" id="fechar-contact-us">FECHAR</button>
+                    </form>
+                </div>
+                
+            </div>
+    </section>
+
+
+</main>
+    <%- include('./partials/footer') %>
+
+</body>
+
+</html>
