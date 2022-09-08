@@ -68,7 +68,12 @@ const userController = {
             if(senhaValida){
                 delete userToLogin.senha;
                 req.session.isAuth = userToLogin;
-                console.log(req.session.isAuth)
+                console.log(dadosUsuario.lembrar)
+                if(dadosUsuario.lembrar){
+                    res.cookie('userEmail', dadosUsuario.email, 
+                    {maxAge: (1000 * 60) * 30} )
+                }
+
                 return res.redirect('/assinante')
             }
         }
@@ -80,6 +85,7 @@ const userController = {
         })
     },
     assinante:(req,res)=>{
+        console.log(req.cookies.userEmail);
         res.render('assinante',{
             userLogged: req.session.isAuth,
             usuario:listaUsuariosassinante,
@@ -87,6 +93,7 @@ const userController = {
         });
     },
     logout: (req, res) => {
+        res.clearCookie('userEmail');
         req.session.destroy();
         
         return res.redirect('/');
