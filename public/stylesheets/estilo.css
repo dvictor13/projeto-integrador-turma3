@@ -549,8 +549,8 @@ main .barbeariasIndex .cardsBarbearia .cardB .btnComecar {
 @media (min-width:1280px) {
 
     /*.slideshow-container {
-            max-width: 1600px;
-        }*/
+        max-width: 1600px;
+    }*/
 
     main .corpoIndex .descricao .introducao {
         padding: 25px 0;
@@ -598,7 +598,6 @@ main .barbeariasIndex .cardsBarbearia .cardB .btnComecar {
     }
 
     main .barbeariasIndex h2 {
-        font-size: 1.2rem;
         color: #42210B;
         margin-bottom: 4%;
     }
@@ -715,18 +714,97 @@ main .barbeariasIndex .cardsBarbearia .cardB .btnComecar {
 }
 
 
-/*---- política de privacidade-------*/
-#politica-de-privacidade {
-    position: fixed;
+
+  /*------------ cards-equipe ----------------------*/
+
+#cards-equipe{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 20px auto;
+}
+
+#cards-equipe .tituloDesc h2 {
+    font-weight: 800;
+    font-size: 2rem;
+    color: #42210B;
+    text-transform: uppercase;
+    margin-top: 40px;
+    text-align: center;
+    font-family: 'Akrobat-Black';
+}
+
+#cards-equipe .container-equipe{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    align-content: space-between;
+    margin: 10px auto;
+    justify-content: center;
+}
+
+/* @media screen and (min-width:425px) {
+    #cards-equipe .container-equipe{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-content: space-between;
+    }
+} */
+
+#cards-equipe .container-equipe .members{
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    /* background-color: var(--terciary-color); */
+    border: var(--terciary-color) 2px solid;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+#cards-equipe .container-equipe .members .photo-name{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+#cards-equipe .container-equipe .members .photo-name img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background: var(--secundary-color);
+    object-position: center;
+    object-fit: cover;
+}
+
+#cards-equipe .container-equipe .members .name{
+    text-align: left;
+    padding-left: 10px;
+    color: var(--primary-color);
+}
+
+
+
+/*------------ form contact us ----------------------*/
+
+#contact-us {
+    /* position: fixed;
     z-index: 999999;
     inset: 0px;
     text-align: center;
     overflow: auto;
-    background: rgba(0, 0, 0, 0.6);
-    display: none;
+    background: rgba(0, 0, 0, 0.6); */
+    display: flex;
+    width: 100%;
 }
 
-#politica-de-privacidade .p-container {
+#contact-us .p-container {
     margin: 60px auto;
     box-sizing: border-box;
     padding: 10px 30px;
@@ -735,95 +813,7 @@ main .barbeariasIndex .cardsBarbearia .cardB .btnComecar {
     background: rgb(255, 255, 255);
 }
 
-#politica-de-privacidade .p-container .content {
+#contact-us .p-container .content {
     text-align: left;
 }
 
-#politica-de-privacidade .p-container .content .politica-paragrafo {
-    margin-top: 10px;
-    color: rgb(0, 0, 0);
-    margin-bottom: 10px;
-    line-height: 22px;
-    font-size: 15px;
-    font-family: sans-serif;
-}
-
-
-#fechar-politica {
-    margin: 20px auto;
-    padding: 12px 30px;
-    color: rgb(255, 255, 255);
-    background: rgb(0, 0, 0);
-    border: none;
-    cursor: pointer;
-}
-
-/*---- Cookies-------*/
-
-#cookies {
-    position: fixed;
-    z-index: 999998;
-    box-sizing: border-box;
-    width: 100%;
-    bottom: 15px;
-    left: 0px;
-
-    display: block;
-}
-
-#cookies .cookies-container {
-    max-width: 880px;
-    padding: 20px 30px;
-    box-sizing: border-box;
-    border-radius: 6px;
-    margin: 0px auto;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
-    background: rgb(255, 255, 255);
-}
-
-#aceitar-cookies {
-    color: rgb(255, 255, 255);
-    background: rgb(0, 0, 0);
-    text-decoration: none;
-    font-size: 15px;
-    font-family: sans-serif;
-    font-weight: bold;
-    display: inline-block;
-    box-sizing: border-box;
-    padding: 10px 20px;
-    display: block;
-}
-
-#cookies .cookies-container .cookies-cols {
-    display: flex;
-    align-items: center;
-    color: rgb(0, 0, 0);
-    flex-flow: row;
-    gap: 10px;
-}
-
-/*#cookies .cookies-container .cookies-cols .cookies-col {
-    margin-right: 20px;
-}*/
-
-#cookies .cookies-container .cookies-cols .cookies-col p {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    line-height: 20px;
-    font-size: 15px;
-    font-family: sans-serif;
-    width: 100%;
-}
-
-#cookies .cookies-container .cookies-cols .cookies-col btn a {
-    color: rgb(255, 255, 255);
-    background: rgb(0, 0, 0);
-    text-decoration: none;
-    font-size: 15px;
-    font-family: sans-serif;
-    font-weight: bold;
-    display: inline-block;
-    box-sizing: border-box;
-    padding: 10px 20px;
-    text-align: center;
-}
