@@ -817,3 +817,21 @@ main .barbeariasIndex .cardsBarbearia .cardB .btnComecar {
     text-align: left;
 }
 
+#contact-us .p-container .content .politica-paragrafo {
+    margin-top: 10px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 10px;
+    line-height: 22px;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+
+#close-contact-us {
+    margin: 20px auto;
+    padding: 12px 30px;
+    color: rgb(255, 255, 255);
+    background: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+}
+
