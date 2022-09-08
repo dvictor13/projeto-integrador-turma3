@@ -15,6 +15,10 @@ const notLogged = require('../middlewares/notLogged');
 router.get('/home',indexController.home)
 router.get('/',indexController.home)
 
+router.get('/equipe', indexController.equipe)
+router.get('/politica', indexController.politica)
+router.get('/faleconosco', indexController.faleconosco)
+
 router.get('/assinante',isAuthUser,userController.assinante)
 router.get('/pagamento',userController.pagamento)
 router.get('/carrinho/:id?',userController.carrinho)
