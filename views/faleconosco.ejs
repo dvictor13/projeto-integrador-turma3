@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/estilo.css">
+    <link rel="stylesheet" href="/stylesheets/estiloForm.css">
     <link rel="stylesheet" href="/stylesheets/estiloHeaderFooter.css">
     <title>Barba,Cabelo e Bigode</title>
 
@@ -14,12 +15,10 @@
 
 <%- include('./partials/header') %>
 <main>
-
     <section id="contact-us">
-            <div class="p-container">
+            <h2>Fale conosco</h2>
                 <div class="content">
-                    <form action="action_page.php">
-            
+                    <form action="">
                         <label for="fname">Nome</label>
                         <input type="text" id="fname" name="firstname" placeholder="Nome">
                 
@@ -27,7 +26,7 @@
                         <input type="text" id="lname" name="lastname" placeholder="Sobrenome">
                 
                         <label for="local">Estado</label>
-                        <select id="local" name="local">
+                        <select class="list-option" id="local" name="local">
                             <option selected disabled>Selecione</option>
                             <option value="rj">Rio de Janeiro</option>
                             <option value="sp">São Paulo</option>
@@ -36,12 +35,11 @@
                         </select>
                 
                         <label for="subject">Mensagem</label>
-                        <textarea id="subject" name="subject" placeholder="Deixe a sua mensagem" style="height:200px"></textarea>
-                
-                        <input type="submit" value="Submit">
-                        <button onclick="closeContact()" id="fechar-contact-us">FECHAR</button>
+                        <textarea class="list-option" id="subject" name="subject" placeholder="Deixe a sua mensagem" style="height:200px"></textarea>
+                        
+                        <input type="submit" value="Enviar">
+                        <!--<button onclick="closeContact()" id="fechar-contact-us">FECHAR</button>-->
                     </form>
-                </div>
                 
             </div>
     </section>
