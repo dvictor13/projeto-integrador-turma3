@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "nome": "BASIC",
         "preco": 30,
         "barbas": 1,
@@ -12,6 +13,7 @@
         "economia": 20
     },
     {
+        "id": 2,
         "nome": "STANDARD",
         "preco": 65,
         "barbas": 2,
@@ -25,6 +27,7 @@
         "economia": 25
     },
     {
+        "id": 3,
         "nome": "PREMIUM",
         "preco": 80,
         "barbas": 5,
@@ -38,6 +41,7 @@
         "economia": 30
     },
     {
+        "id": 4,
         "nome": "MASTER",
         "preco": 100,
         "barbas": "Ilimitado",
