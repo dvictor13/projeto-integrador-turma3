@@ -15,19 +15,31 @@
 
 <%- include('./partials/header')%>
 <main>
+    <script>
+        function alterar() {
+    
+            const special = document.querySelectorAll("input");
+            special.forEach((userItem) => {
+                userItem.disabled = false;
+            });
+            document.getElementById("alterar").style.display = 'none';
+        }
+    </script>
+    </body>
 
         <h2 class="note ak-black">BEM-VINDO,<span class="light ak-black"> <%= userLogged.nome %> !</span></h2>
         <section id="dados">
-            <section class="cortes"> 
-                    <div class="imgPlano"><img src="<%= userLogged.img %>" class="imgCard"></div>
-                    <form class=form1 id="form1" action="/cadastro" method="POST">
+                    <div class="imgU"><img src="<%= userLogged.img %>" id="imgUser"></div>
+                    <form class=form1 id="form1" action="/assinante" method="POST">
                         <div class = "infos">
                             <label>Nome</label>
-                            <input type="text" id="nome" name="nome" required>
+                            <input type="text" id="nome" name="nome" required
+                            value="<%= userLogged.nome %>" disabled >
                         </div>
                         <div class = "infos">
                             <label>Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" required
+                            value="<%= userLogged.email %>" disabled >
                         </div>
                       <!--  <div class = "infos">
                             <label>Nome</label>
@@ -35,56 +47,63 @@
                         </div>-->
                         <div class = "infos">
                             <label>CPF</label>
-                            <input type="number" id="cpf" name="cpf" required>
+                            <input type="number" id="cpf" name="cpf" required
+                            value="<%= userLogged.cpf %>" disabled  >
                         </div>
                         <div class = "infos">
                             <label>Data de nascimento</label>
-                            <input class=date type="date" id="nascimento" name="nascimento" required >
+                            <input class=date type="date" id="nascimento" name="nascimento" required 
+                            value="<%= userLogged.nascimento %>" disabled >
                         </div>
                         <div class = "infos">
                             <label>Telefone</label>
-                            <input type="tel" id="telefone" name="telefone" >
+                            <input type="tel" id="telefone" name="telefone" 
+                            value="<%= userLogged.telefone %>"disabled  >
                         </div>
                         <div class="infos">
                             <label for="genero">Gênero</label>
                             <div>
-                                <input type="radio" name="genero" id="masculino" value="masculino" ><label form="masculino">Masculino</label>
+                                <input type="radio" name="genero" id="masculino" value="masculino" 
+                                <% if (userLogged.genero === 'masculino') { %> checked <% } %> disabled  ><label form="masculino">Masculino</label>
                             </div>
                             <div>
-                                <input type="radio" name="genero" id="feminino" value="feminino"><label form="feminino">Feminino</label>
+                                <input type="radio" name="genero" id="feminino" value="feminino"
+                                <% if (userLogged.genero === 'feminino') { %> checked <% } %> disabled ><label form="feminino">Feminino</label>
                             </div>
                             <div>
-                                <input type="radio" name="genero" id="outros" value="outros"><label form="outros">Outros</label>
+                                <input type="radio" name="genero" id="outros" value="outros"
+                                <% if (userLogged.genero === 'outros') { %> checked <% } %> disabled  ><label form="outros">Outros</label>
                             </div>    
                             <div>    
-                                <input type="radio" name="genero" id="nao informado" value="nao informado"><label form="nao informado">Prefiro não informar</label>
+                                <input type="radio" name="genero" id="nao informado" value="nao informado"
+                                <% if (userLogged.genero === 'nao informado') { %> checked <% } %> disabled ><label form="nao informado">Prefiro não informar</label>
                             </div>    
                         </div>
                         <section class="butons">
-                            <button id="alterar">Alterar</button>
+                            <div id="alterar" onclick="alterar()">Alterar</div>
                             <button id="senha">Alterar Senha</button>
                             <button id="salvar">Salvar</button>    
                         </section>
-                    </form>    
-               <!--     <section class="cardsPlanos">
-                        <% for (let plano of listaplanos) { %>
-                            <article class="card">
-                                <div class="imgPlano"><img src= "<%= plano.img %>" class="imgCard"></div>
-                                <div class="conteudoCard">
-                                <div class="categoria"><%=plano.nome%></div>
-                                <h2 class="preco">R$<%=plano.preco%>,00</h2>
-                                <p class="descPlanos"><%=plano.barbas %> barba<% if (plano.barbas > 1) {%>s<%}%></p>
-                                <p>por mês</p>
-                                <p class="descPlanos"><%=plano.cabelo %> corte<% if (plano.cabelo > 1) {%>s<%}%> de cabelo</p>
-                                <p>por mês</p>
-                                <a href="carrinho"><button class="btnComecar">COMPRAR PLANO</button></a>
-                                </div>
-                            </article>
-                            <%}%>
-                        -->
+                    </form>   
+
+                        <% let planoFound = listaplanos.find( onePlano => onePlano.id === userLogged.id_plano)%> 
+                        <% console.log(planoFound)%>
+                    <section class="planosIndex">
+                        <section class="cardsPlanos">
+                                <article class="card">
+                                    <div class="imgPlano"><img src= "<%= planoFound.img %>" class="imgCard"></div>
+                                    <div class="conteudoCard">
+                                    <div class="categoria"><%=planoFound.nome%></div>
+                                    <h2 class="preco">R$<%=planoFound.preco%>,00</h2>
+                                    <p class="descPlanos"><%=planoFound.barbas %> barba<% if (planoFound.barbas > 1) {%>s<%}%></p>
+                                    <p>por mês</p>
+                                    <p class="descPlanos"><%=planoFound.cabelo %> corte<% if (planoFound.cabelo > 1) {%>s<%}%> de cabelo</p>
+                                    <p>por mês</p>
+                                    </div>
+                                <div class="seuplano">SUA ASSINATURA</div>
+                                </article>
+                        </section>
                     </section>
-            </section>
-            
            
         </section>
         <nav class="historico">
@@ -182,6 +201,7 @@
 </main>
 <%- include('./partials/footer')%>
 
-</body>
+
+
 
 </html>

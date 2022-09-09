@@ -17,10 +17,10 @@
   "email": "melissa@email.com",
   "senha": "$2b$11$9bWDMYGkFwIreuAZEil89e3VriQnDTIyTmqBySXd9lhyqrl7Q7dgi",
   "cpf": "23234354",
-  "nascimento": "",
-  "telefone": "",
+  "nascimento": "1997-03-26",
+  "telefone": "21998868536",
   "genero": "feminino",
-  "img": "images/profile/user.png",
+  "img": "images/profile/userMel.jpg",
   "id_plano": 2
  },
  {
