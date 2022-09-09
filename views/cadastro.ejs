@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/estiloCadastro.css">
+    <link rel="stylesheet" href="/stylesheets/estiloForm.css">
     <link rel="stylesheet" href="/stylesheets/estilo.css">
     <link rel="stylesheet" href="/stylesheets/estiloHeaderFooter.css">
     <title>Barba,Cabelo e Bigode</title>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
+
 <body>
-<%- include('./partials/header') %>
-<main>
+    <%- include('./partials/header') %>
+        <main>
 
         <section class="corpoCadastro">
 
@@ -48,34 +52,54 @@
                     <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone para contato"
                     <% if(typeof oldData !== 'undefined') {%> value="<%=oldData.telefone %>" <% }%>>
                     <br>
-                    <div class="formularioGenero">
-                        <label for="genero">Gênero</label>
-                        <div>
-                            <input type="radio" name="genero" id="masculino" value="masculino" ><label form="masculino">Masculino</label>
+                            <div class="radio-container">
+                                <label for="masculino">
+                                    <input type="radio" id="masculino" value="masculino" name="radio" />
+                                    <div class="custom-radio">
+                                        <span></span>
+                                    </div>
+                                    <span>Masculino</span>
+                                </label>
+                            </div>
+                            <div class="radio-container">
+                                <label for="feminino">
+                                    <input type="radio" id="feminino" value="feminino" name="radio" />
+                                    <div class="custom-radio">
+                                        <span></span>
+                                    </div>
+                                    <span>Feminino</span>
+                                </label>
+                            </div>
+                            <div class="radio-container">
+                                <label for="outros">
+                                    <input type="radio" id="outros" value="outros" name="radio" />
+                                    <div class="custom-radio">
+                                        <span></span>
+                                    </div>
+                                    <span>Outros</span>
+                                </label>
+                            </div>
+                            <div class="radio-container">
+                                <label for="nao informado">
+                                    <input type="radio" id="nao informado" value="nao informado" name="radio" />
+                                    <div class="custom-radio">
+                                        <span></span>
+                                    </div>
+                                    <span>Prefiro não informar</span>
+                                </label>
+                            </div>
                         </div>
-                        <div>
-                            <input type="radio" name="genero" id="feminino" value="feminino"><label form="feminino">Feminino</label>
-                        </div>
-                        <div>
-                            <input type="radio" name="genero" id="outros" value="outros"><label form="outros">Outros</label>
-                        </div>    
-                        <div>    
-                            <input type="radio" name="genero" id="nao informado" value="nao informado"><label form="nao informado">Prefiro não informar</label>
-                        </div>    
-                    </div>
-                    <div class="btnCadastro">
-                        <input type="submit" value="CONCLUIR" class="concluirCadastro"  />
-                    </div>
-                </form>                
+                        <input type="submit" value="CONCLUIR" class="concluirCadastro" />
+
+                    </form>
+                </section>
+
+
+
             </section>
 
-
-            
-        </section>
-
-    </main>
-    <%- include('./partials/footer') %>   
-
-
+        </main>
+        <%- include('./partials/footer') %>
 </body>
+
 </html>
