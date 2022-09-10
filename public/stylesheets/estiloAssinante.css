@@ -85,6 +85,18 @@ main>h2{
     justify-content: center;
 }
 
+#cancelar{
+    background-color: #754C24;
+    border: none;
+    color: #FFFFFF;
+    border-radius: 20px;
+    width: 105px;
+    height: 30px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+} 
+
 
 .infos{
     display: flex;
