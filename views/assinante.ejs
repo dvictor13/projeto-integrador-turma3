@@ -18,28 +18,6 @@
 
     <%- include('./partials/header')%>
         <main>
-                <script>
-
-                    function alterar() {
-
-                        const special = document.querySelectorAll("input");
-                        special.forEach((userItem) => {
-                            userItem.disabled = false;
-                        });
-                        document.getElementById("alterar").style.display = 'none';
-                        document.getElementById("cancelar").style.display = 'flex';
-                    }
-
-                    function cancelar() {
-
-                        const special = document.querySelectorAll("input");
-                        special.forEach((userItem) => {
-                            userItem.disabled = true;
-                        });
-                        document.getElementById("alterar").style.display = 'flex';
-                        document.getElementById("cancelar").style.display = 'none';
-                    }
-                </script>
 
 <h2 class="note ak-black">BEM-VINDO,<span class="light ak-black">
         <%= userLogged.nome %> !
@@ -94,7 +72,7 @@
             </div>
         </div>
         <section class="butons">
-                <div id="alterar" onclick="alterar()">Alterar</div>
+                <div id="alterar">Alterar</div>
                 <div id="cancelar" onclick="cancelar()">Cancelar</div>
                     <button id="senha">Alterar Senha</button>
                     <button id="salvar">Salvar</button>
@@ -249,6 +227,8 @@
 </main>
 <%- include('./partials/footer')%>
 
+<script src="/javaScript/assinante.js">
+</script>
 
 
 </body>
