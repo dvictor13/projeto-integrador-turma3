@@ -45,7 +45,6 @@ const userController = {
         return res.render('login')
     },
     foto: (req,res) => {
-        console.log(req.file)
         if ((req.file.mimetype != 'image/jpeg') && (req.file.mimetype != 'image/png')){
             return res.render('assinante', {
                 errors: {
@@ -56,6 +55,10 @@ const userController = {
                 listaplanos:listaPlanos
            })
         }
+        let user = User.findUserByField('email', req.session.isAuth.email);
+        user.img = `images/profile/${req.file.filename}`;
+        console.log(user)
+
         return res.redirect('/assinante');
     },
     carrinho:(req,res)=>{
@@ -100,7 +103,6 @@ const userController = {
         })
     },
     assinante:(req,res)=>{
-        console.log(req.cookies.userEmail);
         res.render('assinante',{
             userLogged: req.session.isAuth,
             usuario:listaUsuariosassinante,

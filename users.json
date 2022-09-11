@@ -58,16 +58,5 @@
   "genero": "masculino",
   "img": "images/profile/user.png",
   "id_plano": 1
- },
- {
-  "id": 6,
-  "nome": "teste3",
-  "email": "teste3@email.com",
-  "senha": "$2b$11$YGFJtOrftu4D.41x5axnMuMnIE8h4FtBrnBIM96Tw/3S1aAs3ENei",
-  "cpf": "12345679",
-  "nascimento": "1999-12-03",
-  "telefone": "",
-  "radio": "feminino",
-  "img": "images/profile/user.png"
  }
 ]
