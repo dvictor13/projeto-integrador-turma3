@@ -7,7 +7,7 @@ const userController = require('../controllers/userController')
 const contentController = require('../controllers/contentController')
 const notLogged = require('../middlewares/notLogged');
 const multer = require('multer');
-const path = require('path')
+const path = require('path');
 
 const multerDiskStorage = multer.diskStorage({
     destination: (req, file, callback)=>{
@@ -27,7 +27,7 @@ const upload = multer({storage : multerDiskStorage})
 //  res.render('index', { title: 'Express' });
 //});
 
-router.post('/foto', upload.single('userImage'))
+
 
 router.get('/home',indexController.home)
 router.get('/',indexController.home)
@@ -48,6 +48,7 @@ router.post('/cadastro',validationMiddlewares,userController.processRegister)
 router.post('/pagamento',userController.pagar)
 router.get('/login',notLogged,userController.logar)
 router.get('/logout',isAuthUser,userController.logout)
+router.post('/foto', upload.single('userImage'), userController.foto)
 
 
 module.exports = router;

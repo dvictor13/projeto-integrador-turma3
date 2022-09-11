@@ -63,12 +63,11 @@
   "id": 6,
   "nome": "teste3",
   "email": "teste3@email.com",
-  "senha": "$2b$11$/6Ty6d6qFGVsucH1h2IntuuJGNvsE/jT92BijcOKdZWhqYcHqu6cK",
-  "cpf": "",
-  "nascimento": "",
+  "senha": "$2b$11$YGFJtOrftu4D.41x5axnMuMnIE8h4FtBrnBIM96Tw/3S1aAs3ENei",
+  "cpf": "12345679",
+  "nascimento": "1999-12-03",
   "telefone": "",
-  "genero": "nao informado",
-  "img": "images/profile/user.png",
-  "id_plano": 3
+  "radio": "feminino",
+  "img": "images/profile/user.png"
  }
 ]

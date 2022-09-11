@@ -36,15 +36,27 @@ const userController = {
 
         let userToCreate = {
             ...req.body,
-            senha: bcrypt.hashSync(usuario.senha, 11)
-           // avatar: 
+            senha: bcrypt.hashSync(usuario.senha, 11),
+            img: "images/profile/user.png",
+            id_plano: undefined
         }
         
-        let userCreated = User.create(userToCreate)
+        User.create(userToCreate)
         return res.render('login')
     },
     foto: (req,res) => {
-        res.send("Deu certo");
+        console.log(req.file)
+        if ((req.file.mimetype != 'image/jpeg') && (req.file.mimetype != 'image/png')){
+            return res.render('assinante', {
+                errors: {
+                    foto: {msg: "Foto inválida."}
+                },
+                userLogged: req.session.isAuth,
+                usuario:listaUsuariosassinante,
+                listaplanos:listaPlanos
+           })
+        }
+        return res.redirect('/assinante');
     },
     carrinho:(req,res)=>{
         const codPlano = req.params.id;

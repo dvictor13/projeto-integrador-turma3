@@ -1,4 +1,4 @@
-main .secaoPlanos{
+main .sessaoPlanos{
     background-color: #754C24;
     padding: 10% 5%;
     display: flex;
@@ -6,14 +6,14 @@ main .secaoPlanos{
     align-items: center;
 }
 
-main .secaoPlanos h2{
+main .sessaoPlanos h2{
     font-size: 1.2rem;
     color: #ffffff;
     font-family: 'Hansief-Rough';
     font-weight: lighter;
 }
 
-main .secaoPlanos .vantagens{
+main .sessaoPlanos .vantagens{
     text-align: justify;
     margin: 8%;
     font-family: 'Akrobat-Regular';
@@ -21,7 +21,7 @@ main .secaoPlanos .vantagens{
 }
 
 
-main .secaoPlanos .cardsPlanos .cardP{
+main .sessaoPlanos .cardsPlanos .cardP{
     border: 1px solid #42210B;
     width: 250px;
     height: 490px;
@@ -34,7 +34,7 @@ main .secaoPlanos .cardsPlanos .cardP{
     border: none;
 }
 
-main .secaoPlanos .categoriaPlano{
+main .sessaoPlanos .categoriaPlano{
     width: 100%;
     height: 90px;
     background-color: #C69C6D;
@@ -43,13 +43,13 @@ main .secaoPlanos .categoriaPlano{
     align-items: center;
 }
     
-main .secaoPlanos .categoriaPlano p{
+main .sessaoPlanos .categoriaPlano p{
     color: #42210B;
     font-family: 'Hansief-Rough' ;
     font-size: 1.7rem;
 }
 
-main .secaoPlanos .cardsPlanos .categoriaEcon{
+main .sessaoPlanos .cardsPlanos .categoriaEcon{
     width: 160px;
     height: 28px;
     color: #ffffff;
@@ -62,21 +62,21 @@ main .secaoPlanos .cardsPlanos .categoriaEcon{
     top: -14px;
 }
 
-main .secaoPlanos .cardsPlanos ul{
+main .sessaoPlanos .cardsPlanos ul{
     margin-top: 5%;
 
 }
-main .secaoPlanos .cardsPlanos .cardP .descPlanos{
+main .sessaoPlanos .cardsPlanos .cardP .descPlanos{
     color: #42210B;
     width: 170px;
     list-style-image: url(../images/check.png) ;
 }
 
-main .secaoPlanos .cardsPlanos .cardP .descTempo{
+main .sessaoPlanos .cardsPlanos .cardP .descTempo{
     width: 170px;
 }
 
-main .secaoPlanos .cardsPlanos .cardP .precoButon{
+main .sessaoPlanos .cardsPlanos .cardP .precoButon{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -84,7 +84,7 @@ main .secaoPlanos .cardsPlanos .cardP .precoButon{
     margin-top: 30px;
 }
 
-main .secaoPlanos .cardsPlanos .cardP .preco{
+main .sessaoPlanos .cardsPlanos .cardP .preco{
     width: 175px;
     padding-top: 5px;
     text-align: center; 
@@ -98,7 +98,7 @@ main .secaoPlanos .cardsPlanos .cardP .preco{
 }
 
 
-main .secaoPlanos .cardsPlanos .cardP .btnComecar{
+main .sessaoPlanos .cardsPlanos .cardP .btnComecar{
     background-color: #C69C6D;
     width: 150px;
     height: 70px;
@@ -110,13 +110,13 @@ main .secaoPlanos .cardsPlanos .cardP .btnComecar{
     flex-direction: column;
 }
 
-main .secaoPlanos .cardsPlanos .cardP .btnComecar p {
+main .sessaoPlanos .cardsPlanos .cardP .btnComecar p {
     font-family: 'Hansief-Rough';
     color: #ffffff;
     font-size: 1.1rem;
 }
 
-main .secaoPlanos .cardsPlanos .cardP .economia{
+main .sessaoPlanos .cardsPlanos .cardP .economia{
     width: 100%;
     height: 90px;
     background-color: #000000;
@@ -126,48 +126,48 @@ main .secaoPlanos .cardsPlanos .cardP .economia{
     flex-direction: column;
     margin-top: 10px;
 }
-main .secaoPlanos .cardsPlanos .cardP .economia p{
+main .sessaoPlanos .cardsPlanos .cardP .economia p{
     color: #ffffff;
     font-family: 'Hansief-Rough';
 }
 
 @media screen and (min-width:769px) {
-    main .secaoPlanos{
+    main .sessaoPlanos{
         padding: 2% 5%;
 
     }
 
-    main .secaoPlanos h2{
+    main .sessaoPlanos h2{
         font-size: 2rem;
         width: 750px;
     }
 
-    main .secaoPlanos .vantagens{
+    main .sessaoPlanos .vantagens{
         margin: 3% 0%;
         width: 750px;
     }
 
-    main .secaoPlanos .cardsPlanos .cardP{
+    main .sessaoPlanos .cardsPlanos .cardP{
         width: 750px;
         height: 200px;
         flex-direction: row;
         justify-content: space-between;
     }
 
-    main .secaoPlanos .categoriaPlano{
+    main .sessaoPlanos .categoriaPlano{
         width: 180px;
         height: 200px;
     }
 
-    main .secaoPlanos .cardsPlanos .cardP .economia{
+    main .sessaoPlanos .cardsPlanos .cardP .economia{
         display: none;
     }
 
-    main .secaoPlanos .cardsPlanos .categoriaEcon{
+    main .sessaoPlanos .cardsPlanos .categoriaEcon{
         display: none;
     }
 
-    main .secaoPlanos .cardsPlanos ul{
+    main .sessaoPlanos .cardsPlanos ul{
         margin-top: 0%;
         display: flex;
         flex-direction: column;
@@ -177,18 +177,18 @@ main .secaoPlanos .cardsPlanos .cardP .economia p{
 
     }
 
-    main .secaoPlanos .cardsPlanos li{
+    main .sessaoPlanos .cardsPlanos li{
         margin-top: 10px;
         margin-right: 20px;
     }
 
-    main .secaoPlanos .cardsPlanos .cardP .preco{
+    main .sessaoPlanos .cardsPlanos .cardP .preco{
         width: 100px;
         border-top: none;
         margin-top: -10px;
     }
 
-    main .secaoPlanos .cardsPlanos .cardP .precoButon{
+    main .sessaoPlanos .cardsPlanos .cardP .precoButon{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -196,7 +196,7 @@ main .secaoPlanos .cardsPlanos .cardP .economia p{
         width: 170px;
     }
 
-    main .secaoPlanos .cardsPlanos .cardP .btnComecar{
+    main .sessaoPlanos .cardsPlanos .cardP .btnComecar{
         border-radius: 0px;
         margin-bottom: 20px;
     }
@@ -205,15 +205,15 @@ main .secaoPlanos .cardsPlanos .cardP .economia p{
 
 @media (min-width:1280px) {
 
-    main .secaoPlanos h2{
+    main .sessaoPlanos h2{
         width: 1200px;
     }
 
-    main .secaoPlanos .vantagens{
+    main .sessaoPlanos .vantagens{
         width: 1200px;
     }
 
-    main .secaoPlanos .cardsPlanos .cardP{
+    main .sessaoPlanos .cardsPlanos .cardP{
         width: 1200px;
   /*      height: 450px;
         display: flex;
@@ -224,17 +224,17 @@ main .secaoPlanos .cardsPlanos .cardP .economia p{
         border: none;*/
     }
 
-    main .secaoPlanos .categoriaPlano{
+    main .sessaoPlanos .categoriaPlano{
         width: 300px;
     }
 
-    main .secaoPlanos .cardsPlanos ul{
+    main .sessaoPlanos .cardsPlanos ul{
         height: 130px;
         width: 500px;
     
     }
 
-    main .secaoPlanos .cardsPlanos li{
+    main .sessaoPlanos .cardsPlanos li{
         margin-top: 10px;
         margin-right: 40px;
     }

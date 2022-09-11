@@ -17,174 +17,195 @@
 <body>
 
     <%- include('./partials/header')%>
-        <main>
+    <main>
 
-<h2 class="note ak-black">BEM-VINDO,<span class="light ak-black">
-        <%= userLogged.nome %> !
-    </span></h2>
-<section id="dados">
-    <div id="imgU">
-        <img src="<%= userLogged.img %>" id="imgUser">
-        <form id="formImg" action="/foto" method="POST" enctype="multipart/form-data">
-            <input type="file" id="userImage" name="userImage">
-            <button id="carregarFoto">Alterar Foto</button>
-        </form>
-    </div>
-    <form class=form1 id="form1" action="/assinante" method="POST">
-        <div class="infos">
-            <label>Nome</label>
-            <input type="text" id="nome" name="nome" required value="<%= userLogged.nome %>" disabled>
-        </div>
-        <div class="infos">
-            <label>Email</label>
-            <input type="email" id="email" name="email" required value="<%= userLogged.email %>" disabled>
-        </div>
-        <!--  <div class = "infos">
+            <h2 class="note ak-black">BEM-VINDO,<span class="light ak-black">
+                    <%= userLogged.nome %> !
+                </span></h2>
+            <section id="dados">
+                <div id="imgU">
+                    <img src="<%= userLogged.img %>" id="imgUser">
+                    <% if(typeof errors !=='undefined' ){%>
+                        <ul>
+                            <% for(let error in errors){ %>
+                                <li>
+                                    <b>
+                                        <%= error %> :
+                                    </b>
+                                    <%= errors[error].msg %>
+                                </li>
+                                <% } %>
+                        </ul>
+                        <% } %>
+                            <form id="formImg" action="/foto" method="POST" enctype="multipart/form-data">
+                                <input type="file" id="userImage" name="userImage">
+                                <button id="carregarFoto">Alterar Foto</button>
+                            </form>
+                </div>
+                <form class=form1 id="form1" action="/assinante" method="POST">
+                    <div class="infos">
+                        <label>Nome</label>
+                        <input type="text" id="nome" name="nome" required value="<%= userLogged.nome %>" disabled>
+                    </div>
+                    <div class="infos">
+                        <label>Email</label>
+                        <input type="email" id="email" name="email" required value="<%= userLogged.email %>" disabled>
+                    </div>
+                    <!--  <div class = "infos">
                             <label>Nome</label>
                             <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
                         </div>-->
-        <div class="infos">
-            <label>CPF</label>
-            <input type="number" id="cpf" name="cpf" required value="<%= userLogged.cpf %>" disabled>
-        </div>
-        <div class="infos">
-            <label>Data de nascimento</label>
-            <input class=date type="date" id="nascimento" name="nascimento" required
-                value="<%= userLogged.nascimento %>" disabled>
-        </div>
-        <div class="infos">
-            <label>Telefone</label>
-            <input type="tel" id="telefone" name="telefone" value="<%= userLogged.telefone %>" disabled>
-        </div>
-        <div class="infos">
-            <label for="genero">Gênero</label>
-            <div>
-                <input type="radio" name="genero" id="masculino" value="masculino" <% if
-                    (userLogged.genero==='masculino' ) { %> checked <% } %> disabled ><label
-                        form="masculino">Masculino</label>
-            </div>
-            <div>
-                <input type="radio" name="genero" id="feminino" value="feminino" <% if (userLogged.genero==='feminino' )
-                    { %> checked <% } %> disabled ><label form="feminino">Feminino</label>
-            </div>
-            <div>
-                <input type="radio" name="genero" id="outros" value="outros" <% if (userLogged.genero==='outros' ) { %>
-                checked <% } %> disabled ><label form="outros">Outros</label>
-            </div>
-            <div>
-                <input type="radio" name="genero" id="nao informado" value="nao informado" <% if
-                    (userLogged.genero==='nao informado' ) { %> checked <% } %> disabled ><label
-                        form="nao informado">Prefiro não informar</label>
-            </div>
-        </div>
-        <section class="butons">
-                <div id="alterar">Alterar</div>
-                <div id="cancelar" onclick="cancelar()">Cancelar</div>
-                    <button id="senha">Alterar Senha</button>
-                    <button id="salvar">Salvar</button>
-        </section>
-    </form>
-
-    <% let planoFound=listaplanos.find( onePlano=> onePlano.id === userLogged.id_plano)%>
-        <% console.log(planoFound)%>
-            <section class="planosIndex">
-                <section class="cardsPlanos">
-                    <article class="card">
-                        <div class="imgPlano"><img src="<%= planoFound.img %>" class="imgCard"></div>
-                        <div class="conteudoCard">
-                            <div class="categoria">
-                                <%=planoFound.nome%>
-                            </div>
-                            <h2 class="preco">R$<%=planoFound.preco%>,00</h2>
-                            <p class="descPlanos">
-                                <%=planoFound.barbas %> barba<% if (planoFound.barbas> 1) {%>s<%}%>
-                            </p>
-                            <p>por mês</p>
-                            <p class="descPlanos">
-                                <%=planoFound.cabelo %> corte<% if (planoFound.cabelo> 1) {%>s<%}%> de cabelo
-                            </p>
-                            <p>por mês</p>
+                    <div class="infos">
+                        <label>CPF</label>
+                        <input type="number" id="cpf" name="cpf" required value="<%= userLogged.cpf %>" disabled>
+                    </div>
+                    <div class="infos">
+                        <label>Data de nascimento</label>
+                        <input class=date type="date" id="nascimento" name="nascimento" required
+                            value="<%= userLogged.nascimento %>" disabled>
+                    </div>
+                    <div class="infos">
+                        <label>Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" value="<%= userLogged.telefone %>" disabled>
+                    </div>
+                    <div class="infos">
+                        <label for="genero">Gênero</label>
+                        <div>
+                            <input type="radio" name="genero" id="masculino" value="masculino" <% if
+                                (userLogged.genero==='masculino' ) { %> checked <% } %> disabled ><label
+                                    form="masculino">Masculino</label>
                         </div>
-                        <div class="seuplano">SUA ASSINATURA</div>
-                    </article>
-                </section>
-            </section>
+                        <div>
+                            <input type="radio" name="genero" id="feminino" value="feminino" <% if
+                                (userLogged.genero==='feminino' ) { %> checked <% } %> disabled ><label
+                                    form="feminino">Feminino</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="genero" id="outros" value="outros" <% if
+                                (userLogged.genero==='outros' ) { %>
+                            checked <% } %> disabled ><label form="outros">Outros</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="genero" id="nao informado" value="nao informado" <% if
+                                (userLogged.genero==='nao informado' ) { %> checked <% } %> disabled ><label
+                                    form="nao informado">Prefiro não informar</label>
+                        </div>
+                    </div>
+                    <section class="butons">
+                        <div id="alterar">Alterar</div>
+                        <div id="cancelar" onclick="cancelar()">Cancelar</div>
+                        <button id="senha">Alterar Senha</button>
+                        <button id="salvar">Salvar</button>
+                    </section>
+                </form>
 
-</section>
-<nav class="historico">
-    <h2 class="ak-black">SEU HISTÓRICO </h2>
-    <section class="dados">
-        <% for (let data in usuario[0].total) { %>
-            <article class="info">
-                <h2 class="white ak-black">
-                    <%=usuario[0].total[data] %> VEZ<% if(usuario[0].total[data]>1){%>ES<%}%>
-                </h2>
-                <p>É o número total de cortes de <%=data%> desde a compra do plano</p>
-            </article>
-            <% } %>
-                <!-- <article class="info">
+                <% if(userLogged.id_plano !=undefined) { %>
+                    <% let planoFound=listaplanos.find( onePlano=> onePlano.id === userLogged.id_plano)%>
+                        <section class="planosIndex">
+                            <section class="cardsPlanos">
+                                <article class="card">
+                                    <div class="imgPlano"><img src="<%= planoFound.img %>" class="imgCard"></div>
+                                    <div class="conteudoCard">
+                                        <div class="categoria">
+                                            <%=planoFound.nome%>
+                                        </div>
+                                        <h2 class="preco">R$<%=planoFound.preco%>,00</h2>
+                                        <p class="descPlanos">
+                                            <%=planoFound.barbas %> barba<% if (planoFound.barbas> 1) {%>s<%}%>
+                                        </p>
+                                        <p>por mês</p>
+                                        <p class="descPlanos">
+                                            <%=planoFound.cabelo %> corte<% if (planoFound.cabelo> 1) {%>s<%}%> de
+                                                        cabelo
+                                        </p>
+                                        <p>por mês</p>
+                                    </div>
+                                    <div class="seuplano">SUA ASSINATURA</div>
+                                </article>
+                            </section>
+                        </section>
+                <% } %>
+            </section>
+            <% if(userLogged.id_plano !=undefined) { %>
+            <nav class="historico">
+                <h2 class="ak-black">SEU HISTÓRICO </h2>
+                <section class="dados">
+                    <% for (let data in usuario[0].total) { %>
+                        <article class="info">
+                            <h2 class="white ak-black">
+                                <%=usuario[0].total[data] %> VEZ<% if(usuario[0].total[data]>1){%>ES<%}%>
+                            </h2>
+                            <p>É o número total de cortes de <%=data%> desde a compra do plano</p>
+                        </article>
+                        <% } %>
+                            <!-- <article class="info">
                     <h2 class="white ak-black">X VEZES</h2>
                     <p>É o número total de cortes de cabelo desde a compra do plano</p>
                 </article> -->
-                <article class="info">
-                    <h2 class="white ak-black">
-                        <%= usuario[0].barbearia %>
-                    </h2>
-                    <p>É a barbearia de sua preferência</p>
-                </article>
-    </section>
-</nav>
-<nav class="secaoPlanos">
-    <div class="frases">
-        <h2 class="dark ak-black">QUER DAR UM UPGRADE NO SEU PLANO?</h2>
-        <p>Aproveite e dê um upgrade no seu plano e tenha mais ofertas dos nossos serviços. Ao escolher um novo plano
-            você poderá utilizá-lo em até 24 horas. Não perca tempo e vamos fazer mais esse trato. Nós, No Fio do Bigode
-            aguardamos você!!
-        </p>
-    </div>
-    <section class="cardsPlanos">
-        <% const index=listaplanos.findIndex(object=>object.nome===usuario[0].plano) %>
-            <% for (let i=index+1; i< listaplanos.length; i++) { %>
-                <article class="cardP">
-                    <div class="categoriaPlano">
-                        <p>
-                            <%= listaplanos[i].nome %>
+                            <article class="info">
+                                <h2 class="white ak-black">
+                                    <%= usuario[0].barbearia %>
+                                </h2>
+                                <p>É a barbearia de sua preferência</p>
+                            </article>
+                </section>
+            </nav>
+
+            <% } %>
+                <nav class="sessaoPlanos">
+                    <div class="frases">
+                        <h2 class="dark ak-black">QUER DAR UM UPGRADE NO SEU PLANO?</h2>
+                        <p>Aproveite e dê um upgrade no seu plano e tenha mais ofertas dos nossos serviços. Ao escolher
+                            um novo plano
+                            você poderá utilizá-lo em até 24 horas. Não perca tempo e vamos fazer mais esse trato. Nós,
+                            No Fio do Bigode
+                            aguardamos você!!
                         </p>
                     </div>
-                    <% if (listaplanos[i].nome=='BASIC' ) {%>
-                        <div class="categoriaEcon">POPULAR</div>
-                        <% } %>
-                            <ul>
-                                <li class="descPlanos">
-                                    <%= listaplanos[i].cabelos%> corte<% if (listaplanos[i].cabelos> 1) {%>s<%}%> de
-                                                cabelo<span class="descTempo"> no mês</span>
-                                </li>
-                                <li class="descPlanos">
-                                    <%= listaplanos[i].barbas%> barba<% if (listaplanos[i].cabelos> 1) {%>s<%}%><span
-                                                    class="descTempo"> no mês</span>
-                                </li>
-                                <% for( let vantagem of listaplanos[i].vantagens) { %>
-                                    <li class="descPlanos">
-                                        <%= vantagem %>
-                                    </li>
-                                    <% } %>
-                            </ul>
-                            <div class="precoButon">
-                                <h2 class="preco">R$<%= listaplanos[i].preco %>,00 </h2>
+                    <section class="cardsPlanos">
+                        <% const index=listaplanos.findIndex(object=>object.nome===usuario[0].plano) %>
+                            <% for (let i=index+1; i< listaplanos.length; i++) { %>
+                                <article class="cardP">
+                                    <div class="categoriaPlano">
+                                        <p>
+                                            <%= listaplanos[i].nome %>
+                                        </p>
+                                    </div>
+                                    <% if (listaplanos[i].nome=='BASIC' ) {%>
+                                        <div class="categoriaEcon">POPULAR</div>
+                                        <% } %>
+                                            <ul>
+                                                <li class="descPlanos">
+                                                    <%= listaplanos[i].cabelos%> corte<% if (listaplanos[i].cabelos> 1)
+                                                            {%>s<%}%> de
+                                                                cabelo<span class="descTempo"> no mês</span>
+                                                </li>
+                                                <li class="descPlanos">
+                                                    <%= listaplanos[i].barbas%> barba<% if (listaplanos[i].cabelos> 1)
+                                                            {%>s<%}%><span class="descTempo"> no mês</span>
+                                                </li>
+                                                <% for( let vantagem of listaplanos[i].vantagens) { %>
+                                                    <li class="descPlanos">
+                                                        <%= vantagem %>
+                                                    </li>
+                                                    <% } %>
+                                            </ul>
+                                            <div class="precoButon">
+                                                <h2 class="preco">R$<%= listaplanos[i].preco %>,00 </h2>
 
-                                <button class="btnComecar">
-                                    <p>COMPRAR</p>
-                                    <p>ESTE PLANO</p>
-                                </button>
-                                <div class="economia">
-                                    <p>ADQUIRA ESTE PLANO E</p>
-                                    <p>ECONOMIZE ATÉ R$<%=listaplanos[i].economia %> POR</p>
-                                    <p>CORTE E BARBA</p>
-                                </div>
-                            </div>
-                </article>
-                <% } %>
-                    <!-- <article class="cardP">
+                                                <button class="btnComecar">
+                                                    <p>COMPRAR</p>
+                                                    <p>ESTE PLANO</p>
+                                                </button>
+                                                <div class="economia">
+                                                    <p>ADQUIRA ESTE PLANO E</p>
+                                                    <p>ECONOMIZE ATÉ R$<%=listaplanos[i].economia %> POR</p>
+                                                    <p>CORTE E BARBA</p>
+                                                </div>
+                                            </div>
+                                </article>
+                                <% } %>
+                                    <!-- <article class="cardP">
                     <div class="categoriaPlano">
                         <p>STANDARD</p>
                     </div>
@@ -206,7 +227,7 @@
                     </div>
                 </article> -->
 
-                    <!-- <article class="cardP">
+                                    <!-- <article class="cardP">
                     <div class="categoriaPlano">
                         <p>PREMIUM</p>
                     </div>
@@ -228,14 +249,15 @@
                         <p>CORTE E BARBA</p>
                     </div>
                 </article> -->
-    </section>
-</nav>
-</main>
-<%- include('./partials/footer')%>
+                    </section>
+                </nav>
+        </main>
+        <%- include('./partials/footer')%>
 
-<script src="/javaScript/assinante.js">
-</script>
+            <script src="/javaScript/assinante.js">
+            </script>
 
 
 </body>
+
 </html>
