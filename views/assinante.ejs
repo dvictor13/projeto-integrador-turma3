@@ -23,7 +23,13 @@
         <%= userLogged.nome %> !
     </span></h2>
 <section id="dados">
-    <div class="imgU"><img src="<%= userLogged.img %>" id="imgUser"></div>
+    <div id="imgU">
+        <img src="<%= userLogged.img %>" id="imgUser">
+        <form id="formImg" action="/foto" method="POST" enctype="multipart/form-data">
+            <input type="file" id="userImage" name="userImage">
+            <button id="carregarFoto">Alterar Foto</button>
+        </form>
+    </div>
     <form class=form1 id="form1" action="/assinante" method="POST">
         <div class="infos">
             <label>Nome</label>

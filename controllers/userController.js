@@ -43,6 +43,9 @@ const userController = {
         let userCreated = User.create(userToCreate)
         return res.render('login')
     },
+    foto: (req,res) => {
+        res.send("Deu certo");
+    },
     carrinho:(req,res)=>{
         const codPlano = req.params.id;
         res.render('carrinho',{listaplanos:listaPlanos, codPlano:codPlano});
@@ -98,5 +101,6 @@ const userController = {
         
         return res.redirect('/');
     }
+    
 }
 module.exports = userController;

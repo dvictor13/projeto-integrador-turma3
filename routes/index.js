@@ -6,11 +6,28 @@ const indexController = require('../controllers/indexController')
 const userController = require('../controllers/userController')
 const contentController = require('../controllers/contentController')
 const notLogged = require('../middlewares/notLogged');
+const multer = require('multer');
+const path = require('path')
+
+const multerDiskStorage = multer.diskStorage({
+    destination: (req, file, callback)=>{
+        const folder = path.join(__dirname, "../public/images/profile");
+        callback(null, folder);
+    },
+    filename : (req, file, callback) => {
+        const imageName = Date.now() + file.originalname;
+        callback(null, imageName);
+    }
+})
+
+const upload = multer({storage : multerDiskStorage})
 
 /* GET home page. */
 //router.get('/', function(req, res, next) {
 //  res.render('index', { title: 'Express' });
 //});
+
+router.post('/foto', upload.single('userImage'))
 
 router.get('/home',indexController.home)
 router.get('/',indexController.home)
