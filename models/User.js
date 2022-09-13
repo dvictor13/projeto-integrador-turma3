@@ -41,17 +41,19 @@ const User ={
         return userFound;
     }
 
+    
+
 }
 
 module.exports = User;
 
-    // update: function(objeto){
-    //     let allUsers = this.getUsers();
-    //     let userAntigo = findUsersById(objeto.id);
-    //     let i = allUsers.indexOf(userAntigo)
-    //     allUsers[i] = objeto
-    //     User = allUsers;
-    // }
+// update: function(userAntigo, objeto){
+//     let allUsers = this.getUsers();
+//     let i = allUsers.indexOf(userAntigo)
+//     const novosUsuarios = allUsers.map(u => ({ ...u, objeto}));
+//     console.log(novosUsuarios);
+//     return User;
+// }
 
 // }
 

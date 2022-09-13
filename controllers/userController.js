@@ -57,11 +57,11 @@ const userController = {
            })
         }
         
-
         let user = User.findUserByField('email', req.session.isAuth.email);
+    //    let userAntigo =  User.findUsersById(user.id)
         user.img = `images/profile/${req.file.filename}`;
         console.log(user)
-        User.update(user)
+        // User.update(userAntigo, user)
 
         return res.redirect('/assinante');
     },
