@@ -9,6 +9,14 @@ const notLogged = require('../middlewares/notLogged');
 const multer = require('multer');
 const path = require('path');
 
+
+const whitelist = [
+    'image/png',
+    'image/jpeg',
+    'image/jpg',
+    'image/webp'
+  ]
+
 const multerDiskStorage = multer.diskStorage({
     destination: (req, file, callback)=>{
         const folder = path.join(__dirname, "../public/images/profile");
@@ -20,7 +28,18 @@ const multerDiskStorage = multer.diskStorage({
     }
 })
 
-const upload = multer({storage : multerDiskStorage})
+const upload = multer({
+    storage : multerDiskStorage ,
+    fileFilter: (req, file, cb) => {
+        if (!whitelist.includes(file.mimetype)) {
+            console.log('deu erro.')
+            cb(null, false)
+            return
+        }
+
+        cb(null, true)
+    }
+})
 
 /* GET home page. */
 //router.get('/', function(req, res, next) {

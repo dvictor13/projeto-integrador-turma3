@@ -44,3 +44,15 @@ const User ={
 }
 
 module.exports = User;
+
+    // update: function(objeto){
+    //     let allUsers = this.getUsers();
+    //     let userAntigo = findUsersById(objeto.id);
+    //     let i = allUsers.indexOf(userAntigo)
+    //     allUsers[i] = objeto
+    //     User = allUsers;
+    // }
+
+// }
+
+// module.exports = User;

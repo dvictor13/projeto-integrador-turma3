@@ -45,7 +45,8 @@ const userController = {
         return res.render('login')
     },
     foto: (req,res) => {
-        if ((req.file.mimetype != 'image/jpeg') && (req.file.mimetype != 'image/png')){
+        console.log(req.file);
+        if(!req.file){
             return res.render('assinante', {
                 errors: {
                     foto: {msg: "Foto inválida."}
@@ -55,9 +56,12 @@ const userController = {
                 listaplanos:listaPlanos
            })
         }
+        
+
         let user = User.findUserByField('email', req.session.isAuth.email);
         user.img = `images/profile/${req.file.filename}`;
         console.log(user)
+        User.update(user)
 
         return res.redirect('/assinante');
     },
