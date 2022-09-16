@@ -11,6 +11,72 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
+<script>
+    console.log(document.cookie)
+
+    function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+
+}
+
+
+console.log(getCookie("aceite"))
+</script>
+<% if(!aceite){%>
+<div id="cookies">
+    <div class="cookies-container">
+        <div class="cookies-cols">
+            <div class="cookies-col">
+                <p>Utilizamos cookies e tecnologias semelhantes para permitir serviços e funcionalidades no nosso site e para compreender a sua interação com o nosso serviço.</p>
+                <p>Ao clicar em Aceitar, entenderemos que você está de acordo com a nossa <a href="/politica" target="_blank">Política de Privacidade e Segurança.</a></p>
+            </div>
+            <div class="cookies-col">
+                <a href="#" id="aceitar-cookies" onclick="aceitarCookies()">ACEITAR</a>           
+            </div>
+        </div>
+    </div>
+</div>
+<%}%>
+
+
+<!-- <div id="contatc-us">
+    <div class="container">
+        <form action="action_page.php">
+    
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    
+            <label for="local">Estado</label>
+            <select id="local" name="local">
+                <option value="rj">Rio de Janeiro</option>
+                <option value="sp">Sâo Paulo</option>
+                <option value="rs">Rio Grande do Sul</option>
+            </select>
+    
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    
+            <input type="submit" value="Submit">
+    
+        </form>
+    </div>
+</div> -->
+
+
 <%- include('./partials/header') %>
 <main>
     <section class="corpoIndex">
@@ -75,35 +141,11 @@
                     </div>
                 </article>
             <%}%>
-            <!-- <article class="card">
-                <div><img src="images/barbeiros/barbeiro_detalhe_barba_tesoura.jpg" alt="" class="imgCard"></div>
-                <div class="conteudoCard">
-                    <div class="categoria">Standard</div>
-                    <h2 class="preco">R$40,00</h2>
-                    <p class="descPlanos">4 barba</p>
-                    <p>por mês</p>
-                    <p class="descPlanos">1 corte de cabelo</p>
-                    <p>por mês</p>
-                    <button class="btnComecar">COMPRAR PLANO</button>
-                </div>
-            </article>
-            <article class="card">
-                <div><img src="images/barbeiros/barbeiro_detalhe_barba.jpg" alt="" class="imgCard"></div>
-                <div class="conteudoCard">
-                    <div class="categoria">Premium</div>
-                    <h2 class="preco">R$60,00</h2>
-                    <p class="descPlanos">5 barbas</p>
-                    <p>por mês</p>
-                    <p class="descPlanos">5 cortes de cabelo</p>
-                    <p>por mês</p>
-                    <button class="btnComecar">COMPRAR PLANO</button>
-                </div>
-            </article> -->
         </section>
     </section>
 
     <section class="barbeariasIndex">
-        <h2>CONHEÇA AS BARBEARIAS</h2>
+        <h2 class="tituloBarbearias">CONHEÇA AS BARBEARIAS</h2>
         <section class="cardsBarbearia">
 
             <% for (let barbearia of barbearias) { %> 
@@ -137,10 +179,21 @@
         </section>
 
     </section>
+
+
     <%- include('./partials/perguntas') %>
 </main>
     <%- include('./partials/footer') %>
 
+
+<script>
+
+
+function aceitarCookies() {
+    document.getElementById("cookies").style.display = "none";
+    document.cookie = "aceite=true"
+}
+</script>
 
 
 

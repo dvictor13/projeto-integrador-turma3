@@ -1,7 +1,7 @@
-function isAuthUser(req,res,next){
+function uploadMiddleware(req,res,next){
     if(!req.session.isAuth){
         return res.redirect('/login')
      }
      next()
 }
-module.exports = isAuthUser
+module.exports = uploadMiddleware;

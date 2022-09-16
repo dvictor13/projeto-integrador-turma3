@@ -15,6 +15,12 @@ module.exports = function(sequelize,dataTypes){
         },
         planos_id:{
             type:dataTypes.INTEGER
+        },
+        cabelo:{
+            type:dataTypes.STRING
+        },
+        barba:{
+            type:dataTypes.STRING
         }
     }
     let config = {
@@ -23,5 +29,17 @@ module.exports = function(sequelize,dataTypes){
     }
     let Assinatura = sequelize.define(alias,cols,config);
 
-    return Assinatura;
-}
+    Assinatura.associate = function(models){
+        Assinatura.hasMany(models.Pessoa,{
+            as:'pessoas',
+            foreignKey:'assinatura_id'
+            });
+
+        Assinatura.belongsTo(models.Plano,{
+            as:'planos',
+            foreignKey:'planos_id'
+        })
+        }
+        return Assinatura;
+    }
+

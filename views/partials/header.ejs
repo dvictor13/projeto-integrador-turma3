@@ -6,7 +6,12 @@
                 <ul class="list">
                     <li><a href="/planos">PLANOS</a></li>
                     <li><a href="/barbearias">BARBEARIAS</a></li>
-                    <li><a href="/cadastro" >LOGIN</a></li>  <!--consertar pro login quando der-->
+                    <% if(locals.isLogged) { %> 
+                        <li><a href="/assinante" >PERFIL</a></li> 
+                        <li><a href="/logout" >SAIR</a></li> 
+                    <% }else{%> 
+                        <li><a href="/login" >LOGIN</a></li> 
+                    <% } %> 
                 </ul>
             </div>
         </nav>

@@ -1,7 +1,45 @@
-<html>
+<!-- <html>
     <head><title>Barba Cabelo e Bigode</title></head>
     <body>
         <h1 style="text-align: center;">Ih! Acho que você se perdeu! Dê meia volta</h1>
         <img src="/images/seperdeu.png" style="  display: block; margin-left: auto; margin-right: auto; width: 50%;">
     </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/estilo.css">
+    <link rel="stylesheet" href="/stylesheets/estiloHeaderFooter.css">
+    <title>Barba, Cabelo e Bigode</title>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+        <main>
+            <section class="not-found">
+                <div class="container-not-found">
+                    <div class="container-img-not-found">
+                        <img src="./images/barbearias/salao_amplo_vertical_color.jpg" alt="barbearia">
+                    </div>
+
+                    <div class="container-text-not-found">
+                        <h2>Opa! Parece que você se perdeu. </h2>
+                        <h2>Mas fique calmo, te guiaremos até o salão principal da barbearia. </h2>
+                        <button><a href="./home"><h2>Ir para a página principal</h2></a></button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <%- include('./partials/footer')%>
+
+</body>
+
 </html>
