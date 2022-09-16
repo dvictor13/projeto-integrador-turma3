@@ -2,7 +2,7 @@ module.exports = function(sequelize,dataTypes){
 
     let alias = "Barbearia"
     let cols = {
-        id:{
+        id_barbearia:{
             type:dataTypes.INTEGER,
             primaryKey:true,
             autoIncrement:true
@@ -10,7 +10,7 @@ module.exports = function(sequelize,dataTypes){
         nome:{
             type:dataTypes.STRING
         },
-        enderenco:{
+        endereco:{
             type:dataTypes.STRING
         },
         telefone:{
@@ -22,6 +22,16 @@ module.exports = function(sequelize,dataTypes){
         timestamps:false
     }
     let Barbearia = sequelize.define(alias,cols,config);
+
+    Barbearia.associate = function (models){
+        Barbearia.belongsToMany(models.Plano,{
+            as:'barbaria_planos',
+            through:models.BarbeariaPlano,
+            foreignKey:'fk_planos',
+            otherKey:'fk_barbearia',
+            timestamps:false
+        })
+    }
 
     return Barbearia;
 }

@@ -2,11 +2,15 @@ module.exports = function(sequelize,dataTypes){
 
     let alias = "Pessoa"
     let cols = {
-        id:{
+        id_pessoa:{
             type:dataTypes.INTEGER,
             primaryKey:true,
             autoIncrement:true
         },
+        nome:{
+            type:dataTypes.STRING
+        },
+
         data_nasc:{
             type:dataTypes.DATEONLY
         },
@@ -15,6 +19,13 @@ module.exports = function(sequelize,dataTypes){
         },
         cpf:{
             type:dataTypes.STRING(11)
+        },
+        usuario: dataTypes.STRING,
+
+        senha:dataTypes.STRING,
+
+        status:{
+            type:dataTypes.BOOLEAN
         },
         assinaturas_id:{
             type:dataTypes.INTEGER
@@ -27,15 +38,10 @@ module.exports = function(sequelize,dataTypes){
     let Pessoa = sequelize.define(alias,cols,config);
 
     Pessoa.associate = function(models){
-        Pessoa.belongsTo(models.Agenda,{
-            as:"agenda",
-            foreignKey:"agenda_id"
-        });
         Pessoa.belongsTo(models.Assinatura,{
             as:"assinatura",
             foreignKey:"assinatura_id"
         })
     }
-
     return Pessoa;
 }
