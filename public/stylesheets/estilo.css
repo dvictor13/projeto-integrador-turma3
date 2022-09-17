@@ -232,7 +232,7 @@ main .planosIndex .cardsPlanos .card {
     align-items: center;
     background-color: #ffffff;
     gap: 6px;
-    margin-bottom: 100px;
+    margin: 50px auto;
 }
 
 main .planosIndex .cardsPlanos .card .imgCard {
@@ -302,6 +302,7 @@ main .planosIndex .cardsPlanos .card .btnComecar {
     padding: 10px;
     font-size: 0.9rem;
     border: 1px solid #42210B;
+    cursor: pointer;
 }
 
 main .barbeariasIndex {
@@ -367,6 +368,7 @@ main .barbeariasIndex .cardsBarbearia .cardB .btnComecar {
     padding: 10px;
     font-size: 0.9rem;
     border: 1px solid #ffffff;
+    cursor: pointer;
 }
 
 
@@ -458,7 +460,7 @@ main .barbeariasIndex .cardsBarbearia .cardB .btnComecar {
 
     main .planosIndex .tituloPlanos, .tituloBarbearias {
         font-size: 2rem;
-        margin: 3% 0% 10% 0%;
+        margin: 1% 0% 1% 0%;
     }
 
     main .planosIndex h3 {
@@ -471,7 +473,7 @@ main .barbeariasIndex .cardsBarbearia .cardB .btnComecar {
         justify-content: space-between;
         align-items: center;
         gap: 5px;
-
+        margin-top: 5%;
     }
 
     main .barbeariasIndex {
@@ -483,7 +485,7 @@ main .barbeariasIndex .cardsBarbearia .cardB .btnComecar {
         width: 100%;
         display: flex;
         justify-content: space-around;
-        margin-top: 5%;
+        /* margin-top: 5%; */
         gap: 10px;
         flex-wrap: wrap;
         flex: 1 1 290px;

@@ -32,6 +32,10 @@ main *{
     --hans-font: Hansief-Rough;
 }
 
+main{
+    background-color: var(--terciary-color);
+}
+
 main section .links{
     display: flex;
     justify-content: center;
@@ -68,6 +72,11 @@ h1.titulo{
     flex-direction: column;
 }
 
+.caixinhaLogin .chamacadastro{
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
 /*.form2{
     display: flex;
     flex-direction: column;
@@ -94,6 +103,7 @@ h1.titulo{
 #login input{
     height: 35px;
     border: 1px solid #42210B;
+    background-color: var(--branco);
     border-radius: 5px;
     padding-left: 10px;
 }
@@ -115,6 +125,7 @@ h1.titulo{
     border-radius: 5px;
     background-color: #42210B;
     margin-bottom: 5%;
+    cursor: pointer;
 }
 
 
@@ -211,7 +222,6 @@ li.redesSociais{
 }
 
 
-
 @media screen and (min-width:769px) {
     main{
         min-height: 77vh;
@@ -223,9 +233,11 @@ li.redesSociais{
     }
 
     .corpoCadastro{
-        min-width: 40%;
-        background-color:hsla(32, 44%, 60%, 0.5);
-        border-radius: 40px;
+        width: 100%;
+        max-width: 600px;
+        /*min-width: 40%;
+        background-color:hsla(32, 44%, 60%, 0.5); 
+        border-radius: 40px;*/
     }
 
 }

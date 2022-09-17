@@ -1,15 +1,17 @@
 :root {
-    --primary-color: #42210B;
-    --secundary-color: #754C24;
-    --terciary-color: #C69C6D;
-    --white: #ffff;
+    --primary-color:#42210B;
+    --secundary-color:#754C24;
+    --terciary-color:#C69C6D;
+    --amarelo-btn:#CF8801;
+    --preto: #181818;
+    --branco: #fff;
+    --cinza: #dadada;
     --ak-font-regular: Akrobat-Regular;
     --ak-font-black: Akrobat-Black;
     --ak-font-bold: Akrobat-Bold;
     --ak-font-semibold: Akrobat-SemiBold;
     --hans-font: Hansief-Rough;
 }
-
 
 
 /*//////////////FORM LOGIN 
@@ -69,14 +71,14 @@ input[type=submit]:hover {
 
 #formulariocampos {
     width: 100%;
-    margin-top: -20px;
+    /* margin-top: -20px; */
     padding-top: 20px;
     background-color: var(--terciary-color);
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
 .form1>* {
@@ -116,7 +118,7 @@ input[type='radio'] {
 }
 
 .custom-radio {
-    border: 1px solid #fff;
+    border: 1px solid var(--primary-color);
     width: 20px;
     height: 20px;
     display: grid;
@@ -128,23 +130,23 @@ input[type='radio'] {
 .custom-radio,
 span {
     transition: 0.5s ease;
-    color: #fff;
+    color:  var(--primary-color);
 }
 
 .custom-radio span {
     content: '';
     width: 15px;
     height: 15px;
-    background: #fff;
+    background:  var(--primary-color);
     border-radius: 50%;
 }
 
 input[type='radio']:checked+.custom-radio {
-    border-color: var(--primary-color);
+    border-color: var(--secundary-color);
 }
 
 input[type='radio']:checked+.custom-radio span {
-    background: var(--primary-color);
+    background: var(--secundary-color);
 }
 
 /*//////////////FORM FALE CONOSCO 
