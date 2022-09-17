@@ -108,6 +108,7 @@ main .sessaoPlanos .cardsPlanos .cardP .btnComecar{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    cursor: pointer;
 }
 
 main .sessaoPlanos .cardsPlanos .cardP .btnComecar p {
