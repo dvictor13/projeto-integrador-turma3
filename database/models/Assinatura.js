@@ -32,7 +32,7 @@ module.exports = function(sequelize,dataTypes){
     Assinatura.associate = function(models){
         Assinatura.hasMany(models.Pessoa,{
             as:'pessoas',
-            foreignKey:'assinatura_id'
+            foreignKey:'assinaturas_id'
             });
 
         Assinatura.belongsTo(models.Plano,{

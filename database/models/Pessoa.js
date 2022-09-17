@@ -43,7 +43,7 @@ module.exports = function(sequelize,dataTypes){
     Pessoa.associate = function(models){
         Pessoa.belongsTo(models.Assinatura,{
             as:"assinatura",
-            foreignKey:"assinatura_id"
+            foreignKey:"assinaturas_id"
         })
     }
     return Pessoa;
