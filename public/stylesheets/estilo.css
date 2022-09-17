@@ -232,7 +232,7 @@ main .planosIndex .cardsPlanos .card {
     align-items: center;
     background-color: #ffffff;
     gap: 6px;
-    margin: 50px auto;
+    margin: 100px auto;
 }
 
 main .planosIndex .cardsPlanos .card .imgCard {
@@ -474,6 +474,12 @@ main .barbeariasIndex .cardsBarbearia .cardB .btnComecar {
         align-items: center;
         gap: 5px;
         margin-top: 5%;
+        flex-wrap: wrap;
+        flex: 1 1 250px;
+    }
+
+    main .planosIndex .cardsPlanos .card {
+        margin: 50px auto;
     }
 
     main .barbeariasIndex {
