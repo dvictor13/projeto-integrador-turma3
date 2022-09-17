@@ -27,6 +27,9 @@ module.exports = function(sequelize,dataTypes){
         status:{
             type:dataTypes.BOOLEAN
         },
+        imagem:{
+            type:dataTypes.STRING
+        },
         assinaturas_id:{
             type:dataTypes.INTEGER
         }
