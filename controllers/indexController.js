@@ -1,5 +1,6 @@
 const listaPlanos = require("../planos.json")
 const listaBarbearias = require("../barbearias.json")
+const {Planos} = require('../database/models')
 
 
 
@@ -17,7 +18,10 @@ const indexController = {
     faleconosco:(req,res)=>{
         res.render('faleconosco');
     },
-
+    teste: async (req,res) => {
+        let pla = await Planos.findAll()
+        console.log(pla);
+    }
 }
 
 module.exports = indexController;

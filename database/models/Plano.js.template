@@ -23,5 +23,19 @@ module.exports = function (sequelize, dataTypes) {
     }
     let Plano = sequelize.define(alias, cols, config);
 
+    Plano.associate = function (models) {
+
+        Plano.hasMany(models.Assinatura, {
+            as: 'assinaturas',
+            foreignKey: 'planos_id'
+        })
+        Plano.belongsToMany(models.Barbearia,{
+            through:models.BarbeariaPlano,
+            foreignKey:'fk_barbearia',
+            otherKey:'fk_planos',
+            as:'plano_barbearia'
+        })
+    }
+
     return Plano;
 }
