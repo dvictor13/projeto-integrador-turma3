@@ -9,7 +9,7 @@ module.exports = function (sequelize, dataTypes) {
         },
         status: dataTypes.STRING,
         periodo: dataTypes.STRING,
-        planos_id: dataTypes.INTEGER,
+        fk_planos: dataTypes.INTEGER,
         cabelo: dataTypes.STRING,
         barba: dataTypes.STRING
     }

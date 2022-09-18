@@ -16,14 +16,9 @@ module.exports = function (sequelize, dataTypes) {
     let Vantagem = sequelize.define(alias, cols, config);
 
     Vantagem.associate = function (models) {
-
-        Vantagem.hasMany(models.Assinatura, {
-            as: 'assinaturas',
-            foreignKey: 'planos_id'
-        })
-
+        
         Vantagem.belongsToMany(models.Plano, {
-            foreignKey: 'planos_id',
+            foreignKey: 'fk_planos',
             as: 'planos',
             through: models.VantagemPlano
         })

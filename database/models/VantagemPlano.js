@@ -7,23 +7,14 @@ module.exports = function (sequelize, dataTypes) {
             primaryKey: true,
             autoIncrement: true
         },
-        vantagens_id: dataTypes.INTEGER,
-        planos_id: dataTypes.INTEGER
+        fk_vantagens: dataTypes.INTEGER,
+        fk_planos: dataTypes.INTEGER
     }
     let config = {
         tableName: "vantagens_has_planos",
         timestamps: false
     }
     let VantagemPlano = sequelize.define(alias, cols, config);
-
-    VantagemPlano.associate = function (models) {
-
-        VantagemPlano.hasMany(models.Assinatura, {
-            as: 'assinaturas',
-            foreignKey: 'planos_id'
-        })
-
-    }
 
     return VantagemPlano;
 }

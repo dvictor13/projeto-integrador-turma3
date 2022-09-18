@@ -25,13 +25,19 @@ module.exports = function (sequelize, dataTypes) {
 
         Plano.hasMany(models.Assinatura, {
             as: 'assinaturas',
-            foreignKey: 'planos_id'
+            foreignKey: 'fk_planos'
         })
 
         Plano.belongsToMany(models.Vantagem, {
-            foreignKey: 'vantagens_id',
+            foreignKey: 'fk_vantagens',
             as: 'vantagens',
             through: models.VantagemPlano
+        })
+
+        Plano.belongsToMany(models.Barbearia, {
+            as:'barbeariasA',
+            through: models.BarbeariaPlano,
+            foreignKey:'fk_barbearias'
         })
 
     }

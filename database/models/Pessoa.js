@@ -15,7 +15,7 @@ module.exports = function(sequelize,dataTypes){
         senha:dataTypes.STRING,
         status: dataTypes.BOOLEAN,
         imagem: dataTypes.STRING,
-        assinaturas_id: dataTypes.INTEGER
+        fk_assinaturas: dataTypes.INTEGER
     }
     let config = {
         tableName:"pessoas",
@@ -26,7 +26,7 @@ module.exports = function(sequelize,dataTypes){
     Pessoa.associate = function(models){
         Pessoa.belongsTo(models.Assinatura,{
             as:"assinatura",
-            foreignKey:"assinaturas_id"
+            foreignKey:"fk_assinaturas"
         })
     }
     return Pessoa;
