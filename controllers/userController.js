@@ -54,19 +54,8 @@ const userController = {
         })
 
         return res.render('login')
-
-        // let userToCreate = {
-        //     ...req.body,
-        //     senha: bcrypt.hashSync(usuario.senha, 11),
-        //     img: "images/profile/user.png",
-        //     id_plano: undefined
-        // }
-        
-        // User.create(userToCreate)
-        // return res.render('login')
     },
-    foto: (req,res) => {
-        console.log(req.file);
+    foto: async (req,res) => {
         if(!req.file){
             return res.render('assinante', {
                 errors: {
@@ -78,11 +67,19 @@ const userController = {
            })
         }
         
-        let user = User.findUserByField('email', req.session.isAuth.email);
-    //    let userAntigo =  User.findUsersById(user.id)
-        user.img = `images/profile/${req.file.filename}`;
+        let user = await Pessoa.findOne({
+            where: {
+                email: req.session.isAuth.email
+            }
+        });
+        user.update({
+            imagem: `images/profile/${req.file.filename}`
+        },{
+            where: {
+                id: user.id
+            }
+        })
         console.log(user)
-        // User.update(userAntigo, user)
 
         return res.redirect('/assinante');
     },
@@ -92,16 +89,22 @@ const userController = {
     logar: (req,res) =>{
         res.render('login')
     },
-    auth: (req, res) => {
+    auth: async (req, res) => {
         const dadosUsuario = req.body
-        let userToLogin = User.findUserByField('email', dadosUsuario.email);
+        let userToLogin = await Pessoa.findOne({
+            where: {
+                email: dadosUsuario.email
+            }
+        });
+        console.log(userToLogin)
         if(userToLogin){
             let senhaValida = bcrypt.compareSync(dadosUsuario.senha, userToLogin.senha)
 
             if(senhaValida){
                 delete userToLogin.senha;
                 req.session.isAuth = userToLogin;
-                console.log(dadosUsuario.lembrar)
+                console.log('chegando')
+                console.log(req.session.isAuth)
                 if(dadosUsuario.lembrar){
                     res.cookie('userEmail', dadosUsuario.email, 
                     {maxAge: (1000 * 60) * 30} )
@@ -118,6 +121,7 @@ const userController = {
         })
     },
     assinante:(req,res)=>{
+        console.log(req.session.isAuth)
         res.render('assinante',{
             userLogged: req.session.isAuth,
             usuario:listaUsuariosassinante,
