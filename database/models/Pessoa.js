@@ -8,9 +8,11 @@ module.exports = function(sequelize,dataTypes){
             autoIncrement:true
         },
         nome: dataTypes.STRING,
-        data_nasc: dataTypes.DATEONLY,
+        data_nasc: dataTypes.DATE,
         endereco: dataTypes.STRING,
         cpf: dataTypes.STRING,
+        telefone: dataTypes.STRING,
+        sexo: dataTypes.STRING,
         usuario: dataTypes.STRING,
         senha:dataTypes.STRING,
         status: dataTypes.BOOLEAN,

@@ -1,16 +1,17 @@
 const fs = require('fs');
 const bcrypt = require('bcrypt')
-const User = require('../models/User');
+//const User = require('../models/User');
 const {validationResult} = require('express-validator')
 const listaUsuariosassinante = require('../database/preferenciausuarios');
 const listaPlanos = require('../planos.json');
+const {Pessoa} = require('../database/models');
 
 
 const userController = {
     cadastro:(req,res)=>{
         res.render('cadastro')
     },
-    processRegister: (req,res) =>{
+    processRegister: async (req,res) =>{
         const errors = validationResult(req);
         if (!errors.isEmpty()){
             return res.render('cadastro', {
@@ -20,29 +21,46 @@ const userController = {
         }
         
         const usuario = req.body
-        //Criptografar a senha
-        let userExists = User.findUserByField('email', usuario.email);
-
-        if (userExists){
-            console.log("funcionou")
-            return res.render('cadastro', {
-                 errors: {
-                     email: {msg: "Este email já está registrado"}
-                 },
-                oldData: usuario
-            })
-            
-        }
-
-        let userToCreate = {
-            ...req.body,
-            senha: bcrypt.hashSync(usuario.senha, 11),
-            img: "images/profile/user.png",
-            id_plano: undefined
-        }
         
-        User.create(userToCreate)
+        await Pessoa.create({
+            nome : usuario.nome,
+            data_nasc: usuario.nascimento,
+            endereco: 'teste',
+            cpf : usuario.cpf,
+            telefone : usuario.telefone,
+            sexo: usuario.radio,
+            usuario: usuario.email,
+            senha: bcrypt.hashSync(usuario.senha, 11),
+            status: 'inativo',
+            imagem: 'images/profile/user.png',
+            fk_assinaturas: 1
+        })
+
         return res.render('login')
+
+        //Criptografar a senha
+        // let userExists = User.findUserByField('email', usuario.email);
+
+        // if (userExists){
+        //     console.log("funcionou")
+        //     return res.render('cadastro', {
+        //          errors: {
+        //              email: {msg: "Este email já está registrado"}
+        //          },
+        //         oldData: usuario
+        //     })
+            
+        // }
+
+        // let userToCreate = {
+        //     ...req.body,
+        //     senha: bcrypt.hashSync(usuario.senha, 11),
+        //     img: "images/profile/user.png",
+        //     id_plano: undefined
+        // }
+        
+        // User.create(userToCreate)
+        // return res.render('login')
     },
     foto: (req,res) => {
         console.log(req.file);
