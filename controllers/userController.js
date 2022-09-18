@@ -65,16 +65,6 @@ const userController = {
 
         return res.redirect('/assinante');
     },
-    carrinho:(req,res)=>{
-        const codPlano = req.params.id;
-        res.render('carrinho',{listaplanos:listaPlanos, codPlano:codPlano});
-    },
-    pagamento:(req,res)=>{
-        res.render('pagamento',{dadosPlano:listaPlanos[0]})
-    },    
-    contato:(req,res)=>{
-        res.render('contato');
-    }, 
     pagar: (req, res) => {
         res.render('pagamento',{dadosPlano:listaPlanos[0]})
     },

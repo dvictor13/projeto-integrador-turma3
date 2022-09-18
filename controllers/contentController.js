@@ -9,11 +9,11 @@ const contentController ={
     },
     barbearias:(req,res)=>{
         res.render('barbearias',{listabarbearias:listaBarbearias,}) // adicionar objeto barbearias
-    },
-    visualizarPlanos:async (req,res)=>{
-        let planos = await Plano.findAll()
-        res.send(planos)
     }
+    // visualizarPlanos:async (req,res)=>{
+    //     let planos = await Plano.findAll()
+    //     res.send(planos)
+    // }
 }
 
 

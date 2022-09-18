@@ -29,6 +29,15 @@ const indexController = {
             }
         })
         return res.send(teste);
+    },carrinho:(req,res)=>{
+        const codPlano = req.params.id;
+        res.render('carrinho',{listaplanos:listaPlanos, codPlano:codPlano});
+    },
+    pagamento:(req,res)=>{
+        res.render('pagamento',{dadosPlano:listaPlanos[0]})
+    },    
+    contato:(req,res)=>{
+        res.render('contato');
     }
 }
 
