@@ -28,7 +28,7 @@ module.exports = function (sequelize, dataTypes) {
 
         Assinatura.hasMany(models.Pessoa,{
             as:'pessoas',
-            foreignKey:'assinaturas_id'
+            foreignKey:'fk_assinaturas'
         });
     }
 

@@ -21,6 +21,23 @@ const userController = {
         }
         
         const usuario = req.body
+
+        let userExists = await Pessoa.findOne({
+            where: {
+                email: usuario.email
+            }
+        });
+
+        if (userExists){
+            console.log("funcionou")
+            return res.render('cadastro', {
+                 errors: {
+                     email: {msg: "Este email já está registrado"}
+                 },
+                oldData: usuario
+            })
+            
+        }
         
         await Pessoa.create({
             nome : usuario.nome,
@@ -29,7 +46,7 @@ const userController = {
             cpf : usuario.cpf,
             telefone : usuario.telefone,
             sexo: usuario.radio,
-            usuario: usuario.email,
+            email: usuario.email,
             senha: bcrypt.hashSync(usuario.senha, 11),
             status: 'inativo',
             imagem: 'images/profile/user.png',
@@ -37,20 +54,6 @@ const userController = {
         })
 
         return res.render('login')
-
-        //Criptografar a senha
-        // let userExists = User.findUserByField('email', usuario.email);
-
-        // if (userExists){
-        //     console.log("funcionou")
-        //     return res.render('cadastro', {
-        //          errors: {
-        //              email: {msg: "Este email já está registrado"}
-        //          },
-        //         oldData: usuario
-        //     })
-            
-        // }
 
         // let userToCreate = {
         //     ...req.body,

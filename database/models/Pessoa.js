@@ -13,7 +13,7 @@ module.exports = function(sequelize,dataTypes){
         cpf: dataTypes.STRING,
         telefone: dataTypes.STRING,
         sexo: dataTypes.STRING,
-        usuario: dataTypes.STRING,
+        email: dataTypes.STRING,
         senha:dataTypes.STRING,
         status: dataTypes.BOOLEAN,
         imagem: dataTypes.STRING,
