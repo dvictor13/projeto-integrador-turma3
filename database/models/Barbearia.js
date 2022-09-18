@@ -7,15 +7,9 @@ module.exports = function(sequelize,dataTypes){
             primaryKey:true,
             autoIncrement:true
         },
-        nome:{
-            type:dataTypes.STRING
-        },
-        endereco:{
-            type:dataTypes.STRING
-        },
-        telefone:{
-            type:dataTypes.STRING
-        }
+        nome: dataTypes.STRING,
+        endereco: dataTypes.STRING,
+        telefone: dataTypes.STRING
     }
     let config = {
         tableName:"barbearias",
@@ -28,8 +22,7 @@ module.exports = function(sequelize,dataTypes){
             as:'barbaria_planos',
             through:models.BarbeariaPlano,
             foreignKey:'fk_planos',
-            otherKey:'fk_barbearia',
-            timestamps:false
+            otherKey:'fk_barbearia'
         })
     }
 

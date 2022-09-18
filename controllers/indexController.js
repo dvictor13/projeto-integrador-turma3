@@ -1,6 +1,6 @@
 const listaPlanos = require("../planos.json")
 const listaBarbearias = require("../barbearias.json")
-const {Planos} = require('../database/models')
+const {Plano, Vantagem} = require('../database/models')
 
 
 
@@ -19,8 +19,16 @@ const indexController = {
         res.render('faleconosco');
     },
     teste: async (req,res) => {
-        let pla = await Planos.findAll()
-        console.log(pla);
+        let teste = await Plano.findAll({
+            include:{
+                model: Vantagem,
+                as: 'vantagens',
+                //trazer so o q eles tem em comum
+                required: false
+                // false traz tudo das duas 
+            }
+        })
+        return res.send(teste);
     }
 }
 
