@@ -15,7 +15,8 @@ const contentController ={
                 // false traz tudo das duas 
             }
         });
-        console.log(planos)
+        console.log(planos.vantagens)
+    //    res.send(planos[0])
         res.render('planos',{listaplanos:planos}) // adicionar objeto planos
     },
     barbearias:(req,res)=>{

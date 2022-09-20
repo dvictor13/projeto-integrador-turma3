@@ -29,7 +29,8 @@ module.exports = function (sequelize, dataTypes) {
         })
 
         Plano.belongsToMany(models.Vantagem, {
-            foreignKey: 'fk_vantagens',
+            foreignKey: 'fk_planos',
+            otherKey:'fk_vantagens',
             as: 'vantagens',
             through: models.VantagemPlano
         })
@@ -37,7 +38,8 @@ module.exports = function (sequelize, dataTypes) {
         Plano.belongsToMany(models.Barbearia, {
             as:'barbeariasA',
             through: models.BarbeariaPlano,
-            foreignKey:'fk_barbearias'
+            foreignKey:'fk_planos',
+            otherKey:'fk_barbearias',
         })
 
     }
