@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt')
 const {validationResult} = require('express-validator')
 const listaUsuariosassinante = require('../database/preferenciausuarios');
 const listaPlanos = require('../planos.json');
-const {Pessoa} = require('../database/models');
+const {Pessoa,Plano} = require('../database/models');
 
 
 const userController = {
@@ -79,7 +79,10 @@ const userController = {
                 id: user.id
             }
         })
-        console.log(user)
+
+        req.session.isAuth = user;
+
+        console.log(req.session.isAuth)
 
         return res.redirect('/assinante');
     },
@@ -93,7 +96,7 @@ const userController = {
         const dadosUsuario = req.body
         let userToLogin = await Pessoa.findOne({
             where: {
-                email: dadosUsuario.email
+                email: dadosUsuario.email //email é o campo do banco e dados usuario é do formulario
             }
         });
         console.log(userToLogin)

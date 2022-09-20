@@ -72,22 +72,22 @@
                         <label for="genero">Gênero</label>
                         <div>
                             <input type="radio" name="genero" id="masculino" value="masculino" <% if
-                                (userLogged.genero==='masculino' ) { %> checked <% } %> disabled ><label
+                                (userLogged.sexo==='masculino' ) { %> checked <% } %> disabled ><label
                                     form="masculino">Masculino</label>
                         </div>
                         <div>
                             <input type="radio" name="genero" id="feminino" value="feminino" <% if
-                                (userLogged.genero==='feminino' ) { %> checked <% } %> disabled ><label
+                                (userLogged.sexo==='feminino' ) { %> checked <% } %> disabled ><label
                                     form="feminino">Feminino</label>
                         </div>
                         <div>
                             <input type="radio" name="genero" id="outros" value="outros" <% if
-                                (userLogged.genero==='outros' ) { %>
+                                (userLogged.sexo==='outros' ) { %>
                             checked <% } %> disabled ><label form="outros">Outros</label>
                         </div>
                         <div>
                             <input type="radio" name="genero" id="nao informado" value="nao informado" <% if
-                                (userLogged.genero==='nao informado' ) { %> checked <% } %> disabled ><label
+                                (userLogged.sexo==='nao informado' ) { %> checked <% } %> disabled ><label
                                     form="nao informado">Prefiro não informar</label>
                         </div>
                     </div>

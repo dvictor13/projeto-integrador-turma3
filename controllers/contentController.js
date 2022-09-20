@@ -1,11 +1,22 @@
 // criar lista de barbearias e planos e mandar no render
 const listaPlanos = require('../planos.json')
 const listaBarbearias = require('../barbearias.json')
+const {Plano, Vantagem} = require('../database/models');
 
 
 const contentController ={
-    planos:(req,res)=>{
-        res.render('planos',{listaplanos:listaPlanos}) // adicionar objeto planos
+    planos: async(req,res)=>{
+        let planos = await Plano.findAll({
+            include:{
+                model: Vantagem,
+                as: 'vantagens',
+                //trazer so o q eles tem em comum
+                required: false
+                // false traz tudo das duas 
+            }
+        });
+        console.log(planos)
+        res.render('planos',{listaplanos:planos}) // adicionar objeto planos
     },
     barbearias:(req,res)=>{
         res.render('barbearias',{listabarbearias:listaBarbearias,}) // adicionar objeto barbearias
