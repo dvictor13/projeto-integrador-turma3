@@ -5,9 +5,11 @@ const {Plano, Barbearia, Servico} = require('../database/models')
 
 
 const indexController = {
-    home:(req,res)=>{
+    home:async(req,res)=>{
         console.log(req.cookies.aceite)
-        res.render('index',{listaplanos:listaPlanos,barbearias:listaBarbearias, aceite:req.cookies.aceite});
+        let planos = await Plano.findAll()
+        let barbearias = await Barbearia.findAll()
+        res.render('index',{listaplanos:planos,barbearias:barbearias, aceite:req.cookies.aceite});
     },
     equipe:(req,res)=>{
         res.render('equipe');
