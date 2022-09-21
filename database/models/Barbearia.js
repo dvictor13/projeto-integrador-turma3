@@ -26,13 +26,15 @@ module.exports = function(sequelize,dataTypes){
         Barbearia.belongsToMany(models.Plano,{
             as:'planosA',
             through: models.BarbeariaPlano,
-            foreignKey:'fk_planos'
+            foreignKey:'fk_barbearia',
+            otherKey:'fk_planos'
         })
 
         Barbearia.belongsToMany(models.Servico, {
-            foreignKey: 'fk_servicos',
+            foreignKey: 'fk_barbearias',
             as: 'servicos',
-            through: models.ServicoBarbearia
+            through: models.ServicoBarbearia,
+            otherKey:'fk_servicos'
         })
     }
 
