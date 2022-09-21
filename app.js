@@ -5,6 +5,7 @@ var cookies = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session') 
 const loggedUserDataMiddleware = require('./middlewares/loggedUserDataMiddleware')
+const methodOverride = require('method-override')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -25,6 +26,7 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 }))
+app.use(methodOverride('_method'));
 
 app.use(loggedUserDataMiddleware);
 
