@@ -18,7 +18,8 @@ module.exports = function (sequelize, dataTypes) {
     Servico.associate = function (models) {
 
         Servico.belongsToMany(models.Barbearia, {
-            foreignKey: 'fk_barbearias',
+            foreignKey: 'fk_servicos',
+            otherKey:'fk_barbearias',
             as: 'barbearia',
             through: models.ServicoBarbearia
         })

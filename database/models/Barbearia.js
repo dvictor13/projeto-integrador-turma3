@@ -30,7 +30,8 @@ module.exports = function(sequelize,dataTypes){
         })
 
         Barbearia.belongsToMany(models.Servico, {
-            foreignKey: 'fk_servicos',
+            foreignKey: 'fk_barbearias',
+            otherKey:'fk_servicos',
             as: 'servicos',
             through: models.ServicoBarbearia
         })

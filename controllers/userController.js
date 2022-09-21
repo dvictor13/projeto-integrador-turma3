@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt')
 const {validationResult} = require('express-validator')
 const listaUsuariosassinante = require('../database/preferenciausuarios');
 const listaPlanos = require('../planos.json');
-const {Pessoa,Plano} = require('../database/models');
+const {Pessoa,Plano,Vantagem, Assinatura} = require('../database/models');
 
 
 const userController = {
@@ -123,12 +123,32 @@ const userController = {
             }
         })
     },
-    assinante:(req,res)=>{
+    assinante: async (req,res)=>{
         console.log(req.session.isAuth)
+        let listAll = await Plano.findAll({
+            include:{
+            model: Vantagem,
+            as: 'vantagens',
+            //trazer so o q eles tem em comum
+            required: false
+            // false traz tudo das duas 
+            }
+        });
+        let assinaturaUser = await Assinatura.findOne({
+            where: {
+                idAssinaturas: req.session.isAuth.fk_assinaturas
+            }
+        });
+        let planoUser = await Plano.findOne({
+            where: {
+                idPlanos: assinaturaUser.fk_planos
+            }
+        });
         res.render('assinante',{
             userLogged: req.session.isAuth,
-            usuario:listaUsuariosassinante,
-            listaplanos:listaPlanos
+            assinaturaUser: assinaturaUser,
+            listaPlanosUser: planoUser,
+            listaPlanos: listAll
         });
     },
     logout: (req, res) => {
