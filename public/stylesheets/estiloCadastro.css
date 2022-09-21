@@ -221,6 +221,10 @@ li.redesSociais{
     justify-content: center;
 }
 
+.corpoCadastro #formulariocampos ul li{
+    color: #FFFFFF; 
+}
+
 
 @media screen and (min-width:769px) {
     main{

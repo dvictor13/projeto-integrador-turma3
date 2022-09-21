@@ -1,21 +1,19 @@
 module.exports = function (sequelize, dataTypes) {
 
-    let alias = "Planos"
+    let alias = "Plano"
     let cols = {
-        id_planos: {
+        idPlanos: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        nome: {
-            type: dataTypes.STRING
-        },
-        cabelo: {
-            type: dataTypes.INTEGER
-        },
-        barba: {
-            type: dataTypes.INTEGER
-        }
+        nome: dataTypes.STRING,
+        cabelo: dataTypes.INTEGER,
+        barba: dataTypes.INTEGER,
+        preco: dataTypes.DECIMAL,
+        imagem: dataTypes.STRING,
+        economia: dataTypes.DECIMAL
+
     }
     let config = {
         tableName: "planos",
@@ -27,14 +25,23 @@ module.exports = function (sequelize, dataTypes) {
 
         Plano.hasMany(models.Assinatura, {
             as: 'assinaturas',
-            foreignKey: 'planos_id'
+            foreignKey: 'fk_planos'
         })
-        Plano.belongsToMany(models.Barbearia,{
-            through:models.BarbeariaPlano,
-            foreignKey:'fk_barbearia',
-            otherKey:'fk_planos',
-            as:'plano_barbearia'
+
+        Plano.belongsToMany(models.Vantagem, {
+            foreignKey: 'fk_planos',
+            otherKey:'fk_vantagens',
+            as: 'vantagens',
+            through: models.VantagemPlano
         })
+
+        Plano.belongsToMany(models.Barbearia, {
+            as:'barbeariasA',
+            through: models.BarbeariaPlano,
+            foreignKey:'fk_planos',
+            otherKey:'fk_barbearias',
+        })
+
     }
 
     return Plano;

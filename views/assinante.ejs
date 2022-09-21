@@ -17,14 +17,14 @@
 <body>
 
     <%- include('./partials/header')%>
-    <main>
+        <main>
 
             <h2 class="note ak-black">BEM-VINDO,<span class="light ak-black">
                     <%= userLogged.nome %> !
                 </span></h2>
             <section id="dados">
                 <div id="imgU">
-                    <img src="<%= userLogged.img %>" id="imgUser">
+                    <img src="<%= userLogged.imagem %>" id="imgUser">
                     <% if(typeof errors !=='undefined' ){%>
                         <ul>
                             <% for(let error in errors){ %>
@@ -61,8 +61,8 @@
                     </div>
                     <div class="infos">
                         <label>Data de nascimento</label>
-                        <input class=date type="date" id="nascimento" name="nascimento" required
-                            value="<%= userLogged.nascimento %>" disabled>
+                        <input class=date type="date" id="nascimento" name="nascimento"
+                            value="<%= userLogged.data_nasc %>" disabled>
                     </div>
                     <div class="infos">
                         <label>Telefone</label>
@@ -72,140 +72,143 @@
                         <label for="genero">Gênero</label>
                         <div>
                             <input type="radio" name="genero" id="masculino" value="masculino" <% if
-                                (userLogged.genero==='masculino' ) { %> checked <% } %> disabled ><label
+                                (userLogged.sexo==='masculino' ) { %> checked <% } %> disabled ><label
                                     form="masculino">Masculino</label>
                         </div>
                         <div>
                             <input type="radio" name="genero" id="feminino" value="feminino" <% if
-                                (userLogged.genero==='feminino' ) { %> checked <% } %> disabled ><label
+                                (userLogged.sexo==='feminino' ) { %> checked <% } %> disabled ><label
                                     form="feminino">Feminino</label>
                         </div>
                         <div>
                             <input type="radio" name="genero" id="outros" value="outros" <% if
-                                (userLogged.genero==='outros' ) { %>
+                                (userLogged.sexo==='outros' ) { %>
                             checked <% } %> disabled ><label form="outros">Outros</label>
                         </div>
                         <div>
                             <input type="radio" name="genero" id="nao informado" value="nao informado" <% if
-                                (userLogged.genero==='nao informado' ) { %> checked <% } %> disabled ><label
+                                (userLogged.sexo==='nao informado' ) { %> checked <% } %> disabled ><label
                                     form="nao informado">Prefiro não informar</label>
                         </div>
                     </div>
                     <section class="butons">
                         <div id="alterar">Alterar</div>
                         <div id="cancelar" onclick="cancelar()">Cancelar</div>
-                        <button id="senha">Alterar Senha</button>
+                    <!--  <button id="senha">Alterar Senha</button> -->  
                         <button id="salvar">Salvar</button>
                     </section>
                 </form>
 
-                <% if(userLogged.id_plano !=undefined) { %>
-                    <% let planoFound=listaplanos.find( onePlano=> onePlano.id === userLogged.id_plano)%>
-                        <section class="planosIndex">
-                            <section class="cardsPlanos">
-                                <article class="card">
-                                    <div class="imgPlano"><img src="<%= planoFound.img %>" class="imgCard"></div>
-                                    <div class="conteudoCard">
-                                        <div class="categoria">
-                                            <%=planoFound.nome%>
-                                        </div>
-                                        <h2 class="preco">R$<%=planoFound.preco%>,00</h2>
-                                        <p class="descPlanos">
-                                            <%=planoFound.barbas %> barba<% if (planoFound.barbas> 1) {%>s<%}%>
-                                        </p>
-                                        <p>por mês</p>
-                                        <p class="descPlanos">
-                                            <%=planoFound.cabelo %> corte<% if (planoFound.cabelo> 1) {%>s<%}%> de
-                                                        cabelo
-                                        </p>
-                                        <p>por mês</p>
+                <% if(userLogged.fk_assinaturas !=undefined) { %>
+                    <section class="planosIndex">
+                        <section class="cardsPlanos">
+                            <article class="card">
+                                <div class="imgPlano"><img src="<%= listaPlanosUser.imagem %>" class="imgCard"></div>
+                                <div class="conteudoCard">
+                                    <div class="categoria">
+                                        <%=listaPlanosUser.nome%>
                                     </div>
-                                    <div class="seuplano">SUA ASSINATURA</div>
-                                </article>
-                            </section>
+                                    <h2 class="preco">R$<%=listaPlanosUser.preco%>,00</h2>
+                                    <p class="descPlanos">
+                                        <%=listaPlanosUser.barba %> barba<% if (listaPlanosUser.barba> 1) {%>s<%}%>
+                                    </p>
+                                    <p>por mês</p>
+                                    <p class="descPlanos">
+                                        <%=listaPlanosUser.cabelo %> corte<% if (listaPlanosUser.cabelo> 1) {%>s<%}%> de
+                                                    cabelo
+                                    </p>
+                                    <p>por mês</p>
+                                </div>
+                                <div class="seuplano">SUA ASSINATURA</div>
+                            </article>
                         </section>
-                <% } %>
+                    </section>
+                    <%}%>
             </section>
-            <% if(userLogged.id_plano !=undefined) { %>
-            <nav class="historico">
-                <h2 class="ak-black">SEU HISTÓRICO </h2>
-                <section class="dados">
-                    <% for (let data in usuario[0].total) { %>
-                        <article class="info">
-                            <h2 class="white ak-black">
-                                <%=usuario[0].total[data] %> VEZ<% if(usuario[0].total[data]>1){%>ES<%}%>
-                            </h2>
-                            <p>É o número total de cortes de <%=data%> desde a compra do plano</p>
-                        </article>
-                        <% } %>
-                            <!-- <article class="info">
-                    <h2 class="white ak-black">X VEZES</h2>
-                    <p>É o número total de cortes de cabelo desde a compra do plano</p>
-                </article> -->
+            <% if(userLogged.fk_assinaturas !=undefined) { %>
+                <nav class="historico">
+                    <h2 class="ak-black">SEU HISTÓRICO </h2>
+                    <section class="dados">
                             <article class="info">
                                 <h2 class="white ak-black">
-                                    <%= usuario[0].barbearia %>
+                                    <%=assinaturaUser.cabelo%> VEZ<% if(assinaturaUser.cabelo>1){%>ES<%}%>
                                 </h2>
-                                <p>É a barbearia de sua preferência</p>
+                                <p>É o número total de cortes de cabelo desde a compra do plano</p>
                             </article>
-                </section>
-            </nav>
-
-            <% } %>
-                <nav class="sessaoPlanos">
-                    <div class="frases">
-                        <h2 class="dark ak-black">QUER DAR UM UPGRADE NO SEU PLANO?</h2>
-                        <p>Aproveite e dê um upgrade no seu plano e tenha mais ofertas dos nossos serviços. Ao escolher
-                            um novo plano
-                            você poderá utilizá-lo em até 24 horas. Não perca tempo e vamos fazer mais esse trato. Nós,
-                            No Fio do Bigode
-                            aguardamos você!!
-                        </p>
-                    </div>
-                    <section class="cardsPlanos">
-                        <% const index=listaplanos.findIndex(object=>object.nome===usuario[0].plano) %>
-                            <% for (let i=index+1; i< listaplanos.length; i++) { %>
-                                <article class="cardP">
-                                    <div class="categoriaPlano">
-                                        <p>
-                                            <%= listaplanos[i].nome %>
-                                        </p>
-                                    </div>
-                                    <% if (listaplanos[i].nome=='BASIC' ) {%>
-                                        <div class="categoriaEcon">POPULAR</div>
-                                        <% } %>
-                                            <ul>
-                                                <li class="descPlanos">
-                                                    <%= listaplanos[i].cabelos%> corte<% if (listaplanos[i].cabelos> 1)
-                                                            {%>s<%}%> de
-                                                                cabelo<span class="descTempo"> no mês</span>
-                                                </li>
-                                                <li class="descPlanos">
-                                                    <%= listaplanos[i].barbas%> barba<% if (listaplanos[i].cabelos> 1)
-                                                            {%>s<%}%><span class="descTempo"> no mês</span>
-                                                </li>
-                                                <% for( let vantagem of listaplanos[i].vantagens) { %>
+                            <article class="info">
+                                <h2 class="white ak-black">
+                                    <%=assinaturaUser.barba %> VEZ<% if(assinaturaUser.barba>1){%>ES<%}%>
+                                </h2>
+                                <p>É o número total de barbas feitas desde a compra do plano</p>
+                            </article>
+                            <article class="info">
+                                <h2 class="white ak-black">
+                                    <%let total = assinaturaUser.barba + assinaturaUser.cabelo %>
+                                    <%=total%> VEZ<% if(total >1){%>ES<%}%>
+                                </h2>
+                                <p>É o número total que você usou o plano</p>
+                            </article>
+                    </section>
+                </nav>
+                <% } %>
+                    <nav class="sessaoPlanos">
+                        <div class="frases">
+                            <h2 class="dark ak-black">QUER DAR UM UPGRADE NO SEU PLANO?</h2>
+                            <p>Aproveite e dê um upgrade no seu plano e tenha mais ofertas dos nossos serviços. Ao
+                                escolher
+                                um novo plano
+                                você poderá utilizá-lo em até 24 horas. Não perca tempo e vamos fazer mais esse trato.
+                                Nós,
+                                No Fio do Bigode
+                                aguardamos você!!
+                            </p>
+                        </div>
+                        <section class="cardsPlanos">
+                            <%console.log(listaPlanosUser.idPlanos)%>
+                                <% for (let i=listaPlanosUser.idPlanos; i<listaPlanos.length; i++) { %>
+                                    <article class="cardP">
+                                        <div class="categoriaPlano">
+                                            <p>
+                                                <%= listaPlanos[i].nome %>
+                                            </p>
+                                        </div>
+                                        <% if (listaPlanos[i].nome=='BASIC' ) {%>
+                                            <div class="categoriaEcon">POPULAR</div>
+                                            <% } %>
+                                                <ul>
                                                     <li class="descPlanos">
-                                                        <%= vantagem %>
+                                                        <%= listaPlanos[i].cabelo%> corte<% if (listaPlanos[i].cabelo>
+                                                                1)
+                                                                {%>s<%}%> de
+                                                                    cabelo<span class="descTempo"> no mês</span>
                                                     </li>
-                                                    <% } %>
-                                            </ul>
-                                            <div class="precoButon">
-                                                <h2 class="preco">R$<%= listaplanos[i].preco %>,00 </h2>
+                                                    <li class="descPlanos">
+                                                        <%= listaPlanos[i].barba%> barba<% if (listaPlanos[i].cabelo>
+                                                                1)
+                                                                {%>s<%}%><span class="descTempo"> no mês</span>
+                                                    </li>
+                                                    <% for( let vantagem of listaPlanos[i].vantagens) { %>
+                                                        <li class="descPlanos">
+                                                            <%=vantagem.nome%>
+                                                        </li>
+                                                        <% } %>
+                                                </ul>
+                                                <div class="precoButon">
+                                                    <h2 class="preco">R$<%= listaPlanos[i].preco %>,00 </h2>
 
-                                                <button class="btnComecar">
-                                                    <p>COMPRAR</p>
-                                                    <p>ESTE PLANO</p>
-                                                </button>
-                                                <div class="economia">
-                                                    <p>ADQUIRA ESTE PLANO E</p>
-                                                    <p>ECONOMIZE ATÉ R$<%=listaplanos[i].economia %> POR</p>
-                                                    <p>CORTE E BARBA</p>
+                                                    <button class="btnComecar">
+                                                        <p>COMPRAR</p>
+                                                        <p>ESTE PLANO</p>
+                                                    </button>
+                                                    <div class="economia">
+                                                        <p>ADQUIRA ESTE PLANO E</p>
+                                                        <p>ECONOMIZE ATÉ R$<%=listaPlanos[i].economia %> POR</p>
+                                                        <p>CORTE E BARBA</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                </article>
-                                <% } %>
-                                    <!-- <article class="cardP">
+                                    </article>
+                                    <% } %>
+                                        <!-- <article class="cardP">
                     <div class="categoriaPlano">
                         <p>STANDARD</p>
                     </div>
@@ -227,7 +230,7 @@
                     </div>
                 </article> -->
 
-                                    <!-- <article class="cardP">
+                                        <!-- <article class="cardP">
                     <div class="categoriaPlano">
                         <p>PREMIUM</p>
                     </div>
@@ -249,8 +252,8 @@
                         <p>CORTE E BARBA</p>
                     </div>
                 </article> -->
-                    </section>
-                </nav>
+                        </section>
+                    </nav>
         </main>
         <%- include('./partials/footer')%>
 

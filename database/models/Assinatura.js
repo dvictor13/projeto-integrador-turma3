@@ -1,45 +1,37 @@
-module.exports = function(sequelize,dataTypes){
+module.exports = function (sequelize, dataTypes) {
 
     let alias = "Assinatura"
     let cols = {
-        idAssinaturas:{
-            type:dataTypes.INTEGER,
-            primaryKey:true,
-            autoIncrement:true
+        idAssinaturas: {
+            type: dataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
         },
-        status:{
-            type:dataTypes.STRING
-        },
-        periodo:{
-            type:dataTypes.STRING
-        },
-        planos_id:{
-            type:dataTypes.INTEGER
-        },
-        cabelo:{
-            type:dataTypes.STRING
-        },
-        barba:{
-            type:dataTypes.STRING
-        }
+        status: dataTypes.STRING,
+        periodo: dataTypes.STRING,
+        fk_planos: dataTypes.INTEGER,
+        cabelo: dataTypes.INTEGER,
+        barba: dataTypes.INTEGER
     }
     let config = {
-        tableName:"assinaturas",
-        timestamps:false
+        tableName: "assinaturas",
+        timestamps: false
     }
-    let Assinatura = sequelize.define(alias,cols,config);
+    let Assinatura = sequelize.define(alias, cols, config);
 
     Assinatura.associate = function(models){
-        Assinatura.hasMany(models.Pessoa,{
-            as:'pessoas',
-            foreignKey:'assinatura_id'
-            });
-
+        
         Assinatura.belongsTo(models.Plano,{
             as:'planos',
-            foreignKey:'planos_id'
+            foreignKey:'fk_planos'
         })
-        }
-        return Assinatura;
+
+        Assinatura.hasMany(models.Pessoa,{
+            as:'pessoas',
+            foreignKey:'fk_assinaturas'
+        });
     }
 
+
+    return Assinatura;
+}

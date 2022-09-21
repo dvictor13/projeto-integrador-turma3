@@ -2,20 +2,19 @@ module.exports = function(sequelize,dataTypes){
 
     let alias = "Barbearia"
     let cols = {
-        id_barbearia:{
+        idBarbearias:{
             type:dataTypes.INTEGER,
             primaryKey:true,
             autoIncrement:true
         },
-        nome:{
-            type:dataTypes.STRING
-        },
-        endereco:{
-            type:dataTypes.STRING
-        },
-        telefone:{
-            type:dataTypes.STRING
-        }
+        nome: dataTypes.STRING,
+        imagem: dataTypes.STRING,
+        rua: dataTypes.STRING,
+        loja: dataTypes.STRING,
+        bairro: dataTypes.STRING,
+        horarioUtil: dataTypes.STRING,
+        horarioFds: dataTypes.STRING,
+        telefone: dataTypes.STRING
     }
     let config = {
         tableName:"barbearias",
@@ -25,11 +24,16 @@ module.exports = function(sequelize,dataTypes){
 
     Barbearia.associate = function (models){
         Barbearia.belongsToMany(models.Plano,{
-            as:'barbaria_planos',
-            through:models.BarbeariaPlano,
-            foreignKey:'fk_planos',
-            otherKey:'fk_barbearia',
-            timestamps:false
+            as:'planosA',
+            through: models.BarbeariaPlano,
+            foreignKey:'fk_planos'
+        })
+
+        Barbearia.belongsToMany(models.Servico, {
+            foreignKey: 'fk_barbearias',
+            otherKey:'fk_servicos',
+            as: 'servicos',
+            through: models.ServicoBarbearia
         })
     }
 

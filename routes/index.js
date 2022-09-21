@@ -56,10 +56,10 @@ router.get('/politica', indexController.politica)
 router.get('/faleconosco', indexController.faleconosco)
 
 router.get('/assinante',isAuthUser,userController.assinante)
-router.get('/pagamento',userController.pagamento)
-router.get('/carrinho/:id?',userController.carrinho)
+router.get('/pagamento',indexController.pagamento)
+router.get('/carrinho/:id?',indexController.carrinho)
 router.get('/cadastro',notLogged,userController.cadastro)
-router.get('/contato',userController.contato)
+router.get('/contato',indexController.contato)
 router.get('/barbearias',contentController.barbearias)
 router.get('/planos/',contentController.planos)
 router.post('/logar', userController.auth)
@@ -68,6 +68,8 @@ router.post('/pagamento',userController.pagar)
 router.get('/login',notLogged,userController.logar)
 router.get('/logout',isAuthUser,userController.logout)
 router.post('/foto', upload.single('userImage'), userController.foto)
+router.get('/teste', indexController.teste)
+router.post('/assinante', userController.alterarDados)
 
 
 module.exports = router;

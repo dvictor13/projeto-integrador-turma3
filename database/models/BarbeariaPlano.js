@@ -1,12 +1,20 @@
 module.exports = (sequelize,dataTypes) => {
-    const BarbeariaPlano = sequelize.define('barbearia_has_planos',{
-        id_barbearia_plano:{
+    
+    let alias = "BarbeariaPlano"
+    let cols = {
+        id:{
             type:dataTypes.INTEGER,
             primaryKey:true,
             autoIncrement:true
         },
-        fk_barbearia:dataTypes.INTEGER,
+        fk_barbearias:dataTypes.INTEGER,
         fk_planos:dataTypes.INTEGER
-    })
+    }
+    let config = {
+        tableName: "barbearias_has_planos",
+        timestamps: false
+    }
+    let BarbeariaPlano = sequelize.define(alias, cols, config);
+
     return BarbeariaPlano
 }

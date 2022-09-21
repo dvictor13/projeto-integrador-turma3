@@ -2,37 +2,22 @@ module.exports = function(sequelize,dataTypes){
 
     let alias = "Pessoa"
     let cols = {
-        id_pessoa:{
+        idPessoas:{
             type:dataTypes.INTEGER,
             primaryKey:true,
             autoIncrement:true
         },
-        nome:{
-            type:dataTypes.STRING
-        },
-
-        data_nasc:{
-            type:dataTypes.DATEONLY
-        },
-        enderenco:{
-            type:dataTypes.STRING
-        },
-        cpf:{
-            type:dataTypes.STRING(11)
-        },
-        usuario: dataTypes.STRING,
-
+        nome: dataTypes.STRING,
+        data_nasc: dataTypes.DATE,
+        endereco: dataTypes.STRING,
+        cpf: dataTypes.STRING,
+        telefone: dataTypes.STRING,
+        sexo: dataTypes.STRING,
+        email: dataTypes.STRING,
         senha:dataTypes.STRING,
-
-        status:{
-            type:dataTypes.BOOLEAN
-        },
-        imagem:{
-            type:dataTypes.STRING
-        },
-        assinaturas_id:{
-            type:dataTypes.INTEGER
-        }
+        status: dataTypes.BOOLEAN,
+        imagem: dataTypes.STRING,
+        fk_assinaturas: dataTypes.INTEGER
     }
     let config = {
         tableName:"pessoas",
@@ -43,7 +28,7 @@ module.exports = function(sequelize,dataTypes){
     Pessoa.associate = function(models){
         Pessoa.belongsTo(models.Assinatura,{
             as:"assinatura",
-            foreignKey:"assinatura_id"
+            foreignKey:"fk_assinaturas"
         })
     }
     return Pessoa;

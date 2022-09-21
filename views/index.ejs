@@ -129,11 +129,11 @@ console.log(getCookie("aceite"))
         <section class="cardsPlanos">
             <% for (let plano of listaplanos) { %>
                 <article class="card">
-                    <div class="imgPlano"><img src= "<%= plano.img %>" class="imgCard"></div>
+                    <div class="imgPlano"><img src= "<%= plano.imagem %>" class="imgCard"></div>
                     <div class="conteudoCard">
                     <div class="categoria"><%=plano.nome%></div>
                     <h2 class="preco">R$<%=plano.preco%>,00</h2>
-                    <p class="descPlanos"><%=plano.barbas %> barba<% if (plano.barbas > 1) {%>s<%}%></p>
+                    <p class="descPlanos"><%=plano.barba %> barba<% if (plano.barbas > 1) {%>s<%}%></p>
                     <p>por mês</p>
                     <p class="descPlanos"><%=plano.cabelo %> corte<% if (plano.cabelo > 1) {%>s<%}%> de cabelo</p>
                     <p>por mês</p>
@@ -150,7 +150,7 @@ console.log(getCookie("aceite"))
 
             <% for (let barbearia of barbearias) { %> 
                 <article class="cardB">
-                    <div class="imgCard"><img src="<%=barbearias[0].img %>" alt=""></div>
+                    <div class="imgCard"><img src="<%=barbearia.imagem %>" alt=""></div>
                     <p class="localBarbearia"><%= barbearia.nome.toUpperCase(); %> </p>
                     <p class="descPlanos"><%=barbearia.rua%></p>
                     <p class="descLocal">LOJA <%=barbearia.loja%></p>

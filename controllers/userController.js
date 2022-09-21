@@ -1,16 +1,17 @@
 const fs = require('fs');
 const bcrypt = require('bcrypt')
-const User = require('../models/User');
+//const User = require('../models/User');
 const {validationResult} = require('express-validator')
 const listaUsuariosassinante = require('../database/preferenciausuarios');
 const listaPlanos = require('../planos.json');
+const {Pessoa,Plano,Vantagem, Assinatura} = require('../database/models');
 
 
 const userController = {
     cadastro:(req,res)=>{
         res.render('cadastro')
     },
-    processRegister: (req,res) =>{
+    processRegister: async (req,res) =>{
         const errors = validationResult(req);
         if (!errors.isEmpty()){
             return res.render('cadastro', {
@@ -20,8 +21,12 @@ const userController = {
         }
         
         const usuario = req.body
-        //Criptografar a senha
-        let userExists = User.findUserByField('email', usuario.email);
+
+        let userExists = await Pessoa.findOne({
+            where: {
+                email: usuario.email
+            }
+        });
 
         if (userExists){
             console.log("funcionou")
@@ -33,19 +38,24 @@ const userController = {
             })
             
         }
-
-        let userToCreate = {
-            ...req.body,
-            senha: bcrypt.hashSync(usuario.senha, 11),
-            img: "images/profile/user.png",
-            id_plano: undefined
-        }
         
-        User.create(userToCreate)
+        await Pessoa.create({
+            nome : usuario.nome,
+            data_nasc: usuario.nascimento,
+            endereco: 'teste',
+            cpf : usuario.cpf,
+            telefone : usuario.telefone,
+            sexo: usuario.radio,
+            email: usuario.email,
+            senha: bcrypt.hashSync(usuario.senha, 11),
+            status: 'inativo',
+            imagem: 'images/profile/user.png',
+            fk_assinaturas: 1
+        })
+
         return res.render('login')
     },
-    foto: (req,res) => {
-        console.log(req.file);
+    foto: async (req,res) => {
         if(!req.file){
             return res.render('assinante', {
                 errors: {
@@ -57,40 +67,74 @@ const userController = {
            })
         }
         
-        let user = User.findUserByField('email', req.session.isAuth.email);
-    //    let userAntigo =  User.findUsersById(user.id)
-        user.img = `images/profile/${req.file.filename}`;
-        console.log(user)
-        // User.update(userAntigo, user)
+        let user = await Pessoa.findOne({
+            where: {
+                email: req.session.isAuth.email
+            }
+        });
+        user.update({
+            imagem: `images/profile/${req.file.filename}`
+        },{
+            where: {
+                id: user.id
+            }
+        })
+
+        req.session.isAuth = user;
+
+        console.log(req.session.isAuth)
 
         return res.redirect('/assinante');
     },
-    carrinho:(req,res)=>{
-        const codPlano = req.params.id;
-        res.render('carrinho',{listaplanos:listaPlanos, codPlano:codPlano});
+    alterarDados: async (req,res) =>{
+        let user = await Pessoa.findOne({
+            where: {
+                email: req.session.isAuth.email
+            }
+        });
+        let date = req.body.nascimento
+
+        user.update({
+            nome: req.body.nome,
+            data_nasc: date,
+            endereco: 'teste',
+            cpf: req.body.cpf,
+            telefone: req.body.telefone,
+            sexo: req.body.genero,
+            email: req.body.email
+          //  senha: req.body.nome,
+        },{
+            where: {
+                idPessoas: user.id
+            }
+        })
+        req.session.isAuth = user;
+        console.log('teste')
+        console.log(req.session.isAuth)
+        return res.redirect('/assinante');
     },
-    pagamento:(req,res)=>{
-        res.render('pagamento',{dadosPlano:listaPlanos[0]})
-    },    
-    contato:(req,res)=>{
-        res.render('contato');
-    }, 
     pagar: (req, res) => {
         res.render('pagamento',{dadosPlano:listaPlanos[0]})
     },
     logar: (req,res) =>{
         res.render('login')
     },
-    auth: (req, res) => {
+    auth: async (req, res) => {
         const dadosUsuario = req.body
-        let userToLogin = User.findUserByField('email', dadosUsuario.email);
+        let userToLogin = await Pessoa.findOne({
+            where: {
+                email: dadosUsuario.email //email é o campo do banco e dados usuario é do formulario
+            }
+        });
+        console.log(userToLogin)
         if(userToLogin){
             let senhaValida = bcrypt.compareSync(dadosUsuario.senha, userToLogin.senha)
 
             if(senhaValida){
                 delete userToLogin.senha;
                 req.session.isAuth = userToLogin;
-                console.log(dadosUsuario.lembrar)
+                console.log('chegando')
+                console.log(req.session.isAuth)
                 if(dadosUsuario.lembrar){
                     res.cookie('userEmail', dadosUsuario.email, 
                     {maxAge: (1000 * 60) * 30} )
@@ -106,11 +150,32 @@ const userController = {
             }
         })
     },
-    assinante:(req,res)=>{
+    assinante: async (req,res)=>{
+        console.log(req.session.isAuth)
+        let listAll = await Plano.findAll({
+            include:{
+            model: Vantagem,
+            as: 'vantagens',
+            //trazer so o q eles tem em comum
+            required: false
+            // false traz tudo das duas 
+            }
+        });
+        let assinaturaUser = await Assinatura.findOne({
+            where: {
+                idAssinaturas: req.session.isAuth.fk_assinaturas
+            }
+        });
+        let planoUser = await Plano.findOne({
+            where: {
+                idPlanos: assinaturaUser.fk_planos
+            }
+        });
         res.render('assinante',{
             userLogged: req.session.isAuth,
-            usuario:listaUsuariosassinante,
-            listaplanos:listaPlanos
+            assinaturaUser: assinaturaUser,
+            listaPlanosUser: planoUser,
+            listaPlanos: listAll
         });
     },
     logout: (req, res) => {

@@ -63,7 +63,7 @@
                 <div class="cards-container">
                     <% for (let barbearia of listabarbearias){ %> 
                         <article class="enderecoBarbearia">
-                            <div class="imgCard"><img src="<%=barbearia.img  %> " alt=""></div>
+                            <div class="imgCard"><img src="<%=barbearia.imagem  %> " alt=""></div>
                             <div class="dados">
                                 <h4 class="nomeBarbearia"><%= barbearia.nome %> </h4>
                                 <div class="endereco">
@@ -73,7 +73,7 @@
                                 </div>
                                 <ul class="servicos">
                                     <% for (serv of barbearia.servicos) {%> 
-                                        <li><p><%= serv %></p></li>
+                                        <li><p><%= serv.nome %></p></li>
                                             <% } %> 
     
                                 </ul>
