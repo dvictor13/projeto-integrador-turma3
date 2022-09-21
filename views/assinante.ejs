@@ -37,7 +37,7 @@
                                 <% } %>
                         </ul>
                         <% } %>
-                            <form id="formImg" action="/foto" method="post" enctype="multipart/form-data">
+                            <form id="formImg" action="/foto" method="POST" enctype="multipart/form-data">
                                 <input type="file" id="userImage" name="userImage">
                                 <button id="carregarFoto">Alterar Foto</button>
                             </form>
@@ -61,8 +61,8 @@
                     </div>
                     <div class="infos">
                         <label>Data de nascimento</label>
-                        <input class=date type="date" id="nascimento" name="nascimento" required
-                            value="<%= userLogged.nascimento %>" disabled>
+                        <input class=date type="date" id="nascimento" name="nascimento"
+                            value="<%= userLogged.data_nasc %>" disabled>
                     </div>
                     <div class="infos">
                         <label>Telefone</label>
@@ -94,7 +94,7 @@
                     <section class="butons">
                         <div id="alterar">Alterar</div>
                         <div id="cancelar" onclick="cancelar()">Cancelar</div>
-                        <button id="senha">Alterar Senha</button>
+                    <!--  <button id="senha">Alterar Senha</button> -->  
                         <button id="salvar">Salvar</button>
                     </section>
                 </form>

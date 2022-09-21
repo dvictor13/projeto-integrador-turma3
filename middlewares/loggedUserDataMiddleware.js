@@ -17,7 +17,6 @@ async function loggedUserDataMiddleware (req,res,next) {
 
      if(req.session.isAuth){
          res.locals.isLogged = true;
-         console.log(req.cookies.userEmail + "chegandoooooo")
      }
     next()
 }

@@ -69,6 +69,7 @@ router.get('/login',notLogged,userController.logar)
 router.get('/logout',isAuthUser,userController.logout)
 router.post('/foto', upload.single('userImage'), userController.foto)
 router.get('/teste', indexController.teste)
+router.post('/assinante', userController.alterarDados)
 
 
 module.exports = router;

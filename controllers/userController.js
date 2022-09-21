@@ -86,6 +86,33 @@ const userController = {
 
         return res.redirect('/assinante');
     },
+    alterarDados: async (req,res) =>{
+        let user = await Pessoa.findOne({
+            where: {
+                email: req.session.isAuth.email
+            }
+        });
+        let date = req.body.nascimento
+
+        user.update({
+            nome: req.body.nome,
+            data_nasc: date,
+            endereco: 'teste',
+            cpf: req.body.cpf,
+            telefone: req.body.telefone,
+            sexo: req.body.genero,
+            email: req.body.email
+          //  senha: req.body.nome,
+        },{
+            where: {
+                idPessoas: user.id
+            }
+        })
+        req.session.isAuth = user;
+        console.log('teste')
+        console.log(req.session.isAuth)
+        return res.redirect('/assinante');
+    },
     pagar: (req, res) => {
         res.render('pagamento',{dadosPlano:listaPlanos[0]})
     },
