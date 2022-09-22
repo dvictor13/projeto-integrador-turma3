@@ -11,7 +11,8 @@ module.exports = function (sequelize, dataTypes) {
         periodo: dataTypes.STRING,
         fk_planos: dataTypes.INTEGER,
         cabelo: dataTypes.INTEGER,
-        barba: dataTypes.INTEGER
+        barba: dataTypes.INTEGER,
+        fk_pessoas: dataTypes.INTEGER
     }
     let config = {
         tableName: "assinaturas",
@@ -26,9 +27,9 @@ module.exports = function (sequelize, dataTypes) {
             foreignKey:'fk_planos'
         })
 
-        Assinatura.hasMany(models.Pessoa,{
+        Assinatura.belongsTo(models.Pessoa,{
             as:'pessoas',
-            foreignKey:'fk_assinaturas'
+            foreignKey:'fk_pessoas'
         });
     }
 

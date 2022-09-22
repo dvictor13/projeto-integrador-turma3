@@ -49,8 +49,7 @@ const userController = {
             email: usuario.email,
             senha: bcrypt.hashSync(usuario.senha, 11),
             status: 'inativo',
-            imagem: 'images/profile/user.png',
-            fk_assinaturas: 1
+            imagem: 'images/profile/user.png'
         })
 
         return res.render('login')
@@ -166,7 +165,7 @@ const userController = {
         });
         let assinaturaUser = await Assinatura.findOne({
             where: {
-                idAssinaturas: req.session.isAuth.fk_assinaturas
+                fk_pessoas: req.session.isAuth.idPessoas
             }
         });
         let planoUser = await Plano.findOne({
