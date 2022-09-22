@@ -1,6 +1,6 @@
 const listaPlanos = require("../planos.json")
 const listaBarbearias = require("../barbearias.json")
-const {Plano, Barbearia, Servico} = require('../database/models')
+const {Plano, Barbearia, Servico,Vantagem} = require('../database/models')
 
 
 
@@ -42,9 +42,14 @@ const indexController = {
         let plano = await Plano.findOne({
             where:{
                 idPlanos: codPlano
+            },
+            include:{
+                model:Vantagem,
+                as:'vantagens',
+                required:false
             }
         })
-        console.log(plano)
+        console.log("🚀 ~ file: indexController.js ~ line 52 ~ pagamento:async ~ plano", plano.vantagens)
         res.render('pagamento',{dadosPlano:plano})
     },    
     contato:(req,res)=>{

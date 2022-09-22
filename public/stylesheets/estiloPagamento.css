@@ -24,12 +24,14 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0% 2%;
 }
 
 main *{
     font-family: var(--ak-font-regular);
 
 }
+
 
 .finalizeCompra{
     font-family: var(--ak-font-black);
