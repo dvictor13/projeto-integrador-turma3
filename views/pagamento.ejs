@@ -21,7 +21,7 @@
             <h2 class="titulo">DADOS DE PAGAMENTO</h2>
             <article class="resumo">
                 <h3 class="plano"> <%= dadosPlano.nome %> </h3>
-                <span class="valor"><%= dadosPlano.preco %></span>
+                <span class="valor">R$<%= dadosPlano.preco %>,00</span>
             </article>
             <form action="">
                 <label for="duracao">Selecione o período:</label>
@@ -74,17 +74,17 @@
             <article class="finalizarPag">
                 <p class="categoriaEscolhida">PLANO ESCOLHIDO</p>
                     <div class="radio">
-                        <div class="planoEscolhido"><div class="caixinha"></div><p class="categoria">BASIC</p></div>
+                        <div class="planoEscolhido"><div class="caixinha"></div><p class="categoria"><%=dadosPlano.nome%></p></div>
                     </div>
                     <div class="descricao">
                         <div class="ladoDir">
-                            <p class="descPlanos">1 barba</p>
+                            <p class="descPlanos"><%= dadosPlano.barba%> barba<% if (dadosPlano.barba> 1) {%>s<%}%></p>
                             <p>por mês</p>
-                            <p class="descPlanos"> 1 corte de cabelo</p>
+                            <p class="descPlanos"><%= dadosPlano.cabelo%>  corte<% if (dadosPlano.cabelo> 1) {%>s<%}%> de cabelo</p>
                             <p>por mês</p>
                         </div>
                     </div>
-                    <h2 class="preco">R$35,00</h2>
+                    <h2 class="preco">R$<%= dadosPlano.preco%>,00</h2>
                     <p>por mês</p>
             </article>
         </section>

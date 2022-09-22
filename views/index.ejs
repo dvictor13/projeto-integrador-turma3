@@ -137,7 +137,7 @@ console.log(getCookie("aceite"))
                     <p>por mês</p>
                     <p class="descPlanos"><%=plano.cabelo %> corte<% if (plano.cabelo > 1) {%>s<%}%> de cabelo</p>
                     <p>por mês</p>
-                    <a href="carrinho"><button class="btnComecar">COMPRAR PLANO</button></a>
+                    <a href="pagamento/<%=plano.idPlanos%>"><button class="btnComecar">COMPRAR PLANO</button></a>
                     </div>
                 </article>
             <%}%>

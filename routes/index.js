@@ -8,6 +8,7 @@ const contentController = require('../controllers/contentController')
 const notLogged = require('../middlewares/notLogged');
 const multer = require('multer');
 const path = require('path');
+const salvaPlano = require('../middlewares/salvaPlano')
 
 
 const whitelist = [
@@ -56,16 +57,16 @@ router.get('/politica', indexController.politica)
 router.get('/faleconosco', indexController.faleconosco)
 
 router.get('/assinante',isAuthUser,userController.assinante)
-router.get('/pagamento',indexController.pagamento)
-router.get('/carrinho/:id?',indexController.carrinho)
+router.get('/pagamento/:id',salvaPlano,isAuthUser,indexController.pagamento)
+//router.get('/carrinho/:id?',indexController.carrinho)
 router.get('/cadastro',notLogged,userController.cadastro)
 router.get('/contato',indexController.contato)
 router.get('/barbearias',contentController.barbearias)
 router.get('/planos/',contentController.planos)
-router.post('/logar', userController.auth)
+router.post('/logar/:id?', userController.auth)
 router.post('/cadastro',validationMiddlewares,userController.processRegister)
 router.post('/pagamento',userController.pagar)
-router.get('/login',notLogged,userController.logar)
+router.get('/login/:id?',notLogged,userController.logar)
 router.get('/logout',isAuthUser,userController.logout)
 router.post('/foto', upload.single('userImage'), userController.foto)
 router.get('/teste', indexController.teste)

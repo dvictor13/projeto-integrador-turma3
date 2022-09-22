@@ -139,8 +139,11 @@ const userController = {
                     res.cookie('userEmail', dadosUsuario.email, 
                     {maxAge: (1000 * 60) * 30} )
                 }
-
-                return res.redirect('/assinante')
+                if(!req.session.plano){
+                    return res.redirect('/assinante')
+                }else{
+                    return res.redirect('/pagamento/'+ req.session.plano)
+                }
             }
         }
 

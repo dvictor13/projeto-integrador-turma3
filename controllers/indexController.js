@@ -31,14 +31,21 @@ const indexController = {
             }
         })
         return res.send(teste);
-    },carrinho:async (req,res)=>{
+    },
+    carrinho:async (req,res)=>{
         const codPlano = req.params.id;
         let planos = await Plano.findAll()
         res.render('carrinho',{listaplanos:planos, codPlano:codPlano});
     },
-    pagamento:(req,res)=>{
-        
-        res.render('pagamento',{dadosPlano:listaPlanos[0]})
+    pagamento:async(req,res)=>{
+        let codPlano = req.params.id;
+        let plano = await Plano.findOne({
+            where:{
+                idPlanos: codPlano
+            }
+        })
+        console.log(plano)
+        res.render('pagamento',{dadosPlano:plano})
     },    
     contato:(req,res)=>{
         res.render('contato');
