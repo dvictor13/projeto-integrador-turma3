@@ -9,6 +9,8 @@ const notLogged = require('../middlewares/notLogged');
 const multer = require('multer');
 const path = require('path');
 const salvaPlano = require('../middlewares/salvaPlano')
+const marcaNovoUsuario = require('../middlewares/marcaNovoUsuario')
+
 
 
 const whitelist = [
@@ -65,7 +67,7 @@ router.get('/barbearias',contentController.barbearias)
 router.get('/planos/',contentController.planos)
 router.post('/logar/:id?', userController.auth)
 router.post('/cadastro',validationMiddlewares,userController.processRegister)
-router.post('/pagamento',userController.pagar)
+router.post('/pagamento/:id',marcaNovoUsuario,userController.pagar)
 router.get('/login/:id?',notLogged,userController.logar)
 router.get('/logout',isAuthUser,userController.logout)
 router.put('/foto/:id', upload.single('userImage'), userController.foto)
