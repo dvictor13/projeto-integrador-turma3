@@ -151,7 +151,7 @@ const userController = {
             fk_pessoas:idPessoas,
         })
         
-        return res.redirect('assinante')
+        return res.redirect('/assinante')
     },
     logar: (req,res) =>{
         res.render('login')
@@ -215,7 +215,7 @@ const userController = {
                 userLogged: userLogged,
                 assinaturaUser: assinaturaUser,
                 listaPlanosUser: planoUser,
-                listaPlanos: listAll
+                listaPlanos: listAll,
             });
         }
         res.render('assinante',{
