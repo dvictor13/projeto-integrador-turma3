@@ -191,6 +191,8 @@ const userController = {
     assinante: async (req,res)=>{
         let {idPessoas} = req.session.isAuth;
         let userLogged = await Pessoa.findByPk(idPessoas)
+        let userNovo = req.session.novoUsuario;
+        req.session.novoUsuario = false;
         let listAll = await Plano.findAll({
             include:{
             model: Vantagem,
@@ -216,13 +218,15 @@ const userController = {
                 assinaturaUser: assinaturaUser,
                 listaPlanosUser: planoUser,
                 listaPlanos: listAll,
+                sessionUser: userNovo
             });
         }
         res.render('assinante',{
             userLogged: userLogged,
             assinaturaUser: undefined,
             listaPlanosUser: undefined,
-            listaPlanos: listAll
+            listaPlanos: listAll,
+            sessionUser: false
         });
     },
     logout: (req, res) => {
