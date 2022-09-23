@@ -68,9 +68,9 @@ router.post('/cadastro',validationMiddlewares,userController.processRegister)
 router.post('/pagamento',userController.pagar)
 router.get('/login/:id?',notLogged,userController.logar)
 router.get('/logout',isAuthUser,userController.logout)
-router.post('/foto', upload.single('userImage'), userController.foto)
+router.put('/foto/:id', upload.single('userImage'), userController.foto)
 router.get('/teste', indexController.teste)
-router.post('/assinante', userController.alterarDados)
+router.put('/assinante/:id', userController.alterarDados)
 
 
 module.exports = router;

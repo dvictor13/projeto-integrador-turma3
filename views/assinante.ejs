@@ -37,12 +37,13 @@
                                 <% } %>
                         </ul>
                         <% } %>
-                            <form id="formImg" action="/foto" method="POST" enctype="multipart/form-data">
+                            <form id="formImg" action="/foto/<%=userLogged.idPessoas%>?_method=PUT" method="POST"
+                                enctype="multipart/form-data">
                                 <input type="file" id="userImage" name="userImage">
                                 <button id="carregarFoto">Alterar Foto</button>
                             </form>
                 </div>
-                <form class=form1 id="form1" action="/assinante" method="POST">
+                <form class=form1 id="form1" action="/assinante/<%=userLogged.idPessoas%>?_method=PUT" method="POST">
                     <div class="infos">
                         <label>Nome</label>
                         <input type="text" id="nome" name="nome" required value="<%= userLogged.nome %>" disabled>
@@ -61,7 +62,7 @@
                     </div>
                     <div class="infos">
                         <label>Data de nascimento</label>
-                        <input class=date type="date" id="nascimento" name="nascimento"
+                        <input class='date' type="date" id="nascimento" name="nascimento"
                             value="<%= userLogged.data_nasc %>" disabled>
                     </div>
                     <div class="infos">
@@ -94,12 +95,12 @@
                     <section class="butons">
                         <div id="alterar">Alterar</div>
                         <div id="cancelar" onclick="cancelar()">Cancelar</div>
-                    <!--  <button id="senha">Alterar Senha</button> -->  
+                        <!--  <button id="senha">Alterar Senha</button> -->
                         <button id="salvar">Salvar</button>
                     </section>
                 </form>
 
-                <% if(assinaturaUser.idAssinaturas !=undefined) { %>
+                <% if(assinaturaUser !=undefined) { %>
                     <section class="planosIndex">
                         <section class="cardsPlanos">
                             <article class="card">
@@ -125,47 +126,52 @@
                     </section>
                     <%}%>
             </section>
-            <% if(assinaturaUser.idAssinaturas !=undefined) { %>
+            <% if(assinaturaUser !=undefined) { %>
                 <nav class="historico">
                     <h2 class="ak-black">SEU HISTÓRICO </h2>
                     <section class="dados">
-                            <article class="info">
-                                <h2 class="white ak-black">
-                                    <%=assinaturaUser.cabelo%> VEZ<% if(assinaturaUser.cabelo>1){%>ES<%}%>
-                                </h2>
-                                <p>É o número total de cortes de cabelo desde a compra do plano</p>
-                            </article>
-                            <article class="info">
-                                <h2 class="white ak-black">
-                                    <%=assinaturaUser.barba %> VEZ<% if(assinaturaUser.barba>1){%>ES<%}%>
-                                </h2>
-                                <p>É o número total de barbas feitas desde a compra do plano</p>
-                            </article>
-                            <article class="info">
-                                <h2 class="white ak-black">
-                                    <%let total = assinaturaUser.barba + assinaturaUser.cabelo %>
-                                    <%=total%> VEZ<% if(total >1){%>ES<%}%>
-                                </h2>
-                                <p>É o número total que você usou o plano</p>
-                            </article>
+                        <article class="info">
+                            <h2 class="white ak-black">
+                                <%=assinaturaUser.cabelo%> VEZ<% if(assinaturaUser.cabelo>1){%>ES<%}%>
+                            </h2>
+                            <p>É o número total de cortes de cabelo desde a compra do plano</p>
+                        </article>
+                        <article class="info">
+                            <h2 class="white ak-black">
+                                <%=assinaturaUser.barba %> VEZ<% if(assinaturaUser.barba>1){%>ES<%}%>
+                            </h2>
+                            <p>É o número total de barbas feitas desde a compra do plano</p>
+                        </article>
+                        <article class="info">
+                            <h2 class="white ak-black">
+                                <%let total=assinaturaUser.barba + assinaturaUser.cabelo %>
+                                    <%=total%> VEZ<% if(total>1){%>ES<%}%>
+                            </h2>
+                            <p>É o número total que você usou o plano</p>
+                        </article>
                     </section>
                 </nav>
                 <% } %>
                     <nav class="sessaoPlanos">
                         <div class="frases">
-                            <h2 class="dark ak-black">QUER DAR UM UPGRADE NO SEU PLANO?</h2>
-                            <p>Aproveite e dê um upgrade no seu plano e tenha mais ofertas dos nossos serviços. Ao
-                                escolher
-                                um novo plano
-                                você poderá utilizá-lo em até 24 horas. Não perca tempo e vamos fazer mais esse trato.
-                                Nós,
-                                No Fio do Bigode
-                                aguardamos você!!
-                            </p>
+                            <% if(assinaturaUser !=undefined) { %>
+                                <h2 class="dark ak-black">QUER DAR UM UPGRADE NO SEU PLANO?</h2>
+                                <%}%>
+                                    <p>Tenha mais ofertas dos nossos serviços.
+                                        Ao
+                                        escolher
+                                        um novo plano
+                                        você poderá utilizá-lo em até 24 horas. Não perca tempo e vamos fazer mais esse
+                                        trato.
+                                        Nós,
+                                        No Fio do Bigode
+                                        aguardamos você!!
+                                    </p>
                         </div>
                         <section class="cardsPlanos">
-                            <%console.log(listaPlanosUser.idPlanos)%>
+                            <% if(assinaturaUser==undefined) { listaPlanosUser={idPlanos: 0}} %>
                                 <% for (let i=listaPlanosUser.idPlanos; i<listaPlanos.length; i++) { %>
+
                                     <article class="cardP">
                                         <div class="categoriaPlano">
                                             <p>
@@ -196,10 +202,10 @@
                                                 <div class="precoButon">
                                                     <h2 class="preco">R$<%= listaPlanos[i].preco %>,00 </h2>
 
-                                                    <button class="btnComecar">
-                                                        <p>COMPRAR</p>
-                                                        <p>ESTE PLANO</p>
-                                                    </button>
+                                                    <a href="pagamento/<%=listaPlanos[i].idPlanos%>"><button class="btnComecar">
+                                                            <p>COMPRAR</p>
+                                                            <p>ESTE PLANO</p>
+                                                    </button></a>
                                                     <div class="economia">
                                                         <p>ADQUIRA ESTE PLANO E</p>
                                                         <p>ECONOMIZE ATÉ R$<%=listaPlanos[i].economia %> POR</p>
@@ -208,50 +214,7 @@
                                                 </div>
                                     </article>
                                     <% } %>
-                                        <!-- <article class="cardP">
-                    <div class="categoriaPlano">
-                        <p>STANDARD</p>
-                    </div>
-                    <ul>
-                        <li class="descPlanos">2 barbas</li>
-                        <p class="descTempo">por mês</p>
-                        <li class="descPlanos">2 cortes de cabelo</li>
-                        <p class="descTempo">por mês</p>
-                    </ul>
-                    <h2 class="preco">R$65,00</h2>
-                    <button class="btnComecar">
-                        <p>COMPRAR</p>
-                        <p>ESTE PLANO</p>
-                    </button>
-                    <div class="economia">
-                        <p>ADIQUIRA ESTE PLANO E</p>
-                        <p>ECONOMIZE ATÉ R$25 POR</p>
-                        <p>CORTE E BARBA</p>
-                    </div>
-                </article> -->
 
-                                        <!-- <article class="cardP">
-                    <div class="categoriaPlano">
-                        <p>PREMIUM</p>
-                    </div>
-                    <ul>
-                        <li class="descPlanos">2 barbas</li>
-                        <p class="descTempo">por mês</p>
-                        <li class="descPlanos">3 cortes de cabelo</li>
-                        <p class="descTempo">por mês</p>
-
-                    </ul>
-                    <h2 class="preco">R$80,00</h2>
-                    <button class="btnComecar">
-                        <p>COMPRAR</p>
-                        <p>ESTE PLANO</p>
-                    </button>
-                    <div class="economia">
-                        <p>ADIQUIRA ESTE PLANO E</p>
-                        <p>ECONOMIZE ATÉ R$30 POR</p>
-                        <p>CORTE E BARBA</p>
-                    </div>
-                </article> -->
                         </section>
                     </nav>
         </main>

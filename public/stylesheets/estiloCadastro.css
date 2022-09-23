@@ -61,7 +61,7 @@ h1.titulo{
     padding: 10px;
 }
 
-.caixinhaLogin{
+#caixinhaLogin{
     display: flex;
     width: 100%;
     justify-content: center;
@@ -72,11 +72,15 @@ h1.titulo{
     flex-direction: column;
 }
 
-.caixinhaLogin .chamacadastro{
-    color: var(--primary-color);
+main .corpoCadastro #caixinhaLogin #chamacadastro {
+    color: #FFFFFF;
     cursor: pointer;
 }
 
+ #caixinhaLogin ul li{
+    color: #FFFFFF;
+    margin-top: 15%;
+}
 /*.form2{
     display: flex;
     flex-direction: column;

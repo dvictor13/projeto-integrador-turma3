@@ -26,7 +26,7 @@
                 </div>
                 <p class="titulo">OU</p> -->
             </div>
-            <div class="caixinhaLogin">
+            <div id="caixinhaLogin">
                 <% if(typeof errors !== 'undefined'){%> 
                     <ul>
                         <% for(let error in errors){ %>
@@ -48,7 +48,7 @@
                         <input type="submit" value="LOGAR" class="logar"  />
                     </div>
                 </form>
-                <a href="/cadastro" class="chamacadastro">Cadastre-se</a>
+                <a href="/cadastro" id="chamacadastro">Cadastre-se</a>
             </div>
 
         </main>

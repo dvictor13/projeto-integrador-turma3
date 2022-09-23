@@ -55,47 +55,71 @@ const userController = {
         return res.render('login')
     },
     foto: async (req,res) => {
+        const {id} = req.params;
+        let user = await Pessoa.findByPk(id);
+
         if(!req.file){
+            console.log('entrou')
+            let listAll = await Plano.findAll({
+                include:{
+                model: Vantagem,
+                as: 'vantagens',
+                //trazer so o q eles tem em comum
+                required: false
+                // false traz tudo das duas 
+                }
+            });
+            let assinaturaUser = await Assinatura.findOne({
+                where: {
+                    fk_pessoas: user.idPessoas
+                }
+            });
+            if(assinaturaUser){
+                let planoUser = await Plano.findOne({
+                    where: {
+                        idPlanos: assinaturaUser.fk_planos
+                    }
+                });
+                return res.render('assinante', {
+                    errors: {
+                        foto: {msg: "Foto inválida."}
+                    },
+                    userLogged: user,
+                    assinaturaUser: assinaturaUser,
+                    listaPlanosUser: planoUser,
+                    listaPlanos: listAll
+                });
+            }
+            
             return res.render('assinante', {
                 errors: {
                     foto: {msg: "Foto inválida."}
                 },
-                userLogged: req.session.isAuth,
-                usuario:listaUsuariosassinante,
-                listaplanos:listaPlanos
-           })
-        }
+                userLogged: user,
+                assinaturaUser: undefined,
+                listaPlanosUser: undefined,
+                listaPlanos: listAll
+            });
+        }else{
         
-        let user = await Pessoa.findOne({
-            where: {
-                email: req.session.isAuth.email
-            }
-        });
         user.update({
             imagem: `images/profile/${req.file.filename}`
         },{
             where: {
-                id: user.id
+                idPessoas: id
             }
         })
 
-        req.session.isAuth = user;
-
-        console.log(req.session.isAuth)
-
         return res.redirect('/assinante');
+        }
     },
     alterarDados: async (req,res) =>{
-        let user = await Pessoa.findOne({
-            where: {
-                email: req.session.isAuth.email
-            }
-        });
-        let date = req.body.nascimento
+        const {id} = req.params;
+        let user = await Pessoa.findByPk(id);
 
         user.update({
             nome: req.body.nome,
-            data_nasc: date,
+            data_nasc: req.body.nascimento,
             endereco: 'teste',
             cpf: req.body.cpf,
             telefone: req.body.telefone,
@@ -104,12 +128,9 @@ const userController = {
           //  senha: req.body.nome,
         },{
             where: {
-                idPessoas: user.id
+                idPessoas: id
             }
         })
-        req.session.isAuth = user;
-        console.log('teste')
-        console.log(req.session.isAuth)
         return res.redirect('/assinante');
     },
     pagar: (req, res) => {
@@ -132,8 +153,6 @@ const userController = {
             if(senhaValida){
                 delete userToLogin.senha;
                 req.session.isAuth = userToLogin;
-                console.log('chegando')
-                console.log(req.session.isAuth)
                 if(dadosUsuario.lembrar){
                     res.cookie('userEmail', dadosUsuario.email, 
                     {maxAge: (1000 * 60) * 30} )
@@ -153,7 +172,8 @@ const userController = {
         })
     },
     assinante: async (req,res)=>{
-        console.log(req.session.isAuth)
+        let {idPessoas} = req.session.isAuth;
+        let userLogged = await Pessoa.findByPk(idPessoas)
         let listAll = await Plano.findAll({
             include:{
             model: Vantagem,
@@ -165,18 +185,26 @@ const userController = {
         });
         let assinaturaUser = await Assinatura.findOne({
             where: {
-                fk_pessoas: req.session.isAuth.idPessoas
+                fk_pessoas: userLogged.idPessoas
             }
         });
-        let planoUser = await Plano.findOne({
-            where: {
-                idPlanos: assinaturaUser.fk_planos
-            }
-        });
+        if(assinaturaUser){
+            let planoUser = await Plano.findOne({
+                where: {
+                    idPlanos: assinaturaUser.fk_planos
+                }
+            });
+            res.render('assinante',{
+                userLogged: userLogged,
+                assinaturaUser: assinaturaUser,
+                listaPlanosUser: planoUser,
+                listaPlanos: listAll
+            });
+        }
         res.render('assinante',{
-            userLogged: req.session.isAuth,
-            assinaturaUser: assinaturaUser,
-            listaPlanosUser: planoUser,
+            userLogged: userLogged,
+            assinaturaUser: undefined,
+            listaPlanosUser: undefined,
             listaPlanos: listAll
         });
     },
