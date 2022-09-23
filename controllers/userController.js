@@ -56,6 +56,7 @@ const userController = {
     foto: async (req,res) => {
         const {id} = req.params;
         let user = await Pessoa.findByPk(id);
+        req.session.novoUsuario = false;
 
         if(!req.file){
             console.log('entrou')
@@ -86,7 +87,8 @@ const userController = {
                     userLogged: user,
                     assinaturaUser: assinaturaUser,
                     listaPlanosUser: planoUser,
-                    listaPlanos: listAll
+                    listaPlanos: listAll,
+                    sessionUser: userNovo
                 });
             }
             
@@ -97,7 +99,8 @@ const userController = {
                 userLogged: user,
                 assinaturaUser: undefined,
                 listaPlanosUser: undefined,
-                listaPlanos: listAll
+                listaPlanos: listAll,
+                sessionUser: userNovo
             });
         }else{
         
@@ -175,7 +178,6 @@ const userController = {
             }
         });
 
-        console.log(userToLogin)
         if(userToLogin){
             let senhaValida = bcrypt.compareSync(dadosUsuario.senha, userToLogin.senha)
 
