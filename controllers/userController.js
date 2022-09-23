@@ -29,7 +29,6 @@ const userController = {
         });
 
         if (userExists){
-            console.log("funcionou")
             return res.render('cadastro', {
                  errors: {
                      email: {msg: "Este email já está registrado"}
@@ -142,7 +141,7 @@ const userController = {
         let usuario = await Pessoa.findByPk(idPessoas) //'ver aonde posso pegar id'
         let plano = await Plano.findByPk(req.session.plano)
         await usuario.update({status:'ativo'}) //'mudar status do usuario pra ativo'
-        await Assinatura.create({
+        let assinatura = await Assinatura.create({
             status:'ativo',
             periodo:req.body.duracao, // form 
             fk_planos:plano.idPlanos ,
@@ -150,6 +149,7 @@ const userController = {
             barba:plano.barba,
             fk_pessoas:idPessoas,
         })
+        req.session.assinatura = assinatura
         
         return res.redirect('/assinante')
     },
@@ -163,6 +163,7 @@ const userController = {
                 email: dadosUsuario.email //email é o campo do banco e dados usuario é do formulario
             }
         });
+
         console.log(userToLogin)
         if(userToLogin){
             let senhaValida = bcrypt.compareSync(dadosUsuario.senha, userToLogin.senha)
@@ -173,6 +174,15 @@ const userController = {
                 if(dadosUsuario.lembrar){
                     res.cookie('userEmail', dadosUsuario.email, 
                     {maxAge: (1000 * 60) * 30} )
+                }
+                let userAssinaturaAtiva = await Assinatura.findOne({
+                    where:{
+                        fk_pessoas:userToLogin.idPessoas,
+                        status:'ativo'
+                    }
+                })
+                if(userAssinaturaAtiva){
+                    req.session.assinatura = userAssinaturaAtiva;
                 }
                 if(!req.session.plano){
                     return res.redirect('/assinante')
@@ -218,7 +228,7 @@ const userController = {
                 assinaturaUser: assinaturaUser,
                 listaPlanosUser: planoUser,
                 listaPlanos: listAll,
-                sessionUser: userNovo
+                sessionUser: userNovo,
             });
         }
         res.render('assinante',{
@@ -226,7 +236,7 @@ const userController = {
             assinaturaUser: undefined,
             listaPlanosUser: undefined,
             listaPlanos: listAll,
-            sessionUser: false
+            sessionUser: false, 
         });
     },
     logout: (req, res) => {
