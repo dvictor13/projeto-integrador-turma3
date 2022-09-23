@@ -138,9 +138,20 @@ const userController = {
         
         console.log("🚀 ~ file: userController.js ~ line 140 ~ pagar: ~ req.body", req.body.duracao)
         let {idPessoas} = req.session.isAuth;
-        let usuario = await Pessoa.findByPk(idPessoas) //'ver aonde posso pegar id'
+
+        let hasAssinaturaAtiva = await Assinatura.findOne({
+            where:{
+                fk_pessoas:idPessoas,
+                status:'ativo'
+            }
+        })
+        if(hasAssinaturaAtiva){
+            hasAssinaturaAtiva.update({status:"inativa"})
+        }
+
+        //let usuario = await Pessoa.findByPk(idPessoas) //'ver aonde posso pegar id'
         let plano = await Plano.findByPk(req.session.plano)
-        await usuario.update({status:'ativo'}) //'mudar status do usuario pra ativo'
+        //await usuario.update({status:'ativo'}) //'mudar status do usuario pra ativo'
         let assinatura = await Assinatura.create({
             status:'ativo',
             periodo:req.body.duracao, // form 
@@ -149,7 +160,7 @@ const userController = {
             barba:plano.barba,
             fk_pessoas:idPessoas,
         })
-        req.session.assinatura = assinatura
+        req.session.assinaturaAtiva = assinatura
         
         return res.redirect('/assinante')
     },
@@ -182,7 +193,7 @@ const userController = {
                     }
                 })
                 if(userAssinaturaAtiva){
-                    req.session.assinatura = userAssinaturaAtiva;
+                    req.session.assinaturaAtiva = userAssinaturaAtiva;
                 }
                 if(!req.session.plano){
                     return res.redirect('/assinante')
