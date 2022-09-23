@@ -2,8 +2,8 @@ const fs = require('fs');
 const bcrypt = require('bcrypt')
 //const User = require('../models/User');
 const {validationResult} = require('express-validator')
-const listaUsuariosassinante = require('../database/preferenciausuarios');
-const listaPlanos = require('../planos.json');
+//const listaUsuariosassinante = require('../database/preferenciausuarios');
+//const listaPlanos = require('../planos.json');
 const {Pessoa,Plano,Vantagem, Assinatura} = require('../database/models');
 
 
@@ -133,8 +133,25 @@ const userController = {
         })
         return res.redirect('/assinante');
     },
-    pagar: (req, res) => {
-        res.render('pagamento',{dadosPlano:listaPlanos[0]})
+    pagar: async (req , res) => {
+        // update plano e mudar status ativo da pessoa pelo PK 
+        //criar assinatura pra pessoa 
+        
+        console.log("🚀 ~ file: userController.js ~ line 140 ~ pagar: ~ req.body", req.body.duracao)
+        let {idPessoas} = req.session.isAuth;
+        let usuario = await Pessoa.findByPk(idPessoas) //'ver aonde posso pegar id'
+        let plano = await Plano.findByPk(req.session.plano)
+        await usuario.update({status:'ativo'}) //'mudar status do usuario pra ativo'
+        await Assinatura.create({
+            status:'ativo',
+            periodo:req.body.duracao, // form 
+            fk_planos:plano.idPlanos ,
+            cabelo:plano.cabelo,
+            barba:plano.barba,
+            fk_pessoas:idPessoas,
+        })
+        
+        return res.redirect('assinante')
     },
     logar: (req,res) =>{
         res.render('login')

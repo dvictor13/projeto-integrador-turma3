@@ -34,7 +34,7 @@
                       <div>
                         <h6 class="my-0"><%= dadosPlano.nome %> </h6>
                         
-                        <small class="text-muted"><%= dadosPlano.cabelo %> cabelos e <%=dadosPlano.barba%> barbas -<% for(vantagem of dadosPlano.vantagens) {%> <%=vantagem.nome %>,<% } %> </small>
+                        <small class="text-muted"><%= dadosPlano.cabelo %> cabelo<% if(dadosPlano.cabelo>1){%>s<%}%> e <%=dadosPlano.barba%> barba<% if(dadosPlano.barba>1){ %>s<% } %> -<% for(vantagem of dadosPlano.vantagens) {%> <%=vantagem.nome %>,<% } %> </small>
 
                         
                       </div>
@@ -60,7 +60,7 @@
                 <div class="col-md-8 order-md-1">
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Escolha a duração do seu plano</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" id="exampleFormControlSelect1" name="duracao">
                           <option value="1">Mensal</option>
                           <option value="2">Bimestral</option>
                           <option value="3">Trimestral</option>
@@ -69,7 +69,7 @@
                         </select>
                       </div>
                   <h4 class="mb-3">Endereço de cobrança</h4>
-                  <form class="needs-validation" novalidate="">
+                  <form class="needs-validation" method="POST" action="/pagamento/<%=dadosPlano.idPlanos%>">
                     <div class="row">
                       <div class="col-md-6 mb-3">
                         <label for="primeiroNome">Nome</label>
