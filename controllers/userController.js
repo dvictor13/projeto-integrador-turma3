@@ -146,7 +146,7 @@ const userController = {
             }
         })
         if(hasAssinaturaAtiva){
-            hasAssinaturaAtiva.update({status:"inativa"})
+            hasAssinaturaAtiva.update({status:"inativo"})
         }
 
         //let usuario = await Pessoa.findByPk(idPessoas) //'ver aonde posso pegar id'
@@ -161,7 +161,7 @@ const userController = {
             fk_pessoas:idPessoas,
         })
         req.session.assinaturaAtiva = assinatura
-        
+
         return res.redirect('/assinante')
     },
     logar: (req,res) =>{
@@ -225,7 +225,8 @@ const userController = {
         });
         let assinaturaUser = await Assinatura.findOne({
             where: {
-                fk_pessoas: userLogged.idPessoas
+                fk_pessoas: userLogged.idPessoas,
+                status:'ativo'
             }
         });
         if(assinaturaUser){
