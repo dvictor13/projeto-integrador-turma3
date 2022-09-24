@@ -218,6 +218,7 @@ const userController = {
         let userLogged = await Pessoa.findByPk(idPessoas)
         let userNovo = req.session.novoUsuario;
         req.session.novoUsuario = false;
+        let sessaoAtiva = req.session.assinaturaAtiva;
         let listAll = await Plano.findAll({
             include:{
             model: Vantagem,
@@ -233,6 +234,7 @@ const userController = {
                 status:'ativo'
             }
         });
+        req.session.assinaturaAtiva = assinaturaUser;
         if(assinaturaUser){
             let planoUser = await Plano.findOne({
                 where: {
@@ -245,6 +247,7 @@ const userController = {
                 listaPlanosUser: planoUser,
                 listaPlanos: listAll,
                 sessionUser: userNovo,
+                sessionAtiva : sessaoAtiva
             });
         }
         return res.render('assinante',{
@@ -253,6 +256,7 @@ const userController = {
             listaPlanosUser: undefined,
             listaPlanos: listAll,
             sessionUser: false, 
+            sessionAtiva : sessaoAtiva
         });
     },
     logout: (req, res) => {

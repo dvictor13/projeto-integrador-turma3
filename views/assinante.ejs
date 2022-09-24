@@ -31,6 +31,14 @@
                     <!-- <p class="mb-0">Sempre que precisar, use utilitários de margem para manter as coisas perfeitas.</p> -->
                 </div>
             <% } %> 
+            <% if(sessionAtiva == 'ja possui') {%> 
+                <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                    <strong>Você já possui uma assinatura ativa.</strong> Caso queira fazer um upgrade, escolha um plano superior ao seu na pagina <a href="./planos" class="alert-link">de planos</a>.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+            <% } %> 
             <h2 class="note ak-black">BEM-VINDO,<span class="light ak-black">
                     <%= userLogged.nome %> !
                 </span></h2>
