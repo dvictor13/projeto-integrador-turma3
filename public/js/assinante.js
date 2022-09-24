@@ -21,9 +21,12 @@ const cancelar = document.getElementById("cancelar");
         document.getElementById("cancelar").style.display = 'none';
     }
 
-const carregarFoto = document.getElementById("carregarFoto");
+// const carregarFoto = document.getElementById("carregarFoto");
 
-    carregarFoto.onclick = () => {
-        const foto = document.getElementById("userImage");
+//     carregarFoto.addEventListener("click", function(e){
+//         e.preventDefault();
+//         const foto = document.getElementById("userImage");
+//         const value = foto.value
+//         console.log("🚀 ~ file: assinante.js ~ line 30 ~ carregarFoto.addEventListener ~ value", value)
         
-    }
+//     })

@@ -36,9 +36,7 @@ const upload = multer({
     storage : multerDiskStorage ,
     fileFilter: (req, file, cb) => {
         if (!whitelist.includes(file.mimetype)) {
-            console.log('deu erro.')
-            cb(null, false)
-            return
+            return cb(null, false)
         }
 
         cb(null, true)

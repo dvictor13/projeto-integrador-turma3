@@ -60,7 +60,6 @@ const userController = {
         sessaoAtiva = ''
 
         if(!req.file){
-            console.log('entrou')
             let listAll = await Plano.findAll({
                 include:{
                 model: Vantagem,
