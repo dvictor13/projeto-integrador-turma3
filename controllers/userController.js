@@ -197,6 +197,8 @@ const userController = {
                 if(userAssinaturaAtiva){
                     req.session.assinaturaAtiva = userAssinaturaAtiva;
                 }
+
+                
                 if(!req.session.plano){
                     return res.redirect('/assinante')
                 }else{
@@ -237,7 +239,7 @@ const userController = {
                     idPlanos: assinaturaUser.fk_planos
                 }
             });
-            res.render('assinante',{
+            return res.render('assinante',{
                 userLogged: userLogged,
                 assinaturaUser: assinaturaUser,
                 listaPlanosUser: planoUser,
@@ -245,7 +247,7 @@ const userController = {
                 sessionUser: userNovo,
             });
         }
-        res.render('assinante',{
+        return res.render('assinante',{
             userLogged: userLogged,
             assinaturaUser: undefined,
             listaPlanosUser: undefined,

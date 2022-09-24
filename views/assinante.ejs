@@ -164,9 +164,10 @@
                     </section>
                 </nav>
                 <% } %>
+                <% if(assinaturaUser.fk_planos != listaPlanos.length) { %>
                     <nav class="sessaoPlanos">
                         <div class="frases">
-                            <% if(assinaturaUser !=undefined) { %>
+                            <% if(assinaturaUser !=undefined ) { %>
                                 <h2 class="dark ak-black">QUER DAR UM UPGRADE NO SEU PLANO?</h2>
                                 <%}%>
                                     <p>Tenha mais ofertas dos nossos serviços.
@@ -215,8 +216,8 @@
                                                     <h2 class="preco">R$<%= listaPlanos[i].preco %>,00 </h2>
 
                                                     <a href="pagamento/<%=listaPlanos[i].idPlanos%>"><button class="btnComecar">
-                                                            <p>COMPRAR</p>
-                                                            <p>ESTE PLANO</p>
+                                                        <p>COMPRAR</p>
+                                                        <p>ESTE PLANO</p>
                                                     </button></a>
                                                     <div class="economia">
                                                         <p>ADQUIRA ESTE PLANO E</p>
@@ -229,6 +230,7 @@
 
                         </section>
                     </nav>
+                    <% } %>
         </main>
         <%- include('./partials/footer')%>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
