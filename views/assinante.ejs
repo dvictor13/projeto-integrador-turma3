@@ -33,7 +33,7 @@
             <% } %> 
             <% if(sessionAtiva == 'ja possui') {%> 
                 <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                    <strong>Você já possui uma assinatura ativa.</strong> Caso queira fazer um upgrade, escolha um plano superior ao seu na pagina <a href="./planos" class="alert-link">de planos</a>.
+                    <strong>Você já possui uma assinatura ativa.</strong> Caso queira fazer um upgrade, escolha um plano <strong>superior</strong> ao seu na pagina <a href="./planos" class="alert-link">de planos</a>.
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -172,10 +172,11 @@
                     </section>
                 </nav>
                 <% } %>
+                <% if(assinaturaUser==undefined) { assinaturaUser={fk_planos: 0}} %>
                 <% if(assinaturaUser.fk_planos != listaPlanos.length) { %>
                     <nav class="sessaoPlanos">
                         <div class="frases">
-                            <% if(assinaturaUser !=undefined ) { %>
+                            <% if (assinaturaUser.fk_planos != 0 ) { %>
                                 <h2 class="dark ak-black">QUER DAR UM UPGRADE NO SEU PLANO?</h2>
                                 <%}%>
                                     <p>Tenha mais ofertas dos nossos serviços.
@@ -190,7 +191,7 @@
                                     </p>
                         </div>
                         <section class="cardsPlanos">
-                            <% if(assinaturaUser==undefined) { listaPlanosUser={idPlanos: 0}} %>
+                            <% if(assinaturaUser.fk_planos == 0) { listaPlanosUser={idPlanos: 0}} %>
                                 <% for (let i=listaPlanosUser.idPlanos; i<listaPlanos.length; i++) { %>
 
                                     <article class="cardP">

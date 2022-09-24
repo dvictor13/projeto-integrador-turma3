@@ -49,7 +49,6 @@ const indexController = {
                 required:false
             }
         })
-        console.log("🚀 ~ file: indexController.js ~ line 52 ~ pagamento:async ~ plano", plano.vantagens)
         res.render('pagamento',{dadosPlano:plano})
     },    
     contato:(req,res)=>{
