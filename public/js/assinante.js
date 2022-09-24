@@ -20,3 +20,10 @@ const cancelar = document.getElementById("cancelar");
         document.getElementById("alterar").style.display = 'flex';
         document.getElementById("cancelar").style.display = 'none';
     }
+
+const carregarFoto = document.getElementById("carregarFoto");
+
+    carregarFoto.onclick = () => {
+        const foto = document.getElementById("userImage");
+        
+    }

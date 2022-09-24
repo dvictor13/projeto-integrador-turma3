@@ -57,6 +57,7 @@ const userController = {
         const {id} = req.params;
         let user = await Pessoa.findByPk(id);
         req.session.novoUsuario = false;
+        sessaoAtiva = ''
 
         if(!req.file){
             console.log('entrou')
@@ -88,10 +89,10 @@ const userController = {
                     assinaturaUser: assinaturaUser,
                     listaPlanosUser: planoUser,
                     listaPlanos: listAll,
-                    sessionUser: userNovo
+                    sessionUser: req.session.novoUsuario,
+                    sessionAtiva : sessaoAtiva
                 });
             }
-            
             return res.render('assinante', {
                 errors: {
                     foto: {msg: "Foto inválida."}
@@ -100,8 +101,11 @@ const userController = {
                 assinaturaUser: undefined,
                 listaPlanosUser: undefined,
                 listaPlanos: listAll,
-                sessionUser: userNovo
+                sessionUser: req.session.novoUsuario,
+                sessionAtiva : sessaoAtiva
+
             });
+                
         }else{
         
         user.update({
