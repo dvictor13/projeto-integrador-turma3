@@ -1,13 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Numans&display=swap');
-@font-face {
-    font-family: 'Hansief-Rough';
-    src: url(../font/HansiefRough.otf) format('opentype');
-}
-@font-face {
-    font-family: 'Akrobat-Regular';
-    src: url(../font/Akrobat-Regular.otf) format('opentype');
-}
 
 
 *{
