@@ -86,7 +86,7 @@ main .barbearias{
     position: absolute;
 } */
 
-.barbearias .barbearias-container .form .form-img .search button{
+.barbearias .barbearias-container .form .form-img button{
     width: 250px;
     padding: 5px;
     display: flex;
@@ -102,7 +102,7 @@ main .barbearias{
     cursor: pointer;
 }
 
-.barbearias .barbearias-container .form .form-img .search button:hover{
+.barbearias .barbearias-container .form .form-img button:hover{
     background-color: var(--primary-color);
     color: var(--terciary-color);
 }
@@ -122,10 +122,11 @@ main .barbearias{
         flex: 1 1 auto;
     }
 
-    .barbearias .barbearias-container .form .form-img .search button{
+    .barbearias .barbearias-container .form .form-img button{
         flex:1;
     }
 }
+
 
 @media screen and (min-width:768px) {
 
