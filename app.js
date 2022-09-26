@@ -9,6 +9,7 @@ const methodOverride = require('method-override')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var apiRouter = require('./routes/api');
 
 var app = express();
 
@@ -33,6 +34,7 @@ app.use(loggedUserDataMiddleware);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/api',apiRouter);
 
 app.use((req,res)=>{
   res.status(404).render('not-found')
