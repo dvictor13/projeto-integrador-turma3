@@ -12,7 +12,9 @@ const addError = document.querySelector('div.addErrors ul')
 let errors = []
 
 concluirCadastro.addEventListener('click', event => {
-    
+
+    addError.innerHTML = '' 
+    errors = [];
     if(nome.value == ''){
         errors.push("O campo nome não pode ficar vazio")
     }
