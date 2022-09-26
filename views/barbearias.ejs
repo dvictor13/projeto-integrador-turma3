@@ -49,9 +49,6 @@
                                 <div class="search">
                                     <input type="text" name="adress" id="nome" placeholder="Pesquisar unidades"
                                         required>
-                                    <button class="btnform"><span class="material-symbols-outlined">search</span>
-                                        <h5>Pesquisar</h5></span>
-                                    </button>
                                 </div>
                                 <label for="text">
                                     <h5>Buscar por tipo de serviço</h5>
@@ -66,18 +63,31 @@
                                     <option value="cabelo">
                                         <p>Cabelo</p>
                                     </option>
-                                    <option value="depilação">
-                                        <p>Depilação</p>
+                                    <option value="depilação facial">
+                                        <p>depilação facial</p>
+                                    </option>
+                                    <option value="sobrancelha">
+                                        <p>Sobrancelha</p>
+                                    </option>
+                                    <option value="tratamento">
+                                        <p>Tratamento Caspa</p>
+                                    </option>
+                                    <option value="spa">
+                                        <p>Spa</p>
                                     </option>
                                 </select>
+                                <button class="btnform"><span class="material-symbols-outlined">search</span>
+                                    <h5>Pesquisar</h5></span>
+                                </button>
+                                <a class="limpar">Limpar filtro</a>
                                 </form>
                             </div>
                         </div>
                     </section>
                     <section class="cards">
-                        <div class="cards-container">
+                        <ul class="cards-container">
                             <% for (let barbearia of listabarbearias){ %>
-                                <article class="enderecoBarbearia">
+                                <li class="enderecoBarbearia">
                                     <div class="imgCard"><img src="<%=barbearia.imagem  %> " alt=""></div>
                                     <div class="dados">
                                         <h4 class="nomeBarbearia">
@@ -118,7 +128,8 @@
                                             <h5>Horário de funcionamento</h5>
                                             <p>
                                                 <%= barbearia.horarioutil %>
-                                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, dicta.
+                                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores,
+                                                    dicta.
                                             </p>
                                             <p>
                                                 <%= barbearia.horariofds %>
@@ -126,7 +137,7 @@
                                         </div>
                                         <a href="#" target="_blank"><button class="btnComecar">Ver no mapa</button></a>
                                     </div>
-                                </article>
+                                </li>
                                 <% } %>
 
                                     <!-- <article class="enderecoBarbearia">
@@ -192,7 +203,7 @@
                             </div>
                         </div>
                     </article> -->
-                        </div>
+                        </ul>
                     </section>
                     <section class="googlemaps">
                         <div class="maps-container">
@@ -213,3 +224,5 @@
             </section>
         </main>
         <%- include('./partials/footer')%>
+        <script src="../js/barbearias.js">
+        </script>
