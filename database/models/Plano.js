@@ -10,6 +10,7 @@ module.exports = function (sequelize, dataTypes) {
         nome: dataTypes.STRING,
         cabelo: dataTypes.INTEGER,
         barba: dataTypes.INTEGER,
+        servicosextras:dataTypes.INTEGER,
         preco: dataTypes.DECIMAL,
         imagem: dataTypes.STRING,
         economia: dataTypes.DECIMAL
