@@ -1,5 +1,3 @@
-const listaPlanos = require("../planos.json")
-const listaBarbearias = require("../barbearias.json")
 const {Plano, Barbearia, Servico,Vantagem} = require('../database/models')
 
 
@@ -38,6 +36,9 @@ const indexController = {
         res.render('carrinho',{listaplanos:planos, codPlano:codPlano});
     },
     pagamento:async(req,res)=>{
+        // const resibge = await fetch('https://servicodados.ibge.gov.br/api/v1/localidades/distritos?orderBy=nome')
+        // const distritos = await resibge.json();
+
         let codPlano = req.params.id;
         let plano = await Plano.findOne({
             where:{
@@ -49,7 +50,8 @@ const indexController = {
                 required:false
             }
         })
-        res.render('pagamento',{dadosPlano:plano})
+
+        res.render('pagamento',{dadosPlano:plano}) //distritos:distritos
     },    
     contato:(req,res)=>{
         res.render('contato');
