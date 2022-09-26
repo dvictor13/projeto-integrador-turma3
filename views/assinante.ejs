@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no">
     <link rel="stylesheet" href="/stylesheets/baseEstilo.css">
-    <link rel="stylesheet" href="/stylesheets/estiloAssinante.css">
+    <link rel="stylesheet" href="/stylesheets/assinanteEstilo.css">
     <title>Barba,Cabelo e Bigode</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,7 +45,7 @@
                     <%= userLogged.nome %> !
                 </span></h2>
             <section id="dados">
-                <div id="imgU">
+                <div id="imgU" class="photo">
                     <img src="<%= userLogged.imagem %>" id="imgUser">
                     <% if(typeof errors !=='undefined' ){%>
                         <ul>
