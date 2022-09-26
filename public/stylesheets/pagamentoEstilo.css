@@ -1,0 +1,220 @@
+*{
+    box-sizing: border-box;
+}
+
+.duvidas{
+    margin-top: 0;
+}
+
+::placeholder {
+    color: var(--primary-color);
+}
+
+main {
+    background-color: var(--secundary-color);
+    opacity: 1;
+    background-image:  radial-gradient(#42210B 0.65px, transparent 0.65px), radial-gradient(#42210B 0.65px, #754C24 0.65px);
+    background-size: 26px 26px;
+    background-position: 0 0,13px 13px;
+}
+
+main .finalizeCompra{
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px;
+    margin: 0 auto;
+    color: var(--terciary-color);
+}
+
+main .finalizeCompra h2{
+    font-size: 2rem;
+    margin: 20px auto;
+}
+
+@media screen and (min-width:768px){
+    .finalizeCompra{
+        font-size: 2.6rem;
+    }
+}
+
+main .descricao{
+    width: 100%;
+    color: var(--terciary-color);
+    max-width: 1200px;
+    padding: 10px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+.row{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    background-color: var(--terciary-color);
+    color: var(--primary-color);
+    padding: 10px;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.cart{
+    width: 100%;
+    margin: 10px auto;
+    background-color: var(--primary-color);
+    color: var(--terciary-color);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px auto;
+    flex: 1 1 300px;
+    max-width: 300px;
+}
+
+.cart .title-cart{
+    width: 100%;
+}
+
+.cart .title-cart .title{
+    font-size: 1rem;
+    color: var(--yellow);
+}
+
+.cart .title-cart .number-cart{
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    padding: 5px 14px;
+    background-color: var(--yellow);
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-top: -auto;
+}
+
+.cart .array-cart{
+    width: 100%;
+    padding: 20px;
+}
+
+.row .form-cart{
+    width: 100%;
+    margin: 10px auto;
+    background-color: var(--terciary-color);
+    color: var(--primary-color);
+    padding: 10px;
+    border-radius: 10px;
+    /* max-width: 900px; */
+    /* margin: 20px auto; */
+    flex: 2 1 600px;
+}
+
+.row .form-cart .form-group{
+    padding-bottom: 20px;
+}
+
+.row .form-cart .form-group label{
+    margin: 10px 0;
+}
+
+.row .form-cart .form-group select{
+    padding: 5px;
+    width: 100%;
+    color: var(--primary-color);
+}
+
+.row .form-cart .address-cart{
+    width: 100%;
+    padding: 20px 0;
+}
+
+.row .form-cart .address-cart .row2{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    padding: 10px 0;
+}
+
+.row .form-cart .address-cart .row2 .form-row2{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.row .form-cart .address-cart .row2 .form-row2 label{
+    font-weight: 700;
+}
+
+.row .form-cart .address-cart .row2 .form-row2 input{
+    color: var(--primary-color);
+    padding: 5px;
+}
+
+.row .form-cart .address-cart .row3{
+    display: flex;
+    flex-direction: column;
+    gap:5px
+}
+
+.row .form-cart .address-cart .row3 label{
+    font-weight: 700;
+}
+
+.row .form-cart .address-cart .row3 input{
+    color: var(--primary-color);
+    padding: 5px;
+}
+
+.row .form-cart .address-cart .row4{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px 0;
+}
+
+.row .form-cart .address-cart .row4 .form-row4 label{
+    font-weight: 700;
+}
+
+.row .form-cart .address-cart .row4 .form-row4 input{
+    color: var(--primary-color);
+    padding: 5px;
+}
+
+.row .form-cart hr{
+    margin-top: 20px;
+}
+
+.row .form-cart .box-cart{
+    padding-top: 20px;
+    width: 100%;
+}
+
+
+.row .form-cart .pay-cart{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px 0;
+}
+
+
+.row .form-cart .btn-cart{
+    width: 250px;
+    padding: 5px;
+    display: flex;
+    background-color: var(--secundary-color);
+    color: var(--terciary-color);
+    font-weight: 700;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 20%);
+    justify-content: center;
+    margin: 10px auto;
+    align-items: center;
+    cursor: pointer;
+}
+
+.row .form-cart .btn-cart:hover{
+    background-color: var(--primary-color);
+    color: var(--terciary-color);
+}

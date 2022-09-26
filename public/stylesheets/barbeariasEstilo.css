@@ -1,0 +1,307 @@
+main {
+    background-color: var(--secundary-color);
+    opacity: 1;
+    background-image:  radial-gradient(#42210B 0.65px, transparent 0.65px), radial-gradient(#42210B 0.65px, #754C24 0.65px);
+    background-size: 26px 26px;
+    background-position: 0 0,13px 13px;
+}
+
+main .barbearias{
+    margin: 0 auto;
+}
+
+.barbearias .barbearias-container .presentation{
+    color: var(--terciary-color);
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.barbearias .barbearias-container .presentation h1{
+    margin: 20px auto;
+    width: 100%;
+}
+
+.barbearias .barbearias-container .presentation h4{
+    color: var(--white);
+    margin: 10px 0;
+    flex: 1 1 auto;
+}
+
+.barbearias .barbearias-container .presentation p{
+    margin: 10px 0;
+    flex: 1 1 auto;
+}
+
+.barbearias .barbearias-container .form{
+    padding: 10px;
+    background-color: var(--terciary-color);
+    color: var(--primary-color);
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+.barbearias .barbearias-container .form .form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 10px;
+    gap: 20px;
+}
+
+.barbearias .barbearias-container .form .form-text h3{
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    padding: 10px 0;
+}
+
+.barbearias .barbearias-container .form .form-img{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.barbearias .barbearias-container .form .form-img .search{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+.barbearias .barbearias-container .form .form-img .search input{
+    padding: 5px;
+}
+
+::placeholder {
+    color: var(--primary-color);
+}
+
+
+/* .barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .dados a{
+    bottom: 0;
+    position: absolute;
+} */
+
+.barbearias .barbearias-container .form .form-img .search button{
+    width: 250px;
+    padding: 5px;
+    display: flex;
+    background-color: var(--secundary-color);
+    color: var(--terciary-color);
+    font-weight: 700;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 20%);
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.barbearias .barbearias-container .form .form-img .search button:hover{
+    background-color: var(--primary-color);
+    color: var(--terciary-color);
+}
+
+.barbearias .barbearias-container .form .form-img select{
+    padding: 5px;
+    color: var(--secundary-color);
+}
+
+@media screen and (min-width:425px) {
+
+    .barbearias .barbearias-container .form .form-img .search {
+        flex-direction: row;
+    }
+
+    .barbearias .barbearias-container .form .form-img .search input{
+        flex: 1 1 auto;
+    }
+
+    .barbearias .barbearias-container .form .form-img .search button{
+        flex:1;
+    }
+}
+
+@media screen and (min-width:768px) {
+
+    .barbearias .barbearias-container .form .form-container{
+        flex-direction: row;
+        padding: 16px 3%;
+    }
+}
+
+/*CARDS*/
+
+.barbearias .barbearias-container .cards{
+    margin: 20px auto;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.barbearias .barbearias-container .cards .cards-container{
+    width: 100%;
+    margin: 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia{
+    width: 100%;
+    border: var(--terciary-color) 1px solid;
+    background-color: var(--white);
+    display: flex;
+    max-width: 280px;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia:hover{
+    background-color: var(--gray);
+    transition: .5s;
+}
+
+/* .barbeariasIndex .cardsBarbearia .card:hover{
+    background-color: var(--black);
+} */
+
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .imgCard img{
+    object-fit: cover;
+    width: 100%;
+    height: 170px;
+    border-radius: 20px 20px 0 0;
+}
+
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .dados{
+    padding: 10px;
+    color: var(--primary-color);
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 80px;
+}
+
+/* .barbearias .barbearias-container .cards .cards-container .enderecoBarbearia:hover .dados{
+    color: var(--terciary-color);
+} */
+
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .dados .nomeBarbearia{
+    padding: 10px;
+    font-size: 1.4rem;
+}
+
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .dados .endereco{
+    color: var(--primary-color);
+    /* background-color: var(--gray); */
+    padding: 10px;
+}
+
+/* .barbearias .barbearias-container .cards .cards-container .enderecoBarbearia:hover .dados .endereco{
+    background-color: var(--white);
+} */
+
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .dados ul{
+    padding: 20px;
+}
+
+/* .barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .dados .servicos li{ 
+    margin-left: 10px;
+} */
+
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .dados .servicos li p{
+    line-height: 1.4rem;
+    margin: 5px auto;
+    font-weight: 700;
+    border-radius: 20px;
+    background-color: var(--yellow);
+    padding: 5px 10px;
+}
+
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia:hover .dados .servicos li p{
+    color: var(--yellow);
+    background-color: var(--black);
+}
+
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .dados .horarios h5{
+    padding: 10px 0;
+}
+
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .dados a{
+    bottom: 0;
+    position: absolute;
+}
+
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia .dados a button{
+    width: 250px;
+    margin: 10px auto;
+    padding: 5px;
+    background-color: var(--terciary-color);
+    color: var(--primary-color);
+    font-weight: 700;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 50px;
+}
+
+.barbearias .barbearias-container .cards .cards-container .enderecoBarbearia:hover .dados a button{
+    background-color: var(--yellow);
+    cursor: pointer;
+}
+
+@media screen and (min-width:768px) {
+    .barbearias .barbearias-container .presentation h4{
+        width: 40%;
+    }
+    
+    .barbearias .barbearias-container .presentation p{
+        width: 50%;
+        margin-left: 10px;
+    }
+}
+
+
+/*---- Google Maps-------*/
+.barbearias .barbearias-container .googlemaps{
+    background-color: var(--primary-color);
+}
+
+.barbearias .barbearias-container .googlemaps .maps-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 50px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.barbearias .barbearias-container .googlemaps .maps-container .maps-text{
+    color: var(--terciary-color);
+    flex: 1 1 50%;
+}
+
+.barbearias .barbearias-container .googlemaps .maps-container .maps-text h3{
+    font-size: 2rem;
+    padding-bottom: 20px;
+}
+
+.barbearias .barbearias-container .googlemaps .maps-container .maps-img{
+    color: var(--terciary-color);
+    flex: 1 1 50%;
+}
+
+@media screen and (min-width:768px) {
+    .barbearias .barbearias-container .googlemaps .maps-container{
+        flex-direction: row;
+    }
+}

@@ -1,0 +1,179 @@
+main {
+    background-color: var(--secundary-color);
+    opacity: 1;
+    background-image: radial-gradient(#42210B 0.65px, transparent 0.65px), radial-gradient(#42210B 0.65px, #754C24 0.65px);
+    background-size: 26px 26px;
+    background-position: 0 0, 13px 13px;
+}
+
+main .sessaoPlanos{
+    max-width: 1200px;
+    width: 100%;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.sessaoPlanos h2{
+    font-size: 3rem;
+    margin: 40px auto;
+    color: var(--terciary-color);
+    line-height: 2.8rem;
+}
+
+.sessaoPlanos .vantagens{
+    width: 100%;
+    max-width: 600px;
+    color: var(--terciary-color);
+    margin-bottom: 40px;
+}
+
+.sessaoPlanos .cardsPlanos{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.sessaoPlanos .cardsPlanos .cardP{
+    background-color: var(--white);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 1200px;
+}
+
+.sessaoPlanos .cardsPlanos .cardP .categoriaPlano{
+    background-color: var(--terciary-color);
+    color: var(--primary-color);
+}
+
+.sessaoPlanos .cardsPlanos .cardP .categoriaPlano p{
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 20px;
+}
+
+.sessaoPlanos .cardsPlanos .cardP .categoriaEcon{
+    background-color: var(--black);
+    color: var(--gray);
+    width: auto;
+    margin: 0 auto;
+    padding: 5px 10px;
+    margin-top: -25px;
+}
+
+.sessaoPlanos .cardsPlanos .cardP ul .descPlanos{
+    color: var(--primary-color);
+    padding: 10px;
+    margin-left: 34px;
+    list-style-image: url(../images/check.png);
+}
+
+.sessaoPlanos .cardsPlanos .cardP .precoButon{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+}
+
+.sessaoPlanos .cardsPlanos .cardP .precoButon .preco{
+    text-align: center;
+    border-top: 4px solid var(--primary-color);
+    width: 175px;
+    padding-top: 10px;
+    /* 
+    padding-top: 5px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #42210B;
+    font-family: 'Hansief-Rough';
+    font-weight: lighter;
+    height: 50px;
+    margin-top: -10px; */
+}
+
+.sessaoPlanos .cardsPlanos .cardP .precoButon .preco h2{
+    margin: 10px auto;
+}
+
+.sessaoPlanos .cardsPlanos .cardP .precoButon a button{
+    max-width: 280px;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: var(--terciary-color);
+    color: var(--primary-color);
+    font-weight: 700;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.sessaoPlanos .cardsPlanos .cardP .precoButon a button:hover{
+    background-color: var(--yellow);
+    color: var(--primary-color);
+    transition: 1s;
+}
+
+.sessaoPlanos .cardsPlanos .cardP .precoButon a button p{
+    font-weight: 700;
+}
+
+.sessaoPlanos .cardsPlanos .cardP .economia{
+    background-color: var(--black);
+    color: var(--gray);
+    width: 100%;
+    margin: 0 auto;
+    padding: 5px 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.sessaoPlanos .cardsPlanos .cardP .economia p{
+    font-weight: 700;
+}
+
+@media screen and (min-width:768px) {
+
+    .sessaoPlanos .cardsPlanos .cardP {
+        flex-direction: row;
+        gap: 10px;
+        align-items: stretch;
+        justify-content: center;
+        position: relative;
+    }
+
+    .sessaoPlanos .cardsPlanos .cardP .categoriaPlano {
+        flex: 1 1 30%;
+        align-items: center;
+        align-content: stretch;
+        display: flex;
+        justify-content: center;
+    }
+
+    .sessaoPlanos .cardsPlanos .cardP .categoriaEcon {
+        left: 20px;
+        top: 20px;
+        position: absolute;
+    }
+
+    .sessaoPlanos .cardsPlanos .cardP ul {
+        flex: 1 1 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* background-color: var(--white); */
+    }
+
+    .sessaoPlanos .cardsPlanos .cardP .precoButon {
+        flex: 1 1 30%;
+    }
+
+    .sessaoPlanos .cardsPlanos .cardP .precoButon .preco {
+        border-top: none;
+        /* width: 175px; */
+    }
+}

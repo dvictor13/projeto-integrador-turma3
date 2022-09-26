@@ -1,102 +1,135 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/estiloBarbearias.css">
-    <link rel="stylesheet" href="/stylesheets/estiloHeaderFooter.css">
+    <link rel="stylesheet" href="/stylesheets/baseEstilo.css">
+    <link rel="stylesheet" href="/stylesheets/barbeariasEstilo.css">
+    <!-- <link rel="stylesheet" href="/stylesheets/indexEstilo.css"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;400;700;900&family=Staatliches&display=swap"
+        rel="stylesheet">
     <title>Barba,Cabelo e Bigode</title>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
+
 <body>
 
-<%- include('./partials/header') %>
-<main>
-<section class="barbearias">
-        <div class="barbearias-container">
-            <section class="presentation">
-                <h1>nossas barbearias</h1>
-                <h4 class="ak-bold">No Fio do Bigode oferece em suas unidades um ambiente confortável e descontraído. Aproveite já!</h4>
-                <p class="ak-semibold">Nossas unidades estão localizadas em pontos estratégicos da cidade e com serviço de valet gratuito. Busque sua unidade pelo endereço ou pelo serviço desejado. Venha e curta no melhor conforto esse merecido momento de cuidado!
-                </p>
-            </section>
-            <section class="form">
-                <div class="form-container">
-                    <div class="form-text">
-                        <h3>Busque a barbearia mais próxima</h3>
-                        <p class="">Busque a unidade mais próxima a você ou que tenha a melhor acessibilidade e aproveite nosso serviço de valet gratuito e com manobrista.
+    <%- include('./partials/header') %>
+        <main>
+            <section class="barbearias">
+                <div class="barbearias-container">
+                    <section class="presentation">
+                        <h1>nossas barbearias</h1>
+                        <h4 class="ak-bold">No Fio do Bigode oferece em suas unidades um ambiente confortável e
+                            descontraído. Aproveite já!</h4>
+                        <p class="ak-semibold">Nossas unidades estão localizadas em pontos estratégicos da cidade e com
+                            serviço de valet gratuito. Busque sua unidade pelo endereço ou pelo serviço desejado. Venha
+                            e curta no melhor conforto esse merecido momento de cuidado!
                         </p>
-                    </div>
-                    <div class="form-img">
-                        <label for="adress">
-                            <h5>Pesquise por palavra-chave</h5>
-                        </label>
-                        <div class="search">
-                            <input type="text" name="adress" id="nome" placeholder="Pesquisar unidades" required>
-                            <button class="btnform"><span class="material-symbols-outlined">search</span><h5>Pesquisar</h5></span></button>
-                        </div>
-                        <label for="text">
-                            <h5>Buscar por tipo de serviço</h5>
-                        </label>
-                        <select name="departamentos" id="departamentos" required>
-                        <option selected disabled>
-                                    <h5>Selecione</h5>
-                                </option>
-                                <option value="barba">
-                                    <p>Barba</p>
-                                </option>
-                                <option value="cabelo">
-                                    <p>Cabelo</p>
-                                </option>
-                                <option value="depilação">
-                                    <p>Depilação</p>
-                                </option>
-                            </select>
-                            </form>
-                    </div>
-                </div>
-            </section>
-            <section class="cards">
-                <div class="cards-container">
-                    <% for (let barbearia of listabarbearias){ %> 
-                        <article class="enderecoBarbearia">
-                            <div class="imgCard"><img src="<%=barbearia.imagem  %> " alt=""></div>
-                            <div class="dados">
-                                <h4 class="nomeBarbearia"><%= barbearia.nome %> </h4>
-                                <div class="endereco">
-                                    <h5> <%= barbearia.rua %> </h5>
-                                    <p> <%= barbearia.loja %></p>
-                                    <p> <%= barbearia.bairro %></p>
-                                </div>
-                                <ul class="servicos">
-                                    <% for (serv of barbearia.servicos) {%> 
-                                        <li><p><%= serv.nome %></p></li>
-                                            <% } %> 
-    
-                                </ul>
-                                <div class="contact">
-                                    <div class="whats">
-                                        <img src="./images/whatsapp-logo.svg">
-                                        <h5> Conversar pelo Whats</h5>
-                                    </div>
-                                    <div class="gmaps">
-                                        <img src="./images/google-maps-logo.svg">
-                                        <h5> Traçar rota no Maps</h5>
-                                    </div>
-                                </div>
-                                <div class="horarios">
-                                    <h5>Horário de funcionamento</h5>
-                                    <p><%= barbearia.horarioutil %> </p>
-                                    <p><%= barbearia.horariofds %>  </p>
-                                </div>
+                    </section>
+                    <section class="form">
+                        <div class="form-container">
+                            <div class="form-text">
+                                <h3>Busque a barbearia mais próxima</h3>
+                                <p class="">Busque a unidade mais próxima a você ou que tenha a melhor acessibilidade e
+                                    aproveite nosso serviço de valet gratuito e com manobrista.
+                                </p>
                             </div>
-                        </article>
-                        <% } %> 
-        
-                    <!-- <article class="enderecoBarbearia">
+                            <div class="form-img">
+                                <label for="adress">
+                                    <h5>Pesquise por palavra-chave</h5>
+                                </label>
+                                <div class="search">
+                                    <input type="text" name="adress" id="nome" placeholder="Pesquisar unidades"
+                                        required>
+                                    <button class="btnform"><span class="material-symbols-outlined">search</span>
+                                        <h5>Pesquisar</h5></span>
+                                    </button>
+                                </div>
+                                <label for="text">
+                                    <h5>Buscar por tipo de serviço</h5>
+                                </label>
+                                <select name="departamentos" id="departamentos" required>
+                                    <option selected disabled>
+                                        <h5>Selecione</h5>
+                                    </option>
+                                    <option value="barba">
+                                        <p>Barba</p>
+                                    </option>
+                                    <option value="cabelo">
+                                        <p>Cabelo</p>
+                                    </option>
+                                    <option value="depilação">
+                                        <p>Depilação</p>
+                                    </option>
+                                </select>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="cards">
+                        <div class="cards-container">
+                            <% for (let barbearia of listabarbearias){ %>
+                                <article class="enderecoBarbearia">
+                                    <div class="imgCard"><img src="<%=barbearia.imagem  %> " alt=""></div>
+                                    <div class="dados">
+                                        <h4 class="nomeBarbearia">
+                                            <%= barbearia.nome %>
+                                        </h4>
+                                        <div class="endereco">
+                                            <h5>
+                                                <%= barbearia.rua %>
+                                            </h5>
+                                            <p>
+                                                <%= barbearia.loja %>
+                                            </p>
+                                            <p>
+                                                <%= barbearia.bairro %>
+                                            </p>
+                                        </div>
+                                        <ul class="servicos">
+                                            <% for (serv of barbearia.servicos) {%>
+                                                <li>
+                                                    <p>
+                                                        <%= serv.nome %>
+                                                    </p>
+                                                </li>
+                                                <% } %>
+
+                                        </ul>
+                                        <!-- <div class="contact">
+                                            <div class="whats">
+                                                <img src="./images/whatsapp-logo.svg">
+                                                <h5> Conversar pelo Whats</h5>
+                                            </div>
+                                            <div class="gmaps">
+                                                <img src="./images/google-maps-logo.svg">
+                                                <h5> Traçar rota no Maps</h5>
+                                            </div>
+                                        </div> -->
+                                        <div class="horarios">
+                                            <h5>Horário de funcionamento</h5>
+                                            <p>
+                                                <%= barbearia.horarioutil %>
+                                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, dicta.
+                                            </p>
+                                            <p>
+                                                <%= barbearia.horariofds %>
+                                            </p>
+                                        </div>
+                                        <a href="#" target="_blank"><button class="btnComecar">Ver no mapa</button></a>
+                                    </div>
+                                </article>
+                                <% } %>
+
+                                    <!-- <article class="enderecoBarbearia">
                         <div class="imgCard"><img src="images/barbearias/salao_amplo_vertical_color.jpg" alt=""></div>
                         <div class="dados">
                             <h4 class="nomeBarbearia">Barba Negra</h4>
@@ -159,21 +192,24 @@
                             </div>
                         </div>
                     </article> -->
+                        </div>
+                    </section>
+                    <section class="googlemaps">
+                        <div class="maps-container">
+                            <div class="maps-text">
+                                <h3>Nossas unidades</h3>
+                                <p class="ak-semibold">Nossas unidades estão localizadas em pontos estratégicos da
+                                    cidade e com serviço de valet gratuito com manobrista. Venha e aproveite!
+                                </p>
+                            </div>
+                            <div class="maps-img">
+                                <iframe width="100%" height="300" id="gmap_canvas"
+                                    src="https://maps.google.com/maps?q=digitalhouse&t=&z=13&ie=UTF8&iwloc=&output=embed">
+                                </iframe>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </section>
-            <section class="googlemaps">
-                <div class="maps-container">
-                    <div class="maps-text">
-                        <h3>Nossas unidades</h3>
-                        <p class="ak-semibold">Nossas unidades estão localizadas em pontos estratégicos da cidade e com serviço de valet gratuito com manobrista. Venha e aproveite!
-                        </p>
-                    </div>
-                    <div class="maps-img">
-                        <iframe width="100%" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=digitalhouse&t=&z=13&ie=UTF8&iwloc=&output=embed">
-                        </iframe>
-                    </div>
-                </div>
-            </section>
-    </section>
-</main>
-<%- include('./partials/footer')%>
+        </main>
+        <%- include('./partials/footer')%>
