@@ -41,7 +41,7 @@ const userController = {
         await Pessoa.create({
             nome : usuario.nome,
             data_nasc: usuario.nascimento,
-            endereco: 'teste',
+            endereco: usuario.endereco,
             cpf : usuario.cpf,
             telefone : usuario.telefone,
             sexo: usuario.radio,
@@ -124,8 +124,8 @@ const userController = {
 
         user.update({
             nome: req.body.nome,
-            data_nasc: req.body.nascimento,
-            endereco: 'teste',
+            data_nasc: date,
+            endereco: req.body.endereco,
             cpf: req.body.cpf,
             telefone: req.body.telefone,
             sexo: req.body.genero,
@@ -136,6 +136,7 @@ const userController = {
                 idPessoas: id
             }
         })
+        req.session.isAuth = user;
         return res.redirect('/assinante');
     },
     pagar: async (req , res) => {
