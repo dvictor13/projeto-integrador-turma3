@@ -1,4 +1,5 @@
 const alterar = document.getElementById("alterar");
+const userImage = document.getElementById('userImage')
 
     alterar.onclick = function() {
         const special = document.querySelectorAll("input");
@@ -19,6 +20,7 @@ const cancelar = document.getElementById("cancelar");
         });
         document.getElementById("alterar").style.display = 'flex';
         document.getElementById("cancelar").style.display = 'none';
+        userImage.disabled = false
     }
 
 // const carregarFoto = document.getElementById("carregarFoto");

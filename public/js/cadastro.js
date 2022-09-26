@@ -12,7 +12,9 @@ const addError = document.querySelector('div.addErrors ul')
 let errors = []
 
 concluirCadastro.addEventListener('click', event => {
-    
+
+    addError.innerHTML = '' 
+    errors = [];
     if(nome.value == ''){
         errors.push("O campo nome não pode ficar vazio")
     }
@@ -22,14 +24,14 @@ concluirCadastro.addEventListener('click', event => {
     if((senha.value == '') || (senha.value.length < 8)){
         errors.push("O campo senha não pode ficar vazio e tem que ter mais de 8 caracteres")
     }
-    if((cpf.value == '') || (cpf.value.length < 11)){
-        errors.push("O campo cpf não pode ficar vazio")
+    if((cpf.value == '') || (cpf.value.length != 11)){
+        errors.push("O campo senha não pode ficar vazio e tem que ter 11 caracteres")
     }
     if((nascimento.value == '')){
         errors.push("O campo nascimento não pode ficar vazio")
     }
-    if((telefone.value == '')|| (telefone.value.length < 11)){
-        errors.push("O campo telefone não pode ficar vazio")
+    if((telefone.value == '') || (telefone.value.length != 11)){
+        errors.push("O campo senha não pode ficar vazio e tem que ter 11 caracteres")
     }
     if(endereco.value == ''){
         errors.push("O campo endereco não pode ficar vazio")
