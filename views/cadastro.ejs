@@ -28,6 +28,10 @@
 
             <section id="formulariocampos">
                 <h2 class="tituloh2">CRIE SUA CONTA</h2>
+                <div class="addErrors">
+                    <ul></ul>
+                </div>
+
                 <% if(typeof errors !== 'undefined'){%> 
                     <ul>
                         <% for(let error in errors){ %>
@@ -40,7 +44,7 @@
                 <% } %> 
 
                 <form class=form1 id="form1" action="/cadastro" method="POST">
-                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" 
                     <% if(typeof oldData !== 'undefined') {%> value="<%=oldData.nome %>" <% }%>>
                     <br>
                     <input type="email" id="email" name="email" placeholder="Digite seu email" required
@@ -56,6 +60,8 @@
                     <br>
                     <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone para contato"
                     <% if(typeof oldData !== 'undefined') {%> value="<%=oldData.telefone %>" <% }%>>
+                    <input type="text" id="endereco" name="endereco" placeholder="Digite seu endereço"
+                    <% if(typeof oldData !== 'undefined') {%> value="<%=oldData.endereco %>" <% }%>>
                     <br>
                             <div class="radio-container">
                                 <label for="masculino">
@@ -105,6 +111,7 @@
 
         </main>
         <%- include('./partials/footer') %>
+        <script src="../js/cadastro.js"></script>
 </body>
 
 </html>

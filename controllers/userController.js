@@ -42,7 +42,7 @@ const userController = {
         await Pessoa.create({
             nome : usuario.nome,
             data_nasc: usuario.nascimento,
-            endereco: 'teste',
+            endereco: usuario.endereco,
             cpf : usuario.cpf,
             telefone : usuario.telefone,
             sexo: usuario.radio,
@@ -96,7 +96,7 @@ const userController = {
         user.update({
             nome: req.body.nome,
             data_nasc: date,
-            endereco: 'teste',
+            endereco: req.body.endereco,
             cpf: req.body.cpf,
             telefone: req.body.telefone,
             sexo: req.body.genero,
@@ -108,8 +108,6 @@ const userController = {
             }
         })
         req.session.isAuth = user;
-        console.log('teste')
-        console.log(req.session.isAuth)
         return res.redirect('/assinante');
     },
     pagar: (req, res) => {
