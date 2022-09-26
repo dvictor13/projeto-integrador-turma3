@@ -23,7 +23,7 @@ main .corpoCadastro{
     font-size: 2rem;
 }
 
-.corpoCadastro .caixinhaLogin{
+#caixinhaLogin{
     margin: 20px 0;
     display: flex;
     flex-direction: column;
@@ -31,14 +31,14 @@ main .corpoCadastro{
     width: 100%;
 }
 
-.corpoCadastro .caixinhaLogin form{
+#caixinhaLogin form{
     width: 100%;
     max-width: 280px;
 }
 
-.corpoCadastro .caixinhaLogin form input{
+#caixinhaLogin form input{
     padding: 5px;
-    margin: 10px;
+    margin: 10px 0;
     width: 100%;
 }
 
@@ -63,7 +63,7 @@ main .corpoCadastro{
     flex: 1 1 80%;
 }
 
-.corpoCadastro .caixinhaLogin .btnCadastro .logar{
+#caixinhaLogin .btnCadastro .logar{
     max-width: 350px;
     padding: 5px;
     display: flex;
@@ -79,12 +79,12 @@ main .corpoCadastro{
     cursor: pointer;
 }
 
-.corpoCadastro .caixinhaLogin .btnCadastro .logar:hover{
+#caixinhaLogin .btnCadastro .logar:hover{
     background-color: var(--primary-color);
     color: var(--terciary-color);
 }
 
-.corpoCadastro .caixinhaLogin a{
+#caixinhaLogin a{
     list-style: none;
     color: var(--terciary-color);
     text-decoration-line: underline;
@@ -93,7 +93,7 @@ main .corpoCadastro{
     padding: 10px 16px;
 }
 
-.corpoCadastro .caixinhaLogin a:hover{
+#caixinhaLogin a:hover{
     color: var(--white);
     text-decoration: underline 2px solid var(--white);
 }
