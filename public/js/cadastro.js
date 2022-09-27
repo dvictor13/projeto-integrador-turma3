@@ -31,7 +31,7 @@ concluirCadastro.addEventListener('click', event => {
         errors.push("O campo nascimento não pode ficar vazio")
     }
     if((telefone.value == '') || (telefone.value.length != 11)){
-        errors.push("O campo senha não pode ficar vazio e tem que ter 11 caracteres")
+        errors.push("O campo telefone não pode ficar vazio e tem que ter 11 caracteres")
     }
     if(endereco.value == ''){
         errors.push("O campo endereco não pode ficar vazio")
