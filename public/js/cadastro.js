@@ -25,7 +25,7 @@ concluirCadastro.addEventListener('click', event => {
         errors.push("O campo senha não pode ficar vazio e tem que ter mais de 8 caracteres")
     }
     if((cpf.value == '') || (cpf.value.length != 11)){
-        errors.push("O campo senha não pode ficar vazio e tem que ter 11 caracteres")
+        errors.push("O campo CPF não pode ficar vazio e tem que ter 11 caracteres")
     }
     if((nascimento.value == '')){
         errors.push("O campo nascimento não pode ficar vazio")
