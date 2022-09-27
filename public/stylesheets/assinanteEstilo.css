@@ -60,13 +60,13 @@ main p{
 
 @media screen and (min-width:768px) {
     #dados .photo{
-        flex: 1 1 20%;
+        flex: 1;
     }
 }
 
 #dados .photo img{
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     border-radius: 80px;
 }
@@ -78,26 +78,101 @@ main p{
     background-color: var(--terciary-color);
     color: var(--primary-color);
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
+    flex: 4;
 }
 
-@media screen and (min-width:768px) {
+/* @media screen and (min-width:768px) {
     .form1{
         margin: 0 40px;
     }
-}
+} */
 
 .form1 .infos{
-    padding: 10px 0;
+    padding: 2px 0;
+    width: 100%;
+    display: flex;
     color: var(--primary-color);
+    flex-direction: column;
+}
+
+.form1 .infos label {
+    display: inline-block;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.form1 .infos input{
+    margin-bottom: 5px;
+    padding: 5px;
+    width: 100%;
+} 
+
+::placeholder {
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.form1 .infos-radio label {
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.form1 .infos-radio .radio-assina input{
+    margin: 0 5px;
 }
 
 .form1 .butons{
     display: flex;
     width: 100%;
     padding: 10px;
-    flex-direction: column;
+    flex-direction: row;
     gap: 5px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form1 .butons button{
+    width: 192px;
+    border-radius: 20px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 1.5rem;
+    letter-spacing: 0em;
+    margin: 0 auto;
+    font-weight: 700;
+    border: none;
+    flex: 1;
+    cursor: pointer;
+}
+
+.form1 .butons button:hover{
+    background-color: var(--secundary-color);
+    transition: 1s;
+}
+
+#alterar{
+    flex: 1;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#cancelar button:hover{
+    color: var(--secundary-color);
+    transition: 1s;
+}
+
+#cancelar{
+    flex: 1;
+    display: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#cancelar button:hover{
+    color: var(--secundary-color);
+    transition: 1s;
 }
 
 #formImg{
@@ -150,7 +225,7 @@ main p{
 
 @media screen and (min-width:768px) {
     .planosIndex{
-        flex: 1 1 10%;
+        flex: 1;
     }
 }
 
@@ -163,6 +238,9 @@ main p{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    max-width: 300px;
+    min-width: 200px;
+    margin: 0 auto;
     /* gap: 50px; */
     padding: 10px;
     align-items: center;
@@ -178,6 +256,7 @@ main p{
     gap: 5px;
     width: 100%;
     text-align: center;
+    background-color: var(--primary-color) !important;
 }
 
 .planosIndex .cardsPlanos .card:hover{
@@ -309,6 +388,10 @@ main .sessaoPlanos{
     color: var(--white);
 }
 
+.sessaoPlanos .frases p{
+    padding: 20px;
+}
+
 .sessaoPlanos .vantagens{
     width: 100%;
     max-width: 600px;
@@ -321,6 +404,7 @@ main .sessaoPlanos{
     display: flex;
     flex-direction: column;
     gap:20px;
+    padding: 20px;
 }
 
 .sessaoPlanos .cardsPlanos .cardP{

@@ -98,24 +98,24 @@
                         <label>Endereço</label>
                         <input type="text" id="endereco" name="endereco" value="<%=userLogged.endereco %>" disabled>
                     </div>
-                    <div class="infos">
+                    <div class="infos-radio">
                         <label for="genero">Gênero</label>
-                        <div>
+                        <div class="radio-assina">
                             <input type="radio" name="genero" id="masculino" value="masculino" <% if
                                 (userLogged.sexo==='masculino' ) { %> checked <% } %> disabled ><label
                                     form="masculino">Masculino</label>
                         </div>
-                        <div>
+                        <div class="radio-assina">
                             <input type="radio" name="genero" id="feminino" value="feminino" <% if
                                 (userLogged.sexo==='feminino' ) { %> checked <% } %> disabled ><label
                                     form="feminino">Feminino</label>
                         </div>
-                        <div>
+                        <div class="radio-assina">
                             <input type="radio" name="genero" id="outros" value="outros" <% if
                                 (userLogged.sexo==='outros' ) { %>
                             checked <% } %> disabled ><label form="outros">Outros</label>
                         </div>
-                        <div>
+                        <div class="radio-assina">
                             <input type="radio" name="genero" id="nao informado" value="nao informado" <% if
                                 (userLogged.sexo==='nao informado' ) { %> checked <% } %> disabled ><label
                                     form="nao informado">Prefiro não informar</label>
