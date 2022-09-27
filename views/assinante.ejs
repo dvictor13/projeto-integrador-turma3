@@ -47,6 +47,9 @@
             <section id="dados">
                 <div id="imgU" class="photo">
                     <img src="<%= userLogged.imagem %>" id="imgUser">
+                    <div class="addErrors">
+                        <ul></ul>
+                    </div>
                     <% if(typeof errors !=='undefined' ){%>
                         <ul>
                             <% for(let error in errors){ %>
