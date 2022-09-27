@@ -10,18 +10,24 @@ escolhaTempoPlano.addEventListener('change',function(){
 
     total.innerHTML = parseFloat(planopreco.innerHTML) * parseFloat(escolhaTempoPlano.value) 
 })
+const getEstados = async ()=>{
+    let res = await fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome',{method:'get'})
+    let distritos = await res.json();
+    return distritos
 
-// const getEstados = async ()=>{
-//     let res = await fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome')
-//     let distritos = await res.json();
-//     return distritos
-   
-// }
-// distritos = getEstados()
+}
 
-// const s = document.getElementById('estado');
-// const options = distritos;
 
-// options.forEach((element,key) => {
-//     s[key] = new Option(element,key);
-// });
+const showEstados = ()=>{
+    const s = document.getElementById('estado');
+    const options = distritos;
+    console.log(options)
+
+    for (const option in options){
+        s.appendChild(new Option(option.name,option.sigla));    
+}
+}
+window.onload = (event) =>{
+    distritos = getEstados()
+    showEstados()
+}
