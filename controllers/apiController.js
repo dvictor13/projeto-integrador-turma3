@@ -1,10 +1,15 @@
 const {Assinatura,Pessoa} = require('../database/models');
 
 const apiController = {
+
+mostrarFormulario:(req,res)=>{
+    res.render('api')
+},
 checarAssinatura:async (req,res)=>{
-    let cliente = await Pessoa.findByPk(req.params.id)
+    id = req.body.id
+    let cliente = await Pessoa.findByPk(id)
     if (cliente ==null){
-        return res.status(200).send(`ID ${req.params.id} de Cliente não existe`)
+        return res.status(200).send(`ID ${id} de Cliente não existe`)
     }
     let assinatura = await Assinatura.findOne({
         where:{
@@ -21,23 +26,33 @@ checarAssinatura:async (req,res)=>{
 usoAssinatura: async(req,res) => {
     let {id,barba,cabelo,extras} = req.body
     let cliente = await Pessoa.findByPk(id)
+    if (cliente ==null){
+        return res.status(200).send(`ID ${id} de Cliente não existe`)
+    }
     let assinatura = await Assinatura.findOne({
         where:{
             fk_pessoas:cliente.idPessoas,
             status:'ativo'
         }
     })
-    barbaantiga = assinatura.barba
-    cabeloantigo = assinatura.cabelo
-    extrasantigo = assinatura.servicosextras
+    if(!assinatura){
+        return res.status(200).send(`O Cliente ${cliente.nome} de ID ${cliente.idPessoas} não possui uma assinatura ativa `)
+    }
 
+    
+    barbaantiga = assinatura.barba
+    console.log("🚀 ~ file: apiController.js ~ line 32 ~ usoAssinatura:async ~ assinatura.barba", assinatura.barba)
+    cabeloantigo = assinatura.cabelo
+    console.log("🚀 ~ file: apiController.js ~ line 35 ~ usoAssinatura:async ~ assinatura.cabelo", assinatura.cabelo)
+    extrasantigo = assinatura.servicosextras
+    console.log("🚀 ~ file: apiController.js ~ line 38 ~ usoAssinatura:async ~ assinatura.servicosextras", assinatura.servicosextras)
     assinatura.set({
-        barba: barbaantiga - barba,
-        cabelo: cabeloantigo - cabelo,
-        servicosextras: extrasantigo - extras
+        barba: (barbaantiga - barba) ,
+        cabelo: (cabeloantigo - cabelo),
+        servicosextras: (extrasantigo - extras),
     })
     await assinatura.save();
-    res.send('Concluido serviço')
+    res.status(200).send(`Concluido serviço\nO usuário ${cliente.nome} de ID ${id} tinha:\n ${barbaantiga} barbas ,agora tem ${assinatura.barba}\n${cabeloantigo} cabelos ,agora tem ${assinatura.cabelo}\n${extrasantigo} extras ,agora tem ${assinatura.servicosextras}`)
 
 }
 }
