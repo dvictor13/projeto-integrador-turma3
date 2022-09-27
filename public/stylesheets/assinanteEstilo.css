@@ -28,6 +28,10 @@ main h2 span{
     color: var(--white);
 }
 
+main p{
+    margin-bottom: 0!important;
+}
+
 #dados{
     display: flex;
     width: 100%;
