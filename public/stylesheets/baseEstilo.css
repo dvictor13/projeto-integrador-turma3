@@ -4,17 +4,17 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
-    font-family: 'Heebo', sans-serif;
+    font-family: 'Heebo', sans-serif !important;
 }
 
 :root {
     --primary-color:#42210B;
     --secundary-color:#754C24;
     --terciary-color:#C69C6D;
-    --yellow:#CF8801;
+    --yellow:#CF8801 !important;
     --black: #181818;
     --white: #fff;
-    --gray: #dadada;
+    --gray: #dadada !important;
 }
 
 
@@ -22,7 +22,7 @@
 
 
 h1{
-    font-family: 'Staatliches', cursive;
+    font-family: 'Staatliches', cursive !important;
     text-transform: uppercase;
     font-size: 3rem;
     line-height: 3.2rem;
@@ -128,6 +128,7 @@ header .cabecalho a img{
 
 header .cabecalho a:hover{
     color: var(--yellow);
+    text-decoration: none !important;
 }
 
 header .cabecalho .dsk .list{
@@ -202,6 +203,7 @@ footer{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding: 20px;
 }
 
 .container-footer .nav-footer{
