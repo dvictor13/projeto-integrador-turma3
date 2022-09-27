@@ -110,8 +110,8 @@ main p{
     flex-direction: column;
     background-color: var(--terciary-color);
     color: var(--primary-color);
-    padding: 10px;
-    border-radius: 20px;
+    padding: 20px;
+    border-radius: 10px;
     flex: 4;
 }
 
