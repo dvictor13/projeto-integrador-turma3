@@ -4,7 +4,7 @@ const apiController = {
 checarAssinatura:async (req,res)=>{
     let cliente = await Pessoa.findByPk(req.params.id)
     if (cliente ==null){
-        res.status(200).send(`ID ${req.params.id} de Cliente não existe`)
+        return res.status(200).send(`ID ${req.params.id} de Cliente não existe`)
     }
     let assinatura = await Assinatura.findOne({
         where:{
@@ -12,8 +12,9 @@ checarAssinatura:async (req,res)=>{
             status:'ativo'
         }
     })
+    console.log(assinatura)
     if(!assinatura){
-        res.status(200).send(`O Cliente ${cliente.nome} de ID ${cliente.idPessoas} não possui uma assinatura ativa `)
+        return res.status(200).send(`O Cliente ${cliente.nome} de ID ${cliente.idPessoas} não possui uma assinatura ativa `)
     }
     return await res.status(200).json(assinatura)
 },
