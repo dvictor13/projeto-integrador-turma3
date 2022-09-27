@@ -14,6 +14,7 @@ main h2{
     color: var(--terciary-color);
     font-weight: 700;
     padding: 20px;
+    font-family: 'Staatliches', cursive !important;
 }
 
 @media screen and (min-width:768px) {
@@ -572,4 +573,24 @@ main .sessaoPlanos{
     .sessaoPlanos .cardsPlanos .cardP .precoButon .preco {
         border-top: none;
     }
+}
+
+
+/*-----TEXTO ALERTA-----*/
+
+main .alert-success{
+    color: var(--black) !important;
+    background-color: var(--yellow) !important;
+    border-color: var(--black) !important;
+}
+
+main .m-2{
+    margin: 0 !important;
+    padding: 20px !important;
+}
+
+.alert-primary {
+    color: var(--primary-color) !important;
+    background-color: var(--terciary-color) !important;
+    border-color: var(--secundary-color) !important;
 }

@@ -18,6 +18,8 @@ main .sessaoPlanos{
     margin: 40px auto;
     color: var(--terciary-color);
     line-height: 2.8rem;
+    font-family: 'Staatliches', cursive;
+    font-size: 2rem;
 }
 
 .sessaoPlanos .vantagens{
