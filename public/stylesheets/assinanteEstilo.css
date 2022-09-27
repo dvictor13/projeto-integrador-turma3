@@ -71,6 +71,39 @@ main p{
     border-radius: 80px;
 }
 
+
+
+/*-----div foto-----*/
+
+/* #formImg{
+    display: flex;
+    flex-direction: column;
+}
+
+#carregarFoto{
+    background-color: #754C24;
+    border: none;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 20px;
+    width: 105px;
+    height: 30px;
+}
+
+#imgUser{
+    border-radius: 100px;
+    width: 130px;
+    height: 130px;
+    max-height: 150px;
+    position: relative;
+    top: 0 px;
+    background-size: cover;
+    object-fit: cover;
+    border: 2px solid #C69C6D;
+} */
+/*---------------------------*/
+
+
 .form1{
     width: 100%;
     display: flex;
@@ -78,7 +111,7 @@ main p{
     background-color: var(--terciary-color);
     color: var(--primary-color);
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 20px;
     flex: 4;
 }
 
@@ -181,11 +214,11 @@ main p{
 }
 
 #formImg input{
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    padding: 10px 0;
-    max-width: 170px;
+    align-items: center;
+    padding: 20px 0;
 }
 
 #formImg button{
