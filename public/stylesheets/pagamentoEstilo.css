@@ -21,7 +21,7 @@ main {
 
 main .finalizeCompra{
     text-align: left;
-    font-family: 'Staatliches';
+    font-family: 'Staatliches', cursive !important;
     font-weight: 700;
     font-size: 2.4rem;
     padding: 20px 10px;
@@ -30,7 +30,6 @@ main .finalizeCompra{
 
 main .finalizeCompra h2{
     font-size: 2rem;
-    margin: 20px auto;
 }
 
 
