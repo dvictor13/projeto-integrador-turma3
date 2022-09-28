@@ -166,6 +166,7 @@ const userController = {
             cabelo:plano.cabelo,
             barba:plano.barba,
             fk_pessoas:idPessoas,
+            servicosextras:plano.servicosextras
         })
         req.session.assinaturaAtiva = assinatura
 

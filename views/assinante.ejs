@@ -165,20 +165,19 @@
                             <h2 class="white ak-black">
                                 <%=assinaturaUser.cabelo%> VEZ<% if(assinaturaUser.cabelo>1){%>ES<%}%>
                             </h2>
-                            <p>É o número total de cortes de cabelo desde a compra do plano</p>
+                            <p>É o número total de cortes de cabelo que você ainda pode utilizar.</p>
                         </article>
                         <article class="info">
                             <h2 class="white ak-black">
                                 <%=assinaturaUser.barba %> VEZ<% if(assinaturaUser.barba>1){%>ES<%}%>
                             </h2>
-                            <p>É o número total de barbas feitas desde a compra do plano</p>
+                            <p>É o número total de barbas que você pode estilizar.</p>
                         </article>
                         <article class="info">
                             <h2 class="white ak-black">
-                                <%let total=assinaturaUser.barba + assinaturaUser.cabelo %>
-                                    <%=total%> VEZ<% if(total>1){%>ES<%}%>
+                                <%=assinaturaUser.servicosextras %> VEZ<% if(assinaturaUser.servicosextras>1){%>ES<%}%>
                             </h2>
-                            <p>É o número total que você usou o plano</p>
+                            <p>É o número total de serviços extras que você tem disponível</p>
                         </article>
                     </section>
                 </nav>
