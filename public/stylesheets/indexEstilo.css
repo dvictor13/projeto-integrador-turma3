@@ -364,3 +364,81 @@
     cursor: pointer;
 }
 
+
+
+/*---- NOSSA EQUIPE -------*/
+
+.nossa-equipe{
+    width: 100%;
+    background-color: var(--secundary-color);
+    opacity: 1;
+    background-image: radial-gradient(#42210B 0.65px, transparent 0.65px), radial-gradient(#42210B 0.65px, #754C24 0.65px);
+    background-size: 26px 26px;
+    background-position: 0 0, 13px 13px;
+    padding: 20px;
+}
+
+#cards-equipe{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#cards-equipe .tituloDesc h2{
+    font-size: 3rem;
+    margin: 40px auto;
+    color: var(--terciary-color);
+    line-height: 2.8rem;
+    font-family: 'Staatliches', cursive !important;
+}
+
+#cards-equipe .container-equipe{
+    padding: 10px;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
+    justify-content: center;
+}
+
+@media screen and (min-width:425px){
+    #cards-equipe .container-equipe{
+        flex-direction: row;
+    }
+}
+
+#cards-equipe .container-equipe .members{
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    background-color: var(--terciary-color);
+    border-radius: 10px;
+
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-direction: row;
+}
+
+#cards-equipe .container-equipe .members .photo-name{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+
+#cards-equipe .container-equipe .members .photo-name img{
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    object-fit: cover;
+}

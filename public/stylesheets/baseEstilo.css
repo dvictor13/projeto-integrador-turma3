@@ -222,6 +222,7 @@ footer{
 
 .container-footer .nav-footer .links a:hover{
     color: var(--yellow);
+    text-decoration: none;
 }
 
 .container-footer .redes-sociais{

@@ -168,7 +168,7 @@ main .barbearias{
 
 .barbearias .barbearias-container .cards .cards-container .enderecoBarbearia:hover{
     background-color: var(--gray);
-    transition: .5s;
+    transition: 1s;
 }
 
 /* .barbeariasIndex .cardsBarbearia .card:hover{
