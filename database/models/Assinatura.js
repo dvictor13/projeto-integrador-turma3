@@ -12,6 +12,7 @@ module.exports = function (sequelize, dataTypes) {
         fk_planos: dataTypes.INTEGER,
         cabelo: dataTypes.INTEGER,
         barba: dataTypes.INTEGER,
+        servicosextras:dataTypes.INTEGER,
         fk_pessoas: dataTypes.INTEGER
     }
     let config = {

@@ -5,6 +5,7 @@ const validationMiddlewares = require('../middlewares/validationMiddlewares');
 const indexController = require('../controllers/indexController')
 const userController = require('../controllers/userController')
 const contentController = require('../controllers/contentController')
+const hasAssinaturaAtiva = require('../middlewares/hasAssinaturaAtiva')
 const notLogged = require('../middlewares/notLogged');
 const multer = require('multer');
 const path = require('path');
@@ -17,7 +18,7 @@ const whitelist = [
     'image/png',
     'image/jpeg',
     'image/jpg',
-    'image/webp'
+    'image/webp' 
   ]
 
 const multerDiskStorage = multer.diskStorage({
@@ -35,9 +36,7 @@ const upload = multer({
     storage : multerDiskStorage ,
     fileFilter: (req, file, cb) => {
         if (!whitelist.includes(file.mimetype)) {
-            console.log('deu erro.')
-            cb(null, false)
-            return
+            return cb(null, false)
         }
 
         cb(null, true)
@@ -59,7 +58,7 @@ router.get('/politica', indexController.politica)
 router.get('/faleconosco', indexController.faleconosco)
 
 router.get('/assinante',isAuthUser,userController.assinante)
-router.get('/pagamento/:id',salvaPlano,isAuthUser,indexController.pagamento)
+router.get('/pagamento/:id',salvaPlano,isAuthUser,hasAssinaturaAtiva,indexController.pagamento)
 //router.get('/carrinho/:id?',indexController.carrinho)
 router.get('/cadastro',notLogged,userController.cadastro)
 router.get('/contato',indexController.contato)

@@ -1,51 +1,80 @@
-@font-face {
-    font-family: 'Akrobat-Regular';
-    src:url('./font/Akrobat-Regular.otf')
-}
-@font-face {
-    font-family: 'Akrobat-Black';
-    src:url('./font/Akrobat-Black.otf')
-}
-@font-face {
-    font-family: 'Akrobat-Bold';
-    src:url('./font/Akrobat-Bold.otf')
-}
-@font-face{
-    font-family: 'Akrobat-SemiBold';
-    src:url(./font/Akrobat-SemiBold.otf)
-}
 *{
-    margin: 0%;
-    padding: 0%;
-    font-family: var(--ak-font-regular)
+    box-sizing: border-box;
 }
 
-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0% 2%;
+.duvidas{
+    margin-top: 0;
 }
 
-main *{
-    font-family: var(--ak-font-regular);
+::placeholder {
+    color: var(--primary-color);
+}
 
+main {
+    background-color: var(--secundary-color);
+    opacity: 1;
+    background-image:  radial-gradient(#42210B 0.65px, transparent 0.65px), radial-gradient(#42210B 0.65px, #754C24 0.65px);
+    background-size: 26px 26px;
+    background-position: 0 0,13px 13px;
+    padding-bottom: 20px;
+}
+
+main .finalizeCompra{
+    text-align: left;
+    font-family: 'Staatliches', cursive !important;
+    font-weight: 700;
+    font-size: 2.4rem;
+    padding: 20px 10px;
+    color: var(--terciary-color);
+}
+
+main .finalizeCompra h2{
+    font-size: 2rem;
 }
 
 
-.finalizeCompra{
-    font-family: var(--ak-font-black);
+
+
+
+.descricao{
+    color: var(--white);
+    padding: 10px;
+}
+
+@media screen and (min-width:768px) {
+    main .finalizeCompra{
+        font-size: 3rem;
+        padding: 20px 40px;
+    }
+
+    .descricao{
+        padding: 20px 40px;
+    }
+}
+
+#container-row{
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 20px;
+}
+
+
+
+/* .finalizeCompra{
     color: var(--primary-color);
     margin: 3% 0%;
 }
+
 .descricao{
-    font-family: var(--ak-font-bold);
     font-size: 1.25rem;
     color: var(--secundary-color);
     font-weight: 700;
     margin: 2% 0%;
     text-align: center;
-}
+} */
 
 main>section {
     display: flex;
@@ -241,7 +270,6 @@ main>section .total span{
 @media (min-width:1280px) {
 
     main{
-        flex-direction: row;
         align-items: flex-start;
     }
 

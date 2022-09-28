@@ -1,6 +1,6 @@
-const listaPlanos = require("../planos.json")
-const listaBarbearias = require("../barbearias.json")
+
 const {Plano, Barbearia, Servico,Vantagem} = require('../database/models')
+// const fetch = require("node-fetch");
 
 
 
@@ -38,6 +38,8 @@ const indexController = {
         res.render('carrinho',{listaplanos:planos, codPlano:codPlano});
     },
     pagamento:async(req,res)=>{
+
+
         let codPlano = req.params.id;
         let plano = await Plano.findOne({
             where:{
@@ -49,7 +51,7 @@ const indexController = {
                 required:false
             }
         })
-        console.log("🚀 ~ file: indexController.js ~ line 52 ~ pagamento:async ~ plano", plano.vantagens)
+
         res.render('pagamento',{dadosPlano:plano})
     },    
     contato:(req,res)=>{

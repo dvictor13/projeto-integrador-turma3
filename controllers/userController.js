@@ -29,7 +29,6 @@ const userController = {
         });
 
         if (userExists){
-            console.log("funcionou")
             return res.render('cadastro', {
                  errors: {
                      email: {msg: "Este email já está registrado"}
@@ -42,7 +41,7 @@ const userController = {
         await Pessoa.create({
             nome : usuario.nome,
             data_nasc: usuario.nascimento,
-            endereco: 'teste',
+            endereco: usuario.endereco,
             cpf : usuario.cpf,
             telefone : usuario.telefone,
             sexo: usuario.radio,
@@ -57,9 +56,10 @@ const userController = {
     foto: async (req,res) => {
         const {id} = req.params;
         let user = await Pessoa.findByPk(id);
+        req.session.novoUsuario = false;
+        sessaoAtiva = ''
 
         if(!req.file){
-            console.log('entrou')
             let listAll = await Plano.findAll({
                 include:{
                 model: Vantagem,
@@ -87,10 +87,11 @@ const userController = {
                     userLogged: user,
                     assinaturaUser: assinaturaUser,
                     listaPlanosUser: planoUser,
-                    listaPlanos: listAll
+                    listaPlanos: listAll,
+                    sessionUser: req.session.novoUsuario,
+                    sessionAtiva : sessaoAtiva
                 });
             }
-            
             return res.render('assinante', {
                 errors: {
                     foto: {msg: "Foto inválida."}
@@ -98,8 +99,12 @@ const userController = {
                 userLogged: user,
                 assinaturaUser: undefined,
                 listaPlanosUser: undefined,
-                listaPlanos: listAll
+                listaPlanos: listAll,
+                sessionUser: req.session.novoUsuario,
+                sessionAtiva : sessaoAtiva
+
             });
+                
         }else{
         
         user.update({
@@ -119,8 +124,8 @@ const userController = {
 
         user.update({
             nome: req.body.nome,
-            data_nasc: req.body.nascimento,
-            endereco: 'teste',
+            data_nasc: date,
+            endereco: req.body.endereco,
             cpf: req.body.cpf,
             telefone: req.body.telefone,
             sexo: req.body.genero,
@@ -131,6 +136,7 @@ const userController = {
                 idPessoas: id
             }
         })
+        req.session.isAuth = user;
         return res.redirect('/assinante');
     },
     pagar: async (req , res) => {
@@ -139,10 +145,21 @@ const userController = {
         
         console.log("🚀 ~ file: userController.js ~ line 140 ~ pagar: ~ req.body", req.body.duracao)
         let {idPessoas} = req.session.isAuth;
-        let usuario = await Pessoa.findByPk(idPessoas) //'ver aonde posso pegar id'
+
+        let hasAssinaturaAtiva = await Assinatura.findOne({
+            where:{
+                fk_pessoas:idPessoas,
+                status:'ativo'
+            }
+        })
+        if(hasAssinaturaAtiva){
+            hasAssinaturaAtiva.update({status:"inativo"})
+        }
+
+        //let usuario = await Pessoa.findByPk(idPessoas) //'ver aonde posso pegar id'
         let plano = await Plano.findByPk(req.session.plano)
-        await usuario.update({status:'ativo'}) //'mudar status do usuario pra ativo'
-        await Assinatura.create({
+        //await usuario.update({status:'ativo'}) //'mudar status do usuario pra ativo'
+        let assinatura = await Assinatura.create({
             status:'ativo',
             periodo:req.body.duracao, // form 
             fk_planos:plano.idPlanos ,
@@ -150,8 +167,9 @@ const userController = {
             barba:plano.barba,
             fk_pessoas:idPessoas,
         })
-        
-        return res.redirect('assinante')
+        req.session.assinaturaAtiva = assinatura
+
+        return res.redirect('/assinante')
     },
     logar: (req,res) =>{
         res.render('login')
@@ -163,7 +181,7 @@ const userController = {
                 email: dadosUsuario.email //email é o campo do banco e dados usuario é do formulario
             }
         });
-        console.log(userToLogin)
+
         if(userToLogin){
             let senhaValida = bcrypt.compareSync(dadosUsuario.senha, userToLogin.senha)
 
@@ -174,6 +192,17 @@ const userController = {
                     res.cookie('userEmail', dadosUsuario.email, 
                     {maxAge: (1000 * 60) * 30} )
                 }
+                let userAssinaturaAtiva = await Assinatura.findOne({
+                    where:{
+                        fk_pessoas:userToLogin.idPessoas,
+                        status:'ativo'
+                    }
+                })
+                if(userAssinaturaAtiva){
+                    req.session.assinaturaAtiva = userAssinaturaAtiva;
+                }
+
+                
                 if(!req.session.plano){
                     return res.redirect('/assinante')
                 }else{
@@ -191,6 +220,9 @@ const userController = {
     assinante: async (req,res)=>{
         let {idPessoas} = req.session.isAuth;
         let userLogged = await Pessoa.findByPk(idPessoas)
+        let userNovo = req.session.novoUsuario;
+        req.session.novoUsuario = false;
+        let sessaoAtiva = req.session.assinaturaAtiva;
         let listAll = await Plano.findAll({
             include:{
             model: Vantagem,
@@ -202,27 +234,33 @@ const userController = {
         });
         let assinaturaUser = await Assinatura.findOne({
             where: {
-                fk_pessoas: userLogged.idPessoas
+                fk_pessoas: userLogged.idPessoas,
+                status:'ativo'
             }
         });
+        req.session.assinaturaAtiva = assinaturaUser;
         if(assinaturaUser){
             let planoUser = await Plano.findOne({
                 where: {
                     idPlanos: assinaturaUser.fk_planos
                 }
             });
-            res.render('assinante',{
+            return res.render('assinante',{
                 userLogged: userLogged,
                 assinaturaUser: assinaturaUser,
                 listaPlanosUser: planoUser,
-                listaPlanos: listAll
+                listaPlanos: listAll,
+                sessionUser: userNovo,
+                sessionAtiva : sessaoAtiva
             });
         }
-        res.render('assinante',{
+        return res.render('assinante',{
             userLogged: userLogged,
             assinaturaUser: undefined,
             listaPlanosUser: undefined,
-            listaPlanos: listAll
+            listaPlanos: listAll,
+            sessionUser: false, 
+            sessionAtiva : sessaoAtiva
         });
     },
     logout: (req, res) => {
