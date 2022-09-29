@@ -21,28 +21,40 @@
     </form>
 
     <form action="/api?_method=PUT" method="POST">
-        
-        
-        
-        
         <label for="InputID">Insira o ID do Cliente</label>
         <input type="number" class="form-control" id="InputID" placeholder="ID" name="id">
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="InputCabeloSIM" value = true name="fezcabelo">
-            <input class="form-check-input" type="checkbox" id="InputCabeloNAO" value = false name="fezcabelo">
-
-            <label class="form-check-label" for="InputCabelo">
-                Cliente fez Cabelo?
-            </label>
+        <br>
+        <p>Cliente cortou o cabelo?</p>
+        <div class="form-check-inline">
+          <input class="form-check-input" type="radio" name="cabelo" id="InputCabeloSim" value="1">
+          <label class="form-check-label" for="InputCabeloSim">
+            Sim
+          </label>
         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="InputCabelo" name="fezbarba">
-            <label class="form-check-label" for="InputCabelo">
-                Cliente fez Barba?
-            </label>
+        <div class="form-check-inline">
+          <input class="form-check-input" type="radio" name="cabelo" id="InputCabeloNao" value="0" checked>
+          <label class="form-check-label" for="InputCabeloNao">
+            Não
+          </label>
         </div>
+        <p></p>
+        <p>Cliente fez barba?</p>
+        <div class="form-check-inline">
+          <input class="form-check-input" type="radio" name="barba" id="InputBarbaSim" value="1">
+          <label class="form-check-label" for="InputBarbaSim">
+            Sim
+          </label>
+        </div>
+        <div class="form-check-inline">
+          <input class="form-check-input" type="radio" name="barba" id="InputBarbaNao" value="0" checked>
+          <label class="form-check-label" for="InputBarbaNao">
+            Não
+          </label>
+        </div>
+        <p></p>
         <div>
             <label for="InputExtra">Cliente fez Serviços Extras?</label>
+            
             <input type="number" class="form-control" id="InputExtra" placeholder="Extras" name="extras" required>
             <small id="emailHelp" class="form-text text-muted">Caso cliente não tenha utilizado serviços extras, preencha com 0.</small>
         </div>

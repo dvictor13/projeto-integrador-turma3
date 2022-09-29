@@ -52,7 +52,13 @@ usoAssinatura: async(req,res) => {
         servicosextras: (extrasantigo - extras),
     })
     await assinatura.save();
-    res.status(200).send(`Concluido serviço\nO usuário ${cliente.nome} de ID ${id} tinha:\n ${barbaantiga} barbas ,agora tem ${assinatura.barba}\n${cabeloantigo} cabelos ,agora tem ${assinatura.cabelo}\n${extrasantigo} extras ,agora tem ${assinatura.servicosextras}`)
+    let frasebarba,fraseservico,frasecabelo =""
+    barbaantiga==assinatura.barba ? frasebarba = ` Tem ${barbaantiga} cortes de barba disponíveis.` :  frasebarba = ` Tinha: ${barbaantiga} cortes de barba disponíveis. Agora tem: ${assinatura.barba} cortes de barba disponíveis.`
+
+    cabeloantigo==assinatura.cabelo ?  frasecabelo = ` tem ${cabeloantigo} cortes de cabelo disponíveis.` :  frasecabelo = ` tinha: ${cabeloantigo} cortes de cabelo disponíveis. Agora tem: ${assinatura.cabelo} cortes de cabelo disponíveis.`
+    // 
+    extrasantigo==assinatura.servicosextra ? fraseservico = ` Tem ${assinatura.servicosextras} serviços extras` :  fraseservico = ` Tinha ${extrasantigo} serviços extras. Agora tem ${assinatura.servicosextras} serviços extras`
+    res.status(200).send(`Concluido serviço. O usuário ${cliente.nome}, de ID ${id},` +frasecabelo+frasebarba+fraseservico)
 
 }
 }

@@ -5,6 +5,6 @@ var transformCheckedBox = require('../middlewares/transformCheckedBox')
 
 router.get('/',apiController.mostrarFormulario)
 router.post('/',apiController.checarAssinatura)
-router.put('/',transformCheckedBox,apiController.usoAssinatura)
+router.put('/',apiController.usoAssinatura)
 
 module.exports = router;
