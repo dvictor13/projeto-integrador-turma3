@@ -70,5 +70,5 @@ $ nodemon start
 
 # Pessoas Desenvolvedoras do Projeto
 
-| [<img src="https://avatars.githubusercontent.com/u/37356058?v=4" width=115><br><sub>Júlio Castello Branco de Mattos</sub>](https://github.com/jcastellobranco) |  [<img src="https://avatars.githubusercontent.com/u/30351153?v=4" width=115><br><sub>Melissa Ost de Vasconcelos</sub>](https://github.com/melissaost) |  [<img src="https://avatars.githubusercontent.com/u/8989346?v=4" width=115><br><sub>Douglas Menezes</sub>](https://github.com/dvictor13) |
+| [<img src="https://avatars.githubusercontent.com/u/94792677?v=4" width=115><br><sub>Júlio Castello Branco de Mattos</sub>](https://github.com/jcastellobranco) |  [<img src="https://avatars.githubusercontent.com/u/102265129?v=4" width=115><br><sub>Melissa Ost de Vasconcelos</sub>](https://github.com/Melissaost) |  [<img src="https://avatars.githubusercontent.com/u/57369005?v=4" width=115><br><sub>Douglas Menezes</sub>](https://github.com/dvictor13) |
 | :---: | :---: | :---: |
