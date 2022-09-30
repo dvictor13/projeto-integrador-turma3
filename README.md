@@ -35,23 +35,43 @@ Os planos fornecem cortes de cabelo 💇‍♂️, cortes de barba 🧔 e servi�
 - `Funcionalidade 4`: :hammer: `API pras Barbearias` Quando o cliente for utilizar o produto na barbearia, a barbearia tem que ser capaz de checar se o usuário tem uma assinatura ativa e informar pro sistema quais dos serviços disponíveis o usuário utilizou e atualizar a assinatura ativa do cliente.
 
 # Acesso ao Projeto
-`Softwares necessários`
-* MySQL Workbench
-* Node.JS
-* NPM ( Node Package Manager )
+`Download dos seguintes softwares necessários`
 
-No MySQL Workbench
-Abra o [scriptSQL](bancoDeDados.sql) e rode pra criar o seu banco de dados e configure o nome do root e senha no arquivo config.js no diretório database/config.js
+* [MySQL Workbench](https://www.mysql.com/products/workbench/)
+* [Node.JS](https://nodejs.org/en/)
 
-Após fazer o download do projeto, abra seu terminal no repositório e instale as dependências do projeto.
+`Configuração do Banco de dados`
+1. Abra o [script SQL](bancoDeDados.sql) no `MySQL Workbench` e execute o arquivo pra criar o banco de dados relacional.
+2. As configurações de USERNAME,PASSWORD,DATABASE,HOST,DIALECT presentes no arquivo [config.js](database/config/config.js) podem ser preenchidas no arquivo [.env](.env) na raiz do projeto são referentes ao próprio usuário e são explicadas na documentação do [Sequelize](https://sequelize.org/docs/v6/other-topics/migrations/#configuration-connection-string).
 
+Após fazer o download do projeto e configurar o banco de dados, abra seu terminal dentro do repositório e instale as dependências do projeto com o seguinte comando
 ~~~bash
 npm install
 ~~~
-`nodemon start`
+Quando finalizada a instalação das dependências, o seguinte código vai inicializar o servidor do projeto.
+~~~bash
+nodemon start
+~~~
+e quando inicializado corretamente deverá aparecer a seguinte mensagem:
+~~~bash
+$ nodemon start
+[nodemon] 2.0.18
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node ./bin/www start`
+~~~
+Em seu navegador, abra a aplicação no servidor local na porta 3000, ou [clique aqui](http://localhost:3000/)
+~~~bash
+localhost:3000
+~~~
 
 # Tecnologias Utilizadas
-* `Node.js`
+* `JavaScript`
 * `MySQL`
+* `ExpressJS`
+
 # Pessoas Desenvolvedoras do Projeto
 
+| [<img src="https://avatars.githubusercontent.com/u/94792677?v=4" width=115><br><sub>Júlio Castello Branco de Mattos</sub>](https://github.com/jcastellobranco) |  [<img src="https://avatars.githubusercontent.com/u/102265129?v=4" width=115><br><sub>Melissa Ost de Vasconcelos</sub>](https://github.com/Melissaost) |  [<img src="https://avatars.githubusercontent.com/u/57369005?v=4" width=115><br><sub>Douglas Menezes</sub>](https://github.com/dvictor13) |
+| :---: | :---: | :---: |
