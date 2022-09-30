@@ -42,7 +42,7 @@ Os planos fornecem cortes de cabelo 💇‍♂️, cortes de barba 🧔 e servi�
 
 `Configuração do Banco de dados`
 1. Abra o [script SQL](bancoDeDados.sql) no `MySQL Workbench` e execute o arquivo pra criar o banco de dados relacional.
-2. As configurações de USERNAME,PASSWORD,DATABASE,HOST,DIALECT presentes no arquivo [config.js](database/config/config.js) podem ser preenchidas no arquivo [.env](.env.template) sem a extensão *.template* na raiz do projeto são referentes ao próprio usuário e são explicadas detalhadamente na documentação do [Sequelize](https://sequelize.org/docs/v6/other-topics/migrations/#configuration-connection-string).
+2. As configurações de USERNAME,PASSWORD,DATABASE,HOST,DIALECT presentes no arquivo [config.js](database/config/config.js) podem ser preenchidas no arquivo [.env](.env.template) sem a extensão *.template* na raiz do projeto referentes ao próprio usuário e são explicadas detalhadamente na documentação do [Sequelize](https://sequelize.org/docs/v6/other-topics/migrations/#configuration-connection-string).
 
 Após fazer o download do projeto e configurar o banco de dados, abra seu terminal dentro do repositório e instale as dependências do projeto com o seguinte comando
 ~~~bash
