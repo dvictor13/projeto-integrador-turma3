@@ -61,7 +61,10 @@ $ nodemon start
 [nodemon] watching extensions: js,mjs,json
 [nodemon] starting `node ./bin/www start`
 ~~~
-
+Em seu navegador, abra a aplicação no servidor local na porta 3000, ou [clique aqui](http://localhost:3000/)
+~~~bash
+localhost:3000
+~~~
 
 # Tecnologias Utilizadas
 * `JavaScript`
