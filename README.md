@@ -1,6 +1,7 @@
 
-<h1 align="center"> Barba, Cabelo e  Bigode </h1>
+<h1 align="center"> Barba, Cabelo e Bigode </h1>
 
+# Status do Projeto
 <p align="center">
 <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 </p>
@@ -15,18 +16,16 @@ Os planos fornecem cortes de cabelo 💇‍♂️, cortes de barba 🧔 e servi�
 
 
 # Índice 
-* [Título e Imagem de capa](#Título-e-Imagem-de-capa)
-* [Badges](#badges)
+* [Status do Projeto](#status-do-projeto)
 * [Índice](#índice)
 * [Descrição do Projeto](#descrição-do-projeto)
 * [Funcionalidades do Projeto](#funcionalidades-do-projeto)
 * [Acesso ao Projeto](#acesso-ao-projeto)
 * [Tecnologias utilizadas](#tecnologias-utilizadas)
-* [Pessoas Contribuidoras](#pessoas-contribuidoras)
 * [Pessoas Desenvolvedoras do Projeto](#pessoas-desenvolvedoras)
 * [Conclusão](#conclusão)
 
-# 🖥️ Funcionalidades do Projeto
+# Funcionalidades do Projeto
 - `Funcionalidade 1`: `Cadastro do Cliente` Nosso sistema precisa estar apto a cadastrar novos clientes com seus dados inserido por eles. Para cadastrar um cliente, devem ser informados seu e-mail, válido e único dentro do sistema. Nome e dados pessoais. Todos os campos são obrigatórios.
 - `Funcionalidade 1a`: `Login do Cliente` Após o cadastro do cliente, é necessário o cliente logar em uma área disponível apenas para cadastrados.
 - `Funcionalidade 2`: `Visualização dos Planos Disponíveis` O usuário deve ser capaz de visualizar o preço, a quantidade de cortes de cabelo, cortes de barba e serviços extras, além de todas as vantagens dos planos.
@@ -37,17 +36,22 @@ Os planos fornecem cortes de cabelo 💇‍♂️, cortes de barba 🧔 e servi�
 
 # Acesso ao Projeto
 `Softwares necessários`
-*MySQL Workbench
-*Node.JS
-*NPM ( Node Package Manager )
+* MySQL Workbench
+* Node.JS
+* NPM ( Node Package Manager )
+
+No MySQL Workbench
+Abra o [scriptSQL](bancoDeDados.sql) e rode pra criar o seu banco de dados e configure o nome do root e senha no arquivo config.js no diretório database/config.js
 
 Após fazer o download do projeto, abra seu terminal no repositório e instale as dependências do projeto.
-`criar o schema do banco de dados`
-`npm install`
+
+~~~bash
+npm install
+~~~
 `nodemon start`
 
 # Tecnologias Utilizadas
 * `Node.js`
 * `MySQL`
-* 
+# Pessoas Desenvolvedoras do Projeto
 
