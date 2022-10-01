@@ -1,10 +1,16 @@
 
 <h1 align="center"> Barba, Cabelo e Bigode </h1>
 
+<p align="center">
+<img src="public/images/fiodobigode-logo-horizontal.svg"/>
+</p>
+
 # Status do Projeto
+
 <p align="center">
 <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 </p>
+
 <h4 align="center"> 
     :scissors:  Projeto em desenvolvimento  :scissors:
 </h4>
@@ -18,17 +24,17 @@ Os planos fornecem cortes de cabelo 💇‍♂️, cortes de barba 🧔 e servi�
 
 # Índice 
 * [Status do Projeto](#status-do-projeto)
-* [Índice](#índice)
 * [Descrição do Projeto](#descrição-do-projeto)
+* [Índice](#índice)
 * [Funcionalidades do Projeto](#funcionalidades-do-projeto)
 * [Acesso ao Projeto](#acesso-ao-projeto)
 * [Tecnologias utilizadas](#tecnologias-utilizadas)
 * [Pessoas Desenvolvedoras do Projeto](#pessoas-desenvolvedoras-do-projeto)
 
 # Funcionalidades do Projeto
-- `Funcionalidade 1`: `Cadastro do Cliente` Nosso sistema precisa estar apto a cadastrar novos clientes com seus dados inserido por eles. Para cadastrar um cliente, devem ser informados seu e-mail, válido e único dentro do sistema. Nome e dados pessoais. Todos os campos são obrigatórios.
-- `Funcionalidade 1a`: `Login do Cliente` Após o cadastro do cliente, é necessário o cliente logar em uma área disponível apenas para cadastrados.
-- `Funcionalidade 2`: `Visualização dos Planos Disponíveis` O usuário deve ser capaz de visualizar o preço, a quantidade de cortes de cabelo, cortes de barba e serviços extras, além de todas as vantagens dos planos.
+- `Funcionalidade 1`: `Cadastro do Cliente` O sistema precisa estar apto a cadastrar novos clientes com dados inserido pelos próprios usuários. Para cadastrar, deve ser informado um e-mail, válido e único dentro do sistema. Nome e dados pessoais. Todos os campos são obrigatórios, além da criação de uma senha.
+- `Funcionalidade 1a`: `Login do Cliente` Após o cadastro do cliente, é possível o usuário logar em uma área exclusiva.
+- `Funcionalidade 2`: `Visualização dos Planos Disponíveis` O usuário deve ser capaz de visualizar o preço, a quantidade de cortes de cabelo, cortes de barba e serviços extras, além de todas as vantagens dos planos. Ao clicar em comprar, ser redirecionado para página de pagamento.
 - `Funcionalidade 2a`: `Compra de Assinatura` O usuário após analisar os planos, e escolher aquele que mais se encaixa no seu perfil de consumo, o sistema precisa processar a aquisição após a escolha do plano. Além de salvar, qual período o usuário adquirir o plano.
 - `Funcionalidade 2b`: `Upgrade/Downgrade de Assinatura` O usuário pode trocar de assinatura para um plano superior, mesmo possuindo uma assinatura ativa. Porém, não pode permitir a compra de uma assinatura igual ou inferior, tendo uma assinatura ativa.
 - `Funcionalidade 3`: `Visualização das Barbearias` O usuário consegue visualizar e filtrar as barbearias, com os serviços desejados, cadastradas no sistema. Além disso, clicar no endereço e redirecionar ao mapa com a rota até o local.
