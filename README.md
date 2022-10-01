@@ -18,8 +18,7 @@
 
 # Descrição do Projeto
 
-Aplicação desenvolvida para assinaturas mensais de serviços de beleza masculino. Serviço de assinaturas referente à planos fornecidos com parceria de diferentes barbearias no Brasil.
-Os planos fornecem cortes de cabelo 💇‍♂️, cortes de barba 🧔 e serviços extras de cuidados .
+Aplicação desenvolvida para venda e acompanhamento de assinatura de planos mensais de serviços de beleza masculina. Os usuários podem usufruir dos serviços disponíveis nas diversas barbearias parceiras no Brasil. Os planos fornecem cortes de cabelo 💇‍♂️, cortes de barba 🧔 e serviços extras de cuidados .
 
 
 # Índice 
@@ -32,12 +31,15 @@ Os planos fornecem cortes de cabelo 💇‍♂️, cortes de barba 🧔 e servi�
 * [Pessoas Desenvolvedoras do Projeto](#pessoas-desenvolvedoras-do-projeto)
 
 # Funcionalidades do Projeto
+
 - `Funcionalidade 1`: `Cadastro do Cliente` O sistema precisa estar apto a cadastrar novos clientes com dados inserido pelos próprios usuários. Para cadastrar, deve ser informado um e-mail, válido e único dentro do sistema. Nome e dados pessoais. Todos os campos são obrigatórios, além da criação de uma senha.
-- `Funcionalidade 1a`: `Login do Cliente` Após o cadastro do cliente, é possível o usuário logar em uma área exclusiva.
-- `Funcionalidade 2`: `Visualização dos Planos Disponíveis` O usuário deve ser capaz de visualizar o preço, a quantidade de cortes de cabelo, cortes de barba e serviços extras, além de todas as vantagens dos planos. Ao clicar em comprar, ser redirecionado para página de pagamento.
-- `Funcionalidade 2a`: `Compra de Assinatura` O usuário após analisar os planos, e escolher aquele que mais se encaixa no seu perfil de consumo, o sistema precisa processar a aquisição após a escolha do plano. Além de salvar, qual período o usuário adquirir o plano.
-- `Funcionalidade 2b`: `Upgrade/Downgrade de Assinatura` O usuário pode trocar de assinatura para um plano superior, mesmo possuindo uma assinatura ativa. Porém, não pode permitir a compra de uma assinatura igual ou inferior, tendo uma assinatura ativa.
-- `Funcionalidade 3`: `Visualização das Barbearias` O usuário consegue visualizar e filtrar as barbearias, com os serviços desejados, cadastradas no sistema. Além disso, clicar no endereço e redirecionar ao mapa com a rota até o local.
+- `Funcionalidade 1a`: `Login do Cliente` Após o cadastro do cliente, é possível o usuário logar em uma área exclusiva com a inserção de email e senha cadastrados. Quando logado, é capaz de mudar todas as suas as informações pessoais.
+- `Funcionalidade 1b`: `Upload e mudança de foto de perfil` O cliente pode inserir uma foto e ser capaz de modificá-la. 
+- `Funcionalidade 2`: `Visualização dos Planos Disponíveis` O usuário deve ser capaz de visualizar o preço, a quantidade de cortes de cabelo, cortes de barba e serviços extras dos planos, além de todas as vantagens agregadas.
+- `Funcionalidade 2a`: `Compra de Assinatura` Ao escolher o plano que mais se encaixa em seu perfil de consumo e clicar em `Comprar este Plano`, o usuário é redirecionado, caso logado, para a página de pagamento; do contrário, para a página de login. 
+Na página de pagamento é selecionada a duração que o usuário deseja usufruir da assinatura.
+- `Funcionalidade 2b`: `Upgrade/Downgrade de Assinatura` O usuário pode substituir a assinatura ativa desde que o plano escolhido seja superior ao plano atual.
+- `Funcionalidade 3`: `Visualização das Barbearias` O usuário consegue visualizar e filtrar o endereço e os serviços desejados disponibilixados por cada barbearia parceira. :hammer: Além disso, clicar no endereço e ser redirecionado ao mapa com a localização.
 - `Funcionalidade 4`: :hammer: `API pras Barbearias` Quando o cliente for utilizar o produto na barbearia, a barbearia tem que ser capaz de checar se o usuário tem uma assinatura ativa e informar pro sistema quais dos serviços disponíveis o usuário utilizou e atualizar a assinatura ativa do cliente.
 
 # Acesso ao Projeto
