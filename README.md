@@ -28,7 +28,9 @@ Aplicação desenvolvida para venda e acompanhamento de assinatura de planos men
 * [Funcionalidades do Projeto](#funcionalidades-do-projeto)
 * [Acesso ao Projeto](#acesso-ao-projeto)
 * [Tecnologias utilizadas](#tecnologias-utilizadas)
+* [Captura da Página Inicial](#captura-da-página-inicial)
 * [Pessoas Desenvolvedoras do Projeto](#pessoas-desenvolvedoras-do-projeto)
+
 
 # Funcionalidades do Projeto
 
@@ -62,12 +64,10 @@ npm run start
 ~~~
 e quando inicializado corretamente deverá aparecer a seguinte mensagem:
 ~~~bash
-$ nodemon start
-[nodemon] 2.0.18
-[nodemon] to restart at any time, enter `rs`
-[nodemon] watching path(s): *.*
-[nodemon] watching extensions: js,mjs,json
-[nodemon] starting `node ./bin/www start`
+$ npm run start
+
+> projeto-integrador-turma3@0.0.0 start
+> node ./bin/www
 ~~~
 Em seu navegador, abra a aplicação no servidor local na porta 3000, ou [clique aqui](http://localhost:3000/)
 ~~~bash
