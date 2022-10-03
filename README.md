@@ -58,7 +58,7 @@ npm install
 ~~~
 Quando finalizada a instalação das dependências, o seguinte código vai inicializar o servidor do projeto.
 ~~~bash
-nodemon start
+npm run start
 ~~~
 e quando inicializado corretamente deverá aparecer a seguinte mensagem:
 ~~~bash
@@ -78,6 +78,9 @@ localhost:3000
 * `JavaScript`
 * `MySQL`
 * `ExpressJS`
+
+# Captura da Página Inicial
+<img src="screenshot/homepage.png"/>
 
 # Pessoas Desenvolvedoras do Projeto
 
