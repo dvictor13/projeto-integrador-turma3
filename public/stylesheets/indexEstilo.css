@@ -310,6 +310,7 @@
     gap: 5px;
     text-align: center;
     border-radius: 25px;
+    padding-bottom: 2%;
 }
 
 .barbeariasIndex .cardsBarbearia .cardB:hover{

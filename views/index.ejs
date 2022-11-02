@@ -52,32 +52,6 @@ console.log(getCookie("aceite"))
 <%}%>
 
 
-<!-- <div id="contatc-us">
-    <div class="container">
-        <form action="action_page.php">
-    
-            <label for="fname">First Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="Your name..">
-    
-            <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-    
-            <label for="local">Estado</label>
-            <select id="local" name="local">
-                <option value="rj">Rio de Janeiro</option>
-                <option value="sp">Sâo Paulo</option>
-                <option value="rs">Rio Grande do Sul</option>
-            </select>
-    
-            <label for="subject">Subject</label>
-            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-    
-            <input type="submit" value="Submit">
-    
-        </form>
-    </div>
-</div> -->
-
 
 <%- include('./partials/header') %>
 
@@ -155,27 +129,9 @@ console.log(getCookie("aceite"))
                     <p class="localBarbearia"><%= barbearia.nome.toUpperCase(); %> </p>
                     <p class="descPlanos"><%=barbearia.rua%></p>
                     <p class="descLocal"><%=barbearia.loja%></p>
-                    <!-- <div class="redes-sociais">
-                        <img src="/images/Twitter.svg" alt="">
-                        <img src="/images/Facebook.svg" alt="">
-                        <img src="/images/instagram.svg" alt="">
-                    </div> -->
-                    <a href="#" target="_blank"><button class="btnComecar">VER ENDEREÇO</button></a>
                 </article>
             <% } %> 
-<!-- 
-            <article class="cardB">
-                <div class="imgCard"><img src="images/barbearias.svg" alt=""></div>
-                <p class="localBarbearia">VILA JARDIM</p>
-                <p class="descPlanos">Av. Beira-Mar, 2023</p>
-                <p class="descLocal">loja 02</p>
-                <div class="redes-sociais">
-                    <img src="images/Twitter.png" alt="">
-                    <img src="images/Facebook.png" alt="">
-                    <img src="images/instagram.png" alt="">
-                </div>
-                <button class="btnComecar">VER LOJA</button>
-            </article> -->
+
 
         </section>
 

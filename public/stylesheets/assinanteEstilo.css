@@ -17,6 +17,7 @@ main h2{
     font-family: 'Staatliches', cursive !important;
 }
 
+
 @media screen and (min-width:768px) {
     main h2{
         font-size: 2.2rem;
@@ -214,12 +215,30 @@ main p{
     padding: 10px;
 }
 
-#formImg input{
+#formImg label{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 0;
+    margin-top: -10px;
+    color: var(--terciary-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#formImg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#formImg label:hover{
+    color: var(--primary-color);
+    transition: 0.5s;
 }
 
 #formImg button{
@@ -350,6 +369,7 @@ main p{
     background-color: var(--yellow);
     cursor: pointer;
 }
+
 
 @media screen and (min-width:768px) {
 
@@ -594,3 +614,4 @@ main .m-2{
     background-color: var(--terciary-color) !important;
     border-color: var(--secundary-color) !important;
 }
+
